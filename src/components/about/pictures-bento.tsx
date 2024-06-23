@@ -1,4 +1,11 @@
+'use client';
+
+import { AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { useState } from 'react';
+
+import { CursorPopup } from '../cursor-popup';
+import { ABOUT_IMAGES } from '@/lib/constants/about';
 
 /**
  * @function PicturesBento
@@ -7,37 +14,44 @@ import Image from 'next/image';
  * @example <PicturesBento />
  */
 export const PicturesBento: React.FC = (): React.ReactElement => {
+  const [hovered, setHovered] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [popupContent, setPopupContent] = useState('');
+
+  const handleMouseEnter = (text: string) => {
+    setHovered(true);
+    setPopupContent(text);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+  };
+
   // -- Render
   return (
-    <div className="w-full h-full flex flex-wrap justify-between gap-5">
-      <Image
-        src="/images/coding-1.jpg"
-        alt="Picture 1"
-        width={300}
-        height={300}
-        className="rounded-lg shadow-xl"
-      />
-      <Image
-        src="/images/coding-1.jpg"
-        alt="Picture 1"
-        width={300}
-        height={300}
-        className="rounded-lg shadow-xl"
-      />
-      <Image
-        src="/images/coding-1.jpg"
-        alt="Picture 1"
-        width={300}
-        height={300}
-        className="rounded-lg shadow-xl"
-      />
-      <Image
-        src="/images/coding-1.jpg"
-        alt="Picture 1"
-        width={300}
-        height={300}
-        className="rounded-lg shadow-xl"
-      />
+    <div className="relative w-full h-full flex flex-wrap justify-between gap-5">
+      {ABOUT_IMAGES.map((image, index) => (
+        <Image
+          key={index}
+          src={image.src}
+          alt={image.alt}
+          width={300}
+          height={300}
+          className="rounded-lg shadow-xl"
+          onMouseEnter={() => handleMouseEnter(image.text)}
+          onMouseLeave={handleMouseLeave}
+          onMouseMove={handleMouseMove}
+        />
+      ))}
+      <AnimatePresence>
+        {hovered && (
+          <CursorPopup content={popupContent} position={cursorPosition} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
