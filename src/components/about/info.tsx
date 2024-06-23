@@ -20,7 +20,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
           </p>
         </div>
         <div className="max-w-xl w-full border-l-2 border-gray-900 pl-2 flex flex-col gap-5">
-          <Heading variant="h3">Création de contenue</Heading>
+          <Heading variant="h2">Création de contenue</Heading>
           <p className="text-lg text-gray-700/75 text-justify">
             Je suis animé par une envie de partager mes connaissances et
             d'inspirer d'autres développeurs à travers la création de contenu
