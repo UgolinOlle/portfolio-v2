@@ -2,12 +2,6 @@ import { EXPERIENCES } from '@/lib/constants/experience';
 import { Timeline } from '../ui/time-line';
 import { Heading } from '../ui/headers';
 
-/**
- * @function ExperienceInfo
- * @description Display the experience information.
- * @returns {JSX.Element} The experience information.
- * @exports ExperienceInfo
- */
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
   // -- Render
   return (

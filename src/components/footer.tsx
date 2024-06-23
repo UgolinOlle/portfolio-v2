@@ -1,9 +1,3 @@
-/**
- * @function Footer
- * @description The footer component.
- * @returns {JSX.Element} The footer component.
- * @exports Footer
- */
 export const Footer: React.FC = (): JSX.Element => {
   // -- Render
   return (

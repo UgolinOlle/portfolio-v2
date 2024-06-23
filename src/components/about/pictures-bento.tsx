@@ -7,13 +7,6 @@ import { useState } from 'react';
 import { CursorPopup } from '../cursor-popup';
 import { ABOUT_IMAGES } from '@/lib/constants/about';
 
-/**
- * @function PicturesBento
- * @description A component that displays a list of pictures in a bento style.
- * @returns {React.ReactElement}
- * @example <PicturesBento />
- * @exports PicturesBento
- */
 export const PicturesBento: React.FC = (): React.ReactElement => {
   // -- Variables
   const [hovered, setHovered] = useState(false);

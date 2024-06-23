@@ -5,13 +5,6 @@ import React from 'react';
 import { ThemeProvider } from '@/lib/providers/theme';
 import AnimatedCursor from 'react-animated-cursor';
 
-/**
- * @function Providers
- * @description A component to render the providers for the application.
- * @param {React.FC} children - The children to render.
- * @returns {React.ReactElement} - The Providers component.
- * @exports Providers
- */
 export const Providers = ({
   children,
 }: {

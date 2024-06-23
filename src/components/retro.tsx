@@ -1,12 +1,5 @@
 import { cn } from '@/lib/utils';
 
-/**
- * @function RetroGrid
- * @description A retro grid background effect.
- * @param {string} className - The class name to apply to the grid.
- * @returns {JSX.Element} The retro grid background effect.
- * @exports RetroGrid
- */
 export function RetroGrid({ className }: { className?: string }): JSX.Element {
   // -- Render
   return (

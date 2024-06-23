@@ -17,24 +17,10 @@ const headingVariants = cva('text-lg font-semibold', {
   },
 });
 
-/**
- * @interface IHeadingProps
- * @description The props for the Heading component.
- * @extends {React.HTMLAttributes<HTMLHeadingElement>}
- * @extends {VariantProps<typeof headingVariants>}
- * @exports IHeadingProps
- */
 export interface IHeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {}
 
-/**
- * @function Heading
- * @description A component to render a heading element.
- * @param {IHeadingProps} props - The props for the Heading component.
- * @returns {React.ReactElement} - The Heading component.
- * @exports Heading
- */
 function Heading({
   variant,
   className,

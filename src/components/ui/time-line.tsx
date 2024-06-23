@@ -20,13 +20,6 @@ const config = {
   }),
 };
 
-/**
- * @function Timeline
- * @description The timeline component.
- * @param {ITimelineItem[]} timelineData - The timeline data.
- * @returns {JSX.Element} The timeline component.
- * @exports Timeline
- */
 export const Timeline = ({
   timelineData,
 }: {

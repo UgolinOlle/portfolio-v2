@@ -1,17 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-/**
- * @function Popup
- * @description A component that displays a popup near the cursor.
- * @param {Object} props - The properties object.
- * @param {string} props.content - The content to display in the popup.
- * @param {Object} props.position - The position of the popup.
- * @param {number} props.position.x - The x-coordinate for the popup position.
- * @param {number} props.position.y - The y-coordinate for the popup position.
- * @returns {React.ReactElement} The Popup component.
- * @exports CursorPopup
- */
 export const CursorPopup: React.FC<{
   content: string;
   position: { x: number; y: number };

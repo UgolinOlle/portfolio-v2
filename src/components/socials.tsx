@@ -1,20 +1,9 @@
 import { IconType } from 'react-icons';
 
-/**
- * @interface ISocialIcon
- * @description Interface for social icon.
- * @property {string} key - Social key.
- */
 interface ISocialIcon {
   [key: string]: IconType;
 }
 
-/**
- * @constant SOCIALS_ICONS
- * @description Socials icons.
- * @type {IconType}
- * @exports SOCIALS_ICONS
- */
 export const SOCIALS_ICONS: ISocialIcon = {
   github: () => (
     <svg

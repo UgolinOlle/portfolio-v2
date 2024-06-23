@@ -33,24 +33,10 @@ const buttonVariants = cva(
   }
 );
 
-/**
- * @function IButtonProps
- * @description The props for the Button component.
- * @extends {React.ButtonHTMLAttributes<HTMLButtonElement>}
- * @extends {VariantProps<typeof buttonVariants>}
- * @exports IButtonProps
- */
 export interface IButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {}
 
-/**
- * @function Button
- * @description A component to render a button element.
- * @param {IButtonProps} props - The props for the Button component.
- * @returns {React.ReactElement} - The Button component.
- * @exports Button
- */
 function Button({
   variant,
   size,
