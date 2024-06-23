@@ -1,3 +1,5 @@
+import { Play } from 'next/font/google';
+
 /**
  * @interface ITimelineItem
  * @description The timeline item interface.
@@ -13,6 +15,7 @@ export interface ITimelineItem {
   description: string;
   date: string;
   color: string;
+  link?: string;
 }
 
 /**
@@ -23,6 +26,28 @@ export interface ITimelineItem {
  */
 export const EXPERIENCES: ITimelineItem[] = [
   {
+    picture: '/logos/comai.png',
+    title: 'Comai - Développeur Full Stack',
+    description:
+      "Développement d'un SaaS (MVP) pour la gestion et l'automatisation des comptes réseaux sociaux.",
+    date: '2024',
+    color: 'bg-purple-500',
+  },
+  {
+    picture: '/logos/42.jpeg',
+    title: '42 Bangkok - Cadet',
+    description: 'Formation en architecture informatique.',
+    date: '2023 - 2024',
+    color: 'bg-blue-800',
+  },
+  {
+    picture: '/logos/azertyconsulting.svg',
+    title: 'Azerty Consutling - Développeur Full Stack',
+    description: 'Développement & Accompagnement sur des solutions sur mesure.',
+    date: '2022',
+    color: 'bg-red-500',
+  },
+  {
     picture: '/logos/nicoka.png',
     title: 'Nicoka - Développeur Backend',
     description:
@@ -31,17 +56,11 @@ export const EXPERIENCES: ITimelineItem[] = [
     color: 'bg-blue-900',
   },
   {
-    title: 'Open Source Contributor',
+    picture: '/logos/autodidact.svg',
+    title: 'Appprentissage en auto-didacte',
     description:
-      'I am an open source contributor with a passion for giving back to the community.',
-    date: '2019 - Present',
-    color: 'bg-blue-500',
-  },
-  {
-    title: 'Full Stack Developer',
-    description:
-      'I am a full stack developer with a passion for building scalable solutions.',
-    date: '2019 - Present',
-    color: 'bg-yellow-500',
+      'Développement de projets personnels principalement sur du Web & Mobile.',
+    date: '2018 - 2022',
+    color: 'bg-green-500',
   },
 ];

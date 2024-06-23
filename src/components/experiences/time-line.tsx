@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import { ITimelineItem } from '@/lib/constants/experience';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Button } from '../ui/button';
 
 // -- Timeline configuration
 const config = {
@@ -22,8 +22,10 @@ const config = {
 
 export const Timeline = ({
   timelineData,
+  onExperienceClick,
 }: {
   timelineData: ITimelineItem[];
+  onExperienceClick: (experience: ITimelineItem) => void;
 }): JSX.Element => {
   // -- Render
   return (
@@ -48,7 +50,6 @@ export const Timeline = ({
                     alt={item.title}
                     width={20}
                     height={20}
-                    className="rounded-full"
                   />
                 )}
                 <h1>{item.title}</h1>
@@ -59,6 +60,13 @@ export const Timeline = ({
               <p className="text-medium text-gray-700/75 font-normal">
                 {item.description}
               </p>
+              <Button
+                variant="link"
+                onClick={() => onExperienceClick(item)}
+                className="p-0"
+              >
+                Voir en détail
+              </Button>
             </motion.div>
           </li>
         ))}

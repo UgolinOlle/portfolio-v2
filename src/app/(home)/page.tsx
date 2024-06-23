@@ -25,10 +25,9 @@ export default function HomePage() {
         onValueChange={handleTabChange}
       >
         <TabsList>
-          <TabsTrigger value="about">About</TabsTrigger>
-          <TabsTrigger value="skills">Skills</TabsTrigger>
-          <TabsTrigger value="experiences">Experiences</TabsTrigger>
-          <TabsTrigger value="projects">Projects</TabsTrigger>
+          <TabsTrigger value="about">À propos</TabsTrigger>
+          <TabsTrigger value="experiences">Expériences</TabsTrigger>
+          <TabsTrigger value="projects">Projets</TabsTrigger>
           <TabsTrigger value="contact">Contact</TabsTrigger>
         </TabsList>
         <AnimatePresence mode="wait">
@@ -41,18 +40,6 @@ export default function HomePage() {
                 transition={{ duration: 0.3 }}
               >
                 <AboutInfo />
-              </motion.div>
-            </TabsContent>
-          )}
-          {activeTab === 'skills' && (
-            <TabsContent value="skills" key="skills" className="md:py-8">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                Skills show here.
               </motion.div>
             </TabsContent>
           )}

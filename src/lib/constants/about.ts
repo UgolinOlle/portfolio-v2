@@ -19,15 +19,23 @@ interface IAboutPicture {
  */
 export const ABOUT_IMAGES: IAboutPicture[] = [
   {
-    src: '/images/coding-1.jpg',
-    alt: 'Picture 1',
+    src: '/images/code-1.jpg',
+    alt: 'Développement de mon portfolio à Phnom Penh',
     text: 'Développement de mon portfolio à Phnom Penh',
   },
   {
     src: '/images/city-1.jpg',
-    alt: 'Picture 2',
+    alt: 'Coucher de soleil à Phnom Penh',
     text: 'Coucher de soleil à Phnom Penh',
   },
-  { src: '/images/coding-1.jpg', alt: 'Picture 3', text: 'This is picture 3' },
-  { src: '/images/city-1.jpg', alt: 'Picture 4', text: 'This is picture 4' },
+  {
+    src: '/images/code-2.jpg',
+    alt: "Développement de auto-push, un CLI écrit en Go pour automatisé l'update de son profil Github.",
+    text: "Développement de auto-push, un CLI écrit en Go pour automatisé l'update de son profil Github.",
+  },
+  {
+    src: '/images/bouddha.jpg',
+    alt: 'Wat Paknam',
+    text: 'Wat Paknam, un Bouddha de 69 mètres de haut situé en plein Bangkok.',
+  },
 ];

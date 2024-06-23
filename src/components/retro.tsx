@@ -5,7 +5,7 @@ export function RetroGrid({ className }: { className?: string }): JSX.Element {
   return (
     <div
       className={cn(
-        'pointer-events-none absolute h-full w-full overflow-hidden opacity-25 [perspective:200px]',
+        'pointer-events-none absolute h-full w-full overflow-hidden opacity-35 [perspective:200px]',
         className
       )}
     >

@@ -42,6 +42,7 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
           alt={image.alt}
           width={300}
           height={300}
+          objectFit="cover"
           className="rounded-lg shadow-xl"
           onMouseEnter={() => handleMouseEnter(image.text)}
           onMouseLeave={handleMouseLeave}
