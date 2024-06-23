@@ -18,8 +18,16 @@ interface IAboutPicture {
  * @exports ABOUT_IMAGES
  */
 export const ABOUT_IMAGES: IAboutPicture[] = [
-  { src: '/images/coding-1.jpg', alt: 'Picture 1', text: 'This is picture 1' },
-  { src: '/images/coding-1.jpg', alt: 'Picture 2', text: 'This is picture 2' },
+  {
+    src: '/images/coding-1.jpg',
+    alt: 'Picture 1',
+    text: 'Développement de mon portfolio à Phnom Penh',
+  },
+  {
+    src: '/images/city-1.jpg',
+    alt: 'Picture 2',
+    text: 'Coucher de soleil à Phnom Penh',
+  },
   { src: '/images/coding-1.jpg', alt: 'Picture 3', text: 'This is picture 3' },
-  { src: '/images/coding-1.jpg', alt: 'Picture 4', text: 'This is picture 4' },
+  { src: '/images/city-1.jpg', alt: 'Picture 4', text: 'This is picture 4' },
 ];

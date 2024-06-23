@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -12,12 +12,15 @@ import { ABOUT_IMAGES } from '@/lib/constants/about';
  * @description A component that displays a list of pictures in a bento style.
  * @returns {React.ReactElement}
  * @example <PicturesBento />
+ * @exports PicturesBento
  */
 export const PicturesBento: React.FC = (): React.ReactElement => {
+  // -- Variables
   const [hovered, setHovered] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [popupContent, setPopupContent] = useState('');
 
+  // -- Functions
   const handleMouseEnter = (text: string) => {
     setHovered(true);
     setPopupContent(text);
@@ -33,7 +36,12 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
 
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-wrap justify-between gap-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="relative w-full h-full flex flex-wrap justify-between gap-5"
+    >
       {ABOUT_IMAGES.map((image, index) => (
         <Image
           key={index}
@@ -52,6 +60,6 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
           <CursorPopup content={popupContent} position={cursorPosition} />
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };

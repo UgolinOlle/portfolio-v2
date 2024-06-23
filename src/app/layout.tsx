@@ -5,6 +5,7 @@ import { ViewTransitions } from 'next-view-transitions';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/components/providers';
+import { Footer } from '@/components/footer';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -28,10 +29,13 @@ export default function RootLayout({
         <body
           className={cn(
             fontSans.variable,
-            'min-h-screen bg-background font-sans antialiased'
+            'bg-background font-sans antialiased flex flex-col'
           )}
         >
-          <Providers>{children}</Providers>
+          <Providers>
+            {children}
+            <Footer />
+          </Providers>
         </body>
       </html>
     </ViewTransitions>

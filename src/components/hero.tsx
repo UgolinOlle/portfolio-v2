@@ -6,29 +6,28 @@ import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
 import { Heading } from './ui/headers';
 import { Button } from './ui/button';
-import { RetroGrid } from './retro';
 
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="w-full h-full flex flex-col-reverse lg:flex-wrap justify-center lg:justify-between">
+    <div className="w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between">
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3">
         <div className="flex flex-col items-center lg:items-start gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading>Ugolin Ollé</Heading>
             <p className="text-center text-lg text-gray-700/75 hover:text-gray-700 transition ease-in-out">
-              Software Engineer, Full Stack Developer, and Open Source
+              Software Engineer, Développeur Full Stack, et Open Source
               Contributor
             </p>
           </div>
           <div className="flex flex-row items-center gap-3">
             <div className="flex flex-row items-center gap-3">
               <Button className="flex items-center gap-2">
-                <Phone size={16} /> Book a call
+                <Phone size={16} /> Prendre RDV
               </Button>
               <Button variant="secondary" className="flex items-center gap-2">
                 <Paperclip size={16} />
-                Download CV
+                Mon CV
               </Button>
             </div>
             {SOCIALS.map((social, index) => (
@@ -52,9 +51,9 @@ export const Hero: React.FC = () => {
             ))}
           </div>
           <p className="text-justify text-lg text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
-            🌟 Welcome in my world. Expert in full stack development and SaaS
-            software creator, I transform innovative ideas into powerful and
-            scalable solutions.
+            🌟 Bienvenue dans mon monde. Expert en développement full stack et
+            SaaS Créateur de logiciels, je transforme des idées innovantes en
+            solutions évolutives.
           </p>
         </div>
         {/* <RetroGrid /> */}
