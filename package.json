@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:dev": "next dev",
-    "start": "next start",
-    "build": "next build",
+    "start:dev": "clear && next dev",
+    "start": "clear && next start",
+    "build": "clear && next build",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
