@@ -3,7 +3,6 @@ import { toast } from 'sonner';
 import { Heading } from '../ui/headers';
 import { SOCIALS_ICONS } from '../socials';
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface GithubProfile {
   login: string;
