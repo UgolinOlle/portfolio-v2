@@ -32,7 +32,7 @@ export default function HomePage() {
         </TabsList>
         <AnimatePresence mode="wait">
           {activeTab === 'about' && (
-            <TabsContent value="about" key="about" className="md:py-8">
+            <TabsContent value="about" key="about" className="py-4 md:py-8">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function HomePage() {
             <TabsContent
               value="experiences"
               key="experiences"
-              className="md:py-8"
+              className="py-4 md:py-8"
             >
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -60,7 +60,11 @@ export default function HomePage() {
             </TabsContent>
           )}
           {activeTab === 'projects' && (
-            <TabsContent value="projects" key="projects" className="md:py-8">
+            <TabsContent
+              value="projects"
+              key="projects"
+              className="py-4 md:py-8"
+            >
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,7 +76,7 @@ export default function HomePage() {
             </TabsContent>
           )}
           {activeTab === 'contact' && (
-            <TabsContent value="contact" key="contact" className="md:py-8">
+            <TabsContent value="contact" key="contact" className="py-4 md:py-8">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

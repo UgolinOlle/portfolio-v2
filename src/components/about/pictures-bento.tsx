@@ -33,7 +33,7 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="relative w-full h-full flex flex-wrap justify-between gap-5"
+      className="relative w-full h-full flex flex-wrap justify-center lg:justify-between gap-5 mt-5"
     >
       {ABOUT_IMAGES.map((image, index) => (
         <Image

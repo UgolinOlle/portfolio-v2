@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Hero } from '@/components/hero';
+import { Hero } from '@/components/hero/hero';
 import { RetroGrid } from '@/components/retro';
+import { MainContainer } from '@/components/ui/container';
 
 export default function HomeLayout({
   children,
@@ -9,15 +10,15 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="w-full p-0 sm:p-5">
-      <div className="w-full h-full flex flex-col justify-center lg:justify-between">
+    <MainContainer>
+      <div className="w-full h-full flex flex-col justify-center gap-3 lg:gap-6 lg:justify-between">
         <div className="relative h-full lg:h-2/5 p-2 md:p-8">
           <RetroGrid />
           <Hero />
         </div>
-        <div className="border-b border-gray-200 md:mx-8" />
+        <div className="border-b border-gray-200 mx-4 md:mx-8" />
         <div className="h-full lg:h-3/5 p-2 md:p-8">{children}</div>
       </div>
-    </main>
+    </MainContainer>
   );
 }
