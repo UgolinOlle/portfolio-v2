@@ -4,6 +4,17 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 
+  // -- Images --
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'avatars.githubusercontent.com',
+        protocol: 'https',
+      },
+    ],
+  },
+
+  // -- Webpack config --
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve = {

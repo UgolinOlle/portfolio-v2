@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import { Heading } from '../ui/headers';
 import { PicturesBento } from './pictures-bento';
-import { motion } from 'framer-motion';
+import { GithubProfile } from './github';
 
 export const AboutInfo: React.FC = (): JSX.Element => {
   // -- Variables
@@ -64,6 +65,18 @@ export const AboutInfo: React.FC = (): JSX.Element => {
       >
         <Heading variant="h2">🌆 Quelques images</Heading>
         <PicturesBento />
+      </motion.div>
+      <motion.div
+        className="flex flex-col gap-5 items-center lg:items-start"
+        initial="hidden"
+        animate="visible"
+        custom={3}
+        variants={variants}
+      >
+        <Heading variant="h2">🌐 Profiles</Heading>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <GithubProfile />
+        </div>
       </motion.div>
     </div>
   );
