@@ -3,7 +3,7 @@
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 export default function ThemeToggler() {
   const { setTheme } = useTheme();

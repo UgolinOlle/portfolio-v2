@@ -1,28 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { MDXProvider } from '@mdx-js/react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { toast } from 'sonner';
 
 import { EXPERIENCES, ITimelineItem } from '@/lib/constants/experience';
 import { Timeline } from './time-line';
 import { Heading } from '../ui/headers';
-import { TechList } from './tech-list';
-import { toast } from 'sonner';
+import { MDXWrapper } from '../mdx';
 
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
   // -- Variables
   const [selectedExperience, setSelectedExperience] =
     useState<ITimelineItem | null>(null);
   const [mdxExists, setMdxExists] = useState<boolean>(false);
-
-  const experiencesComponents = {
-    h1: (props: any) => <h3 className="text-xl font-bold" {...props} />,
-    p: (props: any) => <p className="text-lg text-gray-700/75" {...props} />,
-    TechList,
-  };
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -92,7 +85,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
               <Heading variant="h2">{selectedExperience.title}</Heading>
             </div>
             {MdxContent && (
-              <MDXProvider components={experiencesComponents}>
+              <MDXWrapper>
                 <motion.div
                   initial="hidden"
                   animate="visible"
@@ -102,7 +95,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
                 >
                   <MdxContent />
                 </motion.div>
-              </MDXProvider>
+              </MDXWrapper>
             )}
           </motion.div>
         )}

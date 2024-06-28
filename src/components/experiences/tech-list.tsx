@@ -15,7 +15,7 @@ export const TechList: React.FC<TechListProps> = ({ items }) => {
       {items.map((item, index) => (
         <li
           key={index}
-          className={`text-md md:text-lg ${item.color} p-2 rounded-md`}
+          className={`text-md md:text-lg ${item.color} p-1 rounded-md`}
         >
           {item.item}
         </li>

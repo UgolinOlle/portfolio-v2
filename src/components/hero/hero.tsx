@@ -6,7 +6,7 @@ import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
 import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
-import ThemeToggler from '../theme-switcher';
+import ThemeToggler from '../commons/theme-switcher';
 
 export const Hero: React.FC = () => {
   // -- Render

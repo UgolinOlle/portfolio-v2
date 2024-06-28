@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { CursorPopup } from '../cursor-popup';
+import { CursorPopup } from '../commons/cursor-popup';
 import { ABOUT_IMAGES } from '@/lib/constants/about';
 
 export const PicturesBento: React.FC = (): React.ReactElement => {
