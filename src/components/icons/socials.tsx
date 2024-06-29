@@ -1,10 +1,10 @@
 import { IconType } from 'react-icons';
 
-interface ISocialIcon {
+export interface IIcon {
   [key: string]: IconType;
 }
 
-export const SOCIALS_ICONS: ISocialIcon = {
+export const SOCIALS_ICONS: IIcon = {
   github: () => (
     <svg
       viewBox="0 0 256 250"

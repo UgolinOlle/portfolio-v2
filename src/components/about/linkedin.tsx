@@ -1,8 +1,9 @@
 import useSWR from 'swr';
 import { toast } from 'sonner';
-import { Heading } from '../ui/headers';
-import { SOCIALS_ICONS } from '../socials';
 import Link from 'next/link';
+
+import { Heading } from '../ui/headers';
+import { SOCIALS_ICONS } from '../icons/socials';
 
 interface LinkedInProfile {
   localizedFirstName: string;
