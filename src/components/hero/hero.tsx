@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
 import ThemeToggler from '../commons/theme-switcher';
+import { RoomObj } from '../commons/obj-loader';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -61,6 +62,9 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-3">
+        {/* <div className="h-64 w-full"> */}
+        {/*   <RoomObj /> */}
+        {/* </div> */}
         <Image
           src="/profile.png"
           alt="Ugolin Ollé"
@@ -68,10 +72,9 @@ export const Hero: React.FC = () => {
           height={250}
           className="m-auto"
         />
-        <div className="flex flex-row gap-3 items-center">
-          <ThemeToggler />
-        </div>
       </div>
     </div>
   );
 };
+
+export default Hero;
