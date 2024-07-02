@@ -6,8 +6,6 @@ import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
 import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
-import ThemeToggler from '../commons/theme-switcher';
-import { RoomObj } from '../commons/obj-loader';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -16,7 +14,7 @@ export const Hero: React.FC = () => {
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
-            <Heading>Ugolin Ollé</Heading>
+            <Heading>⌘ Ugolin Ollé</Heading>
             <p className="text-center text-lg text-gray-700/75 hover:text-gray-700 transition ease-in-out">
               Software Engineer, Développeur Full Stack, et Open Source
               Contributor

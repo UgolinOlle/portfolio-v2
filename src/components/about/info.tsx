@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 
 import { Heading } from '../ui/headers';
 import { PicturesBento } from './pictures-bento';
-import { GithubProfile } from './github';
-import { LinkedInProfile } from './linkedin';
+import { Skills } from './skills';
 
 export const AboutInfo: React.FC = (): JSX.Element => {
   // -- Variables
@@ -24,7 +23,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
     <div className="flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start justify-between">
         <motion.div
-          className="w-full lg:max-w-2xl border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
+          className="w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
           initial="hidden"
           animate="visible"
           custom={0}
@@ -41,7 +40,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
           </p>
         </motion.div>
         <motion.div
-          className="lg:max-w-xl w-full border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
+          className="w-full lg:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
           initial="hidden"
           animate="visible"
           custom={1}
@@ -67,19 +66,16 @@ export const AboutInfo: React.FC = (): JSX.Element => {
         <Heading variant="h2">🌆 Quelques images</Heading>
         <PicturesBento />
       </motion.div>
-      {/* <motion.div */}
-      {/*   className="flex flex-col gap-5 items-center lg:items-start" */}
-      {/*   initial="hidden" */}
-      {/*   animate="visible" */}
-      {/*   custom={3} */}
-      {/*   variants={variants} */}
-      {/* > */}
-      {/*   <Heading variant="h2">🌐 Profiles</Heading> */}
-      {/*   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"> */}
-      {/*     <GithubProfile /> */}
-      {/*     <LinkedInProfile /> */}
-      {/*   </div> */}
-      {/* </motion.div> */}
+
+      <motion.div
+        className="flex flex-col gap-3 items-center lg:items-start"
+        initial="hidden"
+        animate="visible"
+        custom={3}
+        variants={variants}
+      >
+        <Heading variant="h2">📚 Skills</Heading>
+      </motion.div>
     </div>
   );
 };
