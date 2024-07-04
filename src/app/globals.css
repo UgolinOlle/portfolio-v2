@@ -76,10 +76,22 @@
   }
 }
 
+/* CUSTOM */
+
 html {
   --cursor-color: #333;
+  scroll-behavior: smooth;
 }
 
 html.dark-mode {
   --cursor-color: #fff;
+}
+
+::-moz-selection {
+  color: #ebf8f1;
+  background: #ab60d7;
+}
+::selection {
+  color: #ebf8f1;
+  background: #ab60d7;
 }

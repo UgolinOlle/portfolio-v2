@@ -75,6 +75,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
         variants={variants}
       >
         <Heading variant="h2">📚 Skills</Heading>
+        <Skills />
       </motion.div>
     </div>
   );
