@@ -16,7 +16,6 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
   const [selectedExperience, setSelectedExperience] =
     useState<ITimelineItem | null>(null);
   const [mdxExists, setMdxExists] = useState<boolean>(false);
-
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -75,11 +74,11 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
             custom={0}
             variants={variants}
           >
-            <div className="flex flex-row gap-5 w-full">
+            <div className="flex flex-row items-center gap-5 w-full">
               <Image
                 src={selectedExperience.picture || ''}
                 alt={selectedExperience.title}
-                width={20}
+                width={40}
                 height={20}
               />
               <Heading variant="h2">{selectedExperience.title}</Heading>

@@ -1,3 +1,5 @@
+import test_images from '../../../public/images/bouddha.jpg';
+
 export interface ITimelineItem {
   picture?: string;
   title: string;
@@ -58,4 +60,10 @@ export const EXPERIENCES: ITimelineItem[] = [
     date: '2018 - 2022',
     color: 'bg-green-500',
   },
+];
+
+export const COMAI_PICTURES = [
+  test_images.src,
+  test_images.src,
+  test_images.src,
 ];

@@ -23,7 +23,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
     <div className="flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start justify-between">
         <motion.div
-          className="w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
+          className="w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5 rounded-lg shadow-sm py-2"
           initial="hidden"
           animate="visible"
           custom={0}
@@ -40,7 +40,7 @@ export const AboutInfo: React.FC = (): JSX.Element => {
           </p>
         </motion.div>
         <motion.div
-          className="w-full lg:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5"
+          className="w-full lg:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5 rounded-lg shadow-sm py-2"
           initial="hidden"
           animate="visible"
           custom={1}

@@ -88,11 +88,6 @@ export const ABOUT_SKILLS: IAboutSkill[] = [
     icon: SKILLS_ICONS.nestjs(),
   },
   {
-    title: 'Flutter',
-    description: "Développement d'applications mobiles.",
-    icon: SKILLS_ICONS.flutter(),
-  },
-  {
     title: 'Tailwind',
     description: 'Framework CSS.',
     icon: SKILLS_ICONS.tailwindcss(),
@@ -106,16 +101,6 @@ export const ABOUT_SKILLS: IAboutSkill[] = [
     title: 'C',
     description: 'Langage de programmation.',
     icon: SKILLS_ICONS.c(),
-  },
-  {
-    title: 'C++',
-    description: 'Langage de programmation.',
-    icon: SKILLS_ICONS.cpp(),
-  },
-  {
-    title: 'Lua',
-    description: 'Langage de programmation.',
-    icon: SKILLS_ICONS.lua(),
   },
   {
     title: 'Bash',
