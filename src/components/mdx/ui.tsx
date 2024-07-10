@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 // -- Interfaces
@@ -9,10 +10,15 @@ interface IKwProps {
   keywords: string[];
 }
 
+interface IPicture {
+  src: string;
+  alt: string;
+}
+
 export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
   // -- Render
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 mb-3">
       {keywords.map((keyword, index) => (
         <span
           key={index}
@@ -37,9 +43,16 @@ export const Detail: React.FC<IUiProps> = ({ children }) => {
 export const Paragraph: React.FC<IUiProps> = ({ children }) => {
   // -- Render
   return (
-    <div className="border-l-2 border-gray-900 pl-2 rounded-md my-5 transition-all ease-in-out hover:shadow-md">
+    <div className="border-l-2 border-gray-900 pl-2 text-justify rounded-md my-5 transition-all ease-in-out hover:shadow-md">
       {children}
     </div>
+  );
+};
+
+export const Picture: React.FC<IPicture> = ({ src, alt }) => {
+  // -- Render
+  return (
+    <Image src={src} alt={alt} width={50} height={50} className="rounded-lg" />
   );
 };
 

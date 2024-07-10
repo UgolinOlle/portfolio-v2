@@ -2,8 +2,17 @@ import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 
 import { ImageSwiper } from '../experiences/images-swiper';
+import { SchoolProjects } from '../experiences/school-projects';
 import { Heading } from '../ui/headers';
-import { Bold, Detail, Keyword, List, ListItem, Paragraph } from './ui';
+import {
+  Bold,
+  Detail,
+  Keyword,
+  List,
+  ListItem,
+  Paragraph,
+  Picture,
+} from './ui';
 
 const MDXComponents = {
   ImageSwiper,
@@ -11,9 +20,11 @@ const MDXComponents = {
   Keyword,
   Detail,
   Paragraph,
+  Picture,
   List,
   ListItem,
   Bold,
+  SchoolProjects,
 };
 
 export const MDXWrapper: React.FC<{ children: React.ReactNode }> = ({

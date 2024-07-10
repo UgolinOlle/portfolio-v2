@@ -10,6 +10,11 @@ export interface ITimelineItem {
   link?: string;
 }
 
+interface ISchoolPicture {
+  src: string;
+  alt: string;
+}
+
 /**
  * @constant EXPERIENCES
  * @description Experiences data.
@@ -66,4 +71,47 @@ export const COMAI_PICTURES = [
   test_images.src,
   test_images.src,
   test_images.src,
+];
+
+export const SCHOOL_PICTURES: ISchoolPicture[] = [
+  {
+    src: '/images/school/libftn.png',
+    alt: 'Libft',
+  },
+  {
+    src: '/images/school/get_next_linen.png',
+    alt: 'Get Next Line',
+  },
+  {
+    src: '/images/school/ft_printfn.png',
+    alt: 'Ft Printf',
+  },
+  {
+    src: '/images/school/born2berootn.png',
+    alt: 'Born2BeRoot',
+  },
+  {
+    src: '/images/school/fract-ole.png',
+    alt: 'Fractol',
+  },
+  {
+    src: '/images/school/minitalke.png',
+    alt: 'Minitalk',
+  },
+  {
+    src: '/images/school/push_swapn.png',
+    alt: 'Push Swap',
+  },
+  {
+    src: '/images/school/philosophersn.png',
+    alt: 'Philosophers',
+  },
+  {
+    src: '/images/school/minishelln.png',
+    alt: 'Minishell',
+  },
+  {
+    src: '/images/school/netpracticen.png',
+    alt: 'NetPractice',
+  },
 ];
