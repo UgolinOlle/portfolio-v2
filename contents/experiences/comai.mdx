@@ -1,44 +1,49 @@
-import { ImageSwiper } from '../../src/components/experiences/images-swiper.tsx';
-import { Heading } from '../../src/components/ui/headers.tsx';
-
-import { COMAI_PICTURES } from '../../src/lib/constants/experience.ts'
+import { COMAI_PICTURES } from '../../src/lib/constants/experience.ts';
 
 ---
 
 <Heading variant="h2" className="py-2">Détails du projet</Heading>
 
-<div className="p-4 bg-gray-100 rounded-lg my-5">
+<Detail>
   - **Rôle :** Développeur Full Stack
   - **Durée :** ~2 months
   - **Mot clés :** Nest.js, Next.js, TailwindCSS, PostgreSQL, AI, Monolith
-</div>
+</Detail>
 
-<div className="border-l-2 border-gray-900 pl-2 rounded-md">
+<Paragraph>
   Dans le cadre de la première phase de développement de ComAI, j'ai été chargé de développer l'API et l'interface utilisateur pour le MVP. J'ai utilisé NestJS pour construire une API robuste, intégrant :
-</div>
+</Paragraph>
 
-  - Gestion des utilisateurs.
-  - Gestion des différentes entreprises de l'utilisateur.
-  - Authentification OAuth.
-  - Intégration de Meta et Google My Business.
-  - Automatisation des réponses de la fiche Google My Business.
-  - Création de posts et d'images par l'IA.
-  - Statistiques des différends profils connectent.
-  - Conseils et études concurrentiels proposent.
+<List>
+  <ListItem>Gestion des utilisateurs.</ListItem>
+  <ListItem>Gestion des différentes entreprises de l'utilisateur.</ListItem>
+  <ListItem>Authentification OAuth.</ListItem>
+  <ListItem>Intégration de Meta et Google My Business.</ListItem>
+  <ListItem>Automatisation des réponses de la fiche Google My Business.</ListItem>
+  <ListItem>Création de posts et d'images par l'IA.</ListItem>
+  <ListItem>Statistiques des différends profils connectent.</ListItem>
+  <ListItem>Conseils et études concurrentiels proposent.</ListItem>
+</List>
   
-<div className="border-l-2 border-gray-900 pl-2 rounded-md">
+<Paragraph>
   Une première couche de sécurité essentielle a été mise en place pour protéger les données et les interactions des utilisateurs.
+</Paragraph>
 
+<Paragraph>
   Pour le déploiement de l'application sur leur serveur VPS, j'ai intégré des processus de CI/CD, garantissant une livraison et des mises à jour fluides et automatisées.
+</Paragraph>
 
+<Paragraph>
   Sur le front-end, j'ai conçu l'interface utilisateur de A à Z en utilisant shadcn/ui et Tailwind CSS pour un design réactif et moderne. Le développement a été réalisé avec Next.js et TypeScript, assurant ainsi performance et maintenabilité.
-</div>
+</Paragraph>
 
 <Heading variant="h2" className="my-5">Voici quelques points forts du projet :</Heading>
 
-  - **Optimisation des performances** : Réduction du temps de chargement de 30% grâce à l'optimisation des requêtes API et à la mise en cache des données.
-  - **Sécurité** : Implémentation de mesures de sécurité, incluant la protection contre les attaques XSS et CSRF.
-  - **Scalabilité** : Architecture monolithique initiale, prête à évoluer vers des microservices selon les besoins futurs.
+<List>
+  <ListItem>**Optimisation des performances** : Réduction du temps de chargement de 30% grâce à l'optimisation des requêtes API et à la mise en cache des données.</ListItem>
+  <ListItem>**Sécurité** : Implémentation de mesures de sécurité, incluant la protection contre les attaques XSS et CSRF.</ListItem>
+  <ListItem>**Scalabilité** : Architecture monolithique initiale, prête à évoluer vers des microservices selon les besoins futurs.</ListItem>
+</List>
 
 <ImageSwiper images={COMAI_PICTURES} />
 
