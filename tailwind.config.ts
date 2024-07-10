@@ -22,6 +22,9 @@ const config = {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
+      boxShadow: {
+        left: '-4px 0 7px -5px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
