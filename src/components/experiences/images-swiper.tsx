@@ -27,11 +27,11 @@ export const ImageSwiper: React.FC<{
   return (
     <div
       className={cn(
-        'group/hover relative aspect-square h-full w-full overflow-hidden rounded-lg',
+        'group/hover relative aspect-square h-full w-full overflow-hidden rounded-lg my-3',
         className
       )}
     >
-      <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-5 ">
+      <div className="pointer-events-none absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-5">
         <button
           style={imgIndex === 0 ? { opacity: 0 } : {}}
           className="pointer-events-auto h-fit w-fit rounded-full bg-white/80 p-2 opacity-0 transition-all group-hover/hover:opacity-100"
