@@ -3,6 +3,7 @@ import React from 'react';
 import { Hero } from '@/components/hero/hero';
 import { RetroGrid } from '@/components/retro';
 import { MainContainer } from '@/components/ui/container';
+import { Navbar } from '@/components/commons/navbar';
 
 export default function HomeLayout({
   children,
@@ -17,7 +18,10 @@ export default function HomeLayout({
           <Hero />
         </div>
         <div className="border-b border-gray-200 mx-4 md:mx-8" />
-        <div className="h-full lg:h-3/5 p-2 md:p-8">{children}</div>
+        <div className="h-full lg:h-3/5 p-2 md:p-8">
+          <Navbar />
+          {children}
+        </div>
       </div>
     </MainContainer>
   );

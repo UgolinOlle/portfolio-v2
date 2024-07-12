@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 
-import { SOCIALS_ICONS } from '@/components/icons/socials';
+import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
 
 /**
  * @interface ISocialItem

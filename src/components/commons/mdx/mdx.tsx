@@ -1,9 +1,9 @@
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 
-import { ImageSwiper } from '../experiences/images-swiper';
-import { SchoolProjects } from '../experiences/school-projects';
-import { Heading } from '../ui/headers';
+import { ImageSwiper } from '@/components/experiences/images-swiper';
+import { SchoolProjects } from '@/components/experiences/school-projects';
+import { Heading } from '@/components/ui/headers';
 import {
   Bold,
   Detail,

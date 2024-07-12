@@ -1,4 +1,4 @@
-import { SKILLS_ICONS } from '@/components/icons/skills';
+import { SKILLS_ICONS } from '@/components/commons/icons/skills';
 
 /**
  * @interface IAboutPicture

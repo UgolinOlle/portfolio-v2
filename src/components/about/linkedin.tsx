@@ -3,7 +3,7 @@ import { toast } from 'sonner';
 import Link from 'next/link';
 
 import { Heading } from '../ui/headers';
-import { SOCIALS_ICONS } from '../icons/socials';
+import { SOCIALS_ICONS } from '../commons/icons/socials';
 
 interface LinkedInProfile {
   localizedFirstName: string;
