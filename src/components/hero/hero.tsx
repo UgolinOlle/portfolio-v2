@@ -6,6 +6,7 @@ import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
 import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
+import { TopNavbar } from '../commons/top-navbar';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -52,6 +53,7 @@ export const Hero: React.FC = () => {
               ))}
             </div>
           </div>
+          <TopNavbar />
           <p className="text-center md:text-justify text-md text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
             🌟 Bienvenue dans mon monde. Expert en développement full stack et
             SaaS Créateur de logiciels, je transforme des idées innovantes en
@@ -60,9 +62,6 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col items-center gap-3">
-        {/* <div className="h-64 w-full"> */}
-        {/*   <RoomObj /> */}
-        {/* </div> */}
         <Image
           src="/profile.png"
           alt="Ugolin Ollé"
