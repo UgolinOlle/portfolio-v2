@@ -44,7 +44,12 @@ export const Navbar: React.FC = () => {
             Expériences
           </TabsTrigger>
           <TabsTrigger value="projects">Projets</TabsTrigger>
-          <TabsTrigger value="contact">Contact</TabsTrigger>
+          <TabsTrigger
+            value="contact"
+            onClick={() => handleNavigation('/contact', 'contact')}
+          >
+            Contact
+          </TabsTrigger>
         </TabsList>
         <AnimatePresence mode="wait">
           {activeTab === 'projects' && (
@@ -60,18 +65,6 @@ export const Navbar: React.FC = () => {
                 transition={{ duration: 0.3 }}
               >
                 Projects show here.
-              </motion.div>
-            </TabsContent>
-          )}
-          {activeTab === 'contact' && (
-            <TabsContent value="contact" key="contact" className="py-4 md:py-8">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ContactForm />
               </motion.div>
             </TabsContent>
           )}
