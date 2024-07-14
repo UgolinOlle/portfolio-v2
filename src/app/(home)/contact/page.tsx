@@ -1,13 +1,36 @@
 'use client';
 
 import React from 'react';
+import { toast } from 'sonner';
 
 import AutoForm, { AutoFormSubmit } from '@/components/ui/auto-form';
-import { contactFormSchema } from '@/lib/forms/contanct';
 import { AnimatedContainer } from '@/components/commons/animation';
 import { Heading } from '@/components/ui/headers';
+import { ContactFormData, contactFormSchema } from '@/lib/schemas/contact';
 
 export default function Contact() {
+  // -- Functions
+  const onSubmit = async (data: ContactFormData) => {
+    console.log('data', data);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        toast.success('Message envoyé avec succès');
+        return;
+      } else {
+        toast.error("Une erreur est survenue lors de l'envoi du message");
+      }
+    } catch (error) {
+      toast.error("Une erreur est survenue lors de l'envoi du message");
+    }
+  };
+
   // -- Render
   return (
     <AnimatedContainer custom={0}>
@@ -15,6 +38,7 @@ export default function Contact() {
         Un projet ? Une question ? On en discute ?
       </Heading>
       <AutoForm
+        onSubmit={onSubmit}
         formSchema={contactFormSchema}
         fieldConfig={{
           firstName: {

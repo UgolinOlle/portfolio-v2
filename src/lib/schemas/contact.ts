@@ -45,3 +45,5 @@ export const contactFormSchema: z.ZodObject<{
     })
     .min(10, 'Le message doit contenir au moins 10 caractères'),
 });
+
+export type ContactFormData = z.infer<typeof contactFormSchema>;
