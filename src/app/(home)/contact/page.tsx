@@ -11,7 +11,6 @@ import { ContactFormData, contactFormSchema } from '@/lib/schemas/contact';
 export default function Contact() {
   // -- Functions
   const onSubmit = async (data: ContactFormData) => {
-    console.log('data', data);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
