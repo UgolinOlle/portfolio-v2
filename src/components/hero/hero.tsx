@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading>⌘ Ugolin Ollé</Heading>
-            <p className="text-center text-lg text-gray-700/75 hover:text-gray-700 transition ease-in-out">
+            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out">
               Software Engineer, Développeur Full Stack, et Open Source
               Contributor
             </p>
@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   variant="secondary"
                   className={cn(
-                    'text-md text-gray-700/75 hover:text-gray-700 transition ease-in-out px-3 py-2',
+                    'text-md dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out px-3 py-2',
                     `${social.name.toLowerCase() === 'linkedin' && 'hover:text-[#0A66C2]'}`
                   )}
                 >
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
             </div>
             <TopNavbar />
           </div>
-          <p className="text-center md:text-justify text-md text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
+          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
             🌟 Bienvenue dans mon monde. Expert en développement full stack et
             SaaS Créateur de logiciels, je transforme des idées innovantes en
             solutions évolutives.
