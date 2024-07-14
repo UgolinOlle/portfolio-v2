@@ -1,24 +1,31 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { Button } from '../ui/button';
-
 export default function ThemeToggler() {
-  const { setTheme } = useTheme();
+  // -- Variables
+  const { resolvedTheme, setTheme } = useTheme();
+
+  // -- Functions
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+  };
 
   return (
-    <Button variant="ghost" size="icon" className="rounded-full">
-      <SunIcon
-        onClick={() => setTheme('dark')}
-        className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-      />
-      <MoonIcon
-        onClick={() => setTheme('light')}
-        className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-      />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <div
+      onClick={toggleTheme}
+      className={cn(
+        'rounded-full p-2',
+        `${resolvedTheme === 'dark' ? 'bg-yellow-500/75' : 'bg-purple-500/75'}`
+      )}
+    >
+      {resolvedTheme === 'dark' ? (
+        <SunIcon className="fill-white" size={22} />
+      ) : (
+        <MoonIcon className="fill-white" size={22} />
+      )}
+    </div>
   );
 }

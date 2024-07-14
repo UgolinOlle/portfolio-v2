@@ -52,8 +52,8 @@ export const Hero: React.FC = () => {
                 </Button>
               ))}
             </div>
+            <TopNavbar />
           </div>
-          <TopNavbar />
           <p className="text-center md:text-justify text-md text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
             🌟 Bienvenue dans mon monde. Expert en développement full stack et
             SaaS Créateur de logiciels, je transforme des idées innovantes en

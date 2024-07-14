@@ -1,15 +1,16 @@
 'use client';
 
-import React, { SetStateAction, useState } from 'react';
+import React, { SetStateAction, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ContactForm } from '@/components/contact/form';
+import { FlaskConical, MousePointerClick } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   // -- Variables
   const router = useRouter();
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState('about');
 
   // -- Functions
@@ -22,11 +23,22 @@ export const Navbar: React.FC = () => {
     router.push(path);
   };
 
+  useEffect(() => {
+    const pathMap: { [key: string]: string } = {
+      '/': 'about',
+      '/experiences': 'experiences',
+      '/projects': 'projects',
+      '/contact': 'contact',
+      '/lab': 'lab',
+    };
+    setActiveTab(pathMap[pathname] || 'about');
+  }, [pathname]);
+
   // -- Render
   return (
-    <div className="w-full h-full flex flex-wrap justify-between mb-8">
+    <div className="w-full h-full flex items-center justify-between mb-8">
       <Tabs
-        defaultValue="about"
+        value={activeTab}
         className="w-full"
         onValueChange={handleTabChange}
       >
@@ -43,7 +55,12 @@ export const Navbar: React.FC = () => {
           >
             Expériences
           </TabsTrigger>
-          <TabsTrigger value="projects">Projets</TabsTrigger>
+          <TabsTrigger
+            value="projects"
+            onClick={() => handleNavigation('/projects', 'projects')}
+          >
+            Projets
+          </TabsTrigger>
           <TabsTrigger
             value="contact"
             onClick={() => handleNavigation('/contact', 'contact')}
@@ -69,6 +86,22 @@ export const Navbar: React.FC = () => {
             </TabsContent>
           )}
         </AnimatePresence>
+      </Tabs>
+      <Tabs className="1/3">
+        <TabsList>
+          <TabsTrigger
+            value="lab"
+            onClick={() => handleNavigation('/lab', 'lab')}
+          >
+            <FlaskConical size={20} />
+          </TabsTrigger>
+          <TabsTrigger
+            value="uses"
+            onClick={() => handleNavigation('/uses', 'uses')}
+          >
+            <MousePointerClick size={20} />
+          </TabsTrigger>
+        </TabsList>
       </Tabs>
     </div>
   );

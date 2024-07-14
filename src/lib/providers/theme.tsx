@@ -13,7 +13,6 @@ import { type ThemeProviderProps } from 'next-themes/dist/types';
  */
 export function ThemeProvider({
   children,
-  ...props
 }: ThemeProviderProps): React.ReactNode {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return <NextThemesProvider attribute="class">{children}</NextThemesProvider>;
 }

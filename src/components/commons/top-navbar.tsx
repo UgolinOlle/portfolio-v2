@@ -1,17 +1,17 @@
 import React from 'react';
+import { Rss } from 'lucide-react';
+
 import { Button } from '../ui/button';
-import { MoonStar, Rss } from 'lucide-react';
+import ThemeToggler from './theme-switcher';
 
 export const TopNavbar: React.FC = () => {
   // -- Render
   return (
-    <nav className="w-full h-auto flex justify-center items-start gap-5">
-      <Button variant="ghost">
+    <nav className="flex justify-center items-center gap-3">
+      <Button variant="secondary">
         <Rss size={24} />
       </Button>
-      <Button variant="ghost">
-        <MoonStar size={24} />
-      </Button>
+      <ThemeToggler />
     </nav>
   );
 };
