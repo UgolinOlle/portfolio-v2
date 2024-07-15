@@ -44,7 +44,7 @@ export const Top: React.FC = () => {
       initial={{ bottom: '10px' }}
       animate={{ bottom: isBottom ? '80px' : '20px' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="fixed right-10 z-50"
+      className="fixed right-10 z-50 md:block hidden"
     >
       <Button
         variant="outline"

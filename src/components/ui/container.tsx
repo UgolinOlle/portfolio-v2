@@ -32,7 +32,7 @@ const pageVariants = {
 const MainContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.main
-      className="w-full p-0 sm:p-5"
+      className="w-full flex justify-center items-center p-0 sm:p-5"
       initial="initial"
       animate="in"
       exit="out"
