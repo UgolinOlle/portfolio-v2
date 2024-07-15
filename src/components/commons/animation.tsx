@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { custom } from 'zod';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
 const variants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,12 +18,16 @@ const variants = {
 
 const AnimatedSection: React.FC<{
   children: React.ReactNode;
+  className?: string;
   custom: number;
-}> = ({ children, custom }) => {
+}> = ({ children, className, custom }) => {
   // -- Render
   return (
     <motion.section
-      className="w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5 rounded-lg shadow-sm py-2"
+      className={cn(
+        'w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5 rounded-lg shadow-sm py-2',
+        className
+      )}
       initial="hidden"
       animate="visible"
       custom={custom}

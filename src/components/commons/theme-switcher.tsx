@@ -1,31 +1,49 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 export default function ThemeToggler() {
-  // -- Variables
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
-  // -- Functions
-  const toggleTheme = () => {
-    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+  const iconProps = {
+    onClick: () => setTheme(theme === 'dark' ? 'light' : 'dark'),
   };
 
   return (
-    <div
-      onClick={toggleTheme}
+    <Button
+      variant="secondary"
       className={cn(
-        'rounded-full p-2',
-        `${resolvedTheme === 'dark' ? 'bg-yellow-500/75' : 'bg-purple-500/75'}`
+        'p-2 rounded-full',
+        `${theme === 'dark' ? 'bg-yellow-500/75 hover:bg-yellow-500/75' : 'bg-purple-500/75 hover:bg-purple-500/75'}`
       )}
     >
-      {resolvedTheme === 'dark' ? (
-        <SunIcon className="fill-white" size={22} />
-      ) : (
-        <MoonIcon className="fill-white" size={22} />
-      )}
-    </div>
+      <AnimatePresence mode="wait" initial={false}>
+        {theme === 'dark' ? (
+          <motion.div
+            key="sun"
+            initial={{ rotate: -90, scale: 0 }}
+            animate={{ rotate: 0, scale: 1 }}
+            exit={{ rotate: 90, scale: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <SunIcon {...iconProps} className="text-white" size={22} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="moon"
+            initial={{ rotate: 90, scale: 0 }}
+            animate={{ rotate: 0, scale: 1 }}
+            exit={{ rotate: -90, scale: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <MoonIcon {...iconProps} size={22} className="text-white" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Button>
   );
 }
