@@ -48,17 +48,20 @@ export const Timeline = ({
                 initial="hidden"
                 animate="visible"
                 variants={config}
+                className="flex flex-col items-start gap-2"
               >
-                <div className="flex items-center gap-2">
-                  {item.picture && (
-                    <Image
-                      src={item.picture}
-                      alt={item.title}
-                      width={20}
-                      height={20}
-                    />
-                  )}
-                  <h1>{item.title}</h1>
+                <div className="flex flex-col items-start md:flex-row md:items-center gap-3 md:gap-2">
+                  <div className="flex items-center gap-2">
+                    {item.picture && (
+                      <Image
+                        src={item.picture}
+                        alt={item.title}
+                        width={20}
+                        height={20}
+                      />
+                    )}
+                    <h1>{item.title}</h1>
+                  </div>
                   <p className="px-2 py-1 bg-gray-100 rounded-lg text-sm font-light">
                     {item.date}
                   </p>
