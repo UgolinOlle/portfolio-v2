@@ -12,7 +12,7 @@ export default function HomeLayout({
 }) {
   return (
     <MainContainer>
-      <div className="w-full h-full flex flex-col justify-center gap-3 lg:gap-6 lg:justify-between">
+      <div className="w-full lg:w-[70vw] h-full flex flex-col justify-center gap-3 lg:gap-6 lg:justify-between">
         <div className="relative h-full lg:h-2/5 p-2 md:p-8">
           <RetroGrid />
           <Hero />
