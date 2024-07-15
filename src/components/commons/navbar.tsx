@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
 
   // -- Render
   return (
-    <div className="w-full h-full flex items-center justify-between mb-8">
+    <div className="hidden lg:flex w-full h-full items-center justify-between mb-8">
       <Tabs
         value={activeTab}
         className="w-full"
