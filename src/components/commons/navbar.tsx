@@ -68,24 +68,6 @@ export const Navbar: React.FC = () => {
             Contact
           </TabsTrigger>
         </TabsList>
-        <AnimatePresence mode="wait">
-          {activeTab === 'projects' && (
-            <TabsContent
-              value="projects"
-              key="projects"
-              className="py-4 md:py-8"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                Projects show here.
-              </motion.div>
-            </TabsContent>
-          )}
-        </AnimatePresence>
       </Tabs>
       <Tabs className="1/3">
         <TabsList>

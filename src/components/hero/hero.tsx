@@ -7,12 +7,13 @@ import { cn } from '@/lib/utils';
 import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
 import { TopNavbar } from '../commons/top-navbar';
+import { RetroGrid } from '../retro';
 
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between p-0 md:p-4">
-      <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between border rounded-lg shadow-lg">
+      <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading>⌘ Ugolin Ollé</Heading>
@@ -61,7 +62,7 @@ export const Hero: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3 p-0 md:p-4">
         <Image
           src="/profile.png"
           alt="Ugolin Ollé"
@@ -70,6 +71,7 @@ export const Hero: React.FC = () => {
           className="m-auto"
         />
       </div>
+      <RetroGrid />
     </div>
   );
 };
