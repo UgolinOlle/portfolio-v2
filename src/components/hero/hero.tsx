@@ -12,8 +12,8 @@ import { RetroGrid } from '../retro';
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between border rounded-lg shadow-lg">
-      <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 md:p-4">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between md:border md:rounded-lg md:shadow-lg">
+      <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading>⌘ Ugolin Ollé</Heading>
