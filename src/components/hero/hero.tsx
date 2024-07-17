@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { TopNavbar } from '@/components/commons/top-navbar';
 import { Appointement } from '@/components/commons/appointement';
 import { RetroGrid } from '../retro';
+import Clock from './clock';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -60,6 +61,16 @@ export const Hero: React.FC = () => {
             solutions évolutives.
           </p>
         </div>
+        <span className="text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 w-auto px-4 py-1 flex items-center gap-4 rounded-full group">
+          <div className="flex items-center gap-2 group-hover:text-gray-700">
+            <Clock />
+            GMT+1
+          </div>
+          <div className="border border-gray-300 rounded-full w-56 animate-pulse group-hover:border-gray-700 transition ease-in-out" />
+          <span className="text-sm dark:text-gray-300 text-gray-700/75 group-hover:text-gray-700 transition ease-in-out">
+            Phnom Penh, Cambodge
+          </span>
+        </span>
       </div>
       <div className="flex flex-col items-center gap-3 p-0 md:p-4">
         <Image
@@ -78,5 +89,3 @@ export const Hero: React.FC = () => {
     </div>
   );
 };
-
-export default Hero;
