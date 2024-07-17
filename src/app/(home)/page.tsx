@@ -15,7 +15,7 @@ export default function HomePage() {
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start justify-between">
         <AnimatedSection custom={0}>
           <Heading variant="h2">👋 À propos de moi</Heading>
-          <p className="text-md text-gray-700/75 text-justify">
+          <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je m'appelle Ugolin Ollé et je suis un développeur full stack
             passionné, spécialisé dans le développement de logiciels SaaS.
             J'aime explorer de nouvelles technologies et créer des solutions
@@ -26,7 +26,7 @@ export default function HomePage() {
         </AnimatedSection>
         <AnimatedSection custom={1}>
           <Heading variant="h2">📸 Création de contenu</Heading>
-          <p className="text-md text-gray-700/75 text-justify">
+          <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je suis animé par une envie de partager mes connaissances et
             d'inspirer d'autres développeurs à travers la création de contenu
             éducatif. Mon objectif est de démystifier les aspects techniques

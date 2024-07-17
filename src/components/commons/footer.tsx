@@ -6,11 +6,12 @@ export const Footer: React.FC = (): JSX.Element => {
         <p className="text-center text-sm">
           © {new Date().getFullYear()} Ugolin Ollé. All rights reserved.
         </p>
+        <div className="border border-gray-300 w-[30%]" />
         <div className="flex flex-col lg:flex-row items-center gap-10">
-          <p className="text-center text-sm text-gray-700/75">
+          <p className="text-center text-sm text-gray-700/75 dark:text-gray-300/75">
             Built with Next.js, TypeScript, and Tailwind CSS.
           </p>
-          <p className="text-center text-sm text-gray-700/75">
+          <p className="text-center text-sm text-gray-700/75 dark:text-gray-300/75">
             Inspired by rdsx.dev
           </p>
         </div>
