@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
             </div>
             <TopNavbar />
           </div>
-          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-auto">
+          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-5">
             🌟 Bienvenue dans mon monde. Expert en développement full stack et
             SaaS Créateur de logiciels, je transforme des idées innovantes en
             solutions évolutives.
@@ -69,6 +69,10 @@ export const Hero: React.FC = () => {
           height={250}
           className="m-auto"
         />
+        <span className="text-center text-sm dark:text-gray-300 text-gray-700/75 bg-green-500/25 hover:bg-green-500/50 hover:text-gray-700 transition ease-in-out duration-200 w-auto px-4 py-1 flex items-center gap-2 rounded-full">
+          <span className="w-3 h-3 bg-green-500 rounded-full inline-block transition-all animate-pulse" />
+          Disponible pour travailler
+        </span>
       </div>
       <RetroGrid />
     </div>
