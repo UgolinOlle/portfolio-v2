@@ -9,7 +9,9 @@ export const TopNavbar: React.FC = () => {
   return (
     <nav className="flex justify-center items-center gap-3">
       <Button variant="secondary">
-        <Rss size={24} />
+        <span className="transition-all duration-500 ease-in-out hover:animate-phone">
+          <Rss size={24} />
+        </span>
       </Button>
       <ThemeToggler />
     </nav>

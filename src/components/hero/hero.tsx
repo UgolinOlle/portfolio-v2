@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Paperclip, Phone } from 'lucide-react';
+import { Paperclip } from 'lucide-react';
 
 import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
@@ -8,6 +8,7 @@ import { Heading } from '../ui/headers';
 import { Button } from '../ui/button';
 import { TopNavbar } from '../commons/top-navbar';
 import { RetroGrid } from '../retro';
+import { Appointement } from '../commons/appointement';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -24,9 +25,7 @@ export const Hero: React.FC = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="flex flex-row items-center gap-3">
-              <Button className="flex items-center gap-2">
-                <Phone size={16} /> Prendre RDV
-              </Button>
+              <Appointement />
               <Button variant="secondary" className="flex items-center gap-2">
                 <Paperclip size={16} />
                 Mon CV
