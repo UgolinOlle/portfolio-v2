@@ -8,8 +8,8 @@ import { toast } from 'sonner';
 
 import { EXPERIENCES, ITimelineItem } from '@/lib/constants/experience';
 import { Timeline } from './time-line';
-import { Heading } from '../ui/headers';
-import { MDXWrapper } from '../commons/mdx/mdx';
+import { Heading } from '@/components/ui/headers';
+import { MDXWrapper } from '@/components/commons/mdx/mdx';
 
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
   // -- Variables

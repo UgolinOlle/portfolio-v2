@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { MoveUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 
 export const Top: React.FC = () => {
   // -- State

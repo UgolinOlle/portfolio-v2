@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { FlaskConical, MousePointerClick, Menu, X } from 'lucide-react';
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Heading } from '../ui/headers';
+import { Heading } from '@/components/ui/headers';
 
 export const Navbar: React.FC = () => {
   // -- Variables

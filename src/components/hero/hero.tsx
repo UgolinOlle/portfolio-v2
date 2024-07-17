@@ -4,11 +4,11 @@ import { Paperclip } from 'lucide-react';
 
 import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
-import { Heading } from '../ui/headers';
-import { Button } from '../ui/button';
-import { TopNavbar } from '../commons/top-navbar';
+import { Heading } from '@/components/ui/headers';
+import { Button } from '@/components/ui/button';
+import { TopNavbar } from '@/components/commons/top-navbar';
+import { Appointement } from '@/components/commons/appointement';
 import { RetroGrid } from '../retro';
-import { Appointement } from '../commons/appointement';
 
 export const Hero: React.FC = () => {
   // -- Render

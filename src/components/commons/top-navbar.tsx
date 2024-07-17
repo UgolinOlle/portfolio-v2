@@ -1,7 +1,7 @@
 import React from 'react';
 import { Rss } from 'lucide-react';
 
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import ThemeToggler from './theme-switcher';
 
 export const TopNavbar: React.FC = () => {

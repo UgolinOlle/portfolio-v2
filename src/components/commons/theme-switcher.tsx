@@ -3,7 +3,8 @@
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '../ui/button';
+
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export default function ThemeToggler() {

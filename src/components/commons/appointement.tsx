@@ -9,6 +9,7 @@ import {
   ModalContent,
   ModalTrigger,
 } from '@/components/ui/animted-modal';
+import { Heading } from '@/components/ui/headers';
 
 export const Appointement: React.FC = () => {
   // -- Render
@@ -26,7 +27,9 @@ export const Appointement: React.FC = () => {
           </div>
         </ModalTrigger>
         <ModalBody>
-          <ModalContent></ModalContent>
+          <ModalContent>
+            <Heading variant="h3">Prendre RDV</Heading>
+          </ModalContent>
         </ModalBody>
       </Modal>
     </div>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { ITimelineItem } from '@/lib/constants/experience';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 export const Timeline = ({
   timelineData,

@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
+import { MoveLeft, MoveRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
-import { MoveLeft, MoveRight } from 'lucide-react';
 
 export const ImageSwiper: React.FC<{
   images: string[];

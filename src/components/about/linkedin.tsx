@@ -2,8 +2,8 @@ import useSWR from 'swr';
 import { toast } from 'sonner';
 import Link from 'next/link';
 
-import { Heading } from '../ui/headers';
-import { SOCIALS_ICONS } from '../commons/icons/socials';
+import { Heading } from '@/components/ui/headers';
+import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
 
 interface LinkedInProfile {
   localizedFirstName: string;
@@ -38,7 +38,9 @@ export const LinkedInProfile: React.FC = () => {
         variant="h2"
         className="flex flex-row gap-3 items-center text-white"
       >
-        <span className="w-6 h-6">{SOCIALS_ICONS.linkedin()}</span>
+        <span className="w-6 h-6">
+          <SOCIALS_ICONS.linkedin />
+        </span>
         Profile LinkedIn
       </Heading>
       <div className="flex flex-col gap-3 items-start">
