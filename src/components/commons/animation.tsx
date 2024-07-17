@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
+import React from 'react';
+import { motion } from 'framer-motion';
+
 import { cn } from '@/lib/utils';
 
+// -- Global variants animation
 const variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
@@ -40,12 +41,16 @@ const AnimatedSection: React.FC<{
 
 const AnimatedContainer: React.FC<{
   children: React.ReactNode;
+  className?: string;
   custom: number;
-}> = ({ children, custom }) => {
+}> = ({ children, className, custom }) => {
   // -- Render
   return (
     <motion.div
-      className="flex flex-col gap-3 items-center lg:items-start"
+      className={cn(
+        'flex flex-col gap-3 items-center lg:items-start',
+        className
+      )}
       initial="hidden"
       animate="visible"
       custom={custom}

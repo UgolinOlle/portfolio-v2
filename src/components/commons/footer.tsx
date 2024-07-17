@@ -1,7 +1,7 @@
 export const Footer: React.FC = (): JSX.Element => {
   // -- Render
   return (
-    <footer className="w-[70vw] border border-gray-300/75 rounded-lg text-black dark:text-white py-5 px-8 my-5">
+    <footer className="w-full lg:w-[68%] border border-gray-300/75 rounded-lg text-black dark:text-white py-5 px-4 my-5 mx-8 shadow-lg">
       <div className="w-full m-auto flex flex-col lg:flex-row justify-center lg:justify-between gap-3 items-center px-5">
         <p className="text-center text-sm">
           © {new Date().getFullYear()} Ugolin Ollé. All rights reserved.

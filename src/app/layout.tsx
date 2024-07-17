@@ -30,7 +30,7 @@ export default function RootLayout({
         <body
           className={cn(
             fontSans.variable,
-            'bg-background font-sans antialiased flex flex-col items-center relative'
+            'bg-background font-sans antialiased flex flex-col items-center relative px-4 py-4'
           )}
         >
           <Providers>

@@ -32,7 +32,7 @@ export default function Contact() {
 
   // -- Render
   return (
-    <AnimatedContainer custom={0}>
+    <AnimatedContainer custom={0} className="lg:w-1/2">
       <Heading variant="h2" className="mb-6">
         Un projet ? Une question ? On en discute ?
       </Heading>
