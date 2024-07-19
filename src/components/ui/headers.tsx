@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 const headingVariants = cva('text-lg font-semibold', {
   variants: {
     variant: {
+      hero: 'lg:text-8xl md:text-7xl text-6xl font-light',
       h1: 'lg:text-6xl md:text-5xl text-4xl font-bold',
       h2: 'lg:text-3xl md:text-2xl text-xl font-bold',
       h3: 'lg:text-2xl md:text-xl text-lg font-bold',

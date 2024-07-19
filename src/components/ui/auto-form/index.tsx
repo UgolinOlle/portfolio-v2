@@ -1,20 +1,20 @@
-"use client";
-import { Form } from "@/components/ui/form";
-import React from "react";
-import { DefaultValues, FormState, useForm } from "react-hook-form";
-import { z } from "zod";
+'use client';
+import { Form } from '@/components/ui/form';
+import React from 'react';
+import { DefaultValues, FormState, useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from '../button';
+import { cn } from '@/lib/utils';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import AutoFormObject from "./fields/object";
-import { Dependency, FieldConfig } from "./types";
+import AutoFormObject from './fields/object';
+import { Dependency, FieldConfig } from './types';
 import {
   ZodObjectOrWrapped,
   getDefaultValues,
   getObjectFormSchema,
-} from "./utils";
+} from './utils';
 
 export function AutoFormSubmit({
   children,
@@ -27,7 +27,7 @@ export function AutoFormSubmit({
 }) {
   return (
     <Button type="submit" disabled={disabled} className={className}>
-      {children ?? "Submit"}
+      {children ?? 'Submit'}
     </Button>
   );
 }
@@ -85,7 +85,7 @@ function AutoForm<SchemaType extends ZodObjectOrWrapped>({
   }, [valuesString]);
 
   const renderChildren =
-    typeof children === "function"
+    typeof children === 'function'
       ? children(form.formState as FormState<z.infer<SchemaType>>)
       : children;
 
@@ -96,7 +96,7 @@ function AutoForm<SchemaType extends ZodObjectOrWrapped>({
           onSubmit={(e) => {
             form.handleSubmit(onSubmit)(e);
           }}
-          className={cn("space-y-5", className)}
+          className={cn('space-y-5', className)}
         >
           <AutoFormObject
             schema={objectFormSchema}

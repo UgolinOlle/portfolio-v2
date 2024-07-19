@@ -61,4 +61,23 @@ const AnimatedContainer: React.FC<{
   );
 };
 
-export { AnimatedSection, AnimatedContainer };
+const AnimatedGrid: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+  custom: number;
+}> = ({ children, className, custom }) => {
+  // -- Render
+  return (
+    <motion.div
+      className={cn('grid grid-cols-1 md:grid-cols-2 gap-5', className)}
+      initial="hidden"
+      animate="visible"
+      custom={custom}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export { AnimatedSection, AnimatedContainer, AnimatedGrid };

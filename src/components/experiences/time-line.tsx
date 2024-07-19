@@ -4,8 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import { ITimelineItem } from '@/lib/constants/experience';
 import { Button } from '@/components/ui/button';
+import { ITimelineItem } from '@/lib/constants/experience';
 
 export const Timeline = ({
   timelineData,
