@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,7 +78,8 @@
   }
 }
 
-/* CUSTOM */
+/* -- CUSTOM -- */
+
 html {
   --cursor-color: #333;
   scroll-behavior: smooth;
@@ -91,6 +94,7 @@ html.dark-mode {
   --cursor-color: #fff;
 }
 
+/* -- Cursor selection -- */
 ::-moz-selection {
   color: #ebf8f1;
   background: #ab60d7;
@@ -98,4 +102,12 @@ html.dark-mode {
 ::selection {
   color: #ebf8f1;
   background: #ab60d7;
+}
+
+/* -- Fonts custom -- */
+@font-face {
+  font-family: 'Bumbbled';
+  src: url('/fonts/Bumbbled.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }

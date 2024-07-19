@@ -11,6 +11,14 @@ const config = {
   ],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['SF Pro Display'],
+      mono: ['SF Pro Display'],
+      serif: ['SF Pro Display'],
+      display: ['SF Pro Display'],
+      body: ['SF Pro Display'],
+      bumbbled: ['Bumbbled', 'sans-serif'],
+    },
     container: {
       center: true,
       padding: '2rem',

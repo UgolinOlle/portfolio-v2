@@ -18,9 +18,11 @@ export const Hero: React.FC = () => {
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
-            <Heading>⌘ Ugolin Ollé</Heading>
-            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out">
-              Software Engineer, Développeur Full Stack, et Open Source
+            <Heading variant="hero" className="font-bumbbled">
+              Ugolin Ollé
+            </Heading>
+            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out mt-3 lg:mt-5">
+              ⌘ Software Engineer, Développeur Full Stack, et Open Source
               Contributor
             </p>
           </div>
@@ -61,13 +63,13 @@ export const Hero: React.FC = () => {
             solutions évolutives.
           </p>
         </div>
-        <span className="text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 w-auto px-4 py-1 flex items-center gap-4 rounded-full group">
+        <span className="mt-5 lg:mt-10 w-full lg:w-auto text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full group">
           <div className="flex items-center gap-2 group-hover:text-gray-700">
             <Clock />
             GMT+1
           </div>
-          <div className="border border-gray-300 rounded-full w-56 animate-pulse group-hover:border-gray-700 transition ease-in-out" />
-          <span className="text-sm dark:text-gray-300 text-gray-700/75 group-hover:text-gray-700 transition ease-in-out">
+          <div className="border border-gray-300 rounded-full w-full lg:w-56 animate-pulse group-hover:border-gray-700 transition ease-in-out" />
+          <span className="w-80 lg:w-auto text-sm dark:text-gray-300 text-gray-700/75 group-hover:text-gray-700 transition ease-in-out">
             Phnom Penh, Cambodge
           </span>
         </span>
