@@ -1,10 +1,10 @@
 import React from 'react';
-import AnimatedCursor from 'react-animated-cursor';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from 'sonner';
 
 import { ThemeProvider } from '@/lib/providers/theme';
+import { AnimatedCursor } from '@/components/commons/cursor';
 
 export const Providers = ({
   children,
@@ -17,19 +17,7 @@ export const Providers = ({
       <Analytics />
       <SpeedInsights />
       <Toaster richColors />
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        innerScale={1}
-        outerScale={1.7}
-        outerAlpha={0}
-        outerStyle={{
-          border: '3px solid var(--cursor-color)',
-        }}
-        innerStyle={{
-          backgroundColor: 'var(--cursor-color)',
-        }}
-      />
+      <AnimatedCursor />
       <ThemeProvider>{children}</ThemeProvider>
     </>
   );

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
 import { ViewTransitions } from 'next-view-transitions';
 
 import './globals.css';
@@ -7,11 +6,6 @@ import { cn } from '@/lib/utils';
 import { Providers } from '@/components/providers';
 import { Footer } from '@/components/commons/footer';
 import { Top } from '@/components/top';
-
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
 
 export const metadata: Metadata = {
   title: 'Portfolio | Ugolin Ollé',
@@ -29,8 +23,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            fontSans.variable,
-            'bg-background font-sans antialiased flex flex-col items-center relative px-4 py-4'
+            'bg-background font-body antialiased flex flex-col items-center relative px-4 py-4'
           )}
         >
           <Providers>
