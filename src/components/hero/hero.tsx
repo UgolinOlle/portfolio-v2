@@ -63,13 +63,13 @@ export const Hero: React.FC = () => {
             solutions évolutives.
           </p>
         </div>
-        <span className="mt-5 lg:mt-10 w-full lg:w-auto text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full group">
-          <div className="flex items-center gap-2 group-hover:text-gray-700">
+        <span className="mt-5 lg:mt-10 w-full lg:w-auto text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full group/location">
+          <div className="flex items-center gap-2 group-hover/location:text-gray-700 dark:group-hover/location:text-gray-100">
             <Clock />
             GMT+1
           </div>
-          <div className="border border-gray-300 rounded-full w-full lg:w-56 animate-pulse group-hover:border-gray-700 transition ease-in-out" />
-          <span className="w-80 lg:w-auto text-sm dark:text-gray-300 text-gray-700/75 group-hover:text-gray-700 transition ease-in-out">
+          <div className="border border-gray-300 rounded-full w-full lg:w-56 group-hover:border-gray-700 dark:group-hover/location:border-gray-100 transition ease-in-out" />
+          <span className="w-80 lg:w-auto text-sm dark:text-gray-300 text-gray-700/75 group-hover/location:text-gray-700 dark:group-hover/location:text-gray-100 transition ease-in-out">
             Phnom Penh, Cambodge
           </span>
         </span>
