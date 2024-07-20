@@ -30,18 +30,22 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
       <div className="flex flex-col items-start gap-2">
         <Heading variant="h3">{props.name}</Heading>
         <p className="text-md text-gray-500">{props.description}</p>
-        <div className="flex items-center gap-2 mt-2">
+        <div className="flex items-center gap-12 mt-2">
           <Link
-            href={props.githubUrl}
-            className="w-5 h-5 text-black/80 hover:underline"
+            href={`/projects/${props.url}`}
+            className="flex items-center gap-2 text-blue-500 hover:underline group/project-link"
           >
-            <SOCIALS_ICONS.github />
+            Voir le projet
+            <MoveUpRight
+              size={16}
+              className="group-hover/project-link:underline"
+            />
           </Link>
           <Link
-            href={props.url}
-            className="flex items-center gap-2 text-blue-500 hover:underline"
+            href={props.githubUrl}
+            className="w-5 h-5 text-gray-800 dark:text-gray-200/75 hover:underline"
           >
-            Voir le projet <MoveUpRight size={16} />
+            <SOCIALS_ICONS.github />
           </Link>
         </div>
       </div>
