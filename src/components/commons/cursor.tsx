@@ -7,7 +7,7 @@ const AnimatedCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isTextMode, setIsTextMode] = useState(false);
   const [isButtonMode, setIsButtonMode] = useState(false);
-  const [isHeadingMode, setIsHeadingMode] = useState(false);
+  const [headingSize, setHeadingSize] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -23,17 +23,30 @@ const AnimatedCursor: React.FC = () => {
       ) {
         setIsTextMode(true);
         setIsButtonMode(false);
-        setIsHeadingMode(false);
+        setHeadingSize(0);
       } else if (event.target instanceof HTMLButtonElement) {
         setIsButtonMode(true);
         setIsTextMode(false);
-        setIsHeadingMode(false);
+        setHeadingSize(0);
       } else if (event.target instanceof HTMLHeadingElement) {
-        setIsHeadingMode(true);
+        const tagName = event.target.tagName;
+        const size =
+          tagName === 'H1'
+            ? 40
+            : tagName === 'H2'
+              ? 34
+              : tagName === 'H3'
+                ? 28
+                : tagName === 'H4'
+                  ? 22
+                  : tagName === 'H5'
+                    ? 16
+                    : 12;
+        setHeadingSize(size);
         setIsTextMode(false);
         setIsButtonMode(false);
       } else {
-        setIsHeadingMode(false);
+        setHeadingSize(0);
         setIsTextMode(false);
         setIsButtonMode(false);
       }
@@ -60,8 +73,8 @@ const AnimatedCursor: React.FC = () => {
                 borderRadius: '4px',
                 pointerEvents: 'none',
               }
-            : isHeadingMode
-              ? { width: 4, height: 34, borderRadius: '4px' }
+            : headingSize > 0
+              ? { width: 4, height: headingSize, borderRadius: '4px' }
               : { width: 14, height: 14, borderRadius: '50%' }
       }
       transition={{
