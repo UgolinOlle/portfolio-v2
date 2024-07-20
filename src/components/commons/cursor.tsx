@@ -19,7 +19,8 @@ const AnimatedCursor: React.FC = () => {
 
       if (
         event.target instanceof HTMLParagraphElement ||
-        event.target instanceof HTMLAnchorElement
+        event.target instanceof HTMLAnchorElement ||
+        event.target instanceof HTMLSpanElement
       ) {
         setIsTextMode(true);
         setIsButtonMode(false);
@@ -62,7 +63,7 @@ const AnimatedCursor: React.FC = () => {
   return (
     <motion.div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-2 h-2 bg-purple-500 pointer-events-none z-50"
+      className="fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-50"
       animate={
         isTextMode
           ? { width: 2, height: 24, borderRadius: '4px' }
@@ -75,7 +76,7 @@ const AnimatedCursor: React.FC = () => {
               }
             : headingSize > 0
               ? { width: 4, height: headingSize, borderRadius: '4px' }
-              : { width: 14, height: 14, borderRadius: '50%' }
+              : { width: 20, height: 20, borderRadius: '50%' }
       }
       transition={{
         duration: 0.1,
