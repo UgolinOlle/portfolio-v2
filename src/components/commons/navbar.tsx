@@ -2,7 +2,7 @@
 
 import React, { SetStateAction, useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { FlaskConical, MousePointerClick, Menu, X } from 'lucide-react';
+import { FlaskConical, Menu, X, Mouse } from 'lucide-react';
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Heading } from '@/components/ui/headers';
@@ -30,10 +30,22 @@ export const Navbar: React.FC = () => {
       '/': 'about',
       '/experiences': 'experiences',
       '/projects': 'projects',
+      '/uses': 'uses',
       '/contact': 'contact',
       '/lab': 'lab',
     };
-    setActiveTab(pathMap[pathname] || 'about');
+
+    const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'projects' }];
+
+    let activeTab = pathMap[pathname] || 'about';
+
+    dynamicPaths.forEach(({ pattern, tab }) => {
+      if (pattern.test(pathname)) {
+        activeTab = tab;
+      }
+    });
+
+    setActiveTab(activeTab);
   }, [pathname]);
 
   // -- Render
@@ -88,7 +100,7 @@ export const Navbar: React.FC = () => {
               value="uses"
               onClick={() => handleNavigation('/uses', 'uses')}
             >
-              {isMenuOpen ? 'Uses' : <MousePointerClick size={20} />}
+              {isMenuOpen ? 'Uses' : <Mouse size={20} />}
             </TabsTrigger>
           </TabsList>
         </Tabs>
