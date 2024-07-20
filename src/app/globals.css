@@ -83,6 +83,7 @@
 html {
   --cursor-color: #333;
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
@@ -109,5 +110,26 @@ html.dark-mode {
   font-family: 'Bumbbled';
   src: url('/fonts/Bumbbled.otf') format('opentype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/sfp-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/sfp-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/sfp-thin-italic.otf') format('opentype');
+  font-weight: 200;
   font-style: normal;
 }
