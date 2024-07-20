@@ -56,8 +56,8 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
 
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="flex flex-col gap-10">
-      <div className="w-full max-w-2xl flex flex-col gap-3 items-start">
+    <AnimatedContainer custom={0} className="flex flex-col lg:flex-row gap-10">
+      <div className="w-full lg:w-1/2 flex flex-col gap-3 items-start">
         <Heading variant="h2">Experiences</Heading>
         <p className="text-lg text-gray-700/75 text-justify">
           Voici l'ensemble de mes expériences professionnelles.
@@ -67,7 +67,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
           onExperienceClick={setSelectedExperience}
         />
       </div>
-      <div className="w-full max-w-2xl flex flex-col gap-3 items-start">
+      <div className="w-full lg:w-1/2 flex flex-col gap-3 items-start">
         {selectedExperience && (
           <motion.div
             initial="hidden"
