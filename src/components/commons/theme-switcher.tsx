@@ -18,7 +18,7 @@ export default function ThemeToggler() {
     <Button
       variant="secondary"
       className={cn(
-        'p-2 rounded-full',
+        'p-2 rounded-full group/theme-btn',
         `${theme === 'dark' ? 'bg-yellow-500/75 hover:bg-yellow-500/75' : 'bg-purple-500/75 hover:bg-purple-500/75'}`
       )}
     >
@@ -30,6 +30,7 @@ export default function ThemeToggler() {
             animate={{ rotate: 0, scale: 1 }}
             exit={{ rotate: 90, scale: 0 }}
             transition={{ duration: 0.2 }}
+            className="transition animate-phone"
           >
             <SunIcon {...iconProps} className="text-white" size={22} />
           </motion.div>
@@ -40,6 +41,7 @@ export default function ThemeToggler() {
             animate={{ rotate: 0, scale: 1 }}
             exit={{ rotate: -90, scale: 0 }}
             transition={{ duration: 0.2 }}
+            className="transition animate-phone"
           >
             <MoonIcon {...iconProps} size={22} className="text-white" />
           </motion.div>
