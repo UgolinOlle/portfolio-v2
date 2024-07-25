@@ -91,8 +91,8 @@ export const SKILLS_ICONS: IIcon = {
             y2="160.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="white" />
-            <stop offset="1" stop-color="white" stopOpacity="0" />
+            <stop stopColor="white" />
+            <stop offset="1" stopColor="white" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_408_139"
@@ -102,8 +102,8 @@ export const SKILLS_ICONS: IIcon = {
             y2="106.875"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="white" />
-            <stop offset="1" stop-color="white" stopOpacity="0" />
+            <stop stopColor="white" />
+            <stop offset="1" stopColor="white" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -147,8 +147,8 @@ export const SKILLS_ICONS: IIcon = {
             y2="67.556%"
             id="gradient"
           >
-            <stop stop-color="#2298BD" offset="0%"></stop>
-            <stop stop-color="#0ED7B5" offset="100%"></stop>
+            <stop stopColor="#2298BD" offset="0%"></stop>
+            <stop stopColor="#0ED7B5" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -320,10 +320,10 @@ export const SKILLS_ICONS: IIcon = {
             y1="55.169%"
             y2="-18.306%"
           >
-            <stop offset="13.76%" stop-color="#41873F" />
-            <stop offset="40.32%" stop-color="#54A044" />
-            <stop offset="71.36%" stop-color="#66B848" />
-            <stop offset="90.81%" stop-color="#6CC04A" />
+            <stop offset="13.76%" stopColor="#41873F" />
+            <stop offset="40.32%" stopColor="#54A044" />
+            <stop offset="71.36%" stopColor="#66B848" />
+            <stop offset="90.81%" stopColor="#6CC04A" />
           </linearGradient>
           <linearGradient
             id="f"
@@ -332,10 +332,10 @@ export const SKILLS_ICONS: IIcon = {
             y1="49.997%"
             y2="49.997%"
           >
-            <stop offset="9.192%" stop-color="#6CC04A" />
-            <stop offset="28.64%" stop-color="#66B848" />
-            <stop offset="59.68%" stop-color="#54A044" />
-            <stop offset="86.24%" stop-color="#41873F" />
+            <stop offset="9.192%" stopColor="#6CC04A" />
+            <stop offset="28.64%" stopColor="#66B848" />
+            <stop offset="59.68%" stopColor="#54A044" />
+            <stop offset="86.24%" stopColor="#41873F" />
           </linearGradient>
           <path
             id="b"

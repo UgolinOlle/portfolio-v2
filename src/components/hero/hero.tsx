@@ -14,7 +14,7 @@ import Clock from './clock';
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row lg:flex-wrap justify-center lg:justify-between md:border md:border-gray-100 md:rounded-lg md:shadow-sm">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-100 md:rounded-lg md:shadow-sm">
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
-            <div className="flex flex-row items-center gap-3">
+            <div className="flex flex-row items-center gap-3 w-full">
               <Appointement />
               <Button variant="secondary" className="flex items-center gap-2">
                 <Paperclip size={16} />
