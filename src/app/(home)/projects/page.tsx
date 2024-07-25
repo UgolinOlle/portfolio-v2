@@ -30,58 +30,60 @@ export default function ProjectsPage() {
   return (
     <AnimatedContainer custom={0} className="flex flex-col gap-10">
       <Heading variant="h2">Projects</Heading>
-      <div className="flex items-start justify-between gap-10">
+      <div className="flex flex-col lg:flex-row gap-10">
         <AnimatedContainer
           custom={1}
-          className="relative flex h-[100%] w-1/2 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background"
+          className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto"
         >
-          <Tree
-            className="p-2 overflow-hidden rounded-md bg-background"
-            initialSelectedId="7"
-            initialExpandedItems={[
-              '1',
-              '2',
-              '3',
-              '4',
-              '5',
-              '6',
-              '7',
-              '8',
-              '9',
-              '10',
-              '11',
-            ]}
-            elements={PROJECTS_TREE}
-          >
-            <Folder element="src" value="1">
-              <Folder value="2" element="perso">
-                <Folder value="6" element="ui">
-                  <File value="7">
-                    <p>landing-page.tsx</p>
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background p-4">
+            <Tree
+              className="w-full overflow-hidden rounded-md bg-background"
+              initialSelectedId="7"
+              initialExpandedItems={[
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
+                '10',
+                '11',
+              ]}
+              elements={PROJECTS_TREE}
+            >
+              <Folder element="src" value="1">
+                <Folder value="2" element="perso">
+                  <Folder value="6" element="ui">
+                    <File value="7">
+                      <p>landing-page.tsx</p>
+                    </File>
+                  </Folder>
+                  <File value="3" onSelect={handleSelect}>
+                    <p>web-app.tsx</p>
+                  </File>
+                  <File value="4">
+                    <p>software.tsx</p>
                   </File>
                 </Folder>
-                <File value="3" onSelect={handleSelect}>
-                  <p>web-app.tsx</p>
-                </File>
-                <File value="4">
-                  <p>software.tsx</p>
-                </File>
+                <Folder value="5" element="core">
+                  <File value="8">
+                    <p>test.tsx</p>
+                  </File>
+                  <File value="9">
+                    <p>footer.tsx</p>
+                  </File>
+                </Folder>
+                <Folder value="10" element="misc">
+                  <File value="11">
+                    <p>utils.ts</p>
+                  </File>
+                </Folder>
               </Folder>
-              <Folder value="5" element="core">
-                <File value="8">
-                  <p>test.tsx</p>
-                </File>
-                <File value="9">
-                  <p>footer.tsx</p>
-                </File>
-              </Folder>
-              <Folder value="10" element="misc">
-                <File value="11">
-                  <p>utils.ts</p>
-                </File>
-              </Folder>
-            </Folder>
-          </Tree>
+            </Tree>
+          </div>
         </AnimatedContainer>
         <ProjectsList filteredProjects={filteredProjects} custom={2} />
       </div>

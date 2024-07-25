@@ -35,7 +35,7 @@ export const Timeline = ({
           return (
             <li
               key={index}
-              className="mb-10 ms-4 pl-1 rounded-lg p-4 shadow-sm"
+              className="mb-10 ms-4 pl-1 rounded-lg p-4"
               style={{
                 background: `linear-gradient(to right, var(--${bgColor}), #fff)`,
               }}
@@ -62,7 +62,7 @@ export const Timeline = ({
                     )}
                     <h1>{item.title}</h1>
                   </div>
-                  <p className="px-2 py-1 bg-gray-100 rounded-lg text-sm font-light">
+                  <p className="px-2 py-1 bg-gray-100 rounded-lg text-sm font-medium">
                     {item.date}
                   </p>
                 </div>
