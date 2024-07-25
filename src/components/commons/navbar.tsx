@@ -34,77 +34,70 @@ export const Navbar: React.FC = () => {
       '/contact': 'contact',
       '/lab': 'lab',
     };
-
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'projects' }];
-
     let activeTab = pathMap[pathname] || 'about';
-
     dynamicPaths.forEach(({ pattern, tab }) => {
       if (pattern.test(pathname)) {
         activeTab = tab;
       }
     });
-
     setActiveTab(activeTab);
   }, [pathname]);
 
   // -- Render
   return (
-    <div className="mb-4 lg:mb-8 h-auto">
-      <div className="lg:hidden flex justify-between items-center p-4">
-        <Heading variant="h3">Brand</Heading>
+    <nav className="mb-4 lg:mb-8">
+      <div className="lg:hidden flex justify-start items-center">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={24} /> : <Menu size={28} />}
         </button>
       </div>
       <div
-        className={`${isMenuOpen ? 'block' : 'hidden'} w-full h-auto lg:flex lg:items-center lg:justify-between gap-4 lg:gap-0`}
+        className={`${
+          isMenuOpen ? 'flex' : 'hidden'
+        } lg:flex flex-col lg:flex-row justify-between items-start lg:items-center w-full`}
       >
-        <Tabs value={activeTab} onValueChange={handleTabChange}>
-          <TabsList className="flex flex-col lg:flex-row h-auto md:h-10">
-            <TabsTrigger
-              value="about"
-              onClick={() => handleNavigation('/', 'about')}
-            >
-              À propos
-            </TabsTrigger>
-            <TabsTrigger
-              value="experiences"
-              onClick={() => handleNavigation('/experiences', 'experiences')}
-            >
-              Expériences
-            </TabsTrigger>
-            <TabsTrigger
-              value="projects"
-              onClick={() => handleNavigation('/projects', 'projects')}
-            >
-              Projets
-            </TabsTrigger>
-            <TabsTrigger
-              value="contact"
-              onClick={() => handleNavigation('/contact', 'contact')}
-            >
-              Contact
-            </TabsTrigger>
+        <Tabs
+          value={activeTab}
+          onValueChange={handleTabChange}
+          className="w-full lg:w-auto"
+        >
+          <TabsList className="flex flex-col lg:flex-row h-auto">
+            {['about', 'experiences', 'projects', 'contact'].map((tab) => (
+              <TabsTrigger
+                key={tab}
+                value={tab}
+                onClick={() =>
+                  handleNavigation(tab === 'about' ? '/' : `/${tab}`, tab)
+                }
+                className="w-full lg:w-auto"
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </TabsTrigger>
+            ))}
           </TabsList>
         </Tabs>
-        <Tabs className="w-full lg:w-auto">
-          <TabsList className="flex flex-col lg:flex-row h-auto lg:h-10">
+        <Tabs className="w-full lg:w-auto -mt-2">
+          <TabsList className="flex flex-col lg:flex-row h-auto">
             <TabsTrigger
               value="lab"
               onClick={() => handleNavigation('/lab', 'lab')}
+              className="w-full lg:w-auto"
             >
-              {isMenuOpen ? 'Lab' : <FlaskConical size={20} />}
+              <span className="lg:hidden">Lab</span>
+              <FlaskConical size={20} className="hidden lg:inline" />
             </TabsTrigger>
             <TabsTrigger
               value="uses"
               onClick={() => handleNavigation('/uses', 'uses')}
+              className="w-full lg:w-auto"
             >
-              {isMenuOpen ? 'Uses' : <Mouse size={20} />}
+              <span className="lg:hidden">Uses</span>
+              <Mouse size={20} className="hidden lg:inline" />
             </TabsTrigger>
           </TabsList>
         </Tabs>
       </div>
-    </div>
+    </nav>
   );
 };

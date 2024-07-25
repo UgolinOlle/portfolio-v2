@@ -26,7 +26,7 @@ const AnimatedSection: React.FC<{
   return (
     <motion.section
       className={cn(
-        'w-full lg:md:w-[35rem] border-l-2 border-gray-900 pl-2 flex flex-col gap-5 rounded-lg shadow-sm py-2',
+        'w-full h-full flex flex-col gap-5 rounded-lg py-2',
         className
       )}
       initial="hidden"

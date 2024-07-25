@@ -23,7 +23,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            'bg-background font-body antialiased flex flex-col items-center relative px-4 py-4'
+            'bg-background font-body antialiased flex flex-col items-center relative px-4 sm:px-6 md:px-8 py-4'
           )}
         >
           <Providers>

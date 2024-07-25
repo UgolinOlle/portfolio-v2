@@ -11,6 +11,12 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      xl: '1280px',
+      lg: '1024px',
+      md: '768px',
+      sm: '640px',
+    },
     fontFamily: {
       sans: ['SF Pro Display'],
       mono: ['SF Pro Display'],

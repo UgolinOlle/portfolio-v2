@@ -30,6 +30,7 @@ export const CursorPopup: React.FC<{
         zIndex: 1000,
         transform: 'translate(10px, 10px)',
       }}
+      className="text-black"
     >
       {content}
     </motion.div>

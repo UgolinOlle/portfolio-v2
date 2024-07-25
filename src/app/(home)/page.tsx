@@ -12,8 +12,8 @@ export default function HomePage() {
   // -- Render
   return (
     <div className="flex flex-col gap-10">
-      <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start justify-between">
-        <AnimatedSection custom={0}>
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-center lg:items-start justify-between">
+        <AnimatedSection custom={0} className="w-full lg:w-[45%]">
           <Heading variant="h2">👋 À propos de moi</Heading>
           <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je m'appelle Ugolin Ollé et je suis un développeur full stack
@@ -24,7 +24,7 @@ export default function HomePage() {
             produits fonctionnels.
           </p>
         </AnimatedSection>
-        <AnimatedSection custom={1}>
+        <AnimatedSection custom={1} className="w-full lg:w-[45%]">
           <Heading variant="h2">📸 Création de contenu</Heading>
           <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je suis animé par une envie de partager mes connaissances et
