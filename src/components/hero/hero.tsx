@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Paperclip } from 'lucide-react';
 
 import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
@@ -10,6 +9,7 @@ import { TopNavbar } from '@/components/commons/top-navbar';
 import { Appointement } from '@/components/hero/appointement';
 import { RetroGrid } from '@/components/retro';
 import { Clock } from '@/components/hero/clock';
+import { Resume } from '@/components/hero/resume';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -29,10 +29,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="flex flex-row items-center gap-3 w-full">
               <Appointement />
-              <Button variant="secondary" className="flex items-center gap-2">
-                <Paperclip size={16} />
-                Mon CV
-              </Button>
+              <Resume />
             </div>
             <div className="flex flex-row gap-3 items-center">
               {SOCIALS.map((social, index) => (
