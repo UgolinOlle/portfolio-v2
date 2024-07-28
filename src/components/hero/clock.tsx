@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Clock: React.FC = () => {
+export const Clock: React.FC = () => {
   // -- Variables
   const [time, setTime] = useState(new Date());
 
@@ -84,5 +84,3 @@ const Clock: React.FC = () => {
     </div>
   );
 };
-
-export default Clock;
