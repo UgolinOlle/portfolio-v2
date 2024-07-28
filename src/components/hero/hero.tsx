@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
             <Clock />
             GMT+1
           </div>
-          <div className="border border-gray-300 rounded-full w-full lg:w-56 group-hover:border-gray-700 dark:group-hover/location:border-gray-100 transition ease-in-out" />
+          <div className="hidden md:block border border-gray-300 rounded-full w-full lg:w-56 group-hover:border-gray-700 dark:group-hover/location:border-gray-100 transition ease-in-out" />
           <span className="w-80 lg:w-auto text-sm dark:text-gray-300 text-gray-700/75 group-hover/location:text-gray-700 dark:group-hover/location:text-gray-100 transition ease-in-out">
             Phnom Penh, Cambodge
           </span>
