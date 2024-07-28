@@ -7,9 +7,9 @@ import { cn } from '@/lib/utils';
 import { Heading } from '@/components/ui/headers';
 import { Button } from '@/components/ui/button';
 import { TopNavbar } from '@/components/commons/top-navbar';
-import { Appointement } from '@/components/commons/appointement';
-import { RetroGrid } from '../retro';
-import Clock from './clock';
+import { Appointement } from '@/components/hero/appointement';
+import { RetroGrid } from '@/components/retro';
+import { Clock } from '@/components/hero/clock';
 
 export const Hero: React.FC = () => {
   // -- Render
