@@ -70,19 +70,19 @@ pnpm start:dev
 
 4. Open http://localhost:3000 in your browser to see the result.
 
-🤝 · Contributing
+## 🤝 · Contributing
 
 While this is a personal portfolio, I'm open to suggestions and improvements. Feel free to open an issue or submit a pull request.
 
-📜 · License
+## 📜 · License
 
 This project is open source and available under the MIT License.
 
-📞 · Contact
+## 📞 · Contact
 
 Feel free to reach out to me for any questions or collaborations:
 
-🌐 Website: ugolin-olle.com
-📧 Email: hello@ugolin-olle.com
-💼 LinkedIn: linkedin.com/in/ugolin-olle
-🐦 Twitter: @ugolin_olle
+🌐 Website: [ugolin-olle.com](https://ugolin-olle.com)<br />
+📧 Email: [hello@ugolin-olle.com](mailto:hello@ugolin-olle.com) <br />
+💼 LinkedIn: [ugolin-olle](https://linkedin.com/in/ugolin-olle) <br />
+🐦 Twitter: [@ugolin_olle](https://x.com/ugolin_olle) <br />
