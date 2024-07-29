@@ -35,7 +35,7 @@ export const PROJECTS: IProjectItem[] = [
     id: 'whoa-ide',
     name: 'Whoa IDE',
     description: '⌨️ · My custom configuration for Neovim.',
-    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    imageUrl: `${getBaseUrl()}/images/projects/whoa-ide.png`,
     url: 'whoa-ide',
     githubUrl: 'https://github.com/UgolinOlle/WhoaIDE',
     technologies: ['Neovim', 'Lua'],
@@ -46,7 +46,7 @@ export const PROJECTS: IProjectItem[] = [
     name: 'Portfolio v2',
     description:
       '💻 · My simple portfolio to show my skills, projects, experiences.',
-    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    imageUrl: `${getBaseUrl()}/images/projects/portfolio-v2.png`,
     url: 'portfolio-v2',
     githubUrl: 'https://github.com/UgolinOlle/portfolio-v2',
     technologies: [
