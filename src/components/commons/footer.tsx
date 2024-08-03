@@ -1,7 +1,7 @@
 export const Footer: React.FC = (): JSX.Element => {
   // -- Render
   return (
-    <footer className="w-full xl:w-[85vw] text-black dark:text-white py-5 px-4 sm:px-8 md:px-14 shadow-sm">
+    <footer className="w-full xl:w-[85vw] text-black dark:text-white py-5 px-4 sm:mx-8 md:px-20">
       <div className="border border-gray-300 rounded-lg p-2">
         <div className="w-full m-auto flex flex-col sm:flex-row justify-center sm:justify-between gap-3 items-center px-2 sm:px-5">
           <p className="text-center text-sm">
