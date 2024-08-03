@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
-            <Heading variant="hero" className="font-bumbbled">
+            <Heading variant="hero" className="font-bumbbled" border={false}>
               Ugolin Ollé
             </Heading>
             <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out mt-3 lg:mt-5">

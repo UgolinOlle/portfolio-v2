@@ -17,7 +17,7 @@ import { AnimatedGrid } from '../commons/animation';
 const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // -- Render
   return (
-    <li className="bg-white dark:bg-black/75 shadow-md rounded-lg p-4 w-full flex flex-col justify-between items-start gap-4">
+    <li className="bg-white dark:bg-black/75 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[150px]">
       <div className="w-full relative" style={{ paddingBottom: '50%' }}>
         <Image
           src={props.imageUrl}
@@ -28,9 +28,11 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
         />
       </div>
       <div className="flex flex-col items-start gap-2">
-        <Heading variant="h3">{props.name}</Heading>
+        <Heading variant="h3" border={false}>
+          {props.name}
+        </Heading>
         <p className="text-md text-gray-500">{props.description}</p>
-        <div className="flex items-center gap-12 mt-2">
+        <div className="flex items-center gap-5">
           <Link
             href={`/projects/${props.url}`}
             className="flex items-center gap-2 text-blue-500 hover:underline group/project-link"

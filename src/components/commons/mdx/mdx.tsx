@@ -13,6 +13,7 @@ import {
   Paragraph,
   Picture,
 } from './ui';
+import Image from 'next/image';
 
 const MDXComponents = {
   ImageSwiper,
@@ -25,6 +26,7 @@ const MDXComponents = {
   ListItem,
   Bold,
   SchoolProjects,
+  Image,
 };
 
 export const MDXWrapper: React.FC<{ children: React.ReactNode }> = ({

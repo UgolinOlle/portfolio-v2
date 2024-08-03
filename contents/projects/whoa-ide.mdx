@@ -1,0 +1,39 @@
+---
+title: "Whoa IDE"
+date: "2024-08-03"
+description: "Présentation de Whoa IDE, un environnement de développement intégré léger et extensible."
+---
+
+import { ProjectGrid } from '@/components/projects/grid';
+import { FaCode, FaTerminal, FaPlug, FaSitemap, FaSearch, FaGithub, FaClipboard, FaPaintBrush, FaBug, FaFile, FaCog, FaFolder } from 'react-icons/fa';
+
+Welcome to Whoa IDE, a robust and customizable integrated development environment based on Neovim. Elevate your coding experience with a feature-rich environment tailored to your needs.
+
+**Features:**
+
+<ProjectGrid
+  projects={[
+    { title: 'Plugin Manager', description: 'Utilize a plugin manager such as Vim-Plug or Dein for easy installation and management of plugins.', icon: <FaPlug /> },
+    { title: 'Intelligent Auto-completion', description: 'Integrate intelligent auto-completion plugins like CoC (Conquer of Completion) or YouCompleteMe for faster and smarter code input.', icon: <FaCode /> },
+    { title: 'LSP Support (Language Server Protocol)', description: 'Add LSP support for features such as code navigation, refactoring, and real-time error detection.', icon: <FaSitemap /> },
+    { title: 'Advanced Syntax Highlighting', description: 'Enhance syntax highlighting with plugins like vim-polyglot or treesitter for better language support.', icon: <FaPaintBrush /> },
+    { title: 'File Manager Integration', description: 'Integrate a file manager such as NERDTree or Ranger for seamless project navigation.', icon: <FaFolder /> },
+    { title: 'Integrated Terminal', description: 'Use the integrated Neovim terminal to execute commands without leaving the editor.', icon: <FaTerminal /> },
+    { title: 'Enhanced Search and Replace', description: 'Add advanced search capabilities with plugins like The Silver Searcher (Ag) or Ripgrep (rg).', icon: <FaSearch /> },
+    { title: 'Git Management', description: 'Integrate Git tools directly into Neovim with plugins like vim-fugitive or vim-gitgutter.', icon: <FaGithub /> },
+    { title: 'Code Snippets', description: 'Utilize a snippet manager like UltiSnips to store and quickly insert reusable code snippets.', icon: <FaClipboard /> },
+    { title: 'Themes and Customization', description: 'Explore various themes and customization options to make your development environment visually appealing.', icon: <FaPaintBrush /> },
+    { title: 'Integrated Debugger', description: 'Integrate a debugger into Neovim for an enhanced debugging experience, using plugins like vimspector.', icon: <FaBug /> },
+    { title: 'Markdown Support', description: 'Improve Markdown file editing with plugins for previewing and other Markdown-specific features.', icon: <FaFile /> },
+    { title: 'Customizable Status Bar', description: 'Use plugins like vim-airline or lightline to customize the status bar of Neovim.', icon: <FaCog /> },
+    { title: 'Multilingual Support', description: 'Ensure Neovim supports diverse character sets and languages, especially for non-Latin character programming.', icon: <FaGlobe /> },
+  ]}
+/>
+
+### 🧑‍🤝‍🧑・Contributing
+
+Contributions to the Whoa IDE project are welcome. If you encounter any issues or wish to improve the code, feel free to open a pull request or issue.
+
+### 📑・License
+
+This project is licensed under the [MIT License](#) - see the LICENSE file for details.
