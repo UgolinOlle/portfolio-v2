@@ -20,17 +20,25 @@ const headingVariants = cva('text-lg font-semibold', {
 
 export interface IHeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {}
+    VariantProps<typeof headingVariants> {
+  border?: boolean;
+}
 
 function Heading({
   variant,
   className,
+  border = true,
   ...props
 }: IHeadingProps): React.ReactElement {
   return (
-    <h1 className={cn(headingVariants({ variant }), className)}>
-      {props.children}
-    </h1>
+    <div className="flex items-center gap-5 w-full">
+      <h1 className={cn(headingVariants({ variant }), className)}>
+        {props.children}
+      </h1>
+      <span
+        className={cn(border ? '' : 'hidden', `flex-grow h-0.5 bg-gray-100`)}
+      />
+    </div>
   );
 }
 
