@@ -34,6 +34,7 @@ interface ClientMDXProps {
 const ClientMDX = ({ mdxSource }: ClientMDXProps): JSX.Element => {
   // -- Variables
   const components = {
+    // -- Elements
     h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
       <h2 className="lg:text-3xl md:text-2xl text-xl font-bold" {...props} />
     ),
@@ -41,6 +42,8 @@ const ClientMDX = ({ mdxSource }: ClientMDXProps): JSX.Element => {
       <h3 className="lg:text-2xl md:text-xl text-lg font-bold" {...props} />
     ),
     ProjectGrid,
+
+    // -- Icons
     FaGlobe,
     FaCode,
     FaTerminal,

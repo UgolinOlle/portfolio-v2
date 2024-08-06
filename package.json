@@ -70,7 +70,6 @@
     "@types/react-dom": "^18",
     "@types/three": "^0.166.0",
     "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "9.x",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -82,10 +81,5 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "typescript-eslint": "^7.16.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

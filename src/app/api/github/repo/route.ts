@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const GITHUB_API_URL = `https://api.github.com/repos/ugolinolle/${repoName}/commits`;
+  const GITHUB_API_URL = `https://api.github.com/repos/UgolinOlle/${repoName}/commits`;
 
   try {
     const response = await fetch(GITHUB_API_URL, {
@@ -19,6 +19,7 @@ export async function GET(request: NextRequest) {
         Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
       },
     });
+    console.log(response);
 
     if (!response.ok) {
       return NextResponse.json(
@@ -37,6 +38,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(recentCommits, { headers });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       { error: 'An error occurred while fetching data from GitHub' },
       { status: 500 }

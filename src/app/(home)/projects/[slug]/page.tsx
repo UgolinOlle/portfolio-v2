@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { Heading } from '@/components/ui/headers';
 import { AnimatedContainer } from '@/components/commons/animation';
 import { ClientMDX } from '@/components/commons/mdx/client';
+import { CommitList } from '@/components/projects/commits';
 
 interface Props {
   params: {
@@ -61,6 +62,7 @@ const ProjectItemPage = async ({ params }: Props) => {
       <div className="w-full flex flex-col gap-3 items-start">
         <Heading variant="h2">{frontMatter.title}</Heading>
         <ClientMDX mdxSource={mdxSource} />
+        <CommitList repoName={frontMatter.github} />
       </div>
     </AnimatedContainer>
   );
