@@ -55,9 +55,8 @@ export const Hero: React.FC = () => {
             <TopNavbar />
           </div>
           <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-5">
-            🌟 Bienvenue dans mon monde. Expert en développement full stack et
-            SaaS Créateur de logiciels, je transforme des idées innovantes en
-            solutions évolutives.
+            🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
+            lumières vos idées.
           </p>
         </div>
         <span className="mt-5 lg:mt-10 w-full lg:w-auto text-center text-sm dark:text-gray-300 text-gray-700/75 bg-gray-300/25 hover:bg-gray-300/50 hover:text-gray-700 transition ease-in-out duration-200 px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full group/location">
