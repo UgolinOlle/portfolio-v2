@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
  */
 const CardSpotlight = ({
   children,
-  radius = 350,
+  radius = 360,
   color = '#8338ec',
   className,
   ...props
@@ -35,7 +35,6 @@ const CardSpotlight = ({
   }: ReactMouseEvent<HTMLDivElement>) {
     let { left, top } = currentTarget.getBoundingClientRect();
 
-    console.log('mouse moving');
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
@@ -55,7 +54,7 @@ const CardSpotlight = ({
             radial-gradient(
               ${radius}px circle at ${mouseX}px ${mouseY}px,
               white,
-              transparent 60%
+              transparent 80%
             )
           `,
         }}

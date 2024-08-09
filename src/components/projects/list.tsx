@@ -17,7 +17,7 @@ import { AnimatedGrid } from '../commons/animation';
 const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // -- Render
   return (
-    <li className="bg-white dark:bg-black/75 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[150px]">
+    <li className="bg-white dark:bg-secondary-black/75 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[150px]">
       <div className="w-full relative" style={{ paddingBottom: '50%' }}>
         <Image
           src={props.imageUrl}

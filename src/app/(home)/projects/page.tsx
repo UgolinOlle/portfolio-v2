@@ -6,7 +6,7 @@ import { ProjectsList } from '@/components/projects/list';
 import { Folder, File, Tree } from '@/components/ui/file-tree';
 import { Heading } from '@/components/ui/headers';
 import { AnimatedContainer } from '@/components/commons/animation';
-import { PROJECTS, PROJECTS_TREE } from '@/lib/constants/projects';
+import * as projects from '@/lib/constants/projects';
 
 export default function ProjectsPage() {
   // -- Variables
@@ -20,8 +20,8 @@ export default function ProjectsPage() {
   };
 
   const filteredProjects = useMemo(() => {
-    if (!selectedKeyword) return PROJECTS;
-    return PROJECTS.filter((project) =>
+    if (!selectedKeyword) return projects.PROJECTS;
+    return projects.PROJECTS.filter((project) =>
       project.technologies.includes(selectedKeyword)
     );
   }, [selectedKeyword]);
@@ -52,7 +52,6 @@ export default function ProjectsPage() {
                 '10',
                 '11',
               ]}
-              elements={PROJECTS_TREE}
             >
               <Folder element="src" value="1">
                 <Folder value="2" element="perso">
@@ -69,16 +68,35 @@ export default function ProjectsPage() {
                   </File>
                 </Folder>
                 <Folder value="5" element="core">
+                  <File value="6">
+                    <p>libft.c</p>
+                  </File>
+                  <File value="7">
+                    <p>ft_printf.c</p>
+                  </File>
                   <File value="8">
-                    <p>test.tsx</p>
+                    <p>get_next_line.c</p>
                   </File>
                   <File value="9">
-                    <p>footer.tsx</p>
+                    <p>born_to_be_root.mdx</p>
                   </File>
-                </Folder>
-                <Folder value="10" element="misc">
+                  <File value="10">
+                    <p>minitalk.c</p>
+                  </File>
                   <File value="11">
-                    <p>utils.ts</p>
+                    <p>fractol.c</p>
+                  </File>
+                  <File value="12">
+                    <p>push_swap.c</p>
+                  </File>
+                  <File value="13">
+                    <p>philosophers.c</p>
+                  </File>
+                  <File value="14">
+                    <p>minishell.c</p>
+                  </File>
+                  <File value="15">
+                    <p>minirt.c</p>
                   </File>
                 </Folder>
               </Folder>

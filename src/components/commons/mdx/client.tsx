@@ -19,6 +19,7 @@ import {
 
 import { MDXWrapper } from '@/components/commons/mdx/mdx';
 import { ProjectGrid } from '@/components/projects/grid';
+import { ProjectPictures } from '@/components/projects/pictures';
 
 interface ClientMDXProps {
   mdxSource: MDXRemoteSerializeResult;
@@ -42,6 +43,7 @@ const ClientMDX = ({ mdxSource }: ClientMDXProps): JSX.Element => {
       <h3 className="lg:text-2xl md:text-xl text-lg font-bold" {...props} />
     ),
     ProjectGrid,
+    ProjectPictures,
 
     // -- Icons
     FaGlobe,
