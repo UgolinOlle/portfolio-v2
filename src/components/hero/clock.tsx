@@ -14,7 +14,7 @@ export const Clock: React.FC = () => {
   const second = formatTimeUnit(time.getSeconds());
 
   const unitVariants = {
-    initial: { y: -50, opacity: 0 },
+    initial: { y: -10, opacity: 0 },
     enter: { y: 0, opacity: 1 },
     exit: { y: 50, opacity: 0 },
   };
