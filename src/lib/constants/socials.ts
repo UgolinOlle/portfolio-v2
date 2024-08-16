@@ -1,19 +1,5 @@
-import { IconType } from 'react-icons';
-
 import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
-
-/**
- * @interface ISocialItem
- * @description Interface for social item.
- * @property {string} name - Social name.
- * @property {string} url - Social URL.
- * @property {string} icon - Social icon.
- */
-interface ISocialItem {
-  name: string;
-  url: string;
-  icon: IconType;
-}
+import { ISocialItem } from '@/lib/interfaces/social';
 
 /**
  * @constant SOCIALS

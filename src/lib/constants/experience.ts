@@ -1,19 +1,5 @@
 import test_images from '../../../public/images/bouddha.jpg';
-
-export interface ITimelineItem {
-  picture?: string;
-  title: string;
-  slug: string;
-  description: string;
-  date: string;
-  color: string;
-  link?: string;
-}
-
-interface ISchoolPicture {
-  src: string;
-  alt: string;
-}
+import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
 
 /**
  * @constant EXPERIENCES

@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
 
   // -- Render
   return (
-    <footer className="w-full text-black dark:text-white py-5 my-9">
+    <footer className="w-full text-black dark:text-white py-5 mt-9">
       <div className="border border-gray-300 rounded-lg p-2">
         <div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between gap-3 items-center px-2 sm:px-5">
           <p className="text-center text-sm">
