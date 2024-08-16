@@ -5,7 +5,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/components/providers';
 import { Footer } from '@/components/commons/footer';
-import { Top } from '@/components/top';
+import { BottomMenu } from '@/components/commons/bottom-menu';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Ugolin Ollé',
@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <Providers>
             {children}
-            <Top />
+            <BottomMenu />
             <Footer />
           </Providers>
         </body>

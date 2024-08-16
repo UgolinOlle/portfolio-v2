@@ -5,8 +5,9 @@ import { MoveUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
+import { Bugs } from '@/components/commons/bugs';
 
-export const Top: React.FC = () => {
+export const BottomMenu: React.FC = () => {
   // -- State
   const [isBottom, setIsBottom] = useState(false);
 
@@ -44,8 +45,9 @@ export const Top: React.FC = () => {
       initial={{ bottom: '10px' }}
       animate={{ bottom: isBottom ? '80px' : '20px' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="fixed right-10 z-50 md:block hidden"
+      className="fixed right-10 z-50 md:flex flex-col items-center gap-4 hidden"
     >
+      <Bugs />
       <Button
         variant="outline"
         className="rounded-full px-2 py-5 bg-gray-200 text-gray-800 opacity-50 hover:opacity-100 transition-opacity ease-in-out"

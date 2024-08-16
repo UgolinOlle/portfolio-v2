@@ -26,12 +26,12 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const pathMap: { [key: string]: string } = {
-      '/': 'about',
-      '/experiences': 'experiences',
-      '/projects': 'projects',
-      '/uses': 'uses',
-      '/contact': 'contact',
-      '/lab': 'lab',
+      '/': 'A propos',
+      '/experiences': 'Expériences',
+      '/projects': 'Projets',
+      '/contact': 'Contact',
+      '/lab': 'Lab',
+      '/uses': 'Uses',
     };
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'projects' }];
     let activeTab = pathMap[pathname] || 'about';
@@ -62,16 +62,19 @@ export const Navbar: React.FC = () => {
           className="w-full lg:w-auto"
         >
           <TabsList className="flex flex-col lg:flex-row h-auto">
-            {['about', 'experiences', 'projects', 'contact'].map((tab) => (
+            {[
+              { title: 'A propos', path: '/' },
+              { title: 'Expériences', path: '/experiences' },
+              { title: 'Projets', path: '/projects' },
+              { title: 'Contact', path: '/contact' },
+            ].map((tab) => (
               <TabsTrigger
-                key={tab}
-                value={tab}
-                onClick={() =>
-                  handleNavigation(tab === 'about' ? '/' : `/${tab}`, tab)
-                }
+                key={tab.title}
+                value={tab.title}
+                onClick={() => handleNavigation(tab.path, tab.title)}
                 className="w-full lg:w-auto"
               >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                {tab.title.charAt(0).toUpperCase() + tab.title.slice(1)}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -80,7 +83,7 @@ export const Navbar: React.FC = () => {
           <TabsList className="flex flex-col lg:flex-row h-auto">
             <TabsTrigger
               value="lab"
-              onClick={() => handleNavigation('/lab', 'lab')}
+              onClick={() => handleNavigation('/lab', 'Lab')}
               className="w-full lg:w-auto"
             >
               <span className="lg:hidden">Lab</span>
@@ -88,7 +91,7 @@ export const Navbar: React.FC = () => {
             </TabsTrigger>
             <TabsTrigger
               value="uses"
-              onClick={() => handleNavigation('/uses', 'uses')}
+              onClick={() => handleNavigation('/uses', 'Uses')}
               className="w-full lg:w-auto"
             >
               <span className="lg:hidden">Uses</span>
