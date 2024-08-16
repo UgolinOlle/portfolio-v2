@@ -3,6 +3,7 @@ import React from 'react';
 import { Hero } from '@/components/hero/hero';
 import { MainContainer } from '@/components/ui/container';
 import { Navbar } from '@/components/commons/navbar';
+import { Footer } from '@/components/commons/footer';
 
 export default function HomeLayout({
   children,
@@ -18,6 +19,7 @@ export default function HomeLayout({
         <div className="h-full lg:h-auto p-2 md:pb-8 md:px-8">
           <Navbar />
           {children}
+          <Footer />
         </div>
       </div>
     </MainContainer>

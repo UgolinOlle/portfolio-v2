@@ -10,6 +10,7 @@ import { Appointement } from '@/components/hero/appointement';
 import { RetroGrid } from '@/components/retro';
 import { Clock } from '@/components/hero/clock';
 import { Resume } from '@/components/hero/resume';
+import React from 'react';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -21,8 +22,11 @@ export const Hero: React.FC = () => {
             <Heading variant="hero" className="font-bumbbled" border={false}>
               Ugolin Ollé
             </Heading>
-            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out mt-3 lg:mt-5">
-              ⌘ Software Engineer, Développeur Full Stack, et Open Source
+            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out mt-3 lg:mt-7">
+              <span className="hover:rotate-90 transition-transform duration-300 inline-block">
+                ⌘
+              </span>{' '}
+              Software Engineer, Développeur Full Stack, et Open Source
               Contributor
             </p>
           </div>
@@ -47,14 +51,16 @@ export const Hero: React.FC = () => {
                     target="_blank"
                     className="flex justify-center items-center gap-2"
                   >
-                    <div className="w-5 h-5">{social.icon()}</div>
+                    <div className="w-5 h-5">
+                      {React.createElement(social.icon)}
+                    </div>
                   </Link>
                 </Button>
               ))}
             </div>
             <TopNavbar />
           </div>
-          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4 my-5">
+          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4">
             🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
             lumières vos idées.
           </p>

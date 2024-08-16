@@ -1,30 +1,5 @@
 import { SKILLS_ICONS } from '@/components/commons/icons/skills';
-
-/**
- * @interface IAboutPicture
- * @description Interface for the about page image data.
- * @property {string} src - The image source.
- * @property {string} alt - The image alt text.
- * @property {string} text - The image text.
- */
-interface IAboutPicture {
-  src: string;
-  alt: string;
-  text: string;
-}
-
-/**
- * @interface IAboutSkill
- * @description Interface for the about page skill data.
- * @property {string} title - The skill title.
- * @property {string} description - The skill description.
- * @property {React.ReactNode} icon - The skill icon.
- */
-interface IAboutSkill {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
+import { IAboutPicture, IAboutSkill } from '@/lib/interfaces/icons';
 
 /**
  * @constant ABOUT_IMAGES
@@ -65,46 +40,51 @@ export const ABOUT_SKILLS: IAboutSkill[] = [
   {
     title: 'Typescript',
     description: "Développement d'applications web et mobiles.",
-    icon: SKILLS_ICONS.typescript(),
+    icon: SKILLS_ICONS.typescript,
   },
   {
     title: 'Javascript',
     description: "Développement d'applications web et mobiles.",
-    icon: SKILLS_ICONS.javascript(),
+    icon: SKILLS_ICONS.javascript,
   },
   {
     title: 'Node.js',
     description: "Développement d'applications web et mobiles.",
-    icon: SKILLS_ICONS.nodejs(),
+    icon: SKILLS_ICONS.nodejs,
   },
   {
     title: 'Next.js',
     description: "Développement d'applications web et mobiles.",
-    icon: SKILLS_ICONS.nextjs(),
+    icon: SKILLS_ICONS.nextjs,
   },
   {
     title: 'Nest.js',
     description: "Développement d'applications web et mobiles.",
-    icon: SKILLS_ICONS.nestjs(),
+    icon: SKILLS_ICONS.nestjs,
+  },
+  {
+    title: 'PHP',
+    description: "Développement d'applications web.",
+    icon: SKILLS_ICONS.php,
   },
   {
     title: 'Tailwind',
     description: 'Framework CSS.',
-    icon: SKILLS_ICONS.tailwindcss(),
+    icon: SKILLS_ICONS.tailwindcss,
   },
   {
     title: 'PostgreSQL',
     description: 'Base de données SQL.',
-    icon: SKILLS_ICONS.postgresql(),
+    icon: SKILLS_ICONS.postgresql,
   },
   {
     title: 'C',
     description: 'Langage de programmation.',
-    icon: SKILLS_ICONS.c(),
+    icon: SKILLS_ICONS.c,
   },
   {
     title: 'Bash',
     description: 'Langage de script.',
-    icon: SKILLS_ICONS.bash(),
+    icon: SKILLS_ICONS.bash,
   },
 ];

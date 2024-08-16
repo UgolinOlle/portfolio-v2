@@ -4,7 +4,6 @@ import { ViewTransitions } from 'next-view-transitions';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/components/providers';
-import { Footer } from '@/components/commons/footer';
 import { BottomMenu } from '@/components/commons/bottom-menu';
 
 export const metadata: Metadata = {
@@ -29,7 +28,6 @@ export default function RootLayout({
           <Providers>
             {children}
             <BottomMenu />
-            <Footer />
           </Providers>
         </body>
       </html>

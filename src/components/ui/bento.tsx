@@ -1,3 +1,6 @@
+import React from 'react';
+import { IconType } from 'react-icons';
+
 import { cn } from '@/lib/utils';
 
 export const BentoGrid = ({
@@ -28,7 +31,7 @@ export const BentoGridItem = ({
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  icon?: React.ReactNode;
+  icon?: IconType;
 }) => {
   return (
     <div
@@ -38,7 +41,7 @@ export const BentoGridItem = ({
       )}
     >
       <span className="absolute transform rotate-3 -top-8 -right-8 opacity-25 group-hover/bento:opacity-75 h-56 w-56 transition-opacity">
-        {icon}
+        {icon && React.createElement(icon)}
       </span>
       <div className="group-hover/bento:translate-x-2 transition duration-200 flex flex-col justify-end items-start h-full">
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">

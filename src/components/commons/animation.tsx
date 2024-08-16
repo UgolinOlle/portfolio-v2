@@ -17,28 +17,6 @@ const variants = {
   }),
 };
 
-const AnimatedSection: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-  custom: number;
-}> = ({ children, className, custom }) => {
-  // -- Render
-  return (
-    <motion.section
-      className={cn(
-        'w-full h-full flex flex-col gap-5 rounded-lg py-2',
-        className
-      )}
-      initial="hidden"
-      animate="visible"
-      custom={custom}
-      variants={variants}
-    >
-      {children}
-    </motion.section>
-  );
-};
-
 const AnimatedContainer: React.FC<{
   children: React.ReactNode;
   className?: string;
@@ -80,4 +58,4 @@ const AnimatedGrid: React.FC<{
   );
 };
 
-export { AnimatedSection, AnimatedContainer, AnimatedGrid };
+export { AnimatedContainer, AnimatedGrid };

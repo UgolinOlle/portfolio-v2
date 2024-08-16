@@ -1,7 +1,4 @@
-import {
-  AnimatedContainer,
-  AnimatedSection,
-} from '@/components/commons/animation';
+import { AnimatedContainer } from '@/components/commons/animation';
 import { Heading } from '@/components/ui/headers';
 
 export default function UsesPage() {
