@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,32 +6,23 @@ import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
 import { Heading } from '@/components/ui/headers';
 import { Button } from '@/components/ui/button';
-import { TopNavbar } from '@/components/commons/top-navbar';
 import { Appointement } from '@/components/hero/appointement';
 import { RetroGrid } from '@/components/retro';
 import { Clock } from '@/components/hero/clock';
 import { Resume } from '@/components/hero/resume';
-import React from 'react';
 
 export const Hero: React.FC = () => {
   // -- Render
   return (
     <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-100 md:rounded-lg md:shadow-sm">
-      <div className="flex flex-col justify-between items-center lg:items-start gap-3 h-full w-full lg:w-2/3 p-0 py-4 md:p-4">
+      <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading variant="hero" className="font-bumbbled" border={false}>
               Ugolin Ollé
             </Heading>
-            <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out mt-3 lg:mt-7">
-              <span className="hover:rotate-90 transition-transform duration-300 inline-block">
-                ⌘
-              </span>{' '}
-              Software Engineer, Développeur Full Stack, et Open Source
-              Contributor
-            </p>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-3 mt-7">
             <div className="flex flex-row items-center gap-3 w-full">
               <Appointement />
               <Resume />
@@ -58,7 +50,6 @@ export const Hero: React.FC = () => {
                 </Button>
               ))}
             </div>
-            <TopNavbar />
           </div>
           <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4">
             🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
@@ -76,8 +67,21 @@ export const Hero: React.FC = () => {
           </span>
         </span>
       </div>
-      <div className="flex flex-col justify-between items-center gap-3 p-0 md:p-4">
-        <Image src="/profile.png" alt="Ugolin Ollé" width={250} height={250} />
+      <div className="flex flex-col justify-between items-center gap-5 p-0 md:p-4">
+        <div className="flex flex-col items-center">
+          <Image
+            src="/profile.png"
+            alt="Ugolin Ollé"
+            width={250}
+            height={250}
+          />
+          <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out">
+            <span className="hover:rotate-90 transition-transform duration-300 inline-block">
+              ⌘
+            </span>{' '}
+            Développeur Logiciel
+          </p>
+        </div>
         <span className="text-center text-sm dark:text-gray-300 text-gray-700/75 bg-green-500/25 hover:bg-green-500/50 hover:text-gray-700 transition ease-in-out duration-200 w-auto px-4 py-1 flex items-center gap-2 rounded-full">
           <span className="w-3 h-3 bg-green-500 rounded-full inline-block transition-all animate-pulse" />
           Disponible pour travailler

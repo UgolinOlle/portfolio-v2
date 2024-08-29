@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
 import { Bugs } from '@/components/commons/bugs';
+import ThemeToggler from '@/components/commons/theme-switcher';
 
 export const BottomMenu: React.FC = () => {
   // -- State
@@ -47,6 +48,7 @@ export const BottomMenu: React.FC = () => {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="fixed right-10 z-50 md:flex flex-col items-center gap-4 hidden"
     >
+      <ThemeToggler />
       <Bugs />
       <Button
         variant="outline"
