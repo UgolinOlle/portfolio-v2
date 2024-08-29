@@ -1,59 +1,72 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
 
-import { CursorPopup } from '@/components/commons/cursor-popup';
-import { ABOUT_IMAGES } from '@/lib/constants/about';
+import { ABOUT_IMAGES, ABOUT_IMAGES_2 } from '@/lib/constants/about';
 
 export const PicturesBento: React.FC = (): React.ReactElement => {
   // -- Variables
-  const [hovered, setHovered] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [popupContent, setPopupContent] = useState('');
-
-  // -- Functions
-  const handleMouseEnter = (text: string) => {
-    setHovered(true);
-    setPopupContent(text);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
+  const imageVariants = {
+    whileHover: {
+      scale: 1.1,
+      rotate: 0,
+      zIndex: 100,
+    },
+    whileTap: {
+      scale: 1.1,
+      rotate: 0,
+      zIndex: 100,
+    },
   };
 
   // -- Render
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="relative w-full h-full flex flex-wrap justify-center xl:justify-between gap-5 mt-5"
-    >
-      {ABOUT_IMAGES.map((image, index) => (
-        <Image
-          key={index}
-          src={image.src}
-          alt={image.alt}
-          width={300}
-          height={300}
-          objectFit="cover"
-          className="rounded-lg shadow-xl"
-          onMouseEnter={() => handleMouseEnter(image.text)}
-          onMouseLeave={handleMouseLeave}
-          onMouseMove={handleMouseMove}
-        />
-      ))}
-      <AnimatePresence>
-        {hovered && (
-          <CursorPopup content={popupContent} position={cursorPosition} />
-        )}
-      </AnimatePresence>
-    </motion.div>
+    <div className="relative flex flex-col justify-center items-center p-8 gap-10 h-full w-full overflow-hidden z-0">
+      <div className="flex flex-row justify-center items-center">
+        {ABOUT_IMAGES.map((image, index) => (
+          <motion.div
+            variants={imageVariants}
+            key={'images-first' + index}
+            style={{
+              rotate: Math.random() * 20 - 10,
+            }}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width="500"
+              height="500"
+              className="rounded-lg h-40 w-40 md:h-60 md:w-60 object-cover flex-shrink-0"
+            />
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex flex-row">
+        {ABOUT_IMAGES_2.map((image, idx) => (
+          <motion.div
+            key={'images-second' + idx}
+            style={{
+              rotate: Math.random() * 20 - 10,
+            }}
+            variants={imageVariants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width="500"
+              height="500"
+              className="rounded-lg h-40 w-40 md:h-60 md:w-60 object-cover flex-shrink-0"
+            />
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 };

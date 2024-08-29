@@ -16,7 +16,7 @@ export default function HomeLayout({
         <div className="h-full lg:h-2/5 p-2 mt-5 mb-2 md:px-8 md:pt-8">
           <Hero />
         </div>
-        <div className="h-full lg:h-auto p-2 md:pb-8 md:px-8">
+        <div className="h-full lg:h-auto p-2 md:px-8">
           <Navbar />
           {children}
           <Footer />

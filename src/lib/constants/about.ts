@@ -31,6 +31,35 @@ export const ABOUT_IMAGES: IAboutPicture[] = [
 ];
 
 /**
+ * @constant ABOUT_IMAGES_2
+ * @description Array of objects containing image data for the about page.
+ * @type {IAboutPicture[]}
+ * @exports ABOUT_IMAGES_2
+ */
+export const ABOUT_IMAGES_2: IAboutPicture[] = [
+  {
+    src: '/images/code-3.jpg',
+    alt: 'Développement de mon portfolio à Phnom Penh',
+    text: 'Développement de mon portfolio à Phnom Penh',
+  },
+  {
+    src: '/images/code-4.jpg',
+    alt: 'Methode Agile',
+    text: 'Methode Agile',
+  },
+  {
+    src: '/images/me.jpg',
+    alt: 'Moi',
+    text: 'Moi',
+  },
+  {
+    src: '/images/me-2.png',
+    alt: 'Moi',
+    text: 'Moi',
+  },
+];
+
+/**
  * @constant ABOUT_SKILLS
  * @description Array of objects containing skill data for the about page.
  * @type {IAboutSkill[]}
