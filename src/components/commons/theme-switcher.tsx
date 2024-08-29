@@ -32,7 +32,7 @@ export default function ThemeToggler() {
             transition={{ duration: 0.2 }}
             className="transition animate-phone"
           >
-            <SunIcon {...iconProps} className="text-white" size={22} />
+            <SunIcon {...iconProps} className="text-white" size={18} />
           </motion.div>
         ) : (
           <motion.div
@@ -41,9 +41,9 @@ export default function ThemeToggler() {
             animate={{ rotate: 0, scale: 1 }}
             exit={{ rotate: -90, scale: 0 }}
             transition={{ duration: 0.2 }}
-            className="transition animate-phone"
+            className="transition hover:animate-phone"
           >
-            <MoonIcon {...iconProps} size={22} className="text-white" />
+            <MoonIcon {...iconProps} size={18} className="text-white" />
           </motion.div>
         )}
       </AnimatePresence>

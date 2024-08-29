@@ -71,10 +71,10 @@ export const Bugs: React.FC = () => {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="rounded-full px-2 py-5 bg-gray-200 text-gray-800 opacity-50 hover:opacity-100 transition-opacity ease-in-out"
+          className="rounded-full px-2 py-4 bg-gray-200 text-gray-800 opacity-50 hover:opacity-100 transition-opacity ease-in-out"
           onClick={handleScreenshot}
         >
-          <Bug size={24} />
+          <Bug size={18} />
         </Button>
       </DialogTrigger>
       <DialogContent>
