@@ -12,9 +12,15 @@ const headingVariants = cva('text-lg font-semibold', {
       h3: 'lg:text-2xl md:text-xl text-lg font-bold',
       h4: 'lg:text-xl md:text-lg text-base font-bold',
     },
+    align: {
+      left: 'justify-start text-left',
+      center: 'justify-center text-center',
+      right: 'justify-end text-right',
+    },
   },
   defaultVariants: {
     variant: 'h1',
+    align: 'left',
   },
 });
 
@@ -24,14 +30,27 @@ export interface IHeadingProps
   border?: boolean;
 }
 
+/**
+ * @name Heading
+ * @description A heading component that can be used to display different heading sizes.
+ * @param {string} variant - The variant of the heading.
+ * @returns {React.ReactElement} The heading component.
+ */
 function Heading({
   variant,
+  align,
   className,
   border = true,
   ...props
 }: IHeadingProps): React.ReactElement {
   return (
-    <div className="flex items-center gap-5 w-full">
+    <div
+      className={cn(
+        'flex items-center w-full',
+        `${border ? 'gap-5' : ''}`,
+        headingVariants({ align })
+      )}
+    >
       <h1 className={cn(headingVariants({ variant }), className)}>
         {props.children}
       </h1>

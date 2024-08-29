@@ -26,8 +26,8 @@ const AnimatedContainer: React.FC<{
   return (
     <motion.div
       className={cn(
-        'flex flex-col gap-3 items-center lg:items-start',
-        className
+        className,
+        'flex flex-col gap-3 items-center lg:items-start'
       )}
       initial="hidden"
       animate="visible"
