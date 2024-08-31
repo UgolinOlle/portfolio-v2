@@ -1,13 +1,11 @@
+import { IDE_PICTURES } from '../../src/lib/constants/projects.ts';
+
 ---
 title: "Whoa IDE"
 github: "WhoaIDE"
 date: "2024-08-03"
 description: "Présentation de Whoa IDE, un environnement de développement intégré léger et extensible."
 ---
-
-import { ProjectGrid } from '@/components/projects/grid';
-import { ProjectPictures } from '@/components/projects/pictures';
-import { FaCode, FaTerminal, FaPlug, FaSitemap, FaSearch, FaGithub, FaClipboard, FaPaintBrush, FaBug, FaFile, FaCog, FaFolder } from 'react-icons/fa';
 
 Welcome to Whoa IDE, a robust and customizable integrated development environment based on Neovim. Elevate your coding experience with a feature-rich environment tailored to your needs.
 
@@ -31,4 +29,6 @@ Welcome to Whoa IDE, a robust and customizable integrated development environmen
     { title: 'Multilingual Support', description: 'Ensure Neovim supports diverse character sets and languages, especially for non-Latin character programming.', icon: <FaGlobe /> },
   ]}
 />
+
+<ImageSwiper images={IDE_PICTURES} />
 

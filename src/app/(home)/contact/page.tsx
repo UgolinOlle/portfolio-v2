@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="lg:w-1/2">
+    <AnimatedContainer custom={0} className="lg:w-1/2 my-28">
       <Heading variant="h2" border={false} className="mb-6">
         Un projet ? Une question ? <br />
         On en discute !

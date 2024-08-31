@@ -16,18 +16,15 @@ export const Hero: React.FC = () => {
   return (
     <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 md:rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
-        <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
+        <div className="flex flex-col items-center lg:items-start gap-8 lg:gap-5 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading variant="hero" className="font-bumbbled" border={false}>
               Ugolin Ollé
             </Heading>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3 mt-7">
-            <div className="flex flex-row items-center gap-3 w-full">
-              <Appointement />
-              <Resume />
-            </div>
-            <div className="flex flex-row gap-3 items-center">
+            <Appointement />
+            <div className="flex flex-row gap-3 items-center z-20">
               {SOCIALS.map((social, index) => (
                 <Button
                   key={index}
@@ -51,7 +48,7 @@ export const Hero: React.FC = () => {
               ))}
             </div>
           </div>
-          <p className="text-center md:text-justify text-md dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4">
+          <p className="text-center md:text-justify text-lg dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4">
             🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
             lumières vos idées.
           </p>

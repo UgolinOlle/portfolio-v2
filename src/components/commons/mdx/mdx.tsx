@@ -1,6 +1,26 @@
-import { MDXProvider } from '@mdx-js/react';
-import React from 'react';
+'use client';
 
+import React from 'react';
+import { MDXProvider } from '@mdx-js/react';
+import {
+  FaCode,
+  FaTerminal,
+  FaPlug,
+  FaSitemap,
+  FaSearch,
+  FaGithub,
+  FaClipboard,
+  FaPaintBrush,
+  FaBug,
+  FaFile,
+  FaCog,
+  FaFolder,
+  FaGlobe,
+} from 'react-icons/fa';
+import Image from 'next/image';
+
+import { ProjectGrid } from '@/components/projects/grid';
+import { ProjectPictures } from '@/components/projects/pictures';
 import { ImageSwiper } from '@/components/experiences/images-swiper';
 import { SchoolProjects } from '@/components/experiences/school-projects';
 import { Heading } from '@/components/ui/headers';
@@ -13,10 +33,24 @@ import {
   Paragraph,
   Picture,
 } from './ui';
-import Image from 'next/image';
 
 const MDXComponents = {
-  ImageSwiper,
+  // --- Icons
+  FaGlobe,
+  FaCode,
+  FaTerminal,
+  FaPlug,
+  FaSitemap,
+  FaSearch,
+  FaGithub,
+  FaClipboard,
+  FaPaintBrush,
+  FaBug,
+  FaFile,
+  FaCog,
+  FaFolder,
+
+  // --- Components
   Heading,
   Keyword,
   Detail,
@@ -27,6 +61,9 @@ const MDXComponents = {
   Bold,
   SchoolProjects,
   Image,
+  ProjectGrid,
+  ProjectPictures,
+  ImageSwiper,
 };
 
 export const MDXWrapper: React.FC<{ children: React.ReactNode }> = ({

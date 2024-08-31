@@ -2,6 +2,12 @@ import { BioList } from '@/components/bio/list';
 import { AnimatedContainer } from '@/components/commons/animation';
 import { Heading } from '@/components/ui/headers';
 import { BIO_LINKS } from '@/lib/constants/bio';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Lien bio | Ugolin Ollé',
+  description: 'Liste de mes liens',
+};
 
 export default function BioPage() {
   // -- Render

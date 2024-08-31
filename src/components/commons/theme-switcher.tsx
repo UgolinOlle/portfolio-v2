@@ -19,7 +19,7 @@ export default function ThemeToggler() {
       variant="secondary"
       className={cn(
         'p-2 rounded-full group/theme-btn',
-        `${theme === 'dark' ? 'bg-yellow-500/75 hover:bg-yellow-500/75' : 'bg-purple-500/75 hover:bg-purple-500/75'}`
+        `${theme === 'dark' ? 'bg-yellow-500/75 hover:bg-yellow-500/75' : 'bg-primary/75 hover:bg-primary/75'}`
       )}
     >
       <AnimatePresence mode="wait" initial={false}>

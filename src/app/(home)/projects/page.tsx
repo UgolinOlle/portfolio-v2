@@ -14,8 +14,6 @@ export default function ProjectsPage() {
 
   // -- Functions
   const handleSelect = (element: any) => {
-    console.log('Selected element:');
-    console.log(element);
     setSelectedKeyword(element);
   };
 
@@ -28,9 +26,9 @@ export default function ProjectsPage() {
 
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="flex flex-col gap-10">
+    <AnimatedContainer custom={0} className="flex flex-col gap-10 my-28">
       <Heading variant="h2">Projects</Heading>
-      <div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col lg:flex-row gap-10 mt-12">
         <AnimatedContainer
           custom={1}
           className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto"

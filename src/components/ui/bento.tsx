@@ -40,7 +40,7 @@ export const BentoGridItem = ({
         className
       )}
     >
-      <span className="absolute transform rotate-3 -top-8 -right-8 opacity-25 group-hover/bento:opacity-75 h-56 w-56 transition-opacity">
+      <span className="absolute transform transition-all duration-300 ease-in-out rotate-3 -top-8 -right-8 opacity-25 group-hover/bento:opacity-75 group-hover/bento:rotate-5 group-hover/bento:-top-3 group-hover/bento:-right-3 h-56 w-56">
         {icon && React.createElement(icon)}
       </span>
       <div className="group-hover/bento:translate-x-2 transition duration-200 flex flex-col justify-end items-start h-full">

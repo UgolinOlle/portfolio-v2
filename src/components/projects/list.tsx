@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { IProjectItem } from '@/lib/constants/projects';
+import { IProjectItem } from '@/lib/interfaces/project';
 import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
 import { Heading } from '@/components/ui/headers';
 import { AnimatedGrid } from '../commons/animation';

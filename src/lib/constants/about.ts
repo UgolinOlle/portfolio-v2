@@ -97,6 +97,11 @@ export const ABOUT_SKILLS: IAboutSkill[] = [
     icon: SKILLS_ICONS.php,
   },
   {
+    title: 'Symfony',
+    description: "Développement d'applications web.",
+    icon: SKILLS_ICONS.symfony,
+  },
+  {
     title: 'Tailwind',
     description: 'Framework CSS.',
     icon: SKILLS_ICONS.tailwindcss,

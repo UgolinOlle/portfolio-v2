@@ -1,4 +1,6 @@
-import test_images from '../../../public/images/bouddha.jpg';
+import dashboard from '../../../public/images/projects/comai-dashboard.jpg';
+import login from '../../../public/images/projects/comai-login.jpg';
+import publication from '../../../public/images/projects/comai-publication.jpg';
 import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
 
 /**
@@ -53,11 +55,7 @@ export const EXPERIENCES: ITimelineItem[] = [
   },
 ];
 
-export const COMAI_PICTURES = [
-  test_images.src,
-  test_images.src,
-  test_images.src,
-];
+export const COMAI_PICTURES = [dashboard.src, login.src, publication.src];
 
 export const SCHOOL_PICTURES: ISchoolPicture[] = [
   {

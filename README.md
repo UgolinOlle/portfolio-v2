@@ -1,7 +1,7 @@
 # Portfolio v2 🚀
 
 <p align="center">
-    <img src=".github/assets/portfolio-v2.png" alt="Portfolio v2 Screenshot" width="600">
+    <img src="/images/projects/portfolio-v2.jpg" alt="Portfolio v2 Screenshot" width="600">
 </p>
 
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)

@@ -7,7 +7,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const data = await request.json();
     const parsedData = contactFormSchema.parse(data);
-    console.log('parsedData', parsedData);
 
     await sendMail(
       'hello@ugolin-olle.com',

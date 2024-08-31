@@ -1,14 +1,21 @@
 import React from 'react';
+import { Metadata } from 'next';
 
+import { AnimatedContainer } from '@/components/commons/animation';
 import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
-import { AnimatedContainer } from '@/components/commons/animation';
+
+export const metadata: Metadata = {
+  title: 'Accueil | Ugolin Ollé',
+  description:
+    'Développeur full stack passionné par la création de logiciels SaaS et la création de contenu éducatif.',
+};
 
 export default function HomePage() {
   // -- Render
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-28 my-28">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-center lg:items-start justify-between">
         <AnimatedContainer custom={0} className="w-full lg:w-[45%]">
           <Heading variant="h2" className="flex items-center gap-2 group/hand">
@@ -17,7 +24,7 @@ export default function HomePage() {
             </span>
             À propos de moi
           </Heading>
-          <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
+          <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify">
             Je m'appelle Ugolin Ollé et je suis un développeur full stack
             passionné, spécialisé dans le développement de logiciels SaaS.
             J'aime explorer de nouvelles technologies et créer des solutions
@@ -36,7 +43,7 @@ export default function HomePage() {
             </span>
             Création de contenu
           </Heading>
-          <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
+          <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify">
             Je suis animé par une envie de partager mes connaissances et
             d'inspirer d'autres développeurs à travers la création de contenu
             éducatif. Mon objectif est de démystifier les aspects techniques
@@ -45,6 +52,7 @@ export default function HomePage() {
           </p>
         </AnimatedContainer>
       </div>
+
       <AnimatedContainer custom={2}>
         <Heading variant="h2">🌆 Quelques images</Heading>
         <PicturesBento />

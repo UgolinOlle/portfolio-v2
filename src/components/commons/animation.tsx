@@ -12,7 +12,7 @@ const variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
+      delay: i * 0.3,
     },
   }),
 };
@@ -22,7 +22,7 @@ const AnimatedContainer: React.FC<{
   className?: string;
   custom: number;
 }> = ({ children, className, custom }) => {
-  // -- Render
+  // --- Render
   return (
     <motion.div
       className={cn(
@@ -44,7 +44,7 @@ const AnimatedGrid: React.FC<{
   className?: string;
   custom: number;
 }> = ({ children, className, custom }) => {
-  // -- Render
+  // --- Render
   return (
     <motion.div
       className={cn('grid grid-cols-1 md:grid-cols-2 gap-5', className)}

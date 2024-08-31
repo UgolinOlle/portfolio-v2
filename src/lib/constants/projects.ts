@@ -1,18 +1,23 @@
 import { IProjectItem } from '@/lib/interfaces/project';
 import { getBaseUrl } from '@/lib/utils';
 
+import whoaide from '../../../public/images/projects/whoa-ide/whoa-ide.jpg';
+import telescope from '../../../public/images/projects/whoa-ide/telescope.png';
+
+const IDE_PICTURES = [whoaide.src, telescope.src];
+
 /**
  * @constant PROJECTS
  * @description List of projects.
  * @type {IProjectItem[]}
  * @export PROJECTS
  */
-export const PROJECTS: IProjectItem[] = [
+const PROJECTS: IProjectItem[] = [
   {
     id: 'whoa-ide',
     name: 'Whoa IDE',
     description: '⌨️ · My custom configuration for Neovim.',
-    imageUrl: `${getBaseUrl()}/images/projects/whoa-ide.png`,
+    imageUrl: `${getBaseUrl()}/images/projects/whoa-ide/whoa-ide.jpg`,
     url: 'whoa-ide',
     githubUrl: 'https://github.com/UgolinOlle/WhoaIDE',
     technologies: ['Neovim', 'Lua'],
@@ -23,7 +28,7 @@ export const PROJECTS: IProjectItem[] = [
     name: 'Portfolio v2',
     description:
       '💻 · My simple portfolio to show my skills, projects, experiences.',
-    imageUrl: `${getBaseUrl()}/images/projects/portfolio-v2.png`,
+    imageUrl: `${getBaseUrl()}/images/projects/portfolio-v2.jpg`,
     url: 'portfolio-v2',
     githubUrl: 'https://github.com/UgolinOlle/portfolio-v2',
     technologies: [
@@ -63,3 +68,5 @@ export const PROJECTS: IProjectItem[] = [
     date: '12-04-2023',
   },
 ];
+
+export { PROJECTS, IDE_PICTURES };
