@@ -14,7 +14,7 @@ import { Resume } from '@/components/hero/resume';
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-100 md:rounded-lg md:shadow-sm">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 md:rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-3 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
@@ -75,8 +75,8 @@ export const Hero: React.FC = () => {
             width={250}
             height={250}
           />
-          <p className="text-center text-lg dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out">
-            <span className="hover:rotate-90 transition-transform duration-300 inline-block">
+          <p className="group/software text-center text-lg dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out">
+            <span className="group-hover/software:rotate-90 transition-transform duration-300 inline-block">
               ⌘
             </span>{' '}
             Développeur Logiciel

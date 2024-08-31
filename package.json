@@ -73,6 +73,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/three": "^0.167.1",
+    "@xpd/tailwind-3dtransforms": "^1.0.3",
     "commitizen": "^4.3.0",
     "eslint": "9.x",
     "eslint-config-prettier": "^9.1.0",

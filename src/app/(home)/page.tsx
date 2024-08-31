@@ -11,7 +11,12 @@ export default function HomePage() {
     <div className="flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-center lg:items-start justify-between">
         <AnimatedContainer custom={0} className="w-full lg:w-[45%]">
-          <Heading variant="h2">👋 À propos de moi</Heading>
+          <Heading variant="h2" className="flex items-center gap-2 group/hand">
+            <span className="group-hover/hand:animate-phone transition ease-in-out">
+              👋
+            </span>
+            À propos de moi
+          </Heading>
           <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je m'appelle Ugolin Ollé et je suis un développeur full stack
             passionné, spécialisé dans le développement de logiciels SaaS.
@@ -22,7 +27,15 @@ export default function HomePage() {
           </p>
         </AnimatedContainer>
         <AnimatedContainer custom={1} className="w-full lg:w-[45%]">
-          <Heading variant="h2">📸 Création de contenu</Heading>
+          <Heading
+            variant="h2"
+            className="flex items-center gap-2 group/camera"
+          >
+            <span className="group-hover/camera:animate-flash transition ease-in-out">
+              📸
+            </span>
+            Création de contenu
+          </Heading>
           <p className="text-md text-gray-700/75 dark:text-gray-300/75 text-justify">
             Je suis animé par une envie de partager mes connaissances et
             d'inspirer d'autres développeurs à travers la création de contenu

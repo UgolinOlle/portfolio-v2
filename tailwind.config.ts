@@ -106,6 +106,10 @@ const config = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
         },
+        flash: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -113,10 +117,14 @@ const config = {
         grid: 'grid 15s linear infinite',
         phone: 'phone 1s ease-in-out infinite',
         pulse: 'pulse 1.5s ease-in-out infinite',
+        flash: 'flash 1s ease-in-out infinite',
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@xpd/tailwind-3dtransforms'),
+  ],
 } satisfies Config;
 
 export default config;
