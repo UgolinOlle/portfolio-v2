@@ -14,10 +14,8 @@ export const Appointement: React.FC = () => {
         <div className="gap-2 group-hover/modal-btn:translate-x-40 text-center transition duration-500 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium">
           <Phone size={16} /> Prendre RDV
         </div>
-        <div className="text-white dark:text-black -translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 z-20">
-          <span className="animate-phone">
-            <Phone size={16} />
-          </span>
+        <div className="text-white dark:text-black -translate-x-32 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute transition duration-500 animate-phone">
+          <Phone size={16} />
         </div>
       </Button>
     </Link>
