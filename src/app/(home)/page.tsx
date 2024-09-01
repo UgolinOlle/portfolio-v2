@@ -1,21 +1,14 @@
 import React from 'react';
-import { Metadata } from 'next';
 
 import { AnimatedContainer } from '@/components/commons/animation';
 import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
 
-export const metadata: Metadata = {
-  title: 'Accueil | Ugolin Ollé',
-  description:
-    'Développeur full stack passionné par la création de logiciels SaaS et la création de contenu éducatif.',
-};
-
 export default function HomePage() {
   // -- Render
   return (
-    <div className="flex flex-col gap-28 my-28">
+    <div className="flex flex-col gap-16 my-16">
       <AnimatedContainer custom={0}>
         <Heading variant="h2" className="flex items-center gap-2">
           À propos de moi
