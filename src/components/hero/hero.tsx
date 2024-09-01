@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { Appointement } from '@/components/hero/appointement';
 import { RetroGrid } from '@/components/retro';
 import { Clock } from '@/components/hero/clock';
-import { Resume } from '@/components/hero/resume';
 
 export const Hero: React.FC = () => {
   // -- Render

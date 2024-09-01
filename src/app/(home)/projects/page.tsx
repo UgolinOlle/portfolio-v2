@@ -26,7 +26,7 @@ export default function ProjectsPage() {
 
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="flex flex-col gap-10 my-28">
+    <AnimatedContainer custom={0} className="flex flex-col gap-10 mt-10 mb-28">
       <Heading variant="h2">Projects</Heading>
       <div className="flex flex-col lg:flex-row gap-10 mt-12">
         <AnimatedContainer

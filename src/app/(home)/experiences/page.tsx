@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="my-28">
-      <AnimatedContainer custom={1} className="mb-12">
+    <AnimatedContainer custom={0} className="mt-10 mb-28">
+      <AnimatedContainer custom={1} className="mb-8 w-full">
         <Heading variant="h2">Experiences</Heading>
         <p className="text-lg text-gray-700/75 text-justify">
-          Voici l'ensemble de mes expériences professionnelles.
+          Voici l'ensemble de mes expériences.
         </p>
       </AnimatedContainer>
       <AnimatedContainer

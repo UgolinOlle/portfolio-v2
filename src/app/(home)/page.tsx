@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   // -- Render
   return (
-    <div className="flex flex-col gap-28 my-28">
+    <div className="flex flex-col gap-28 mt-10 mb-28">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-center lg:items-start justify-between">
         <AnimatedContainer custom={0} className="w-full lg:w-[45%]">
           <Heading variant="h2" className="flex items-center gap-2 group/hand">
