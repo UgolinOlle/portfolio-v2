@@ -30,7 +30,7 @@ export const Clock: React.FC = () => {
 
   // -- Render
   return (
-    <div className="flex space-x-1 text-md text-gray-700/75 dark:text-gray-300 transition ease-in-out group-hover/location:text-gray-700 dark:group-hover/location:text-gray-100">
+    <div className="flex space-x-1 text-md text-neutral-600/70 dark:text-neutral-400/70 transition ease-in-out">
       <div className="flex">
         {hour.split('').map((char, index) => (
           <AnimatePresence key={`${char}-${index}`}>

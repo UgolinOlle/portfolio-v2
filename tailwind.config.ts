@@ -40,7 +40,7 @@ const config = {
         left: '-4px 0 7px -5px rgba(0, 0, 0, 0.25)',
       },
       colors: {
-        black: '#020202',
+        black: '#282b30',
         'secondary-black': '#1c1c1c',
         'third-black': '#2e2e2e',
         border: 'hsl(var(--border))',

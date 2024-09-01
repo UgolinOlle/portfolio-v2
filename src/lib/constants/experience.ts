@@ -11,6 +11,14 @@ import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
  */
 export const EXPERIENCES: ITimelineItem[] = [
   {
+    picture: '/logos/le-boutiquier.webp',
+    title: 'Le Boutiquier - Support Technique',
+    slug: 'le-boutiquier',
+    description: 'Support technique et développement de solutions sur mesure.',
+    date: '2024',
+    color: 'bg-pink-500',
+  },
+  {
     picture: '/logos/comai.png',
     title: 'Comai - Développeur Full Stack',
     slug: 'comai',
