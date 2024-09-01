@@ -13,7 +13,7 @@ import { Clock } from '@/components/hero/clock';
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 md:rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 md:rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-ou">
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-8 lg:gap-5 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">

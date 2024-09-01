@@ -26,7 +26,8 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const pathMap: { [key: string]: string } = {
-      '/': 'A propos',
+      '/': 'À propos',
+      '/services': 'Services',
       '/experiences': 'Expériences',
       '/projects': 'Projets',
       '/contact': 'Contact',
@@ -63,7 +64,8 @@ export const Navbar: React.FC = () => {
         >
           <TabsList className="flex flex-col lg:flex-row h-auto">
             {[
-              { title: 'A propos', path: '/' },
+              { title: 'À propos', path: '/' },
+              { title: 'Services', path: '/services' },
               { title: 'Expériences', path: '/experiences' },
               { title: 'Projets', path: '/projects' },
               { title: 'Contact', path: '/contact' },
@@ -72,7 +74,7 @@ export const Navbar: React.FC = () => {
                 key={tab.title}
                 value={tab.title}
                 onClick={() => handleNavigation(tab.path, tab.title)}
-                className="w-full lg:w-auto text-md"
+                className="w-full lg:w-auto"
               >
                 {tab.title.charAt(0).toUpperCase() + tab.title.slice(1)}
               </TabsTrigger>
