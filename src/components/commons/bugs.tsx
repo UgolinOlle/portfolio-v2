@@ -71,7 +71,7 @@ export const Bugs: React.FC = () => {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="rounded-full px-2 py-4 bg-gray-200 text-gray-800 opacity-50 hover:opacity-100 transition-opacity ease-in-out"
+          className="rounded-full px-2 py-4 text-neutral-600/70 dark:text-neutral-400/70"
           onClick={handleScreenshot}
         >
           <Bug size={18} />

@@ -16,11 +16,11 @@ export default function HomePage() {
   // -- Render
   return (
     <div className="flex flex-col gap-28 my-28">
-      <AnimatedContainer custom={0} className="w-3/4">
+      <AnimatedContainer custom={0}>
         <Heading variant="h2" className="flex items-center gap-2">
           À propos de moi
         </Heading>
-        <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify">
+        <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify w-3/4">
           Je m'appelle Ugolin Ollé et je suis un développeur full stack
           passionné, spécialisé dans le développement de logiciels SaaS. J'aime
           explorer de nouvelles technologies et créer des solutions innovantes

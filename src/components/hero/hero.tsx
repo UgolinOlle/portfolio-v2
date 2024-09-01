@@ -11,11 +11,17 @@ import { RetroGrid } from '@/components/retro';
 import { Clock } from '@/components/hero/clock';
 import AnimatedShinyText from '../ui/shiny';
 import { ArrowRightIcon } from 'lucide-react';
+import { CrossIcon } from '../commons/icons/common';
 
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 md:rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-ou">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
+      <CrossIcon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+      <CrossIcon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+      <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+      <CrossIcon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+
       <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
         <div className="flex flex-col items-center lg:items-start gap-8 lg:gap-5 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
@@ -32,7 +38,7 @@ export const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   variant="secondary"
                   className={cn(
-                    'text-md dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out px-3 py-2 shadow-md hover:shadow-lg border border-black/5 dark:border-white/5',
+                    'text-md dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out px-3 py-2 shadow-md hover:shadow-xl border border-black/10 dark:border-white/10',
                     `${social.name.toLowerCase() === 'linkedin' && 'hover:text-[#0A66C2]'}`
                   )}
                 >
@@ -70,26 +76,19 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col justify-between items-center gap-5 p-0 md:p-4">
-        <div className="flex flex-col items-center">
-          <Image
-            src="/profile.png"
-            alt="Ugolin Ollé"
-            width={250}
-            height={250}
-          />
-          <div className="flex min-h-10 items-center justify-center">
-            <div
-              className={cn(
-                'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'
-              )}
-            >
-              <Link href="/contact" passHref>
-                <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                  <span>🎉 Obtenez votre audit gratuit</span>
-                  <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-                </AnimatedShinyText>
-              </Link>
-            </div>
+        <Image src="/profile.png" alt="Ugolin Ollé" width={250} height={250} />
+        <div className="flex min-h-10 items-center justify-center">
+          <div
+            className={cn(
+              'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'
+            )}
+          >
+            <Link href="/contact" passHref>
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                <span>🎉 Obtenez votre audit gratuit</span>
+                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+              </AnimatedShinyText>
+            </Link>
           </div>
         </div>
       </div>

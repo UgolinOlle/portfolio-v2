@@ -95,6 +95,12 @@ html.dark-mode {
   --cursor-color: #fff;
 }
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
 /* -- Cursor selection -- */
 ::-moz-selection {
   color: #ebf8f1;
