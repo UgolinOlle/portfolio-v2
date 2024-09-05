@@ -1,3 +1,5 @@
+import { CrossIcon } from './icons/common';
+
 export const Footer: React.FC = () => {
   // -- Variables
   const sharedTextClasses =
@@ -6,7 +8,12 @@ export const Footer: React.FC = () => {
   // -- Render
   return (
     <footer className="w-full text-black dark:text-white py-5 mt-9">
-      <div className="border border-gray-300 rounded-lg p-2">
+      <div className="border border-gray-300 relative p-2">
+        <CrossIcon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+        <CrossIcon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+        <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+        <CrossIcon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+
         <div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between gap-3 items-center px-2 sm:px-5">
           <p className="text-center text-sm">
             © {new Date().getFullYear()} Ugolin Ollé. All rights reserved.
@@ -16,7 +23,6 @@ export const Footer: React.FC = () => {
             <p className={sharedTextClasses}>
               Built with Next.js, TypeScript, and Tailwind CSS.
             </p>
-            <p className={sharedTextClasses}>Inspired by rdsx.dev</p>
           </div>
         </div>
       </div>
