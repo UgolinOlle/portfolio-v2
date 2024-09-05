@@ -1,8 +1,7 @@
-import type { NextApiRequest } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(req: NextApiRequest) {
-  const { title, body } = req.body;
+export async function POST(req: NextRequest) {
+  const { title, body } = await req.json();
 
   const GITHUB_TOKEN = process.env.GITHUB_API_TOKEN;
   const GITHUB_REPO = 'UgolinOlle/portfolio-v2';
