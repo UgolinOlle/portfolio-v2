@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
             'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mt-5 lg:mt-10'
           )}
         >
-          <AnimatedShinyText className="px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full w-full lg:w-auto text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+          <AnimatedShinyText className="cursor-none px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full w-full lg:w-auto text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
             <div className="flex items-center gap-2">
               <Clock />
               GMT+1
