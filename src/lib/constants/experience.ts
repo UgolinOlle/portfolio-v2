@@ -1,4 +1,6 @@
 import dashboard from '../../../public/images/projects/comai-dashboard.jpg';
+import desk from '../../../public/images/projects/school-desk.jpg';
+import computer from '../../../public/images/projects/school-computer.jpg';
 import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
 
 /**
@@ -63,7 +65,9 @@ export const EXPERIENCES: ITimelineItem[] = [
 
 export const COMAI_PICTURES = [dashboard.src];
 
-export const SCHOOL_PICTURES: ISchoolPicture[] = [
+export const SCHOOL_PICTURES = [desk.src, computer.src];
+
+export const SCHOOL_PROJECTS_PICTURES: ISchoolPicture[] = [
   {
     src: '/images/school/libftn.png',
     alt: 'Libft',
