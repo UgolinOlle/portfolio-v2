@@ -40,7 +40,7 @@ export const Detail: React.FC<IUiProps> = ({ children }) => {
 export const Paragraph: React.FC<IUiProps> = ({ children }) => {
   // -- Render
   return (
-    <div className="border-l-2 border-gray-900 pl-2 text-justify rounded-md my-5 transition-all ease-in-out hover:shadow-md">
+    <div className="border-l-2 border-gray-900 pl-2 text-justify rounded-md my-5">
       {children}
     </div>
   );
@@ -64,7 +64,7 @@ export const List: React.FC<IUiProps> = ({ children }) => {
 
 export const ListItem: React.FC<IUiProps> = ({ children }) => {
   // -- Render
-  return <li className="flex gap-2 items-center">{children}</li>;
+  return <li className="flex gap-2 items-center align-top">{children}</li>;
 };
 
 export const Bold: React.FC<IUiProps> = ({ children }) => {
