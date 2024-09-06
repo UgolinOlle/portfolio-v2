@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AnimatedContainer } from '@/components/commons/animation';
+import { HeroAbout } from '@/components/hero/about';
 import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
@@ -13,14 +14,7 @@ export default function HomePage() {
         <Heading variant="h2" className="flex items-center gap-2">
           À propos de moi
         </Heading>
-        <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify w-3/4">
-          Je m'appelle Ugolin Ollé et je suis un développeur full stack
-          passionné, spécialisé dans le développement de logiciels SaaS. J'aime
-          explorer de nouvelles technologies et créer des solutions innovantes
-          qui simplifient la vie des gens. Je suis constamment à la recherche de
-          nouveaux défis techniques pour transformer des idées en produits
-          fonctionnels.
-        </p>
+        <HeroAbout />
       </AnimatedContainer>
 
       <AnimatedContainer custom={2}>
