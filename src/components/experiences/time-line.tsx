@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { ITimelineItem } from '@/lib/interfaces/experience';
+import { adjustColorBrightness, cn } from '@/lib/utils';
 
 export const Timeline = ({
   timelineData,
@@ -30,17 +31,16 @@ export const Timeline = ({
   return (
     <ul className="relative border-l border-gray-300 border-opacity-50">
       {timelineData.map((item, index) => {
-        const bgColor = item.color.replace('bg-', '');
         return (
           <li
             key={index}
-            className="mb-10 ms-4 pl-1 rounded-lg p-4"
-            style={{
-              background: `linear-gradient(to right, var(--${bgColor}), #fff)`,
-            }}
+            className={cn(
+              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70`
+            )}
           >
             <div
-              className={`absolute w-2 h-2 ${item.color} rounded-full mt-1.5 -start-1`}
+              className={cn(`absolute w-2 h-2 rounded-full mt-1.5 -start-1`)}
+              style={{ backgroundColor: item.color }}
             />
             <motion.div
               custom={index}
@@ -57,6 +57,7 @@ export const Timeline = ({
                       alt={item.title}
                       width={20}
                       height={20}
+                      className="rounded-sm"
                     />
                   )}
                   <h1>{item.title}</h1>

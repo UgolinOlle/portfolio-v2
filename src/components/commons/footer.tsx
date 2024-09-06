@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           <p className="text-center text-sm">
             © {new Date().getFullYear()} Ugolin Ollé. All rights reserved.
           </p>
-          <div className="hidden sm:block border-t sm:border-l border-gray-300 h-8 sm:h-auto sm:w-px my-2 sm:my-0" />
+          <div className="hidden sm:inline-block h-2 bg-neutral-800/70 dark:bg-neutral-100/70 my-2 sm:my-0" />
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-10">
             <p className={sharedTextClasses}>
               Built with Next.js, TypeScript, and Tailwind CSS.

@@ -36,7 +36,12 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
 
       if (!data.exists)
         toast.error('Aucune information disponible pour le moment.');
-      else setMdxExists(data.exists);
+      else {
+        setMdxExists(data.exists);
+
+        const element = document.getElementById('experience-info');
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }
     };
 
     if (selectedExperience) {
@@ -57,7 +62,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
   // --- Render
   return (
     <>
-      <div className="w-full lg:w-1/2 flex flex-col gap-3 items-start">
+      <div className="w-full lg:w-1/2 flex flex-col gap-3 mx-5 items-start">
         <Timeline
           timelineData={EXPERIENCES}
           onExperienceClick={setSelectedExperience}
@@ -70,6 +75,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
             animate="visible"
             custom={0}
             variants={variants}
+            id="experience-info"
           >
             <div className="flex flex-row items-center gap-5 w-full">
               <Image
@@ -77,6 +83,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
                 alt={selectedExperience.title}
                 width={40}
                 height={20}
+                className="rounded-sm"
               />
               <Heading variant="h2">{selectedExperience.title}</Heading>
             </div>

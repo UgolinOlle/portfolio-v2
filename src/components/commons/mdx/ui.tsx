@@ -40,7 +40,7 @@ export const Detail: React.FC<IUiProps> = ({ children }) => {
 export const Paragraph: React.FC<IUiProps> = ({ children }) => {
   // -- Render
   return (
-    <div className="border-l-2 border-gray-900 pl-2 text-justify rounded-md my-5">
+    <div className="border-l border-neutral-900/70 dark:border-neutral-100/70 pl-2 text-justify my-5">
       {children}
     </div>
   );

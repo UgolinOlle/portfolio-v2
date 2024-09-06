@@ -1,7 +1,8 @@
+import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
+
 import dashboard from '../../../public/images/projects/comai-dashboard.jpg';
 import desk from '../../../public/images/projects/school-desk.jpg';
 import computer from '../../../public/images/projects/school-computer.jpg';
-import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
 
 /**
  * @constant EXPERIENCES
@@ -16,7 +17,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     slug: 'le-boutiquier',
     description: 'Support technique et développement de solutions sur mesure.',
     date: '2024',
-    color: 'bg-pink-500',
+    color: '#fc046f',
   },
   {
     picture: '/logos/comai.png',
@@ -25,7 +26,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     description:
       "Développement d'un SaaS (MVP) pour la gestion et l'automatisation des comptes réseaux sociaux.",
     date: '2024',
-    color: 'bg-purple-500',
+    color: '#7d16f3',
   },
   {
     picture: '/logos/42.jpeg',
@@ -33,7 +34,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     slug: '42-bangkok',
     description: 'Formation en architecture informatique.',
     date: '2023 - 2024',
-    color: 'bg-blue-800',
+    color: '#3d958b',
   },
   {
     picture: '/logos/azertyconsulting.svg',
@@ -41,7 +42,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     slug: 'azerty-consulting',
     description: 'Développement & Accompagnement sur des solutions sur mesure.',
     date: '2022',
-    color: 'bg-red-500',
+    color: '#e53d50',
   },
   {
     picture: '/logos/nicoka.png',
@@ -50,7 +51,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     description:
       "Stage de fin d'études chez Nicoka, entreprise dédiée aux métiers du conseil et du service.",
     date: '2022',
-    color: 'bg-blue-900',
+    color: '#11417f',
   },
   {
     picture: '/logos/autodidact.svg',
@@ -59,7 +60,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     description:
       'Développement de projets personnels principalement sur du Web & Mobile.',
     date: '2018 - 2022',
-    color: 'bg-green-500',
+    color: '#d256ff',
   },
 ];
 
