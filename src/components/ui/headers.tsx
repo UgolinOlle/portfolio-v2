@@ -13,9 +13,10 @@ const headingVariants = cva('text-lg font-semibold', {
       h4: 'lg:text-xl md:text-lg text-base font-bold',
     },
     align: {
-      left: 'justify-start text-left',
-      center: 'justify-center text-center',
-      right: 'justify-end text-right',
+      left: 'justify-start leading-snug md:leading-normal text-center md:text-left',
+      center: 'justify-center leading-snug md:leading-normal text-center',
+      right:
+        'justify-end text-center leading-snug md:leading-normal md:text-right',
     },
   },
   defaultVariants: {

@@ -22,10 +22,14 @@ export const Hero: React.FC = () => {
       <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <CrossIcon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
 
-      <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 p-0 py-4 md:p-4">
+      <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 py-4 px-2 md:py-8 md:px-8">
         <div className="flex flex-col items-center lg:items-start gap-8 lg:gap-5 h-full">
           <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
-            <Heading variant="hero" className="font-bumbbled" border={false}>
+            <Heading
+              variant="hero"
+              className="font-bumbbled mt-8 md:mt-0"
+              border={false}
+            >
               Ugolin Ollé
             </Heading>
           </div>
@@ -65,7 +69,7 @@ export const Hero: React.FC = () => {
             'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mt-5 lg:mt-10'
           )}
         >
-          <AnimatedShinyText className="cursor-none px-4 py-1 flex justify-between lg:justify-normal items-center gap-4 rounded-full w-full lg:w-auto text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+          <AnimatedShinyText className="cursor-none px-4 py-1 flex flex-col md:flex-row md:justify-between lg:justify-normal items-center gap-2 md:gap-4 rounded-full w-full lg:w-auto text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
             <div className="flex items-center gap-2">
               <Clock />
               GMT+1
@@ -75,7 +79,7 @@ export const Hero: React.FC = () => {
           </AnimatedShinyText>
         </div>
       </div>
-      <div className="flex flex-col justify-between items-center gap-5 p-0 md:p-4">
+      <div className="flex flex-col justify-between items-center gap-5 py-4 px-2 md:py-8 md:px-8">
         <Image src="/profile.png" alt="Ugolin Ollé" width={250} height={250} />
         <div className="flex min-h-10 items-center justify-center">
           <div
