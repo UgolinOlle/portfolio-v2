@@ -86,7 +86,7 @@ export const HeroAbout: React.FC = () => {
         />
       </motion.div>
 
-      <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify w-3/4">
+      <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify w-full md:w-3/4">
         Je m'appelle Ugolin Ollé et je suis un développeur full stack passionné,
         spécialisé dans le développement de logiciels SaaS. J'aime explorer de
         nouvelles technologies et créer des solutions innovantes qui simplifient
