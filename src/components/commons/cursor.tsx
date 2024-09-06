@@ -19,13 +19,15 @@ const AnimatedCursor: React.FC = () => {
 
       if (
         event.target instanceof HTMLParagraphElement ||
-        event.target instanceof HTMLAnchorElement ||
-        event.target instanceof HTMLSpanElement
+        event.target instanceof HTMLAnchorElement
       ) {
         setIsTextMode(true);
         setIsButtonMode(false);
         setHeadingSize(0);
-      } else if (event.target instanceof HTMLButtonElement) {
+      } else if (
+        event.target instanceof HTMLButtonElement ||
+        event.target instanceof HTMLSpanElement
+      ) {
         setIsButtonMode(true);
         setIsTextMode(false);
         setHeadingSize(0);

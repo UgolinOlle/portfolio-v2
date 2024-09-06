@@ -61,11 +61,11 @@ export const Timeline = ({
                   )}
                   <h1>{item.title}</h1>
                 </div>
-                <p className="px-2 py-1 bg-gray-100 rounded-lg text-sm font-medium">
+                <p className="px-2 py-1 bg-gray-100 dark:bg-muted rounded-lg text-sm font-medium">
                   {item.date}
                 </p>
               </div>
-              <p className="text-medium text-gray-700/75 font-normal">
+              <p className="text-medium text-neutral-600/70 dark:text-neutral-100/70 font-normal">
                 {item.description}
               </p>
               <Button

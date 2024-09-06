@@ -1,1 +1,1 @@
-export { FolderAnimation } from './folder-animation';
+export { FolderIcon } from './folder';

@@ -20,10 +20,7 @@ export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
   return (
     <div className="flex flex-wrap gap-2 mb-3">
       {keywords.map((keyword, index) => (
-        <span
-          key={index}
-          className="bg-gray-100 text-gray-800 px-2 py-1 rounded-md transition-all ease-in-out hover:bg-gray-200"
-        >
+        <span key={index} className="bg-muted px-2 py-1 rounded-lg">
           {keyword}
         </span>
       ))}
@@ -34,7 +31,7 @@ export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
 export const Detail: React.FC<IUiProps> = ({ children }) => {
   // -- Render
   return (
-    <div className="p-4 bg-gray-100 rounded-lg my-5 transition-all ease-in-out hover:bg-gray-200">
+    <div className="p-4 bg-muted rounded-lg my-5 transition-all ease-in-out">
       {children}
     </div>
   );

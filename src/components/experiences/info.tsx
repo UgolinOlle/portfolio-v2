@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { toast } from 'sonner';
 
 import { ITimelineItem } from '@/lib/interfaces/experience';
-import { EXPERIENCES } from '@/lib/constants/experience';
-import { Timeline } from './time-line';
+import { EXPERIENCES } from '@/lib/constants/experiences';
+import { Timeline } from '@/components/experiences/time-line';
 import { Heading } from '@/components/ui/headers';
 import { MDXWrapper } from '@/components/commons/mdx/mdx';
 
