@@ -7,12 +7,13 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Bugs } from '@/components/commons/bugs';
 import ThemeToggler from '@/components/commons/theme-switcher';
+import { SettingsPopup } from '@/components/commons/settings';
 
 export const BottomMenu: React.FC = () => {
-  // -- State
+  // --- State
   const [isBottom, setIsBottom] = useState(false);
 
-  // -- Functions
+  // --- Functions
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,7 +33,6 @@ export const BottomMenu: React.FC = () => {
     }
   };
 
-  // -- Effect
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -40,7 +40,7 @@ export const BottomMenu: React.FC = () => {
     };
   }, []);
 
-  // -- Render
+  // --- Render
   return (
     <motion.div
       initial={{ bottom: '10px' }}
@@ -48,6 +48,7 @@ export const BottomMenu: React.FC = () => {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="fixed right-10 z-50 md:flex flex-col items-center gap-4 hidden"
     >
+      <SettingsPopup />
       <ThemeToggler />
       <Bugs />
       <Button

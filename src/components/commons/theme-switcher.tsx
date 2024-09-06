@@ -49,9 +49,7 @@ export default function ThemeToggler() {
           'p-2 rounded-full text-neutral-600/70 dark:text-neutral-400/70 hover:text-neutral-900/70'
         )}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          <SwatchBook size={20} />
-        </AnimatePresence>
+        <SwatchBook size={20} />
       </Button>
 
       <AnimatePresence>
@@ -62,7 +60,7 @@ export default function ThemeToggler() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute -top-2 right-12 mt-2 bg-white dark:bg-neutral-900/70 shadow-md rounded-lg w-32 py-2 z-10 border border-neutral-200 dark:border-neutral-700"
+            className="absolute -top-5 right-12 mt-2 bg-white dark:bg-neutral-900/70 shadow-md rounded-lg w-32 py-2 z-10 border border-neutral-200 dark:border-neutral-700"
           >
             {themes.map((t) => (
               <button
