@@ -6,6 +6,9 @@ import dynamic from 'next/dynamic';
 import { toast } from 'sonner';
 
 import { MDXWrapper } from '@/components/commons/mdx/mdx';
+import { Button } from '../ui/button';
+import { ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface MDXContentRendererProps {
   slug: string;
@@ -15,6 +18,7 @@ export const ProjectsContent: React.FC<MDXContentRendererProps> = ({
   slug,
 }): JSX.Element => {
   // --- Variables
+  const router = useRouter();
   const [mdxExists, setMdxExists] = useState<boolean>(false);
 
   const variants = {
@@ -48,7 +52,11 @@ export const ProjectsContent: React.FC<MDXContentRendererProps> = ({
 
   // --- Render
   return (
-    <div className="w-full flex flex-col gap-3 items-start">
+    <div className="relative w-full flex flex-col gap-3 items-start">
+      <Button variant="outline" onClick={() => router.push('/projects')}>
+        <ArrowLeft size={16} className="mr-2" />
+        Retour
+      </Button>
       {mdxExists && MdxContent ? (
         <MDXWrapper>
           <motion.div
