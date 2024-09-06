@@ -17,15 +17,13 @@ const AnimatedCursor: React.FC = () => {
         cursorRef.current.style.transform = `translate(-50%, -50%)`;
       }
 
-      if (
-        event.target instanceof HTMLParagraphElement ||
-        event.target instanceof HTMLAnchorElement
-      ) {
+      if (event.target instanceof HTMLParagraphElement) {
         setIsTextMode(true);
         setIsButtonMode(false);
         setHeadingSize(0);
       } else if (
         event.target instanceof HTMLButtonElement ||
+        event.target instanceof HTMLAnchorElement ||
         event.target instanceof HTMLSpanElement
       ) {
         setIsButtonMode(true);
