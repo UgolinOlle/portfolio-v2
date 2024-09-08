@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { ITimelineItem } from '@/lib/interfaces/experience';
-import { adjustColorBrightness, cn } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 export const Timeline = ({
   timelineData,
@@ -16,6 +16,9 @@ export const Timeline = ({
   onExperienceClick: (experience: ITimelineItem) => void;
 }): JSX.Element => {
   // --- Variables
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null); // Index de l'élément survolé
+  const [hoverRotates, setHoverRotates] = useState<number[]>([]); // Stocke la rotation de chaque élément
+
   const config = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -25,6 +28,22 @@ export const Timeline = ({
         delay: i * 0.3,
       },
     }),
+  };
+
+  // --- Functions
+  const handleMouseEnter = (index: number) => {
+    // Générer une rotation aléatoire pour cet élément
+    const randomRotation = Math.random() * 5 - 2.5;
+    setHoverIndex(index);
+    setHoverRotates((prevRotates) => {
+      const newRotates = [...prevRotates];
+      newRotates[index] = randomRotation; // Assigner la rotation à l'index
+      return newRotates;
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setHoverIndex(null); // Réinitialiser l'état lorsqu'on quitte l'élément
   };
 
   // --- Render
@@ -37,6 +56,15 @@ export const Timeline = ({
             className={cn(
               `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70`
             )}
+            style={{
+              rotate:
+                hoverIndex === index
+                  ? `${hoverRotates[index] || 0}deg`
+                  : '0deg',
+              transition: 'rotate 0.3s',
+            }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
           >
             <div
               className={cn(`absolute w-2 h-2 rounded-full mt-1.5 -start-1`)}
