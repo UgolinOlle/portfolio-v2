@@ -63,7 +63,7 @@ const AnimatedCursor: React.FC = () => {
   return (
     <motion.div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]"
+      className="hidden lg:fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]"
       animate={
         isTextMode
           ? { width: 2, height: 24, borderRadius: '4px' }
