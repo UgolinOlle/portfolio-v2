@@ -162,7 +162,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning={true}>
         <body
           className={cn(
-            'bg-background font-body antialiased flex flex-col items-center relative px-4 sm:px-6 md:px-8 py-4 lg:cursor-none cursor-auto'
+            'bg-background font-body antialiased flex flex-col items-center relative px-4 sm:px-6 md:px-8 py-4'
           )}
         >
           <Providers>
