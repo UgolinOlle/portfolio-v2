@@ -9,6 +9,7 @@ import { MDXWrapper } from '@/components/commons/mdx/mdx';
 import { Button } from '../ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { getMDXContent } from '@/lib/utils';
 
 interface MDXContentRendererProps {
   slug: string;
@@ -48,7 +49,8 @@ export const ProjectsContent: React.FC<MDXContentRendererProps> = ({
       ssr: false,
     });
 
-  const MdxContent = mdxExists ? loadMdxComponent(slug) : null;
+  const { metadata, content } = getMDXContent(slug, 'projects');
+  const MdxContent = loadMdxComponent(slug);
 
   // --- Render
   return (

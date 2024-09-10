@@ -1,7 +1,9 @@
-import { MoveUpRight } from 'lucide-react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { MoveUpRight } from 'lucide-react';
 
 import { IProjectItem } from '@/lib/interfaces/project';
 import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
@@ -15,9 +17,26 @@ import { AnimatedGrid } from '../commons/animation';
  * @exports ProjectItem
  */
 const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
-  // -- Render
+  // --- Variables
+  const [hoverRotate, setHoverRotate] = useState(0);
+
+  // --- Functions
+  const handleMouseEnter = () => {
+    setHoverRotate(Math.random() * 5 - 2.5);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverRotate(0);
+  };
+
+  // --- Render
   return (
-    <li className="bg-white dark:bg-secondary-black/75 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[150px]">
+    <li
+      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[130px]`}
+      style={{ rotate: `${hoverRotate}deg`, transition: 'rotate 0.3s' }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="w-full relative" style={{ paddingBottom: '50%' }}>
         <Image
           src={props.imageUrl}
@@ -31,7 +50,9 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
         <Heading variant="h3" border={false}>
           {props.name}
         </Heading>
-        <p className="text-md text-gray-500">{props.description}</p>
+        <p className="text-md text-neutral-600 dark:text-neutral-300">
+          {props.description}
+        </p>
         <div className="flex items-center gap-5">
           <Link
             href={`/projects/${props.url}`}
@@ -43,19 +64,22 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
               className="group-hover/project-link:underline"
             />
           </Link>
-          <Link
-            href={props.githubUrl}
-            className="w-5 h-5 text-gray-800 dark:text-gray-200/75 hover:underline"
-          >
-            <SOCIALS_ICONS.github />
-          </Link>
+
+          {props.githubUrl !== '' && (
+            <Link
+              href={props.githubUrl}
+              className="w-5 h-5 text-neutral-600 dark:text-neutral-300 hover:underline"
+            >
+              <SOCIALS_ICONS.github />
+            </Link>
+          )}
         </div>
       </div>
       <ul className="flex flex-wrap gap-2 mt-2">
         {props.technologies.map((tech) => (
           <li
             key={tech}
-            className="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-lg inline-block"
+            className="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs px-2 py-1 rounded-lg inline-block"
           >
             {tech}
           </li>

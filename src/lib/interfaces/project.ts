@@ -21,3 +21,19 @@ export interface IProjectItem {
   technologies: string[];
   date: string;
 }
+
+export interface ProjectData {
+  publishedDate: Date;
+  modifiedDate?: Date;
+  title: string;
+  description: string;
+  tags: string[];
+  thumbnailUrl: string;
+  status: 'published' | 'draft';
+}
+
+export interface Project {
+  data: ProjectData;
+  slug: string;
+  content: string;
+}

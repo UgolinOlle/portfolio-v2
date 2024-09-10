@@ -55,7 +55,7 @@ const ProjectCard: React.FC<IProjectItem> = (props): JSX.Element => {
               {props.title}
             </span>
           </div>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+          <p className="text-sm text-neutral-600/70 dark:text-neutral-400/70 max-w-xs relative z-10 px-10">
             {props.description}
           </p>
         </div>

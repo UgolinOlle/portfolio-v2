@@ -1,6 +1,9 @@
 import type { ClassValue } from 'clsx';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 import { URL_DEV, URL_PROD } from './constants/common';
 
@@ -46,3 +49,14 @@ export function adjustColorBrightness(color: string, percent: number): string {
 
   return newColor;
 }
+
+export const getMDXContent = (slug: string, category: string) => {
+  const filePath = path.join(process.cwd(), `contents/${category}/${slug}.mdx`);
+  const fileContents = fs.readFileSync(filePath, 'utf-8');
+  const { data, content } = matter(fileContents);
+
+  return {
+    metadata: data, // Métadonnées comme title, date, description
+    content, // Contenu MDX
+  };
+};

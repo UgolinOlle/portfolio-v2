@@ -4,7 +4,7 @@ import { getBaseUrl } from '@/lib/utils';
 import whoaide from '../../../public/images/projects/whoa-ide/whoa-ide.jpg';
 import telescope from '../../../public/images/projects/whoa-ide/telescope.png';
 
-const IDE_PICTURES = [whoaide.src, telescope.src];
+export const IDE_PICTURES = [whoaide.src, telescope.src];
 
 /**
  * @constant PROJECTS
@@ -12,7 +12,7 @@ const IDE_PICTURES = [whoaide.src, telescope.src];
  * @type {IProjectItem[]}
  * @export PROJECTS
  */
-const PROJECTS: IProjectItem[] = [
+export const PROJECTS: IProjectItem[] = [
   {
     id: 'whoa-ide',
     name: 'Whoa IDE',
@@ -58,15 +58,45 @@ const PROJECTS: IProjectItem[] = [
     date: '2024',
   },
   {
+    id: 'libft',
+    name: 'libft',
+    description: '📚 • Une bibliothèque de fonctions en C.',
+    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    url: 'libft',
+    githubUrl: 'https://github.com/UgolinOlle/libft',
+    technologies: ['C'],
+    date: '2023',
+  },
+  {
     id: 'ft_printf',
     name: 'ft_printf',
-    description: '📚 • A reimplementation of the c library function printf.',
+    description: '📚 • Une reimplémentation de la fonction printf en C.',
     imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
     url: 'ft_printf',
     githubUrl: 'https://github.com/UgolinOlle/ft_printf',
     technologies: ['C'],
-    date: '12-04-2023',
+    date: '2023',
+  },
+  {
+    id: 'get_next_line',
+    name: 'get_next_line',
+    description:
+      '📚 • Une fonction qui lit une ligne terminée par un retour à la ligne depuis un file descriptor.',
+    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    url: 'get_next_line',
+    githubUrl: 'https://github.com/UgolinOlle/get_next_line',
+    technologies: ['C'],
+    date: '2023',
+  },
+  {
+    id: 'born2beroot',
+    name: 'Born2beroot',
+    description:
+      '🐧 • Installation et configuration d’un serveur dédié sous Debian.',
+    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    url: 'born2beroot',
+    githubUrl: '',
+    technologies: ['Debian', 'Linux', 'VirtualBox'],
+    date: '2023',
   },
 ];
-
-export { PROJECTS, IDE_PICTURES };
