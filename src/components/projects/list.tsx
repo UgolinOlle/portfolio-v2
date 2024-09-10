@@ -32,47 +32,58 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // --- Render
   return (
     <li
-      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-6 min-h-[130px]`}
+      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-10 min-h-[130px] max-h-[650px] border`}
       style={{ rotate: `${hoverRotate}deg`, transition: 'rotate 0.3s' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full relative" style={{ paddingBottom: '50%' }}>
-        <Image
-          src={props.imageUrl}
-          alt={props.name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-      </div>
-      <div className="flex flex-col items-start gap-2">
-        <Heading variant="h3" border={false}>
-          {props.name}
-        </Heading>
-        <p className="text-md text-neutral-600 dark:text-neutral-300">
-          {props.description}
-        </p>
-        <div className="flex items-center gap-5">
-          <Link
-            href={`/projects/${props.url}`}
-            className="flex items-center gap-2 text-blue-500 hover:underline group/project-link"
-          >
-            Voir le projet
-            <MoveUpRight
-              size={16}
-              className="group-hover/project-link:underline"
+      <div className="flex flex-col items-start gap-6">
+        <div className="w-full relative" style={{ paddingBottom: '50%' }}>
+          {props.imageBg && (
+            <Image
+              src={props.imageBg}
+              alt={`${props.name} background`}
+              layout="fill"
+              objectFit="cover"
+              className="absolute top-0 left-0 w-full h-full rounded-lg opacity-25"
             />
-          </Link>
-
-          {props.githubUrl !== '' && (
-            <Link
-              href={props.githubUrl}
-              className="w-5 h-5 text-neutral-600 dark:text-neutral-300 hover:underline"
-            >
-              <SOCIALS_ICONS.github />
-            </Link>
           )}
+          <Image
+            src={props.imageUrl}
+            alt={props.name}
+            layout="fill"
+            objectFit={`${props.imageSize || 'cover'}`}
+            className="rounded-lg"
+          />
+        </div>
+        <div className="flex flex-col items-start gap-2">
+          <Heading variant="h3" border={false}>
+            {props.name}
+          </Heading>
+          <p className="text-md text-neutral-600 dark:text-neutral-300">
+            {props.description}
+          </p>
+          <div className="flex items-center gap-5">
+            <Link
+              href={`/projects/${props.url}`}
+              className="flex items-center gap-2 text-blue-500 hover:underline group/project-link"
+            >
+              Voir le projet
+              <MoveUpRight
+                size={16}
+                className="group-hover/project-link:underline"
+              />
+            </Link>
+
+            {props.githubUrl !== '' && (
+              <Link
+                href={props.githubUrl}
+                className="w-5 h-5 text-neutral-600 dark:text-neutral-300 hover:underline"
+              >
+                <SOCIALS_ICONS.github />
+              </Link>
+            )}
+          </div>
         </div>
       </div>
       <ul className="flex flex-wrap gap-2 mt-2">

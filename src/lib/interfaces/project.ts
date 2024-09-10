@@ -16,6 +16,8 @@ export interface IProjectItem {
   name: string;
   description: string;
   imageUrl: string;
+  imageSize?: string;
+  imageBg?: string;
   url: string;
   githubUrl: string;
   technologies: string[];
