@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
 import { SOCIALS } from '@/lib/constants/socials';
 import { cn } from '@/lib/utils';
@@ -9,14 +10,13 @@ import { Button } from '@/components/ui/button';
 import { Appointement } from '@/components/hero/appointement';
 import { RetroGrid } from '@/components/commons/retro';
 import { Clock } from '@/components/hero/clock';
-import AnimatedShinyText from '../ui/shiny';
-import { ArrowRightIcon } from 'lucide-react';
-import { CrossIcon } from '../commons/icons/common';
+import AnimatedShinyText from '@/components/ui/shiny';
+import { CrossIcon } from '@/components/commons/icons/common';
 
 export const Hero: React.FC = () => {
   // -- Render
   return (
-    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-gray-200 shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
+    <div className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
       <CrossIcon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <CrossIcon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
       <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
