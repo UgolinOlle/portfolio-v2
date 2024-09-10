@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
         </AnimatedContainer>
       </AnimatedContainer>
       <AnimatedContainer
-        custom={8}
+        custom={2}
         className="flex flex-col justify-between items-center gap-5 py-4 px-2 md:py-8 md:px-8"
       >
         <Image src="/profile.png" alt="Ugolin Ollé" width={250} height={250} />
