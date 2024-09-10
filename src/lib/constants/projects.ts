@@ -45,7 +45,7 @@ export const PROJECTS: IProjectItem[] = [
     name: 'Vaultflow',
     description:
       '🌐 · A simple landing page about a modern analytics tool for the modern world.',
-    imageUrl: `${getBaseUrl()}/images/bouddha.jpg`,
+    imageUrl: `${getBaseUrl()}/images/projects/vaultflow/home-1.jpg`,
     url: 'vaultflow',
     githubUrl: 'https://github.com/UgolinOlle/vaultflow',
     technologies: [

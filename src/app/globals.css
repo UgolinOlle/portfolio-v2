@@ -93,7 +93,7 @@
 html {
   --cursor-color: #333;
   scroll-behavior: smooth;
-  cursor: none;
+  /* cursor: none; */
 }
 
 body {

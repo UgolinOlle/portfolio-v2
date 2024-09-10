@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
           </AnimatedContainer>
           <AnimatedText
             custom={6}
-            className="text-center md:text-justify text-lg dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4"
+            className="text-center md:text-justify text-lg font-body dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4"
           >
             🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
             lumières vos idées.
