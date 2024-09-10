@@ -5,10 +5,10 @@ import { MoveUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
-import { Bugs } from '@/components/commons/bugs';
-import ThemeToggler from '@/components/commons/theme-switcher';
+import { Bugs } from '@/components/commons/menus/bugs';
+import ThemeToggler from '@/components/commons/menus/theme-switcher';
 
-export const BottomMenu: React.FC = () => {
+export const RightMenu: React.FC = () => {
   // -- State
   const [isBottom, setIsBottom] = useState(false);
 
@@ -44,7 +44,7 @@ export const BottomMenu: React.FC = () => {
   return (
     <motion.div
       initial={{ bottom: '10px' }}
-      animate={{ bottom: isBottom ? '80px' : '20px' }}
+      animate={{ bottom: isBottom ? '70px' : '20px' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="fixed right-10 z-50 md:flex flex-col items-center gap-4 hidden"
     >

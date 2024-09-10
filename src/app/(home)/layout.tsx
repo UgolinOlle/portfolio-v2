@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Hero } from '@/components/hero/hero';
 import { MainContainer } from '@/components/ui/container';
-import { Navbar } from '@/components/commons/navbar';
+import { Navbar } from '@/components/commons/menus/navbar';
 import { Footer } from '@/components/commons/footer';
 
 export default function HomeLayout({

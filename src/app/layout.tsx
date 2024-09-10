@@ -3,8 +3,8 @@ import { ViewTransitions } from 'next-view-transitions';
 
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Providers } from '@/components/providers';
-import { BottomMenu } from '@/components/commons/bottom-menu';
+import { Providers } from '@/components/commons/providers';
+import { RightMenu } from '@/components/commons/menus/right-menu';
 
 export const metadata: Metadata = {
   title: 'Ugolin Ollé',
@@ -167,7 +167,7 @@ export default function RootLayout({
         >
           <Providers>
             {children}
-            <BottomMenu />
+            <RightMenu />
           </Providers>
         </body>
       </html>

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Heading } from '@/components/ui/headers';
 import { Button } from '@/components/ui/button';
 import { Appointement } from '@/components/hero/appointement';
-import { RetroGrid } from '@/components/retro';
+import { RetroGrid } from '@/components/commons/retro';
 import { Clock } from '@/components/hero/clock';
 import AnimatedShinyText from '../ui/shiny';
 import { ArrowRightIcon } from 'lucide-react';
