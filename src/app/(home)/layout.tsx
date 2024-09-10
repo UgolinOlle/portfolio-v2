@@ -20,7 +20,7 @@ export default function HomeLayout({
         >
           <Hero />
         </AnimatedContainer>
-        <AnimatedContainer custom={8} className="h-full lg:h-auto p-2 md:px-8">
+        <AnimatedContainer custom={2} className="h-full lg:h-auto p-2 md:px-8">
           <Navbar />
           {children}
           <Footer />

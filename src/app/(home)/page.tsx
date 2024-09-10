@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col gap-16 mt-8">
       <AnimatedContainer
-        custom={9}
+        custom={1}
         className="flex flex-col items-center gap-5"
       >
         <Heading variant="h2" className="flex items-center gap-2">
@@ -20,12 +20,12 @@ export default function HomePage() {
         <HeroAbout />
       </AnimatedContainer>
 
-      <AnimatedContainer custom={10}>
+      <AnimatedContainer custom={2}>
         <Heading variant="h2">Quelques images</Heading>
         <PicturesBento />
       </AnimatedContainer>
 
-      <AnimatedContainer custom={11}>
+      <AnimatedContainer custom={3}>
         <Heading variant="h2">Skills</Heading>
         <Skills />
       </AnimatedContainer>

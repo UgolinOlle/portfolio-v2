@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="mt-10 mb-28">
-      <AnimatedContainer custom={1} className="mb-5 w-full">
+    <AnimatedContainer custom={1} className="mt-10 mb-28">
+      <AnimatedContainer custom={2} className="mb-5 w-full">
         <Heading variant="h2">Experiences</Heading>
         <p className="text-lg text-neutral-600/75 dark:text-neutral-100/70 text-justify">
           Voici l'ensemble de mes expériences.
         </p>
       </AnimatedContainer>
       <AnimatedContainer
-        custom={2}
+        custom={3}
         className="w-full flex flex-col lg:flex-row justify-between items-start"
       >
         <ExperiencesInfo />
