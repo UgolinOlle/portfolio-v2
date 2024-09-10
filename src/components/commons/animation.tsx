@@ -7,12 +7,14 @@ import { cn } from '@/lib/utils';
 
 // -- Global variants animation
 const variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 5 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.2,
+      duration: 0.6,
+      ease: 'easeOut',
     },
   }),
 };
@@ -25,10 +27,7 @@ const AnimatedContainer: React.FC<{
   // --- Render
   return (
     <motion.div
-      className={cn(
-        className,
-        'flex flex-col gap-3 items-center lg:items-start'
-      )}
+      className={cn(className)}
       initial="hidden"
       animate="visible"
       custom={custom}
@@ -58,4 +57,23 @@ const AnimatedGrid: React.FC<{
   );
 };
 
-export { AnimatedContainer, AnimatedGrid };
+const AnimatedText: React.FC<{
+  children: React.ReactNode;
+  custom: number;
+  className?: string;
+}> = ({ children, custom, className }) => {
+  // --- Render
+  return (
+    <motion.p
+      className={cn('text-lg font-light', className)}
+      initial="hidden"
+      animate="visible"
+      custom={custom}
+      variants={variants}
+    >
+      {children}
+    </motion.p>
+  );
+};
+
+export { AnimatedContainer, AnimatedGrid, AnimatedText };

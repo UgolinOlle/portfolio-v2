@@ -9,20 +9,23 @@ import { Skills } from '@/components/about/skills';
 export default function HomePage() {
   // -- Render
   return (
-    <div className="flex flex-col gap-16 my-16">
-      <AnimatedContainer custom={0}>
+    <div className="flex flex-col gap-16 mt-8">
+      <AnimatedContainer
+        custom={9}
+        className="flex flex-col items-center gap-5"
+      >
         <Heading variant="h2" className="flex items-center gap-2">
           À propos de moi
         </Heading>
         <HeroAbout />
       </AnimatedContainer>
 
-      <AnimatedContainer custom={2}>
+      <AnimatedContainer custom={10}>
         <Heading variant="h2">Quelques images</Heading>
         <PicturesBento />
       </AnimatedContainer>
 
-      <AnimatedContainer custom={3}>
+      <AnimatedContainer custom={11}>
         <Heading variant="h2">Skills</Heading>
         <Skills />
       </AnimatedContainer>

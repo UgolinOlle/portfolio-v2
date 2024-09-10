@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
 
   // -- Render
   return (
-    <nav className="mb-4 lg:mb-8">
+    <nav className="my-4 lg:my-8">
       <div className="lg:hidden flex justify-start items-center">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={24} /> : <Menu size={28} />}
