@@ -33,9 +33,9 @@ export default function ProjectsPage() {
           custom={1}
           className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto"
         >
-          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background p-4">
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100 dark:bg-neutral-900  p-4">
             <Tree
-              className="w-full overflow-hidden rounded-md bg-background"
+              className="w-full overflow-hidden rounded-md"
               initialSelectedId="7"
               initialExpandedItems={[
                 '1',

@@ -2,21 +2,18 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 const AnimatedCursor: React.FC = () => {
-  // --- Variables
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isTextMode, setIsTextMode] = useState(false);
   const [isButtonMode, setIsButtonMode] = useState(false);
   const [headingSize, setHeadingSize] = useState(0);
 
-  // --- Functions
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (cursorRef.current) {
-        cursorRef.current.style.top = `${event.clientY}px`;
-        cursorRef.current.style.left = `${event.clientX}px`;
+        cursorRef.current.style.top = `${event.clientY - 20}px`;
+        cursorRef.current.style.left = `${event.clientX - 125}px`;
         cursorRef.current.style.transform = `translate(-50%, -50%)`;
       }
 
@@ -63,13 +60,10 @@ const AnimatedCursor: React.FC = () => {
     };
   }, []);
 
-  // --- Render
   return (
     <motion.div
       ref={cursorRef}
-      className={cn(
-        `fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]`
-      )}
+      className="fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]"
       animate={
         isTextMode
           ? { width: 2, height: 24, borderRadius: '4px' }
