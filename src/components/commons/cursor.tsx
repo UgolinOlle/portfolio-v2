@@ -10,13 +10,10 @@ const AnimatedCursor: React.FC = () => {
   const [isTextMode, setIsTextMode] = useState(false);
   const [isButtonMode, setIsButtonMode] = useState(false);
   const [headingSize, setHeadingSize] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(false);
 
   // --- Functions
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      if (!isDesktop) return;
-
       if (cursorRef.current) {
         cursorRef.current.style.top = `${event.clientY}px`;
         cursorRef.current.style.left = `${event.clientX}px`;
@@ -59,26 +56,19 @@ const AnimatedCursor: React.FC = () => {
       }
     };
 
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1024);
-    };
-
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
     };
-  }, [isDesktop]);
+  }, []);
 
   // --- Render
   return (
     <motion.div
       ref={cursorRef}
       className={cn(
-        `top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]`,
-        `${isDesktop ? 'fixed ' : 'hidden'}`
+        `fixed top-0 left-0 w-2 h-2 bg-purple-500/75 pointer-events-none z-[100]`
       )}
       animate={
         isTextMode
