@@ -12,8 +12,8 @@ const AnimatedCursor: React.FC = () => {
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (cursorRef.current) {
-        cursorRef.current.style.top = `${event.clientY - 20}px`;
-        cursorRef.current.style.left = `${event.clientX - 125}px`;
+        cursorRef.current.style.top = `${event.clientY}px`;
+        cursorRef.current.style.left = `${event.clientX}px`;
         cursorRef.current.style.transform = `translate(-50%, -50%)`;
       }
 

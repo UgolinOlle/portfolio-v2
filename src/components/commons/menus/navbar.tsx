@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
                 key={tab.title}
                 value={tab.title}
                 onClick={() => handleNavigation(tab.path, tab.title)}
-                className="w-full lg:w-auto cursor-none"
+                className="w-full lg:w-auto"
               >
                 {tab.title.charAt(0).toUpperCase() + tab.title.slice(1)}
               </TabsTrigger>
