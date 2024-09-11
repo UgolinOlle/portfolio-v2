@@ -30,7 +30,6 @@ export const Navbar: React.FC = () => {
       '/experiences': 'Expériences',
       '/projects': 'Projets',
       '/contact': 'Contact',
-      '/lab': 'Lab',
       '/uses': 'Uses',
     };
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'projects' }];
@@ -81,14 +80,6 @@ export const Navbar: React.FC = () => {
         </Tabs>
         <Tabs className="w-full lg:w-auto -mt-2">
           <TabsList className="flex flex-col lg:flex-row h-auto">
-            <TabsTrigger
-              value="lab"
-              onClick={() => handleNavigation('/lab', 'Lab')}
-              className="w-full lg:w-auto"
-            >
-              <span className="lg:hidden">Lab</span>
-              <FlaskConical size={20} className="hidden lg:inline" />
-            </TabsTrigger>
             <TabsTrigger
               value="uses"
               onClick={() => handleNavigation('/uses', 'Uses')}
