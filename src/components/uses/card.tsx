@@ -1,14 +1,17 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { Heading } from '@/components/ui/headers';
+import { cn } from '@/lib/utils';
 
 export interface CardProps {
   title: string;
   description: string;
   image: StaticImageData;
-  link: string;
+  link?: string;
 }
 
 const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
@@ -31,14 +34,16 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
           >
             {title}
           </Heading>
-          <Link
-            target="_blank"
-            href={link}
-            passHref
-            className="cursor-none text-sm px-2 py-1 rounded-full text-neutral-600/70 dark:text-neutral-400/70 bg-neutral-300/70 dark:bg-neutral-700/70 dark:hover:text-neutral-200/70 hover:text-neutral-800/70 transition duration-300 ease-in-out"
-          >
-            Obtenir
-          </Link>
+          {link && (
+            <Link
+              target="_blank"
+              href={link}
+              passHref
+              className="cursor-none text-sm px-2 py-1 rounded-full text-neutral-600/70 dark:text-neutral-400/70 bg-neutral-300/70 dark:bg-neutral-700/70 dark:hover:text-neutral-200/70 hover:text-neutral-800/70 transition duration-300 ease-in-out"
+            >
+              Obtenir
+            </Link>
+          )}
         </div>
         <p className="text-neutral-600/70 dark:text-neutral-400/70 transform group-hover/uses-card:translate-x-1 transition duration-300 ease-in-out">
           {description}
@@ -48,61 +53,49 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
   );
 };
 
-const UseCardImage: React.FC<CardProps> = ({
-  title,
-  description,
-  image,
-  link,
-}) => {
-  // --- Variantes pour l'animation du texte et du titre
+const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
+  // --- Variables
   const textVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, x: 0 },
     visible: {
       opacity: 1,
-      y: 0,
+      x: 10,
       transition: { duration: 0.4, ease: 'easeInOut' },
     },
   };
 
   // --- Render
   return (
-    <div className="relative flex items-center justify-center rounded-lg dark:hover:bg-muted py-4 px-2 transition duration-300 ease-in-out group/uses-card overflow-hidden">
-      {/* Image pleine page */}
+    <div className="relative flex items-center justify-center rounded-lg py-4 px-2 transition duration-300 ease-in-out group/uses-card overflow-hidden">
       <Image
         src={image}
         alt={title}
         width="300"
         height="300"
-        className="rounded-lg m-auto transform group-hover/uses-card:scale-105 transition duration-300 ease-in-out w-full h-full object-cover"
+        className="rounded-lg m-auto transform transition duration-300 ease-in-out w-full h-full object-cover"
       />
-
-      {/* Contenu textuel (apparition au hover) */}
       <motion.div
         initial="hidden"
         whileHover="visible"
-        className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start p-4 bg-gradient-to-t from-black/60 to-transparent"
+        className={cn(
+          'absolute bottom-0 left-0 w-full h-full flex flex-col justify-end items-start p-4 pb-8 opacity-0 group-hover/uses-card:opacity-100 transition duration-300 ease-in-out',
+          'bg-gradient-to-t from-white/60 to-transparent'
+        )}
       >
         <motion.div variants={textVariants}>
-          <h3 className="text-lg text-white font-semibold">{title}</h3>
+          <Heading
+            variant="h3"
+            className="text-lg text-neutral-100 font-semibold"
+          >
+            {title}
+          </Heading>
         </motion.div>
-        <motion.p variants={textVariants} className="text-neutral-200 mt-2">
+        <motion.p variants={textVariants} className="text-neutral-100 mt-1">
           {description}
         </motion.p>
-
-        {/* Lien pour obtenir */}
-        <Link
-          target="_blank"
-          href={link}
-          passHref
-          className="mt-4 text-sm px-2 py-1 rounded-full text-white bg-neutral-500/70 dark:hover:text-neutral-200/70 hover:text-neutral-800/70 transition duration-300 ease-in-out"
-        >
-          Obtenir
-        </Link>
       </motion.div>
     </div>
   );
 };
 
-export default UseCardImage;
-
-export { UseCard };
+export { UseCard, UseCardImage };

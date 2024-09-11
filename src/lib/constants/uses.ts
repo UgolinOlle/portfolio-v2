@@ -14,6 +14,8 @@ import Keychron from 'public/images/uses/keycron.webp';
 import THFBag from 'public/images/uses/bag.webp';
 import iPhone from 'public/images/uses/iphone.jpeg';
 
+import WhoaWallpaper from 'public/images/uses/wallpapers/whoa-wallpaper.png';
+
 /**
  * @constant USES_APP
  * @description - List of applications that I use on a daily basis.
@@ -101,5 +103,20 @@ export const USES_GEAR: CardProps[] = [
     description: 'Un iPhone 13 pour gérer mes tâches et mes projets.',
     image: iPhone,
     link: 'https://www.apple.com/shop/buy-iphone/iphone-13',
+  },
+];
+
+/**
+ * @constant USES_WALLPAPER
+ * @description - List of my favorite wallpapers that I use on a daily basis.
+ * @type {Array<CardProps>}
+ * @exports USES_WALLPAPER
+ */
+export const USES_WALLPAPER: CardProps[] = [
+  {
+    title: 'Whoa Wallpaper',
+    description: "Un fond d'écran realisé sur Figma.",
+    image: WhoaWallpaper,
+    link: 'https://ugolin-olle.com/',
   },
 ];
