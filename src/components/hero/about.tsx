@@ -19,7 +19,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '-150%', y: '-350%', rotate: '-10deg' },
+          hover: { opacity: 1, x: '-150%', y: '150%', rotate: '-6deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -47,7 +47,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '-250%', y: '150%', rotate: '7deg' },
+          hover: { opacity: 1, x: '-250%', y: '150%', rotate: '4deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -59,7 +59,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '50%', y: '150%', rotate: '-11deg' },
+          hover: { opacity: 1, x: '50%', y: '150%', rotate: '-7deg' },
         }}
         transition={{ duration: 0.2 }}
       >

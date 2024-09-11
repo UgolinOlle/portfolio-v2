@@ -12,7 +12,10 @@ import { RetroGrid } from '@/components/commons/retro';
 import { Clock } from '@/components/hero/clock';
 import AnimatedShinyText from '@/components/ui/shiny';
 import { CrossIcon } from '@/components/commons/icons/common';
-import { AnimatedContainer, AnimatedText } from '../commons/animation';
+import {
+  AnimatedContainer,
+  AnimatedText,
+} from '@/components/commons/animation';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -77,9 +80,9 @@ export const Hero: React.FC = () => {
           </AnimatedContainer>
           <AnimatedText
             custom={6}
-            className="text-center md:text-justify text-lg font-body dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4"
+            className="font-normal text-center md:text-justify text-lg font-body dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4"
           >
-            🌟 Je craft des logiciels sur mesure, dynamise vos sites et met en
+            Je craft des logiciels sur mesure, dynamise vos sites et met en
             lumières vos idées.
           </AnimatedText>
         </div>
@@ -111,7 +114,7 @@ export const Hero: React.FC = () => {
             )}
           >
             <Link href="/contact" passHref>
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out duration-300 hover:text-neutral-800 hover:dark:text-neutral-200">
                 <span>🎉 Obtenez votre audit gratuit</span>
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
               </AnimatedShinyText>

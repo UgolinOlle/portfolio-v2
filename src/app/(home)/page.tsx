@@ -5,11 +5,16 @@ import { HeroAbout } from '@/components/hero/about';
 import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'À propos | Ugolin Olle',
+  description: "Page d'accueil de mon portfolio",
+};
 export default function HomePage() {
   // -- Render
   return (
-    <div className="flex flex-col gap-16 mt-8">
+    <div className="flex flex-col gap-16 mt-16">
       <AnimatedContainer
         custom={1}
         className="flex flex-col items-center gap-5"
