@@ -9,22 +9,22 @@ import { IAboutPicture, IAboutSkill } from '@/lib/interfaces/icons';
  */
 export const ABOUT_IMAGES: IAboutPicture[] = [
   {
-    src: '/images/code-1.jpg',
+    src: '/images/code/code-1.jpeg',
     alt: 'Développement de mon portfolio à Phnom Penh',
     text: 'Développement de mon portfolio à Phnom Penh',
   },
   {
-    src: '/images/city-1.jpg',
+    src: '/images/misc/city-1.jpeg',
     alt: 'Coucher de soleil à Phnom Penh',
     text: 'Coucher de soleil à Phnom Penh',
   },
   {
-    src: '/images/code-2.jpg',
+    src: '/images/code/code-2.jpeg',
     alt: "Développement de auto-push, un CLI écrit en Go pour automatisé l'update de son profil Github.",
     text: "Développement de auto-push, un CLI écrit en Go pour automatisé l'update de son profil Github.",
   },
   {
-    src: '/images/bouddha.jpg',
+    src: '/images/misc/bouddha.jpeg',
     alt: 'Wat Paknam',
     text: 'Wat Paknam, un Bouddha de 69 mètres de haut situé en plein Bangkok.',
   },
@@ -38,22 +38,22 @@ export const ABOUT_IMAGES: IAboutPicture[] = [
  */
 export const ABOUT_IMAGES_2: IAboutPicture[] = [
   {
-    src: '/images/code-3.jpg',
+    src: '/images/code/code-3.jpeg',
     alt: 'Développement de mon portfolio à Phnom Penh',
     text: 'Développement de mon portfolio à Phnom Penh',
   },
   {
-    src: '/images/code-4.jpg',
+    src: '/images/code/code-4.jpeg',
     alt: 'Methode Agile',
     text: 'Methode Agile',
   },
   {
-    src: '/images/me.jpg',
+    src: '/images/me/me-1.jpeg',
     alt: 'Moi',
     text: 'Moi',
   },
   {
-    src: '/images/me-2.png',
+    src: '/images/me/me-2.jpeg',
     alt: 'Moi',
     text: 'Moi',
   },

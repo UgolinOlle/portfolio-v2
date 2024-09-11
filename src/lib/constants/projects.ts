@@ -1,8 +1,8 @@
 import { IProjectItem } from '@/lib/interfaces/project';
 import { getBaseUrl } from '@/lib/utils';
 
-import whoaide from '../../../public/images/projects/whoa-ide/whoa-ide.jpg';
-import telescope from '../../../public/images/projects/whoa-ide/telescope.png';
+import whoaide from 'public/images/projects/whoa-ide/whoa-ide.jpg';
+import telescope from 'public/images/projects/whoa-ide/telescope.png';
 
 export const IDE_PICTURES = [whoaide.src, telescope.src];
 
@@ -28,7 +28,7 @@ export const PROJECTS: IProjectItem[] = [
     name: 'Portfolio v2',
     description:
       '💻 · My simple portfolio to show my skills, projects, experiences.',
-    imageUrl: `${getBaseUrl()}/images/projects/portfolio-v2.jpg`,
+    imageUrl: `${getBaseUrl()}/images/projects/portfolio/portfolio-v2.jpg`,
     url: 'portfolio-v2',
     githubUrl: 'https://github.com/UgolinOlle/portfolio-v2',
     technologies: [

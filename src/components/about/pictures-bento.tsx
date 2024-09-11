@@ -41,6 +41,8 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
               width="500"
               height="500"
               className="rounded-lg h-40 w-40 md:h-60 md:w-60 object-cover flex-shrink-0"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJncmF5Ii8+PC9zdmc+"
             />
           </motion.div>
         ))}
@@ -63,6 +65,8 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
               width="500"
               height="500"
               className="rounded-lg h-40 w-40 md:h-60 md:w-60 object-cover flex-shrink-0"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJncmF5Ii8+PC9zdmc+"
             />
           </motion.div>
         ))}

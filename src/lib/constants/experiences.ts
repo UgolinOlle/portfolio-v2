@@ -1,8 +1,8 @@
 import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
 
-import dashboard from '../../../public/images/projects/comai-dashboard.jpg';
-import desk from '../../../public/images/projects/school-desk.jpg';
-import computer from '../../../public/images/projects/school-computer.jpg';
+import dashboard from 'public/images/projects/comai/comai-dashboard.jpg';
+import desk from 'public/images/projects/school/school-desk.jpg';
+import computer from 'public/images/projects/school/school-computer.jpg';
 
 /**
  * @constant EXPERIENCES
@@ -12,7 +12,7 @@ import computer from '../../../public/images/projects/school-computer.jpg';
  */
 export const EXPERIENCES: ITimelineItem[] = [
   {
-    picture: '/logos/le-boutiquier.webp',
+    picture: '/logos/le-boutiquier.jpeg',
     title: 'Le Boutiquier - Support Technique',
     slug: 'le-boutiquier',
     description: 'Support technique et développement de solutions sur mesure.',
@@ -20,7 +20,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     color: '#fc046f',
   },
   {
-    picture: '/logos/comai.png',
+    picture: '/logos/comai.jpeg',
     title: 'Comai - Développeur Full Stack',
     slug: 'comai',
     description:
@@ -45,7 +45,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     color: '#e53d50',
   },
   {
-    picture: '/logos/nicoka.png',
+    picture: '/logos/nicoka.jpeg',
     title: 'Nicoka - Développeur Backend',
     slug: 'nicoka',
     description:

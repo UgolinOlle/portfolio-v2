@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Pen } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+
+import { Badge } from '@/components/ui/badge';
 
 export const HeroAbout: React.FC = () => {
   return (
@@ -73,13 +73,13 @@ export const HeroAbout: React.FC = () => {
         className="absolute pointer-events-none"
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
-          rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '0', y: '-170%', rotate: '2deg' },
+          rest: { opacity: 0, x: 0, y: '-100%' },
+          hover: { opacity: 1, x: 0, y: '-170%', rotate: '2deg' },
         }}
         transition={{ duration: 0.2 }}
       >
         <Image
-          src="/images/me-3.svg"
+          src="/images/me/me-3.svg"
           width={200}
           height={200}
           alt="Ugolin OLLE"
