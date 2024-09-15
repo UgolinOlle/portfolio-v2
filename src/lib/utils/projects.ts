@@ -55,6 +55,7 @@ function getProject(slugOrFilePath: string): Project | null {
       modifiedDate: data.modified ? new Date(data.modified) : undefined,
       title: data.title,
       description: data.description,
+      github: data.github,
       tags: data.tags,
       thumbnailUrl: data.thumbnailUrl,
       status: data.status ?? 'published',

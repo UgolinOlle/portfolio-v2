@@ -29,6 +29,7 @@ export interface ProjectData {
   modifiedDate?: Date;
   title: string;
   description: string;
+  github?: string;
   tags: string[];
   thumbnailUrl: string;
   status: 'published' | 'draft';

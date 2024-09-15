@@ -111,7 +111,9 @@ const MDXComponents = {
   ProjectPictures,
   ImageSwiper,
   SchoolProjects,
-  IdeGallery: () => <ImageSwiper images={IDE_PICTURES} />,
+  IdeGallery: (className: string) => (
+    <ImageSwiper className={className} images={IDE_PICTURES} />
+  ),
 
   // --- Default Image component (Next.js optimized image)
   img: (props: any) => (

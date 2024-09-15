@@ -7,6 +7,7 @@ import { getProject, getFilenames } from '@/lib/utils/projects';
 import { Heading } from '@/components/ui/headers';
 import { AnimatedContainer } from '@/components/commons/animation';
 import { ClientMdxRenderer } from '@/components/commons/mdx/render';
+import { CommitList } from '@/components/projects/commits';
 
 export async function generateStaticParams() {
   const filenames = getFilenames();
@@ -24,12 +25,11 @@ export default async function ProjectBySlug({
   params: { slug: string };
 }) {
   try {
-    // Récupère les données du projet
     const project = getProject(params.slug);
 
     if (!project) notFound();
+    console.log('Project:', project);
 
-    // Sérialisation du contenu MDX avant de l'envoyer au composant client
     const mdxSource = await serialize(project.content);
 
     return (
@@ -55,8 +55,10 @@ export default async function ProjectBySlug({
           />
         )}
 
-        {/* Passer le contenu sérialisé à ClientMdxRenderer */}
         <ClientMdxRenderer content={mdxSource} />
+        {project.data.github && (
+          <CommitList repoName={project.data.github} className="w-1/2" />
+        )}
       </AnimatedContainer>
     );
   } catch (error) {

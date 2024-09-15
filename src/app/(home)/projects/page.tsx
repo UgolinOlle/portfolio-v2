@@ -31,7 +31,7 @@ export default function ProjectsPage() {
       <div className="flex flex-col lg:flex-row gap-10">
         <AnimatedContainer
           custom={1}
-          className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto"
+          className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto hover:shadow-lg transition duration-300 ease-in-out"
         >
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100 dark:bg-neutral-900 p-4">
             <Tree

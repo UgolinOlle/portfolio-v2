@@ -1,9 +1,10 @@
 'use client';
 
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Heading } from '../ui/headers';
-import { motion } from 'framer-motion';
 
 interface Commit {
   sha: string;
@@ -19,6 +20,7 @@ interface Commit {
 
 interface CommitListProps {
   repoName: string;
+  className?: string;
 }
 
 /**
@@ -28,6 +30,7 @@ interface CommitListProps {
  * @exports CommitList
  */
 const CommitList: React.FC<CommitListProps> = ({
+  className,
   repoName,
 }): React.ReactElement => {
   // -- Variables
@@ -62,13 +65,13 @@ const CommitList: React.FC<CommitListProps> = ({
   if (error) toast.error(error);
 
   return (
-    <div className="py-4 h-[55vh] md:h-[40vh]">
+    <div className={cn(className, 'py-4 h-[55vh] md:h-[40vh]')}>
       <Heading variant="h3">Dernier commits</Heading>
       <ul className="space-y-3 mt-4">
         {commits.map((commit) => (
           <motion.li
             key={commit.sha}
-            className="p-2 bg-gray-100 rounded overflow-hidden"
+            className="p-2 bg-neutral-200 dark:bg-neutral-800 rounded overflow-hidden"
             whileHover={{ height: 65 }}
             transition={{ type: 'spring', stiffness: 120 }}
             onHoverStart={() => setHovered(commit.sha)}
@@ -76,7 +79,7 @@ const CommitList: React.FC<CommitListProps> = ({
           >
             <p className="font-semibold">{commit.commit.message}</p>
             <motion.div
-              className={`text-gray-600 text-sm ${
+              className={`text-neutral-600 dark:text-neutral-400 text-sm ${
                 hovered === commit.sha ? 'block' : 'hidden'
               }`}
               initial={{ opacity: 0 }}
