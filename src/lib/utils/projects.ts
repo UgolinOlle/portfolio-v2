@@ -21,18 +21,19 @@ function getFilenames() {
 }
 
 function sortProjectsByDate(project1: Project, project2: Project) {
-  const date1 = project1.data.publishedDate.getTime();
-  const date2 = project2.data.publishedDate.getTime();
-  return date2 - date1;
+  return project1.data.date.toLocaleDateString() <
+    project2.data.date.toLocaleDateString()
+    ? 1
+    : -1;
 }
 
 function getProjects(): Project[] {
   const filenames = getFilenames();
   return filenames
     .map((filename) => {
-      return getProject(filename); // Appelle avec une chaîne de caractères, pas un tableau
+      return getProject(filename);
     })
-    .filter((project): project is Project => project !== null) // Filtrer les null
+    .filter((project): project is Project => project !== null)
     .sort(sortProjectsByDate);
 }
 
@@ -51,10 +52,9 @@ function getProject(slugOrFilePath: string): Project | null {
     const { data, content } = matter(markdownWithMeta);
 
     const projectData: ProjectData = {
-      publishedDate: new Date(data.publishedDate),
-      modifiedDate: data.modified ? new Date(data.modified) : undefined,
       title: data.title,
       description: data.description,
+      date: data.date,
       github: data.github,
       tags: data.tags,
       thumbnailUrl: data.thumbnailUrl,

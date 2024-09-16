@@ -40,7 +40,7 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // --- Render
   return (
     <motion.li
-      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start justify-between min-h-[130px] h-full border`}
+      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-10 h-auto border`}
       variants={variants}
       whileHover="hover"
       onMouseEnter={handleMouseEnter}

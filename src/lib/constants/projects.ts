@@ -21,7 +21,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'whoa-ide',
     githubUrl: 'https://github.com/UgolinOlle/WhoaIDE',
     technologies: ['Neovim', 'Lua'],
-    keywords: ['neovim', 'lua', 'software'],
+    keywords: ['neovim', 'lua', 'software', 'config'],
     date: '2023',
   },
   {
@@ -38,6 +38,16 @@ export const PROJECTS: IProjectItem[] = [
       'TypeScript',
       'Tailwind CSS',
       'shadcn/ui',
+    ],
+    keywords: [
+      'nextjs',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'ui',
+      'landing-page',
+      'website',
+      'web-app',
     ],
     date: '2024',
   },
@@ -56,6 +66,15 @@ export const PROJECTS: IProjectItem[] = [
       'Tailwind CSS',
       'shadcn/ui',
     ],
+    keywords: [
+      'nextjs',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'ui',
+      'landing-page',
+      'website',
+    ],
     date: '2024',
   },
   {
@@ -68,6 +87,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'libft',
     githubUrl: 'https://github.com/UgolinOlle/libft',
     technologies: ['C'],
+    keywords: ['libft', 'c', 'library', 'functions'],
     date: '2023',
   },
   {
@@ -80,6 +100,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'ft_printf',
     githubUrl: 'https://github.com/UgolinOlle/ft_printf',
     technologies: ['C'],
+    keywords: ['ft_printf', 'c', 'printf', 'function'],
     date: '2023',
   },
   {
@@ -93,6 +114,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'get_next_line',
     githubUrl: 'https://github.com/UgolinOlle/get_next_line',
     technologies: ['C'],
+    keywords: ['get_next_line', 'c', 'function', 'file'],
     date: '2023',
   },
   {
@@ -106,6 +128,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'born2beroot',
     githubUrl: '',
     technologies: ['Debian', 'Linux', 'VirtualBox'],
+    keywords: ['born2beroot', 'debian', 'linux', 'server'],
     date: '2023',
   },
   {
@@ -119,6 +142,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'minitalk',
     githubUrl: 'https://github.com/UgolinOlle/minitalk',
     technologies: ['C', 'UNIX'],
+    keywords: ['minitalk', 'c', 'unix', 'communication'],
     date: '2023',
   },
   {
@@ -131,6 +155,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'fractol',
     githubUrl: 'https://github.com/UgolinOlle/fract-ol',
     technologies: ['C', 'Minilibx'],
+    keywords: ['fractol', 'c', 'minilibx', '2d'],
     date: '2023',
   },
   {
@@ -144,6 +169,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'push_swap',
     githubUrl: 'https://github.com/UgolinOlle/push_swap',
     technologies: ['C'],
+    keywords: ['push_swap', 'c', 'algorithm', 'sort'],
     date: '2024',
   },
   {
@@ -157,6 +183,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'philosophers',
     githubUrl: 'https://github.com/UgolinOlle/philosophers',
     technologies: ['C', 'Threads'],
+    keywords: ['philosophers', 'c', 'threads', 'problem'],
     date: '2024',
   },
   {
@@ -169,6 +196,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'minishell',
     githubUrl: 'https://github.com/UgolinOlle/minishell',
     technologies: ['C', 'Shell', 'Bash'],
+    keywords: ['minishell', 'c', 'shell', 'bash'],
     date: '2024',
   },
   {
@@ -182,6 +210,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'minirt',
     githubUrl: 'https://github.com/UgolinOlle/minirt',
     technologies: ['C', 'Ray Tracing'],
+    keywords: ['minirt', 'c', 'raytracing', '3d'],
     date: '2024',
   },
 ];

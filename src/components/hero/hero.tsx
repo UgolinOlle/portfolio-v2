@@ -12,10 +12,7 @@ import { RetroGrid } from '@/components/commons/retro';
 import { Clock } from '@/components/hero/clock';
 import AnimatedShinyText from '@/components/ui/shiny';
 import { CrossIcon } from '@/components/commons/icons/common';
-import {
-  AnimatedContainer,
-  AnimatedText,
-} from '@/components/commons/animation';
+import { AnimatedContainer } from '@/components/commons/animation';
 
 export const Hero: React.FC = () => {
   // -- Render
@@ -29,15 +26,9 @@ export const Hero: React.FC = () => {
       <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <CrossIcon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
 
-      <AnimatedContainer
-        custom={2}
-        className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 py-4 px-2 md:py-8 md:px-8"
-      >
+      <div className="flex flex-col justify-between items-center lg:items-start gap-3 w-full lg:w-2/3 py-4 px-2 md:py-8 md:px-8">
         <div className="flex flex-col items-center lg:items-start gap-8 lg:gap-5 h-full">
-          <AnimatedContainer
-            custom={3}
-            className="flex flex-col items-center lg:justify-start lg:items-start gap-3"
-          >
+          <div className="flex flex-col items-center lg:justify-start lg:items-start gap-3">
             <Heading
               variant="hero"
               className="font-bumbbled mt-8 md:mt-0"
@@ -45,16 +36,10 @@ export const Hero: React.FC = () => {
             >
               Ugolin Ollé
             </Heading>
-          </AnimatedContainer>
-          <AnimatedContainer
-            custom={4}
-            className="flex md:flex-row items-center gap-3 mt-7"
-          >
+          </div>
+          <div className="flex md:flex-row items-center gap-3 mt-7">
             <Appointement />
-            <AnimatedContainer
-              custom={5}
-              className="flex flex-row gap-3 items-center z-20"
-            >
+            <div className="flex flex-row gap-3 items-center z-20">
               {SOCIALS.map((social, index) => (
                 <Button
                   key={index}
@@ -76,18 +61,14 @@ export const Hero: React.FC = () => {
                   </Link>
                 </Button>
               ))}
-            </AnimatedContainer>
-          </AnimatedContainer>
-          <AnimatedText
-            custom={6}
-            className="font-normal text-center md:text-justify text-lg font-body dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4"
-          >
+            </div>
+          </div>
+          <p className="font-normal text-center md:text-justify text-lg font-body dark:text-gray-300 text-gray-700 hover:text-gray-700 transition ease-in-out w-full lg:w-3/4">
             Je craft des logiciels sur mesure, dynamise vos sites et met en
             lumières vos idées.
-          </AnimatedText>
+          </p>
         </div>
-        <AnimatedContainer
-          custom={7}
+        <div
           className={cn(
             'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mt-5 lg:mt-10'
           )}
@@ -105,12 +86,9 @@ export const Hero: React.FC = () => {
               Phnom Penh, Cambodge
             </span>
           </AnimatedShinyText>
-        </AnimatedContainer>
-      </AnimatedContainer>
-      <AnimatedContainer
-        custom={2}
-        className="flex flex-col justify-between items-center gap-5 py-4 px-2 md:py-8 md:px-8"
-      >
+        </div>
+      </div>
+      <div className="flex flex-col justify-between items-center gap-5 py-4 px-2 md:py-8 md:px-8">
         <Image src="/profile.png" alt="Ugolin Ollé" width={250} height={250} />
         <div className="flex min-h-10 items-center justify-center">
           <div
@@ -126,7 +104,7 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
         </div>
-      </AnimatedContainer>
+      </div>
       <RetroGrid />
     </AnimatedContainer>
   );

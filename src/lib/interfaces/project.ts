@@ -26,10 +26,9 @@ export interface IProjectItem {
 }
 
 export interface ProjectData {
-  publishedDate: Date;
-  modifiedDate?: Date;
   title: string;
   description: string;
+  date: Date;
   github?: string;
   tags: string[];
   thumbnailUrl: string;

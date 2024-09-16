@@ -9,7 +9,6 @@ import { MDXWrapper } from '@/components/commons/mdx/mdx';
 import { Button } from '../ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { getMDXContent } from '@/lib/utils';
 
 interface MDXContentRendererProps {
   slug: string;

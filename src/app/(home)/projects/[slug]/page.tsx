@@ -24,45 +24,41 @@ export default async function ProjectBySlug({
 }: {
   params: { slug: string };
 }) {
-  try {
-    const project = getProject(params.slug);
+  // --- Variables
+  const project = getProject(params.slug);
 
-    if (!project) notFound();
-    console.log('Project:', project);
+  if (!project) notFound();
 
-    const mdxSource = await serialize(project.content);
+  const mdxSource = await serialize(project.content);
 
-    return (
-      <AnimatedContainer custom={0}>
-        <Heading variant="h2">{project.data.title}</Heading>
-        <em>Created: {project.data.publishedDate.toLocaleDateString()}</em>
-        <br />
-        {project.data.modifiedDate && (
-          <>
-            <em>Modified: {project.data.modifiedDate.toLocaleDateString()}</em>
-            <br />
-          </>
-        )}
-        <br />
+  // --- Render
+  return (
+    <AnimatedContainer custom={0}>
+      <Heading variant="h2">{project.data.title}</Heading>
 
-        {project.data.thumbnailUrl && (
-          <Image
-            src={`/images/${project.data.thumbnailUrl}`}
-            alt={`${project.data.title} thumbnail`}
-            width={640}
-            height={200}
-            style={{ objectFit: 'cover' }}
-          />
-        )}
+      <br />
 
-        <ClientMdxRenderer content={mdxSource} />
-        {project.data.github && (
-          <CommitList repoName={project.data.github} className="w-1/2" />
-        )}
-      </AnimatedContainer>
-    );
-  } catch (error) {
-    console.error('Error rendering project:', error);
-    notFound();
-  }
+      <em>Created: {new Date(project.data.date).toLocaleDateString()}</em>
+
+      <br />
+
+      {project.data.thumbnailUrl && (
+        <Image
+          src={`/images/${project.data.thumbnailUrl}`}
+          alt={`${project.data.title} thumbnail`}
+          width={640}
+          height={200}
+          style={{ objectFit: 'cover' }}
+        />
+      )}
+
+      <br />
+
+      <ClientMdxRenderer content={mdxSource} />
+
+      {project.data.github && (
+        <CommitList repoName={project.data.github} className="w-1/2" />
+      )}
+    </AnimatedContainer>
+  );
 }

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 // -- Global variants animation
 const variants = {
-  hidden: { opacity: 0, y: 5 },
+  hidden: { opacity: 0, y: '-20' },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
