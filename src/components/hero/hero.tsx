@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   variant="secondary"
                   className={cn(
-                    'text-md dark:text-gray-300 text-gray-700/75 hover:text-gray-700 transition ease-in-out px-3 py-2 shadow-md hover:shadow-xl border border-black/10 dark:border-white/10',
+                    'text-md dark:text-neutral-200 text-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 transition ease-in-out px-3 py-2 shadow-md hover:shadow-xl border border-neutral-900/10 dark:border-neutral-100/10 group/social-link',
                     `${social.name.toLowerCase() === 'linkedin' && 'hover:text-[#0A66C2]'}`
                   )}
                 >
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
                     target="_blank"
                     className="flex justify-center items-center gap-2"
                   >
-                    <span className="w-5 h-5 cursor-none">
+                    <span className="w-5 h-5 cursor-none transform group-hover/social-link:-translate-y-4 group-hover/social-link:rotate-12 transition duration-300 ease-in-out">
                       {React.createElement(social.icon)}
                     </span>
                   </Link>
@@ -98,7 +98,12 @@ export const Hero: React.FC = () => {
               GMT+1
             </div>
             <div className="hidden md:block border border-neutral-600/70 dark:border-neutral-400/70 rounded-full w-full lg:w-56" />
-            <span className="text-nowrap">📍 Phnom Penh, Cambodge</span>
+            <span className="flex items-center gap-2 text-nowrap">
+              <span className="transform group-hover:-translate-y-1 transition duration-300 ease-in-out">
+                📍
+              </span>
+              Phnom Penh, Cambodge
+            </span>
           </AnimatedShinyText>
         </AnimatedContainer>
       </AnimatedContainer>
@@ -116,7 +121,7 @@ export const Hero: React.FC = () => {
             <Link href="/contact" passHref>
               <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out duration-300 hover:text-neutral-800 hover:dark:text-neutral-200">
                 <span>🎉 Obtenez votre audit gratuit</span>
-                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
               </AnimatedShinyText>
             </Link>
           </div>
