@@ -33,7 +33,7 @@ export const ProjectsInfo: React.FC = () => {
       >
         <ProjectExplorer handleSelect={handleSelect} />
       </AnimatedContainer>
-      <ProjectsList filteredProjects={filteredProjects} custom={2} />
+      <ProjectsList filteredProjects={filteredProjects} />
     </AnimatedContainer>
   );
 };
