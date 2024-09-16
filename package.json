@@ -55,6 +55,7 @@
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
     "react-resizable-panels": "^2.0.19",
+    "remark-gfm": "^4.0.0",
     "shadergradient": "^1.2.14",
     "sonner": "^1.5.0",
     "swr": "^2.2.5",

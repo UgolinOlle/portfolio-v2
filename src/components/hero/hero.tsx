@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
   return (
     <AnimatedContainer
       custom={1}
-      className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
+      className="relative w-full h-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 shadow-sm transition duration-300 ease-in-out"
     >
       <CrossIcon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <CrossIcon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />

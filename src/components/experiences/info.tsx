@@ -77,7 +77,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
             variants={variants}
             id="experience-info"
           >
-            <div className="flex flex-row items-center gap-5 w-full">
+            <div className="flex flex-row items-center gap-5 w-full mb-4">
               <Image
                 src={selectedExperience.picture || ''}
                 alt={selectedExperience.title}
@@ -85,7 +85,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
                 height={20}
                 className="rounded-sm"
               />
-              <Heading variant="h2">{selectedExperience.title}</Heading>
+              <Heading variant="h2" border={false}>{selectedExperience.title}</Heading>
             </div>
             {MdxContent && (
               <MDXWrapper>

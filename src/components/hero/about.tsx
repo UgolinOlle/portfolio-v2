@@ -6,6 +6,11 @@ import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
 
+/**
+ * @function HeroAbout
+ * @description Simple component that displays a short description of the author.
+ * @exports HeroAbout
+ */
 export const HeroAbout: React.FC = () => {
   return (
     <motion.div

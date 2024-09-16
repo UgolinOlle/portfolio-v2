@@ -31,7 +31,7 @@ export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
 export const Detail: React.FC<IUiProps> = ({ children }) => {
   // -- Render
   return (
-    <div className="p-4 bg-muted rounded-lg my-5 transition-all ease-in-out">
+    <div className="p-4 bg-muted rounded-lg my-4 transition-all ease-in-out">
       {children}
     </div>
   );

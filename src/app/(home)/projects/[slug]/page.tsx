@@ -29,7 +29,14 @@ export default async function ProjectBySlug({
 
   if (!project) notFound();
 
-  const mdxSource = await serialize(project.content);
+  let mdxSource = await serialize(project.content);
+
+  mdxSource = await serialize(mdxSource, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+    },
+  });
 
   // --- Render
   return (

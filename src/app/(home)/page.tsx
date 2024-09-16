@@ -7,19 +7,30 @@ import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
 import { Metadata } from 'next';
 
+// --- Metadata
 export const metadata: Metadata = {
   title: 'À propos | Ugolin Olle',
   description: "Page d'accueil de mon portfolio",
 };
+
+/**
+ * @function HomePage
+ * @description Main page of the portfolio.
+ * @exports HomePage
+ */
 export default function HomePage() {
-  // -- Render
+  // --- Render
   return (
     <div className="flex flex-col gap-16 mt-16">
       <AnimatedContainer
         custom={1}
-        className="flex flex-col items-center gap-5"
+        className="flex flex-col items-center gap-5 rounded-lg border border-neutral-300 dark:border-neutral-100 bg-neutral-100 p-10 shadow-sm"
       >
-        <Heading variant="h2" className="flex items-center gap-2">
+        <Heading
+          variant="h2"
+          className="flex items-center gap-2"
+          border={false}
+        >
           À propos de moi
         </Heading>
         <HeroAbout />

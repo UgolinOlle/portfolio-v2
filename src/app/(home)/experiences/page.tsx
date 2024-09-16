@@ -15,7 +15,7 @@ export default function ExperiencePage() {
     <AnimatedContainer custom={1} className="mt-10 mb-28">
       <AnimatedContainer custom={2} className="mb-5 w-full">
         <Heading variant="h2">Experiences</Heading>
-        <p className="text-lg text-neutral-600/75 dark:text-neutral-100/70 text-justify">
+        <p className="text-lg text-neutral-600 dark:text-neutral-200 text-justify py-4">
           Voici l'ensemble de mes expériences.
         </p>
       </AnimatedContainer>
