@@ -49,7 +49,6 @@ export const ProjectsContent: React.FC<MDXContentRendererProps> = ({
       ssr: false,
     });
 
-  const { metadata, content } = getMDXContent(slug, 'projects');
   const MdxContent = loadMdxComponent(slug);
 
   // --- Render
