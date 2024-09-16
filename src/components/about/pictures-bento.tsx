@@ -22,8 +22,8 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
 
   // --- Render
   return (
-    <div className="relative flex flex-col justify-center items-center py-8 px-4 gap-10 h-auto w-full overflow-hidden z-0">
-      <div className="flex justify-start md:justify-center items-start md:items-center py-2 md:py-0 md:overflow-x-hidden overflow-x-auto overflow-y-hidden no-scrollbar">
+    <div className="relative flex flex-col justify-center items-center py-8 gap-10 w-full overflow-hidden z-0">
+      <div className="w-full flex justify-start md:justify-center items-start md:items-center py-2 md:overflow-x-hidden overflow-x-auto overflow-y-hidden no-scrollbar">
         {ABOUT_IMAGES.map((image, index) => (
           <motion.div
             variants={imageVariants}
@@ -47,7 +47,7 @@ export const PicturesBento: React.FC = (): React.ReactElement => {
           </motion.div>
         ))}
       </div>
-      <div className="flex justify-start md:justify-center items-start md:items-center py-2 md:py-0 md:overflow-x-hidden overflow-x-auto overflow-y-hidden no-scrollbar">
+      <div className="w-full flex justify-start md:justify-center items-start md:items-center py-2 md:overflow-x-hidden overflow-x-auto overflow-y-hidden no-scrollbar">
         {ABOUT_IMAGES_2.map((image, idx) => (
           <motion.div
             key={'images-second' + idx}
