@@ -31,13 +31,6 @@ export default async function ProjectBySlug({
 
   let mdxSource = await serialize(project.content);
 
-  mdxSource = await serialize(mdxSource, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [],
-    },
-  });
-
   // --- Render
   return (
     <AnimatedContainer custom={0}>
