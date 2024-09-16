@@ -21,6 +21,7 @@ export interface IProjectItem {
   url: string;
   githubUrl: string;
   technologies: string[];
+  keywords?: string[];
   date: string;
 }
 

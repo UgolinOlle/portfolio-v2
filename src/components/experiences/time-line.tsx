@@ -29,13 +29,13 @@ export const Timeline = ({
 
   // --- Render
   return (
-    <ul className="relative border-l border-gray-300 border-opacity-50">
+    <ul className="relative border-l border-neutral-300 border-opacity-50">
       {timelineData.map((item, index) => {
         return (
           <li
             key={index}
             className={cn(
-              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70  shadow-md`
+              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70 border shadow-md`
             )}
           >
             <div

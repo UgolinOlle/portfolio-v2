@@ -10,7 +10,7 @@ export const IDE_PICTURES = [whoaide.src, telescope.src];
  * @constant PROJECTS
  * @description List of projects.
  * @type {IProjectItem[]}
- * @export PROJECTS
+ * @exports PROJECTS
  */
 export const PROJECTS: IProjectItem[] = [
   {
@@ -21,6 +21,7 @@ export const PROJECTS: IProjectItem[] = [
     url: 'whoa-ide',
     githubUrl: 'https://github.com/UgolinOlle/WhoaIDE',
     technologies: ['Neovim', 'Lua'],
+    keywords: ['neovim', 'lua', 'software'],
     date: '2023',
   },
   {

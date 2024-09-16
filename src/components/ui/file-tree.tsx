@@ -308,6 +308,7 @@ const File = forwardRef<
   ) => {
     const { direction, selectedId, selectItem } = useTree();
     const isSelected = isSelect ?? selectedId === value;
+
     return (
       <AccordionPrimitive.Item value={value} className="relative">
         <AccordionPrimitive.Trigger
@@ -324,7 +325,10 @@ const File = forwardRef<
             isSelectable ? 'cursor-pointer' : 'opacity-50 cursor-not-allowed',
             className
           )}
-          onClick={() => selectItem(value)}
+          onClick={() => {
+            selectItem(value);
+            if (handleSelect) handleSelect?.(value);
+          }}
         >
           {fileIcon ?? <FileIcon className="size-4" />}
           {children}
