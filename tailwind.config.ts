@@ -106,10 +106,6 @@ const config = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
         },
-        flash: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
-        },
         shimmer: {
           '0%, 90%, 100%': {
             'background-position': 'calc(-100% - var(--shimmer-width)) 0',
@@ -126,7 +122,6 @@ const config = {
         grid: 'grid 15s linear infinite',
         phone: 'phone 1s ease-in-out infinite',
         pulse: 'pulse 1.5s ease-in-out infinite',
-        flash: 'flash 1s ease-in-out infinite',
       },
     },
   },
