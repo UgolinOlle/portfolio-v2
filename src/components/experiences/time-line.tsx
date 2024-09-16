@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -16,8 +16,6 @@ export const Timeline = ({
   onExperienceClick: (experience: ITimelineItem) => void;
 }): JSX.Element => {
   // --- Variables
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  const [hoverRotates, setHoverRotates] = useState<number[]>([]);
   const config = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -29,21 +27,6 @@ export const Timeline = ({
     }),
   };
 
-  // --- Functions
-  const handleMouseEnter = (index: number) => {
-    const randomRotation = Math.random() * 5 - 2.5;
-    setHoverIndex(index);
-    setHoverRotates((prevRotates) => {
-      const newRotates = [...prevRotates];
-      newRotates[index] = randomRotation;
-      return newRotates;
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoverIndex(null);
-  };
-
   // --- Render
   return (
     <ul className="relative border-l border-gray-300 border-opacity-50">
@@ -52,17 +35,8 @@ export const Timeline = ({
           <li
             key={index}
             className={cn(
-              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70`
+              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70  shadow-md`
             )}
-            // style={{
-            //   rotate:
-            //     hoverIndex === index
-            //       ? `${hoverRotates[index] || 0}deg`
-            //       : '0deg',
-            //   transition: 'rotate 0.3s',
-            // }}
-            // onMouseEnter={() => handleMouseEnter(index)}
-            // onMouseLeave={handleMouseLeave}
           >
             <div
               className={cn(`absolute w-2 h-2 rounded-full mt-1.5 -start-1`)}
