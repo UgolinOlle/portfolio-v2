@@ -13,12 +13,14 @@ export const metadata: Metadata = {
 export default function Contact() {
   // -- Render
   return (
-    <AnimatedContainer custom={0} className="lg:w-1/2 mt-10 mb-28">
-      <Heading variant="h2" border={false} className="mb-6">
-        Un projet ? Une question ? <br />
-        On en discute !
-      </Heading>
-      <ContactForm />
+    <AnimatedContainer custom={0}>
+      <AnimatedContainer custom={0} className="w-full lg:w-1/2 m-auto">
+        <Heading variant="h2" border={false} className="mb-6">
+          Un projet ? Une question ? <br />
+          On en discute !
+        </Heading>
+        <ContactForm />
+      </AnimatedContainer>
     </AnimatedContainer>
   );
 }

@@ -1,18 +1,43 @@
 'use client';
 
-import React, { useState } from 'react';
-import { toast } from 'sonner';
-import AutoForm, { AutoFormSubmit } from '@/components/ui/auto-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 import { ContactFormData, contactFormSchema } from '@/lib/schemas/contact';
+import { toast } from 'sonner';
 
 export const ContactForm: React.FC = () => {
-  // --- Variables
-  const [loading, setLoading] = useState(false);
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      companyName: '',
+      email: '',
+      message: '',
+    },
+  });
 
-  // --- Functions
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = form;
+
   const onSubmit = async (data: ContactFormData) => {
-    setLoading(true);
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -24,74 +49,96 @@ export const ContactForm: React.FC = () => {
 
       if (response.ok) {
         toast.success('Message envoyé avec succès');
-        setLoading(false);
+        reset();
       } else {
         toast.error("Une erreur est survenue lors de l'envoi du message");
-        setLoading(false);
       }
     } catch (error) {
-      setLoading(false);
       toast.error("Une erreur est survenue lors de l'envoi du message");
     }
   };
 
-  // --- Render
   return (
-    <AutoForm
-      onSubmit={onSubmit}
-      formSchema={contactFormSchema}
-      fieldConfig={{
-        firstName: {
-          inputProps: {
-            type: 'text',
-            placeholder: 'Ugolin',
-            showLabel: true,
-          },
-          label: 'Prénom',
-        },
-        lastName: {
-          inputProps: {
-            type: 'text',
-            placeholder: 'Ollé',
-            showLabel: true,
-          },
-          label: 'Nom',
-        },
-        companyName: {
-          inputProps: {
-            type: 'text',
-            placeholder: 'Papillon & Fils',
-            showLabel: true,
-          },
-          label: "Nom de l'entreprise",
-        },
-        email: {
-          inputProps: {
-            type: 'email',
-            placeholder: 'hello@ugolin-olle.com',
-            showLabel: true,
-          },
-          label: 'Email',
-        },
-        message: {
-          fieldType: 'textarea',
-          inputProps: {
-            type: 'textarea',
-            placeholder: 'Bonjour, je suis intéressé par...',
-            showLabel: true,
-          },
-          label: 'Message',
-        },
-      }}
-    >
-      <p className="text-sm text-muted-foreground mt-4">
-        En soumettant ce formulaire, vous acceptez que vos données soient
-        utilisées pour vous recontacter.
-      </p>
+    <Form {...form}>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={control}
+          name="firstName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Prénom</FormLabel>
+              <FormControl>
+                <Input placeholder="Votre prénom" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-      <AutoFormSubmit disabled={loading}>
-        {loading ? 'Envoi en cours...' : 'Envoyer'}
-      </AutoFormSubmit>
-    </AutoForm>
+        {/* Nom */}
+        <FormField
+          control={control}
+          name="lastName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nom</FormLabel>
+              <FormControl>
+                <Input placeholder="Votre nom" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Nom de l'entreprise */}
+        <FormField
+          control={control}
+          name="companyName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nom de l'entreprise</FormLabel>
+              <FormControl>
+                <Input placeholder="Nom de votre entreprise" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Email */}
+        <FormField
+          control={control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="Votre email" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Message */}
+        <FormField
+          control={control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Message</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Votre message" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button variant="default" disabled={isSubmitting}>
+          {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+        </Button>
+      </form>
+    </Form>
   );
 };

@@ -86,6 +86,19 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* RESPONSIVE CURSOR */
+  @media (min-width: 1024px) {
+    html {
+      cursor: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    html {
+      cursor: auto;
+    }
+  }
 }
 
 /* -- CUSTOM -- */
