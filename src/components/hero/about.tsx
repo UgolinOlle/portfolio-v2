@@ -24,7 +24,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '-150%', y: '150%', rotate: '6deg' },
+          hover: { opacity: 1, x: '-140%', y: '130%', rotate: '6deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -36,7 +36,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '50%', y: '150%', rotate: '-7deg' },
+          hover: { opacity: 1, x: '50%', y: '100%', rotate: '-7deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -51,7 +51,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: '-100%' },
-          hover: { opacity: 1, x: 0, y: '-170%', rotate: '2deg' },
+          hover: { opacity: 1, x: '140%', y: '-120%', rotate: '2deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -63,7 +63,7 @@ export const HeroAbout: React.FC = () => {
         />
       </motion.div>
 
-      <p className="text-md text-slay-700/75 dark:text-slay-300/75 text-justify w-full md:w-3/4">
+      <p className="text-md text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4">
         Je m'appelle Ugolin Ollé et je suis un développeur full stack passionné,
         spécialisé dans le développement de logiciels SaaS. J'aime explorer de
         nouvelles technologies et créer des solutions innovantes qui simplifient

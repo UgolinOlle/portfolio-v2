@@ -24,7 +24,7 @@ export default function HomePage() {
     <div className="flex flex-col gap-16 mt-16">
       <AnimatedContainer
         custom={1}
-        className="flex flex-col items-center gap-5 rounded-lg border border-neutral-300 dark:border-neutral-100 bg-neutral-100 p-10 shadow-sm"
+        className="flex flex-col items-center gap-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 p-10 shadow-sm"
       >
         <Heading
           variant="h2"
