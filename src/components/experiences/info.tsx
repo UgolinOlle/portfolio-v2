@@ -62,7 +62,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
   // --- Render
   return (
     <>
-      <div className="w-full lg:w-1/2 flex flex-col gap-3 mx-5 items-start">
+      <div className="w-full lg:w-1/2 flex flex-col gap-3 lg:mx-5 items-start">
         <Timeline
           timelineData={EXPERIENCES}
           onExperienceClick={setSelectedExperience}
@@ -85,7 +85,9 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
                 height={20}
                 className="rounded-sm"
               />
-              <Heading variant="h2" border={false}>{selectedExperience.title}</Heading>
+              <Heading variant="h2" border={false}>
+                {selectedExperience.title}
+              </Heading>
             </div>
             {MdxContent && (
               <MDXWrapper>
