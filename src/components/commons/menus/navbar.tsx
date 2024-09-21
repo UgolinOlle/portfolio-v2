@@ -27,6 +27,7 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     const pathMap: { [key: string]: string } = {
       '/': 'À propos',
+      '/services': 'Services',
       '/experiences': 'Expériences',
       '/projects': 'Projets',
       '/contact': 'Contact',
@@ -63,6 +64,7 @@ export const Navbar: React.FC = () => {
           <TabsList className="flex flex-col lg:flex-row h-auto">
             {[
               { title: 'À propos', path: '/' },
+              { title: 'Services', path: '/services' },
               { title: 'Expériences', path: '/experiences' },
               { title: 'Projets', path: '/projects' },
               { title: 'Contact', path: '/contact' },

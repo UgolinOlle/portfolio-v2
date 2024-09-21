@@ -1,11 +1,9 @@
 import React from 'react';
+import { Metadata } from 'next';
 
 import { AnimatedContainer } from '@/components/commons/animation';
 import { HeroAbout, HeroAboutTwo } from '@/components/hero/about';
-import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
-import { Skills } from '@/components/about/skills';
-import { Metadata } from 'next';
 
 // --- Metadata
 export const metadata: Metadata = {
@@ -33,9 +31,6 @@ export default function HomePage() {
       </AnimatedContainer>
       <AnimatedContainer custom={3} className="px-20">
         <HeroAboutTwo />
-      </AnimatedContainer>
-      <AnimatedContainer custom={3} className="px-20">
-        <Skills />
       </AnimatedContainer>
     </AnimatedContainer>
   );
