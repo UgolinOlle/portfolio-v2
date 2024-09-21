@@ -19,6 +19,12 @@ import { Heading } from '@/components/ui/headers';
 const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // --- Variables
   const [hoverRotate, setHoverRotate] = useState<number>(0);
+  const variants = {
+    hover: {
+      rotate: hoverRotate,
+      transition: { type: 'spring', stiffness: 300, damping: 20 },
+    },
+  };
 
   // --- Functions
   const handleMouseEnter = () => {
@@ -27,14 +33,6 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
 
   const handleMouseLeave = () => {
     setHoverRotate(0);
-  };
-
-  // --- Variantes pour les animations
-  const variants = {
-    hover: {
-      rotate: hoverRotate,
-      transition: { type: 'spring', stiffness: 300, damping: 20 },
-    },
   };
 
   // --- Render

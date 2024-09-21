@@ -20,7 +20,7 @@ export const ProjectExplorer: FC<ProjectExplorerProps> = ({ handleSelect }) => {
         Reset
       </Button>
       <Tree
-        className="w-full overflow-hidden rounded-md"
+        className="w-full overflow-hidden rounded-md bg-neutral-100"
         initialSelectedId="7"
         initialExpandedItems={['src', 'perso', 'ui', 'core']}
       >

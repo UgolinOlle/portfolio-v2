@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   // -- Rendu
   return (
-    <AnimatedContainer custom={1} className="flex flex-col gap-10 mt-10 mb-28">
+    <AnimatedContainer custom={1} className="flex flex-col gap-10 mb-28">
       <Heading variant="h2">Projects</Heading>
       <ProjectsInfo />
     </AnimatedContainer>
