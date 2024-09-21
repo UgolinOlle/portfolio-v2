@@ -22,14 +22,14 @@ export default function HomePage() {
     <AnimatedContainer custom={0} className="flex flex-col gap-16 mt-16">
       <AnimatedContainer
         custom={1}
-        className="flex flex-col items-center gap-5 px-20"
+        className="flex flex-col items-center gap-5 md:px-20"
       >
         <HeroAbout />
       </AnimatedContainer>
       <AnimatedContainer custom={2}>
         <PicturesBento />
       </AnimatedContainer>
-      <AnimatedContainer custom={3} className="px-20">
+      <AnimatedContainer custom={3} className="md:px-20">
         <HeroAboutTwo />
       </AnimatedContainer>
     </AnimatedContainer>

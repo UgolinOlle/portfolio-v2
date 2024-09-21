@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   variant="secondary"
                   className={cn(
-                    'text-md dark:text-neutral-200 text-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 transition ease-in-out px-3 py-2 shadow-md hover:shadow-xl border border-neutral-900/10 dark:border-neutral-100/10 group/social-link',
+                    'text-md dark:text-neutral-200 text-neutral-800 md:hover:text-neutral-900 md:dark:hover:text-neutral-100 transition ease-in-out px-3 py-2 shadow-md md:hover:shadow-xl border border-neutral-900/10 dark:border-neutral-100/10 group/social-link',
                     `${social.name.toLowerCase() === 'linkedin' && 'hover:text-[#0A66C2]'}`
                   )}
                 >
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
                     target="_blank"
                     className="flex justify-center items-center gap-2"
                   >
-                    <span className="w-5 h-5 cursor-none transform group-hover/social-link:-translate-y-4 group-hover/social-link:rotate-12 transition duration-300 ease-in-out">
+                    <span className="w-5 h-5 cursor-none transform md:group-hover/social-link:-translate-y-4 md:group-hover/social-link:rotate-12 transition duration-300 ease-in-out">
                       {React.createElement(social.icon)}
                     </span>
                   </Link>

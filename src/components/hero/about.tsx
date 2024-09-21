@@ -63,7 +63,7 @@ const HeroAbout: React.FC = () => {
         />
       </motion.div>
 
-      <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 m-auto">
+      <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
         Je suis Ugolin Ollé, développeur full stack spécialisé dans les
         logiciels SaaS. Ce qui me motive, c’est de créer des solutions qui
         facilitent la vie des gens. J’adore explorer de nouvelles technologies
@@ -77,7 +77,7 @@ const HeroAbout: React.FC = () => {
 const HeroAboutTwo: React.FC = () => {
   // --- Render
   return (
-    <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 m-auto">
+    <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
       J'aime partager mes expériences et mes réflexions sur le développement et
       l'entrepreneuriat.
       <br />
