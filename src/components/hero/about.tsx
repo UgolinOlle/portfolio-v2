@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
  * @description Simple component that displays a short description of the author.
  * @exports HeroAbout
  */
-export const HeroAbout: React.FC = () => {
+const HeroAbout: React.FC = () => {
   return (
     <motion.div
       className="relative"
@@ -24,7 +24,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '-140%', y: '130%', rotate: '6deg' },
+          hover: { opacity: 1, x: '-190%', y: '240%', rotate: '6deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -36,7 +36,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: 0 },
-          hover: { opacity: 1, x: '50%', y: '100%', rotate: '-7deg' },
+          hover: { opacity: 1, x: '50%', y: '140%', rotate: '-7deg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -51,7 +51,7 @@ export const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: '-100%' },
-          hover: { opacity: 1, x: '140%', y: '-120%', rotate: '2deg' },
+          hover: { opacity: 1, x: '-320%', y: '-80%', rotate: '-1jdeg' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -63,13 +63,36 @@ export const HeroAbout: React.FC = () => {
         />
       </motion.div>
 
-      <p className="text-md text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4">
-        Je m'appelle Ugolin Ollé et je suis un développeur full stack passionné,
-        spécialisé dans le développement de logiciels SaaS. J'aime explorer de
-        nouvelles technologies et créer des solutions innovantes qui simplifient
-        la vie des gens. Je suis constamment à la recherche de nouveaux défis
-        techniques pour transformer des idées en produits fonctionnels.
+      <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 m-auto">
+        Je suis Ugolin Ollé, développeur full stack spécialisé dans les
+        logiciels SaaS. Ce qui me motive, c’est de créer des solutions qui
+        facilitent la vie des gens. J’adore explorer de nouvelles technologies
+        et relever des défis techniques pour transformer des idées en produits
+        concrets et fonctionnels.
       </p>
     </motion.div>
   );
 };
+
+const HeroAboutTwo: React.FC = () => {
+  // --- Render
+  return (
+    <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 m-auto">
+      J'aime partager mes expériences et mes réflexions sur le développement et
+      l'entrepreneuriat.
+      <br />
+      <br />
+      Sur LinkedIn, j'essaie d'inspirer et de motiver les autres à travers des
+      contenus autour de ces thèmes, en partageant mes apprentissages et mes
+      conseils pour ceux qui cherchent à se lancer.
+      <br />
+      <br />
+      Sur X (Twitter), je me tourne vers un partage plus personnel, en racontant
+      mon quotidien de développeur et d'entrepreneur, les défis que je
+      rencontre, les petites victoires, et tout ce qui fait la richesse de cette
+      aventure.
+    </p>
+  );
+};
+
+export { HeroAbout, HeroAboutTwo };

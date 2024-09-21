@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AnimatedContainer } from '@/components/commons/animation';
-import { HeroAbout } from '@/components/hero/about';
+import { HeroAbout, HeroAboutTwo } from '@/components/hero/about';
 import { Heading } from '@/components/ui/headers';
 import { PicturesBento } from '@/components/about/pictures-bento';
 import { Skills } from '@/components/about/skills';
@@ -21,30 +21,22 @@ export const metadata: Metadata = {
 export default function HomePage() {
   // --- Render
   return (
-    <div className="flex flex-col gap-16 mt-16">
+    <AnimatedContainer custom={0} className="flex flex-col gap-16 mt-16">
       <AnimatedContainer
         custom={1}
-        className="flex flex-col items-center gap-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 p-10 shadow-sm"
+        className="flex flex-col items-center gap-5 px-20"
       >
-        <Heading
-          variant="h2"
-          className="flex items-center gap-2"
-          border={false}
-        >
-          À propos de moi
-        </Heading>
         <HeroAbout />
       </AnimatedContainer>
-
       <AnimatedContainer custom={2}>
-        <Heading variant="h2">Quelques images</Heading>
         <PicturesBento />
       </AnimatedContainer>
-
-      <AnimatedContainer custom={3}>
-        <Heading variant="h2">Skills</Heading>
+      <AnimatedContainer custom={3} className="px-20">
+        <HeroAboutTwo />
+      </AnimatedContainer>
+      <AnimatedContainer custom={3} className="px-20">
         <Skills />
       </AnimatedContainer>
-    </div>
+    </AnimatedContainer>
   );
 }
