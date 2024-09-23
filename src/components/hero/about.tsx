@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
  * @exports HeroAbout
  */
 const HeroAbout: React.FC = () => {
+  // --- Render
   return (
     <motion.div
       className="relative"
@@ -51,7 +52,7 @@ const HeroAbout: React.FC = () => {
         style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
         variants={{
           rest: { opacity: 0, x: 0, y: '-100%' },
-          hover: { opacity: 1, x: '-320%', y: '-80%', rotate: '-1jdeg' },
+          hover: { opacity: 1, x: 0, y: '-160%' },
         }}
         transition={{ duration: 0.2 }}
       >
@@ -63,7 +64,7 @@ const HeroAbout: React.FC = () => {
         />
       </motion.div>
 
-      <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
+      <p className="text-xl text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
         Je suis Ugolin Ollé, développeur full stack spécialisé dans les
         logiciels SaaS. Ce qui me motive, c’est de créer des solutions qui
         facilitent la vie des gens. J’adore explorer de nouvelles technologies
@@ -77,7 +78,7 @@ const HeroAbout: React.FC = () => {
 const HeroAboutTwo: React.FC = () => {
   // --- Render
   return (
-    <p className="text-lg text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
+    <p className="text-xl text-neutral-800 dark:text-neutral-300 text-justify w-full md:w-3/4 md:m-auto">
       J'aime partager mes expériences et mes réflexions sur le développement et
       l'entrepreneuriat.
       <br />

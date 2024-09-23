@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   // --- Render
   return (
-    <AnimatedContainer custom={0} className="flex flex-col gap-16 mt-16">
+    <AnimatedContainer custom={0} className="flex flex-col gap-16 my-16">
       <AnimatedContainer
         custom={1}
         className="flex flex-col items-center gap-5 md:px-20"
