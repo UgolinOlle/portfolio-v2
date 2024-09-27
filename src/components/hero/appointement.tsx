@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Phone } from 'lucide-react';
+import React from 'react'
+import { Phone } from 'lucide-react'
 
-import { Button } from '../ui/button';
-import Link from 'next/link';
+import { Button } from '../ui/button'
+import Link from 'next/link'
 
 export const Appointement: React.FC = () => {
   // -- Render
   return (
     <Link href="https://cal.com/ugolin-olle" passHref target="_blank">
-      <Button className="relative bg-primary text-white dark:bg-white dark:text-black flex items-center justify-center group/modal-btn shadow-md hover:shadow-lg border border-black/5 dark:border-white/5 transition duration-300 ease-in-out">
-        <div className="gap-2 group-hover/modal-btn:translate-x-40 group-hover/modal-btn:opacity-0 text-center transition duration-500 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium">
+      <Button className="group/modal-btn relative flex items-center justify-center border border-black/5 bg-primary text-white shadow-md transition duration-300 ease-in-out hover:shadow-lg">
+        <div className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-center text-sm font-medium transition duration-500 group-hover/modal-btn:translate-x-40 group-hover/modal-btn:opacity-0">
           <Phone size={16} /> Prendre RDV
         </div>
-        <div className="text-white dark:text-black -translate-x-14 opacity-0 group-hover/modal-btn:opacity-100 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute transition duration-300 group-hover/modal-btn:animate-phone">
-          <Phone size={16} />
+        <div className="absolute flex -translate-x-14 items-center justify-center text-white opacity-0 transition duration-300 group-hover/modal-btn:translate-x-0 group-hover/modal-btn:animate-phone group-hover/modal-btn:opacity-100 dark:text-black">
+          <Phone size={16} className="text-white" />
         </div>
       </Button>
     </Link>
-  );
-};
+  )
+}
