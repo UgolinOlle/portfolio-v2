@@ -1,52 +1,53 @@
-'use client';
+'use client'
 
-import React, { SetStateAction, useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { FlaskConical, Menu, X, Mouse } from 'lucide-react';
+import React, { SetStateAction, useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { Menu, X, Mouse, BriefcaseBusiness } from 'lucide-react'
 
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 export const Navbar: React.FC = () => {
   // -- Variables
-  const router = useRouter();
-  const pathname = usePathname();
-  const [activeTab, setActiveTab] = useState('about');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter()
+  const pathname = usePathname()
+  const [activeTab, setActiveTab] = useState('about')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // -- Functions
   const handleTabChange = (value: SetStateAction<string>) => {
-    setActiveTab(value);
-  };
+    setActiveTab(value)
+  }
 
   const handleNavigation = (path: string, title?: string) => {
-    setActiveTab(title || path);
-    router.push(path);
-    setIsMenuOpen(false);
-  };
+    setActiveTab(title || path)
+    router.push(path)
+    setIsMenuOpen(false)
+  }
 
   useEffect(() => {
     const pathMap: { [key: string]: string } = {
       '/': 'À propos',
       '/services': 'Services',
-      '/experiences': 'Expériences',
+      '/experiences': 'Experiences',
       '/projects': 'Projets',
       '/contact': 'Contact',
       '/uses': 'Uses',
-    };
-    const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'projects' }];
-    let activeTab = pathMap[pathname] || 'about';
+    }
+    const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'Projets' }]
+    let activeTab = pathMap[pathname] || 'about'
     dynamicPaths.forEach(({ pattern, tab }) => {
       if (pattern.test(pathname)) {
-        activeTab = tab;
+        activeTab = tab
       }
-    });
-    setActiveTab(activeTab);
-  }, [pathname]);
+    })
+
+    setActiveTab(activeTab)
+  }, [pathname])
 
   // -- Render
   return (
     <nav className="mb-8">
-      <div className="lg:hidden flex justify-start items-center">
+      <div className="flex items-center justify-start lg:hidden">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={24} /> : <Menu size={28} />}
         </button>
@@ -54,18 +55,18 @@ export const Navbar: React.FC = () => {
       <div
         className={`${
           isMenuOpen ? 'flex' : 'hidden'
-        } lg:flex flex-col lg:flex-row justify-between items-start lg:items-center w-full`}
+        } w-full flex-col items-start justify-between lg:flex lg:flex-row lg:items-center`}
       >
+        {/* Onglets alignés à gauche */}
         <Tabs
           value={activeTab}
           onValueChange={handleTabChange}
           className="w-full lg:w-auto"
         >
-          <TabsList className="flex flex-col lg:flex-row h-auto">
+          <TabsList className="flex h-auto flex-col lg:flex-grow lg:flex-row lg:justify-start">
             {[
               { title: 'À propos', path: '/' },
               { title: 'Services', path: '/services' },
-              { title: 'Expériences', path: '/experiences' },
               { title: 'Projets', path: '/projects' },
               { title: 'Contact', path: '/contact' },
             ].map((tab) => (
@@ -80,12 +81,27 @@ export const Navbar: React.FC = () => {
             ))}
           </TabsList>
         </Tabs>
-        <Tabs className="w-full lg:w-auto -mt-2">
-          <TabsList className="flex flex-col lg:flex-row h-auto">
+
+        {/* Onglets alignés à droite */}
+        <Tabs
+          value={activeTab}
+          onValueChange={handleTabChange}
+          className="w-full lg:w-auto"
+        >
+          <TabsList className="flex h-auto flex-col lg:ml-auto lg:flex-row lg:justify-end">
             <TabsTrigger
-              value="uses"
+              value="Experiences"
+              onClick={() => handleNavigation('/experiences', 'Experiences')}
+              className="flex w-full items-center lg:w-auto"
+            >
+              <span className="lg:hidden">Experiences</span>
+              <BriefcaseBusiness size={20} className="hidden lg:inline" />
+            </TabsTrigger>
+
+            <TabsTrigger
+              value="Uses"
               onClick={() => handleNavigation('/uses', 'Uses')}
-              className="w-full lg:w-auto"
+              className="flex w-full items-center lg:w-auto"
             >
               <span className="lg:hidden">Uses</span>
               <Mouse size={20} className="hidden lg:inline" />
@@ -94,5 +110,5 @@ export const Navbar: React.FC = () => {
         </Tabs>
       </div>
     </nav>
-  );
-};
+  )
+}
