@@ -9,7 +9,7 @@ export const SERVICES: ServiceCardProps[] = [
   {
     index: 0,
     title: 'Landing page',
-    price: 950,
+    price: 650,
     description:
       'Craft des landing pages sur mesure pour convertir vos visiteurs en clients.',
     icon: 'SwatchBook',
@@ -19,8 +19,8 @@ export const SERVICES: ServiceCardProps[] = [
   },
   {
     index: 1,
-    title: 'Landing page',
-    price: 950,
+    title: 'Application web',
+    price: 0,
     description:
       'Craft des landing pages sur mesure pour convertir vos visiteurs en clients.',
     icon: 'SwatchBook',
