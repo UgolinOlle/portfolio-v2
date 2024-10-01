@@ -6,7 +6,7 @@ import { Bug } from 'lucide-react';
 import { toast } from 'sonner';
 import html2canvas from 'html2canvas';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from '~/components/ui/dialog';
 
 export const Bugs: React.FC = () => {
   // -- Variables

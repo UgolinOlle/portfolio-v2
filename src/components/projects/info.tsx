@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from 'react';
 
-import { ProjectsList } from '@/components/projects/list';
-import { ProjectExplorer } from '@/components/projects/explorer';
-import { AnimatedContainer } from '@/components/commons/animation';
-import * as projects from '@/lib/constants/projects';
+import { ProjectsList } from '~/components/projects/list';
+import { ProjectExplorer } from '~/components/projects/explorer';
+import { Container } from '~/components/commons/animation';
+import * as projects from '~/lib/constants/projects';
 
 export const ProjectsInfo: React.FC = () => {
   // --- Variables
@@ -26,14 +26,14 @@ export const ProjectsInfo: React.FC = () => {
 
   // --- Rendu
   return (
-    <AnimatedContainer custom={1} className="flex flex-col lg:flex-row gap-10">
-      <AnimatedContainer
-        custom={2}
+    <Container  className="flex flex-col lg:flex-row gap-10">
+      <Container
+        
         className="lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] lg:w-1/3 flex-shrink-0 overflow-auto transition duration-300 ease-in-out"
       >
         <ProjectExplorer handleSelect={handleSelect} />
-      </AnimatedContainer>
+      </Container>
       <ProjectsList filteredProjects={filteredProjects} />
-    </AnimatedContainer>
+    </Container>
   );
 };

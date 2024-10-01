@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import React from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-import { Button } from '@/components/ui/button';
-import { ITimelineItem } from '@/lib/interfaces/experience';
-import { cn } from '@/lib/utils';
+import { Button } from '~/components/ui/button'
+import { ITimelineItem } from '~/lib/interfaces/experience'
+import { cn } from '~/lib/utils'
 
 export const Timeline = ({
   timelineData,
   onExperienceClick,
 }: {
-  timelineData: ITimelineItem[];
-  onExperienceClick: (experience: ITimelineItem) => void;
+  timelineData: ITimelineItem[]
+  onExperienceClick: (experience: ITimelineItem) => void
 }): JSX.Element => {
   // --- Variables
   const config = {
@@ -25,7 +25,7 @@ export const Timeline = ({
         delay: i * 0.3,
       },
     }),
-  };
+  }
 
   // --- Render
   return (
@@ -35,11 +35,11 @@ export const Timeline = ({
           <li
             key={index}
             className={cn(
-              `mb-10 ms-4 pl-1 rounded-lg p-4 bg-neutral-100/70 dark:bg-neutral-800/70 border shadow-md`
+              `mb-10 ms-4 rounded-lg border bg-neutral-100/70 p-4 pl-1 shadow-md dark:bg-neutral-800/70`
             )}
           >
             <div
-              className={cn(`absolute w-2 h-2 rounded-full mt-1.5 -start-1`)}
+              className={cn(`absolute -start-1 mt-1.5 h-2 w-2 rounded-full`)}
               style={{ backgroundColor: item.color }}
             />
             <motion.div
@@ -49,7 +49,7 @@ export const Timeline = ({
               variants={config}
               className="flex flex-col items-start gap-2"
             >
-              <div className="flex flex-col items-start md:flex-row md:items-center gap-3 md:gap-2">
+              <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-2">
                 <div className="flex items-center gap-2">
                   {item.picture && (
                     <Image
@@ -62,11 +62,11 @@ export const Timeline = ({
                   )}
                   <h1>{item.title}</h1>
                 </div>
-                <p className="px-2 py-1 bg-gray-100 dark:bg-muted rounded-lg text-sm font-medium">
+                <p className="rounded-lg bg-gray-100 px-2 py-1 text-sm font-medium dark:bg-muted">
                   {item.date}
                 </p>
               </div>
-              <p className="text-medium text-neutral-600/70 dark:text-neutral-100/70 font-normal">
+              <p className="text-medium font-normal text-neutral-600/70 dark:text-neutral-100/70">
                 {item.description}
               </p>
               <Button
@@ -78,8 +78,8 @@ export const Timeline = ({
               </Button>
             </motion.div>
           </li>
-        );
+        )
       })}
     </ul>
-  );
-};
+  )
+}

@@ -1,24 +1,51 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { createContext, useContext, useState, useEffect } from 'react'
+import { motion, useAnimation, AnimationControls } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
-export const Cursor = () => {
+type CursorContextType = {
+  mousePosition: { x: number; y: number }
+  cursorColor: string
+  isHovering: boolean
+  controls: AnimationControls
+  isPopupVisible: boolean
+  popupText: string
+  handleMouseEnterDiv: (text: string) => void
+  handleMouseLeaveDiv: () => void
+}
+
+// Create a default context
+const CursorContext = createContext<CursorContextType | null>(null)
+
+export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 }) // Nouvelle position de popup
   const [isHovering, setIsHovering] = useState(false)
+  const [isPopupVisible, setIsPopupVisible] = useState(false)
+  const [popupText, setPopupText] = useState('')
   const pathname = usePathname()
   const controls = useAnimation()
 
+  const cursorColor =
+    pathname === '/'
+      ? 'hsl(262 100% 49%)'
+      : pathname === '/services'
+        ? 'hsl(22.93, 92.59%, 52.35%)'
+        : pathname === '/contact'
+          ? 'hsl(204 100% 49%)'
+          : pathname === '/projects'
+            ? 'hsl(0 100% 49%)'
+            : 'hsl(262 100% 49%)'
+
   useEffect(() => {
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      })
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
-    const mouseOver = (e: MouseEvent) => {
+    const handleMouseOver = (e: MouseEvent) => {
       if (
         (e.target as HTMLElement).tagName === 'A' ||
         (e.target as HTMLElement).tagName === 'BUTTON'
@@ -29,7 +56,7 @@ export const Cursor = () => {
       }
     }
 
-    const mouseClick = () => {
+    const handleClick = () => {
       controls
         .start({
           scale: 0.8,
@@ -43,41 +70,45 @@ export const Cursor = () => {
         })
     }
 
-    window.addEventListener('mousemove', mouseMove)
-    window.addEventListener('mouseover', mouseOver)
-    window.addEventListener('click', mouseClick)
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mouseover', handleMouseOver)
+    window.addEventListener('click', handleClick)
 
     return () => {
-      window.removeEventListener('mousemove', mouseMove)
-      window.removeEventListener('mouseover', mouseOver)
-      window.removeEventListener('click', mouseClick)
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mouseover', handleMouseOver)
+      window.removeEventListener('click', handleClick)
     }
   }, [controls])
 
-  const cursorColor =
-    pathname === '/'
-      ? 'hsl(262 100% 49%)'
-      : pathname === '/services'
-        ? 'hsl(22.93, 92.59%, 52.35%)'
-        : pathname === '/contact'
-          ? 'hsl(204 100% 49%)'
-          : pathname === '/projects'
-            ? 'hsl(0 100% 49%)'
-            : 'hsl(262 100% 49%)'
+  const handleMouseEnterDiv = (text: string) => {
+    setPopupText(text)
+    setPopupPosition(mousePosition) // Fixe la position de la popup au moment de l'activation
+    setIsPopupVisible(true)
+  }
+
+  const handleMouseLeaveDiv = () => {
+    setIsPopupVisible(false)
+  }
+
   return (
-    <>
-      <style jsx global>{`
-        body,
-        * {
-          cursor: none !important;
-        }
-      `}</style>
+    <CursorContext.Provider
+      value={{
+        mousePosition,
+        cursorColor,
+        isHovering,
+        controls,
+        isPopupVisible,
+        popupText,
+        handleMouseEnterDiv,
+        handleMouseLeaveDiv,
+      }}
+    >
+      {children}
+
       <motion.div
         className="pointer-events-none fixed left-0 top-0 z-[10001]"
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
-        }}
+        animate={{ x: mousePosition.x, y: mousePosition.y }}
         transition={{
           type: 'spring',
           stiffness: 1000,
@@ -146,7 +177,36 @@ export const Cursor = () => {
             </filter>
           </defs>
         </motion.svg>
+
+        {isPopupVisible && (
+          <motion.div
+            className="absolute rounded-lg bg-white px-2 py-1 text-black shadow-lg"
+            style={{
+              left: popupPosition.x - 300, // Fixer la position avec un décalage constant
+              top: popupPosition.y - 260,
+              transform: 'translate(0, 0)', // Pas de transformation supplémentaire
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {popupText}
+          </motion.div>
+        )}
       </motion.div>
-    </>
+    </CursorContext.Provider>
   )
+}
+
+/**
+ * @function useCursor
+ * @description Hook to get access to the cursor context.
+ * @exports useCursor
+ */
+export const useCursor = () => {
+  const context = useContext(CursorContext)
+  if (!context) {
+    throw new Error('useCursor must be used within a CursorProvider')
+  }
+  return context
 }

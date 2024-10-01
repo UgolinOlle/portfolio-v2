@@ -1,4 +1,4 @@
-import { ISchoolPicture, ITimelineItem } from '@/lib/interfaces/experience';
+import { ISchoolPicture, ITimelineItem } from '~/lib/interfaces/experience';
 
 import dashboard from 'public/images/projects/comai/comai-dashboard.jpg';
 import desk from 'public/images/projects/school/school-desk.jpg';

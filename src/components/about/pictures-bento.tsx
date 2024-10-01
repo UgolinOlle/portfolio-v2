@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import { ABOUT_IMAGES, ABOUT_IMAGES_2 } from '@/lib/constants/about';
+import { ABOUT_IMAGES, ABOUT_IMAGES_2 } from '~/lib/constants/about';
 
 export const PicturesBento: React.FC = (): React.ReactElement => {
   // --- Variables

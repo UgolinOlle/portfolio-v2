@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Calendar, icons } from 'lucide-react'
 
-import { ServiceCardProps } from '@/lib/interfaces/service'
+import { ServiceCardProps } from '~/lib/interfaces/service'
 import { BorderBeam } from '../commons/border-beam'
 
 /**

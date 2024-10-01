@@ -1,26 +1,51 @@
+/**
+ * @file Hero.tsx
+ * @module Hero
+ * @description A React functional component that serves as the hero section of the website.
+ * It includes various UI elements such as headings, buttons, social links, and a custom cursor behavior.
+ *
+ * The component integrates with the `useCursor` context to track mouse events, change the cursor style,
+ * and display additional effects on hover.
+ *
+ * @example
+ * // Usage
+ * import { Hero } from '~/components/hero/hero'
+ *
+ * function App() {
+ *   return (
+ *     <Hero />
+ *   )
+ * }
+ */
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRightIcon } from 'lucide-react'
 
-import { SOCIALS } from '@/lib/constants/socials'
-import { cn } from '@/lib/utils'
-import { Heading } from '@/components/ui/headers'
-import { Button } from '@/components/ui/button'
-import { Appointement } from '@/components/hero/appointement'
-import { RetroGrid } from '@/components/commons/retro'
-import { Clock } from '@/components/hero/clock'
-import AnimatedShinyText from '@/components/ui/shiny'
-import { CrossIcon } from '@/components/commons/icons/common'
-import { AnimatedContainer } from '@/components/commons/animation'
+import { Heading } from '~/components/ui/headers'
+import { Button } from '~/components/ui/button'
+import { Appointement } from '~/components/hero/appointement'
+import { RetroGrid } from '~/components/commons/retro'
+import { Clock } from '~/components/hero/clock'
+import AnimatedShinyText from '~/components/ui/shiny'
+import { CrossIcon } from '~/components/commons/icons/common'
+import { Container } from '~/components/commons/animation'
 
-export const Hero: React.FC = () => {
-  // -- Render
+import { SOCIALS } from '~/lib/constants/socials'
+import { cn } from '~/lib/utils'
+
+/**
+ * The `Hero` component is a prominent section on the landing page,
+ * featuring personal information, call-to-action buttons, social media links,
+ * and dynamic effects with a custom cursor.
+ *
+ * @returns {JSX.Element} A responsive container that contains the hero layout with dynamic content.
+ */
+export const Hero: React.FC = (): JSX.Element => {
+  // --- Render
   return (
-    <AnimatedContainer
-      custom={1}
-      className="relative flex h-full w-full flex-col-reverse justify-center shadow-sm transition duration-300 ease-in-out md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 lg:flex-row lg:justify-between"
-    >
+    <Container className="relative flex h-full w-full flex-col-reverse justify-center shadow-sm transition duration-300 ease-in-out md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 lg:flex-row lg:justify-between">
       <CrossIcon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
       <CrossIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
       <CrossIcon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
@@ -106,6 +131,6 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       <RetroGrid />
-    </AnimatedContainer>
+    </Container>
   )
 }

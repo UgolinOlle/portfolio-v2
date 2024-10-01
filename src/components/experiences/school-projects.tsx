@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SCHOOL_PROJECTS_PICTURES } from '@/lib/constants/experiences';
-import { Picture } from '@/components/commons/mdx/ui';
+import { SCHOOL_PROJECTS_PICTURES } from '~/lib/constants/experiences';
+import { Picture } from '~/components/commons/mdx/ui';
 
 export const SchoolProjects: React.FC = () => {
   return (

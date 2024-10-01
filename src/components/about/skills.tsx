@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { BentoGrid, BentoGridItem } from '@/components/ui/bento';
-import { ABOUT_SKILLS } from '@/lib/constants/about';
+import { BentoGrid, BentoGridItem } from '~/components/ui/bento';
+import { ABOUT_SKILLS } from '~/lib/constants/about';
 
 export const Skills: React.FC = () => {
   // -- Render

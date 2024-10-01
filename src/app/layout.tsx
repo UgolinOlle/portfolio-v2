@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { ViewTransitions } from 'next-view-transitions';
 
 import './globals.css';
-import { cn } from '@/lib/utils';
-import { Providers } from '@/components/commons/providers';
-import { RightMenu } from '@/components/commons/menus/right-menu';
+import { cn } from '~/lib/utils';
+import { Providers } from '~/components/commons/providers';
+import { RightMenu } from '~/components/commons/menus/right-menu';
 
 export const metadata: Metadata = {
   title: 'Ugolin Ollé',

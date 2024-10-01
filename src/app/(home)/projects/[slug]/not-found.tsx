@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Heading } from '@/components/ui/headers';
+import { Heading } from '~/components/ui/headers';
 
 export default function NotFound() {
   // -- Render

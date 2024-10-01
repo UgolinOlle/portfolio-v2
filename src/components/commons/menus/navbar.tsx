@@ -4,7 +4,7 @@ import React, { SetStateAction, useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X, Mouse, BriefcaseBusiness } from 'lucide-react'
 
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsList, TabsTrigger } from '~/components/ui/tabs'
 
 export const Navbar: React.FC = () => {
   // -- Variables

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
 
-import { AnimatedContainer } from '@/components/commons/animation';
-import { HeroAbout, HeroAboutTwo } from '@/components/hero/about';
-import { PicturesBento } from '@/components/about/pictures-bento';
+import { Container } from '~/components/commons/animation';
+import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
+import { PicturesBento } from '~/components/about/pictures-bento';
 
 // --- Metadata
 export const metadata: Metadata = {
@@ -19,19 +19,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   // --- Render
   return (
-    <AnimatedContainer custom={0} className="flex flex-col gap-16 my-16">
-      <AnimatedContainer
-        custom={1}
+    <Container  className="flex flex-col gap-16 my-16">
+      <Container
+        
         className="flex flex-col items-center gap-5 md:px-20"
       >
         <HeroAbout />
-      </AnimatedContainer>
-      <AnimatedContainer custom={2}>
+      </Container>
+      <Container >
         <PicturesBento />
-      </AnimatedContainer>
-      <AnimatedContainer custom={3} className="md:px-20">
+      </Container>
+      <Container  className="md:px-20">
         <HeroAboutTwo />
-      </AnimatedContainer>
-    </AnimatedContainer>
+      </Container>
+    </Container>
   );
 }

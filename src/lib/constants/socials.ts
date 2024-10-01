@@ -1,5 +1,5 @@
-import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
-import { ISocialItem } from '@/lib/interfaces/social';
+import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
+import { ISocialItem } from '~/lib/interfaces/social';
 
 /**
  * @constant SOCIALS

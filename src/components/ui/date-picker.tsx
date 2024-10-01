@@ -4,14 +4,14 @@ import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { forwardRef } from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 import { Button } from './button';
-import { Calendar } from '@/components/ui/calendar';
+import { Calendar } from '~/components/ui/calendar';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
+} from '~/components/ui/popover';
 
 export const DatePicker = forwardRef<
   HTMLDivElement,

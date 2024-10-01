@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 // -- Header Variants
 const headingVariants = cva('text-lg font-semibold', {

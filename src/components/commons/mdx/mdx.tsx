@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-import { Heading } from '@/components/ui/headers';
+import { Heading } from '~/components/ui/headers';
 import {
   Bold,
   Detail,
@@ -32,11 +32,11 @@ import {
   FaFolder,
   FaGlobe,
 } from 'react-icons/fa';
-import { IDE_PICTURES } from '@/lib/constants/projects';
+import { IDE_PICTURES } from '~/lib/constants/projects';
 
 // --- Dynamic imports with named exports handling
 const ProjectGrid = dynamic(
-  () => import('@/components/projects/grid').then((mod) => mod.ProjectGrid),
+  () => import('~/components/projects/grid').then((mod) => mod.ProjectGrid),
   {
     ssr: false,
     loading: () => <p>Loading ProjectGrid...</p>,
@@ -45,7 +45,7 @@ const ProjectGrid = dynamic(
 
 const ProjectPictures = dynamic(
   () =>
-    import('@/components/projects/pictures').then((mod) => mod.ProjectPictures),
+    import('~/components/projects/pictures').then((mod) => mod.ProjectPictures),
   {
     ssr: false,
     loading: () => <p>Loading ProjectPictures...</p>,
@@ -54,7 +54,7 @@ const ProjectPictures = dynamic(
 
 const ImageSwiper = dynamic(
   () =>
-    import('@/components/experiences/images-swiper').then(
+    import('~/components/experiences/images-swiper').then(
       (mod) => mod.ImageSwiper
     ),
   {
@@ -65,7 +65,7 @@ const ImageSwiper = dynamic(
 
 const SchoolProjects = dynamic(
   () =>
-    import('@/components/experiences/school-projects').then(
+    import('~/components/experiences/school-projects').then(
       (mod) => mod.SchoolProjects
     ),
   {

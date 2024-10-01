@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Toaster } from 'sonner'
 
-import { ThemeProvider } from '@/lib/providers/theme'
-import { Cursor } from './cursor'
+import { ThemeProvider } from '~/lib/providers/theme'
+import { CursorProvider } from '~/components/commons/cursor'
 
 export const Providers = ({
   children,
@@ -19,8 +19,9 @@ export const Providers = ({
       <Analytics />
       <SpeedInsights />
       <Toaster richColors />
-      <Cursor />
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider>
+        <CursorProvider>{children}</CursorProvider>
+      </ThemeProvider>
     </>
   )
 }

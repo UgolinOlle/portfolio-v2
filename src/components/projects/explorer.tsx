@@ -2,8 +2,8 @@
 
 import { FC } from 'react';
 
-import { Tree, Folder, File } from '@/components/ui/file-tree';
-import { Button } from '@/components/ui/button';
+import { Tree, Folder, File } from '~/components/ui/file-tree';
+import { Button } from '~/components/ui/button';
 
 interface ProjectExplorerProps {
   handleSelect: (element: any) => void;

@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { globSync } from 'glob';
-import { Project, ProjectData } from '@/lib/interfaces/project';
+import { Project, ProjectData } from '~/lib/interfaces/project';
 
 function getProjectsDirectory() {
   const root = process.cwd();

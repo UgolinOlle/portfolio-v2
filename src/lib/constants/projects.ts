@@ -1,5 +1,5 @@
-import { IProjectItem } from '@/lib/interfaces/project';
-import { getBaseUrl } from '@/lib/utils';
+import { IProjectItem } from '~/lib/interfaces/project';
+import { getBaseUrl } from '~/lib/utils';
 
 import whoaide from 'public/images/projects/whoa-ide/whoa-ide.jpg';
 import telescope from 'public/images/projects/whoa-ide/telescope.png';

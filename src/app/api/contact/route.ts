@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { sendMail } from '@/lib/mailer';
-import { contactFormSchema } from '@/lib/schemas/contact';
+import { sendMail } from '~/lib/mailer';
+import { contactFormSchema } from '~/lib/schemas/contact';
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {

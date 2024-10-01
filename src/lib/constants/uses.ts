@@ -1,4 +1,4 @@
-import { CardProps } from '@/components/uses/card';
+import { CardProps } from '~/components/uses/card';
 
 import Arc from 'public/images/uses/arc.svg';
 import Warp from 'public/images/uses/warp.svg';

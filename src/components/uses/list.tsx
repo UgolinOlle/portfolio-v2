@@ -1,6 +1,6 @@
-import { Heading } from '@/components/ui/headers';
-import { CardProps, UseCard, UseCardImage } from '@/components/uses/card';
-import { AnimatedContainer } from '@/components/commons/animation';
+import { Heading } from '~/components/ui/headers';
+import { CardProps, UseCard, UseCardImage } from '~/components/uses/card';
+import { Container } from '~/components/commons/animation';
 
 interface ListProps {
   title: string;
@@ -10,7 +10,7 @@ interface ListProps {
 const UseList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
-    <AnimatedContainer custom={1} className="flex flex-col gap-4 mt-16">
+    <Container  className="flex flex-col gap-4 mt-16">
       <Heading variant="h3" border={false}>
         {title}
       </Heading>
@@ -19,14 +19,14 @@ const UseList: React.FC<ListProps> = ({ title, items }) => {
           <UseCard key={index} {...item} />
         ))}
       </section>
-    </AnimatedContainer>
+    </Container>
   );
 };
 
 const UseImagesList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
-    <AnimatedContainer custom={1} className="flex flex-col gap-4 mt-16">
+    <Container  className="flex flex-col gap-4 mt-16">
       <Heading variant="h3" border={false}>
         {title}
       </Heading>
@@ -35,7 +35,7 @@ const UseImagesList: React.FC<ListProps> = ({ title, items }) => {
           <UseCardImage key={index} {...item} />
         ))}
       </section>
-    </AnimatedContainer>
+    </Container>
   );
 };
 

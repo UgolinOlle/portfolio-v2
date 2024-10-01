@@ -1,4 +1,4 @@
-import { ServiceCardProps } from '@/lib/interfaces/service'
+import { ServiceCardProps } from '~/lib/interfaces/service'
 
 /**
  * @constant SERVICES

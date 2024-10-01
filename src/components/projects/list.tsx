@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { MoveUpRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { IProjectItem } from '@/lib/interfaces/project';
-import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
-import { Heading } from '@/components/ui/headers';
+import { IProjectItem } from '~/lib/interfaces/project';
+import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
+import { Heading } from '~/components/ui/headers';
 
 /**
  * @name ProjectItem

@@ -1,5 +1,5 @@
-import { SOCIALS_ICONS } from '@/components/commons/icons/socials';
-import { IBioItem } from '@/lib/interfaces/bio';
+import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
+import { IBioItem } from '~/lib/interfaces/bio';
 import { GITHUB_URL } from './common';
 
 /**

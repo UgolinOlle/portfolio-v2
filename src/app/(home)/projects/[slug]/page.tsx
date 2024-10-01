@@ -3,11 +3,11 @@ import Image from 'next/image';
 import path from 'path';
 import { notFound } from 'next/navigation';
 
-import { getProject, getFilenames } from '@/lib/utils/projects';
-import { Heading } from '@/components/ui/headers';
-import { AnimatedContainer } from '@/components/commons/animation';
-import { ClientMdxRenderer } from '@/components/commons/mdx/render';
-import { CommitList } from '@/components/projects/commits';
+import { getProject, getFilenames } from '~/lib/utils/projects';
+import { Heading } from '~/components/ui/headers';
+import { Container } from '~/components/commons/animation';
+import { ClientMdxRenderer } from '~/components/commons/mdx/render';
+import { CommitList } from '~/components/projects/commits';
 
 export async function generateStaticParams() {
   const filenames = getFilenames();
@@ -33,7 +33,7 @@ export default async function ProjectBySlug({
 
   // --- Render
   return (
-    <AnimatedContainer custom={0}>
+    <Container >
       <Heading variant="h2">{project.data.title}</Heading>
 
       <br />
@@ -59,6 +59,6 @@ export default async function ProjectBySlug({
       {project.data.github && (
         <CommitList repoName={project.data.github} className="w-1/2" />
       )}
-    </AnimatedContainer>
+    </Container>
   );
 }

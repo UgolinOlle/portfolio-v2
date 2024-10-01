@@ -1,4 +1,4 @@
-import { Heading } from '@/components/ui/headers';
+import { Heading } from '~/components/ui/headers';
 import Link from 'next/link';
 
 export default function NotFound() {

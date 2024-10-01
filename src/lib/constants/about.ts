@@ -1,5 +1,5 @@
-import { SKILLS_ICONS } from '@/components/commons/icons/skills';
-import { IAboutPicture, IAboutSkill } from '@/lib/interfaces/icons';
+import { SKILLS_ICONS } from '~/components/commons/icons/skills';
+import { IAboutPicture, IAboutSkill } from '~/lib/interfaces/icons';
 
 /**
  * @constant ABOUT_IMAGES

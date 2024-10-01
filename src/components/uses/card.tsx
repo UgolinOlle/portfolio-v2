@@ -4,8 +4,8 @@ import Image, { StaticImageData } from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-import { Heading } from '@/components/ui/headers'
-import { cn } from '@/lib/utils'
+import { Heading } from '~/components/ui/headers'
+import { cn } from '~/lib/utils'
 
 export interface CardProps {
   title: string

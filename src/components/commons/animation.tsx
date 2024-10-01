@@ -1,11 +1,10 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { cn } from '~/lib/utils'
 
-import { cn } from '@/lib/utils';
-
-// -- Global variants animation
+// --- Global variants animation
 const variants = {
   hidden: { opacity: 0, y: '-20' },
   visible: (i: number) => ({
@@ -17,63 +16,110 @@ const variants = {
       ease: 'easeOut',
     },
   }),
-};
+}
 
-const AnimatedContainer: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-  custom: number;
-}> = ({ children, className, custom }) => {
+/**
+ * @function Container
+ * @description Animate the container when it's visible
+ * @exports Container
+ */
+const Container: React.FC<{
+  children: React.ReactNode
+  className?: string
+}> = ({ children, className }) => {
+  // --- Variables
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // --- Functions
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
   // --- Render
   return (
-    <motion.div
+    <motion.section
+      ref={ref}
       className={cn(className)}
       initial="hidden"
-      animate="visible"
-      custom={custom}
+      animate={isVisible ? 'visible' : 'hidden'}
       variants={variants}
     >
       {children}
-    </motion.div>
-  );
-};
+    </motion.section>
+  )
+}
 
-const AnimatedGrid: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-  custom: number;
-}> = ({ children, className, custom }) => {
+/**
+ * @function Box
+ * @description Animate the box when it's visible
+ * @exports Box
+ */
+const Box: React.FC<{
+  children: React.ReactNode
+  className?: string
+}> = ({ children, className }) => {
+  // --- Variables
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // --- Functions
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
+
   // --- Render
   return (
-    <motion.div
-      className={cn('grid grid-cols-1 md:grid-cols-2 gap-5', className)}
+    <motion.section
+      ref={ref}
+      className={cn(className)}
       initial="hidden"
-      animate="visible"
-      custom={custom}
+      animate={isVisible ? 'visible' : 'hidden'}
       variants={variants}
     >
       {children}
-    </motion.div>
-  );
-};
+    </motion.section>
+  )
+}
 
-const AnimatedText: React.FC<{
-  children: React.ReactNode;
-  custom: number;
-  className?: string;
-}> = ({ children, custom, className }) => {
-  // --- Render
-  return (
-    <motion.p
-      className={cn('text-lg font-light', className)}
-      initial="hidden"
-      animate="visible"
-      custom={custom}
-      variants={variants}
-    >
-      {children}
-    </motion.p>
-  );
-};
-
-export { AnimatedContainer, AnimatedGrid, AnimatedText };
+export { Container, Box }

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 export function RetroGrid({ className }: { className?: string }): JSX.Element {
   // -- Render

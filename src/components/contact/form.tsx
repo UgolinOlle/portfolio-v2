@@ -11,11 +11,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { ContactFormData, contactFormSchema } from '@/lib/schemas/contact';
+} from '~/components/ui/form';
+import { Input } from '~/components/ui/input';
+import { Textarea } from '~/components/ui/textarea';
+import { Button } from '~/components/ui/button';
+import { ContactFormData, contactFormSchema } from '~/lib/schemas/contact';
 import { toast } from 'sonner';
 
 export const ContactForm: React.FC = () => {
