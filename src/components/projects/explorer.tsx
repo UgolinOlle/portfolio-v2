@@ -1,26 +1,26 @@
-'use client';
+'use client'
 
-import { FC } from 'react';
+import { FC } from 'react'
 
-import { Tree, Folder, File } from '~/components/ui/file-tree';
-import { Button } from '~/components/ui/button';
+import { Tree, Folder, File } from '~/components/ui/file-tree'
+import { Button } from '~/components/ui/button'
 
 interface ProjectExplorerProps {
-  handleSelect: (element: any) => void;
+  handleSelect: (element: any) => void
 }
 
 export const ProjectExplorer: FC<ProjectExplorerProps> = ({ handleSelect }) => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100 dark:bg-neutral-900 p-4">
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100 p-4 dark:bg-neutral-900">
       <Button
         variant="outline"
-        className="absolute top-4 right-4 z-10"
+        className="absolute right-4 top-4 z-10"
         onClick={() => handleSelect('')}
       >
         Reset
       </Button>
       <Tree
-        className="w-full overflow-hidden rounded-md bg-neutral-100"
+        className="w-full overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900"
         initialSelectedId="7"
         initialExpandedItems={['src', 'perso', 'ui', 'core']}
       >
@@ -73,5 +73,5 @@ export const ProjectExplorer: FC<ProjectExplorerProps> = ({ handleSelect }) => {
         </Folder>
       </Tree>
     </div>
-  );
-};
+  )
+}

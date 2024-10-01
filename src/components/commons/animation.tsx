@@ -6,13 +6,13 @@ import { cn } from '~/lib/utils'
 
 // --- Global variants animation
 const variants = {
-  hidden: { opacity: 0, y: '-20' },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.2,
-      duration: 0.6,
+      duration: 1,
       ease: 'easeOut',
     },
   }),
@@ -42,7 +42,7 @@ const Container: React.FC<{
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     )
 
     if (ref.current) {
@@ -110,7 +110,7 @@ const Box: React.FC<{
 
   // --- Render
   return (
-    <motion.section
+    <motion.div
       ref={ref}
       className={cn(className)}
       initial="hidden"
@@ -118,7 +118,7 @@ const Box: React.FC<{
       variants={variants}
     >
       {children}
-    </motion.section>
+    </motion.div>
   )
 }
 
