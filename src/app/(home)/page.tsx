@@ -1,15 +1,15 @@
-import React from 'react';
-import { Metadata } from 'next';
+import React from 'react'
+import { Metadata } from 'next'
 
-import { Container } from '~/components/commons/animation';
-import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
-import { PicturesBento } from '~/components/about/pictures-bento';
+import { Box, Container } from '~/components/commons/animation'
+import { HeroAbout, HeroAboutTwo } from '~/components/hero/about'
+import { PicturesBento } from '~/components/about/pictures-bento'
 
 // --- Metadata
 export const metadata: Metadata = {
   title: 'À propos | Ugolin Olle',
   description: "Page d'accueil de mon portfolio",
-};
+}
 
 /**
  * @function HomePage
@@ -19,19 +19,16 @@ export const metadata: Metadata = {
 export default function HomePage() {
   // --- Render
   return (
-    <Container  className="flex flex-col gap-16 my-16">
-      <Container
-        
-        className="flex flex-col items-center gap-5 md:px-20"
-      >
+    <Container className="my-16 flex flex-col gap-16">
+      <Box className="flex flex-col items-center gap-5 md:px-20">
         <HeroAbout />
-      </Container>
-      <Container >
+      </Box>
+      <Box>
         <PicturesBento />
-      </Container>
-      <Container  className="md:px-20">
+      </Box>
+      <Box className="md:px-20">
         <HeroAboutTwo />
-      </Container>
+      </Box>
     </Container>
-  );
+  )
 }

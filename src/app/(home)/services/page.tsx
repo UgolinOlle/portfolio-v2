@@ -1,10 +1,14 @@
+import React from 'react'
 import { Metadata } from 'next'
+import { CircleCheckBig } from 'lucide-react'
 
 import { Skills } from '~/components/about/skills'
 import { Box, Container } from '~/components/commons/animation'
 import { ServiceCard } from '~/components/services/card'
 import { Heading } from '~/components/ui/headers'
-import { SERVICES } from '~/lib/constants/service'
+import { Marquee } from '~/components/ui/marquee'
+
+import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service'
 
 // --- Metadata
 export const metadata: Metadata = {
@@ -21,6 +25,21 @@ export default function ServicesPage() {
         {SERVICES.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
+      </Box>
+      <Box className="relative my-16">
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
+
+        <Marquee pauseOnHover className="[--duration:20s] [--gap:2rem]">
+          {SERVICES_BENEFITS.map((review) => (
+            <div className="flex items-center gap-2">
+              <CircleCheckBig className="text-primary-500 dark:text-primary-400 h-6 w-6" />
+              <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                {review.title}
+              </p>
+            </div>
+          ))}
+        </Marquee>
       </Box>
       <Skills />
     </Container>

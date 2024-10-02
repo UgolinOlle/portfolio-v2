@@ -83,6 +83,14 @@ const config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+        'marquee-vertical': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
         'border-beam': {
           '100%': {
             'offset-distance': '100%',
@@ -107,10 +115,6 @@ const config = {
           '75%': { rotate: '-5deg' },
           '100%': { rotate: '0' },
         },
-        pulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
-        },
         shimmer: {
           '0%, 90%, 100%': {
             'background-position': 'calc(-100% - var(--shimmer-width)) 0',
@@ -119,15 +123,21 @@ const config = {
             'background-position': 'calc(100% + var(--shimmer-width)) 0',
           },
         },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
+        'fade-in': 'fade-in 0.5s ease-out',
+        marquee: 'marquee var(--duration) linear infinite',
+        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         shimmer: 'shimmer 8s infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         grid: 'grid 15s linear infinite',
         phone: 'phone 1s ease-in-out infinite',
-        pulse: 'pulse 1.5s ease-in-out infinite',
       },
     },
   },
