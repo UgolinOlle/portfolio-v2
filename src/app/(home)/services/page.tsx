@@ -12,8 +12,8 @@ import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service'
 
 // --- Metadata
 export const metadata: Metadata = {
-  title: 'Services | Ugolin Olle',
-  description: 'Les services que je propose',
+  title: 'Services · Ugolin Ollé',
+  description: 'Liste des services proposés.',
 }
 
 export default function ServicesPage() {

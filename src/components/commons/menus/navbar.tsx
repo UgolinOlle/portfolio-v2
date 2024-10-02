@@ -2,7 +2,7 @@
 
 import React, { SetStateAction, useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Menu, X, Mouse, BriefcaseBusiness } from 'lucide-react'
+import { Menu, X, Mouse, BriefcaseBusiness, NotebookPen } from 'lucide-react'
 
 import { Tabs, TabsList, TabsTrigger } from '~/components/ui/tabs'
 
@@ -31,6 +31,7 @@ export const Navbar: React.FC = () => {
       '/experiences': 'Experiences',
       '/projects': 'Projets',
       '/contact': 'Contact',
+      '/notes': 'Notes',
       '/uses': 'Uses',
     }
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'Projets' }]
@@ -89,6 +90,14 @@ export const Navbar: React.FC = () => {
           className="w-full lg:w-auto"
         >
           <TabsList className="flex h-auto flex-col lg:ml-auto lg:flex-row lg:justify-end">
+            <TabsTrigger
+              value="Notes"
+              onClick={() => handleNavigation('/notes', 'Notes')}
+              className="flex w-full items-center lg:w-auto"
+            >
+              <span className="lg:hidden">Notes</span>
+              <NotebookPen size={20} className="hidden lg:inline" />
+            </TabsTrigger>
             <TabsTrigger
               value="Experiences"
               onClick={() => handleNavigation('/experiences', 'Experiences')}

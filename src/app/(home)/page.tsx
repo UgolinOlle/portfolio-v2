@@ -7,7 +7,7 @@ import { PicturesBento } from '~/components/about/pictures-bento'
 
 // --- Metadata
 export const metadata: Metadata = {
-  title: 'À propos | Ugolin Olle',
+  title: 'À propos · Ugolin Ollé',
   description: "Page d'accueil de mon portfolio",
 }
 

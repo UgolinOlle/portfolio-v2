@@ -24,6 +24,7 @@ const config = {
       display: ['SF Pro Display'],
       body: ['SF Pro Display'],
       bumbbled: ['Bumbbled', 'sans-serif'],
+      'robot-slab': ['Roboto Slab', 'serif'],
     },
     container: {
       center: true,

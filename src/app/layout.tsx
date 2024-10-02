@@ -1,10 +1,13 @@
-import type { Metadata } from 'next';
-import { ViewTransitions } from 'next-view-transitions';
+import type { Metadata } from 'next'
+import RobotSlab, { Roboto_Slab } from 'next/font/google'
+import { ViewTransitions } from 'next-view-transitions'
 
-import './globals.css';
-import { cn } from '~/lib/utils';
-import { Providers } from '~/components/commons/providers';
-import { RightMenu } from '~/components/commons/menus/right-menu';
+import './globals.css'
+
+import { cn } from '~/lib/utils'
+
+import { Providers } from '~/components/commons/providers'
+import { RightMenu } from '~/components/commons/menus/right-menu'
 
 export const metadata: Metadata = {
   title: 'Ugolin Ollé',
@@ -136,7 +139,7 @@ export const metadata: Metadata = {
         url: 'https://ugolin-olle.com/profile.png',
         width: 1200,
         height: 630,
-        alt: 'Ugolin Ollé - Développeur Full Stack',
+        alt: 'Développeur Full Stack · Ugolin Ollé',
       },
     ],
     locale: 'fr_FR',
@@ -150,19 +153,25 @@ export const metadata: Metadata = {
     images: 'https://ugolin-olle.com/profile.png',
     creator: '@ugolin_olle',
   },
-};
+}
+
+const robotSlab = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
-            'bg-background font-body antialiased flex flex-col items-center relative px-4 sm:px-6 md:px-8 py-4'
+            'relative flex flex-col items-center bg-background px-4 py-4 font-body antialiased sm:px-6 md:px-8',
+            `${robotSlab.className}`
           )}
         >
           <Providers>
@@ -172,5 +181,5 @@ export default function RootLayout({
         </body>
       </html>
     </ViewTransitions>
-  );
+  )
 }
