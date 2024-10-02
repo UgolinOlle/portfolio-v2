@@ -41,7 +41,9 @@ export default function ServicesPage() {
           ))}
         </Marquee>
       </Box>
-      <Skills />
+      <Box>
+        <Skills />
+      </Box>
     </Container>
   )
 }

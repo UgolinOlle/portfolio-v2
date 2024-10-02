@@ -1,11 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Calendar, icons } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 import { ServiceCardProps } from '~/lib/interfaces/service'
-import { BorderBeam } from '../commons/border-beam'
+import { cn } from '~/lib/utils'
+
+import { BorderBeam } from '~/components/commons/border-beam'
 
 /**
  * @function ServiceCard
@@ -14,12 +17,55 @@ import { BorderBeam } from '../commons/border-beam'
  */
 export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
   // --- Variables
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 1,
+        ease: 'easeOut',
+      },
+    }),
+  }
   const LucideIcon = icons[props.icon as keyof typeof icons]
   const [isHovered, setIsHovered] = React.useState(false)
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // --- Functions
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.05 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [])
 
   // --- Render
   return (
-    <div
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isVisible ? 'visible' : 'hidden'}
+      variants={variants}
       className="group/service relative flex min-h-[400px] min-w-[300px] flex-col items-start justify-start gap-5 rounded-xl border p-5 shadow-md"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -69,6 +115,6 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
           <span className="font-bold">{props.linkText}</span>
         </Link>
       </div>
-    </div>
+    </motion.div>
   )
 }

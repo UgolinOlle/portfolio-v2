@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { BentoGrid, BentoGridItem } from '~/components/ui/bento';
-import { ABOUT_SKILLS } from '~/lib/constants/about';
+import { BentoGrid, BentoGridItem } from '~/components/ui/bento'
+import { ABOUT_SKILLS } from '~/lib/constants/about'
 
 export const Skills: React.FC = () => {
-  // -- Render
+  // --- Render
   return (
     <BentoGrid className="w-full">
       {ABOUT_SKILLS.map((item, index) => (
@@ -19,5 +19,5 @@ export const Skills: React.FC = () => {
         />
       ))}
     </BentoGrid>
-  );
-};
+  )
+}

@@ -16,6 +16,7 @@ export const SERVICES: ServiceCardProps[] = [
     description:
       'Craft des landing pages sur mesure pour convertir vos visiteurs en clients. Fournies en 72h.',
     icon: 'SwatchBook',
+    color: '',
     link: 'https://cal.com/ugolin-olle',
     linkText: 'Prendre rendez-vous',
     features: ['Design sur mesure', 'Responsive', 'Optimisé SEO'],
@@ -25,8 +26,9 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Application web',
     price: 0,
     description:
-      'Développement d’applications web complètes, optimisées pour la performance et la scalabilité.',
+      "Création d'applications web sur mesure, conçues pour être performantes, évolutives, expérience utilisateur fluide et design interactif.",
     icon: 'Code',
+    color: 'green-500',
     link: 'https://cal.com/ugolin-olle',
     linkText: 'Prendre rendez-vous',
     features: ['Technologies modernes', 'Design interactif', 'Support mobile'],
@@ -38,6 +40,7 @@ export const SERVICES: ServiceCardProps[] = [
     description:
       'Conception de logiciels et solutions SaaS sur mesure pour automatiser et faire évoluer votre entreprise.',
     icon: 'BookKey',
+    color: 'purple-500',
     link: 'https://cal.com/ugolin-olle',
     linkText: 'Prendre rendez-vous',
     features: ['Cloud-based', 'Scalabilité', 'Sécurité renforcée'],
@@ -50,6 +53,7 @@ export const SERVICES: ServiceCardProps[] = [
     description:
       'Assistance technique pour maintenir vos systèmes, applications, logiciel et serveur à jour 7/7j.',
     icon: 'Computer',
+    color: 'red-500',
     link: 'https://cal.com/ugolin-olle',
     linkText: 'Prendre rendez-vous',
     features: [

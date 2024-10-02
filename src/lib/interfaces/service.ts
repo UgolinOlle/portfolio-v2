@@ -16,6 +16,7 @@ export interface ServiceCardProps {
   price: number
   hour?: boolean
   description: string
+  color: string
   icon: string
   link: string
   linkText: string
