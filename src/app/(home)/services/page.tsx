@@ -1,20 +1,20 @@
-import React from 'react'
-import { Metadata } from 'next'
-import { CircleCheckBig } from 'lucide-react'
+import React from 'react';
+import { Metadata } from 'next';
+import { CircleCheckBig } from 'lucide-react';
 
-import { Skills } from '~/components/about/skills'
-import { Box, Container } from '~/components/commons/animation'
-import { ServiceCard } from '~/components/services/card'
-import { Heading } from '~/components/ui/headers'
-import { Marquee } from '~/components/ui/marquee'
+import { Skills } from '~/components/about/skills';
+import { Box, Container } from '~/components/commons/animation';
+import { ServiceCard } from '~/components/services/card';
+import { Heading } from '~/components/ui/headers';
+import { Marquee } from '~/components/ui/marquee';
 
-import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service'
+import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service';
 
 // --- Metadata
 export const metadata: Metadata = {
   title: 'Services · Ugolin Ollé',
   description: 'Liste des services proposés.',
-}
+};
 
 export default function ServicesPage() {
   // --- Render
@@ -34,9 +34,7 @@ export default function ServicesPage() {
           {SERVICES_BENEFITS.map((review) => (
             <div className="flex items-center gap-2">
               <CircleCheckBig className="text-primary-500 dark:text-primary-400 h-6 w-6" />
-              <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
-                {review.title}
-              </p>
+              <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">{review.title}</p>
             </div>
           ))}
         </Marquee>
@@ -45,5 +43,5 @@ export default function ServicesPage() {
         <Skills />
       </Box>
     </Container>
-  )
+  );
 }
