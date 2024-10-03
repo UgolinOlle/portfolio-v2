@@ -20,7 +20,8 @@ export const Navbar: React.FC = () => {
 
   const handleNavigation = (path: string, title?: string) => {
     setActiveTab(title || path);
-    router.push(path);
+    if (path.startsWith('http')) window.open(path, '_blank');
+    else router.push(path);
     setIsMenuOpen(false);
   };
 
@@ -30,7 +31,7 @@ export const Navbar: React.FC = () => {
       '/services': 'Services',
       '/experiences': 'Experiences',
       '/projects': 'Projets',
-      '/contact': 'Contact',
+      'https://cal.com/ugolin-olle': 'Contact',
       '/uses': 'Uses',
     };
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'Projets' }];
@@ -55,7 +56,6 @@ export const Navbar: React.FC = () => {
           isMenuOpen ? 'flex' : 'hidden'
         } w-full flex-col items-start justify-between lg:flex lg:flex-row lg:items-center`}
       >
-        {/* Onglets alignés à gauche */}
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full lg:w-auto">
           <TabsList className="flex h-auto flex-col lg:flex-grow lg:flex-row lg:justify-start">
             {[
@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
               { title: 'Services', path: '/services' },
               { title: 'Projets', path: '/projects' },
               { title: 'Experiences', path: '/experiences' },
-              { title: 'Contact', path: '/contact' },
+              { title: 'Contact', path: 'https://cal.com/ugolin-olle' },
             ].map((tab) => (
               <TabsTrigger
                 key={tab.title}

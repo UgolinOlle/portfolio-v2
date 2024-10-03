@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '~/lib/utils';
 
 // -- Header Variants
-const headingVariants = cva('text-lg font-semibold', {
+const headingVariants = cva('text-lg font-semibold text-neutral-900 dark:text-neutral-200', {
   variants: {
     variant: {
       hero: 'lg:text-8xl md:text-7xl text-6xl font-light',
@@ -15,8 +15,7 @@ const headingVariants = cva('text-lg font-semibold', {
     align: {
       left: 'justify-start leading-snug md:leading-normal text-center md:text-left',
       center: 'justify-center leading-snug md:leading-normal text-center',
-      right:
-        'justify-end text-center leading-snug md:leading-normal md:text-right',
+      right: 'justify-end text-center leading-snug md:leading-normal md:text-right',
     },
   },
   defaultVariants: {
@@ -25,9 +24,7 @@ const headingVariants = cva('text-lg font-semibold', {
   },
 });
 
-export interface IHeadingProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {
+export interface IHeadingProps extends React.HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof headingVariants> {
   border?: boolean;
 }
 
@@ -37,27 +34,11 @@ export interface IHeadingProps
  * @param {string} variant - The variant of the heading.
  * @returns {React.ReactElement} The heading component.
  */
-function Heading({
-  variant,
-  align,
-  className,
-  border = true,
-  ...props
-}: IHeadingProps): React.ReactElement {
+function Heading({ variant, align, className, border = true, ...props }: IHeadingProps): React.ReactElement {
   return (
-    <div
-      className={cn(
-        'flex items-center w-full',
-        `${border ? 'gap-5' : ''}`,
-        headingVariants({ align })
-      )}
-    >
-      <h1 className={cn(headingVariants({ variant }), className)}>
-        {props.children}
-      </h1>
-      <span
-        className={cn(border ? '' : 'hidden', `flex-grow h-0.5 bg-gray-100`)}
-      />
+    <div className={cn('flex w-full items-center', `${border ? 'gap-5' : ''}`, headingVariants({ align }))}>
+      <h1 className={cn(headingVariants({ variant }), className)}>{props.children}</h1>
+      <span className={cn(border ? '' : 'hidden', `h-0.5 flex-grow bg-gray-100`)} />
     </div>
   );
 }
