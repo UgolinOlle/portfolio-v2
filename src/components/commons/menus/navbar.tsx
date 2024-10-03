@@ -31,7 +31,6 @@ export const Navbar: React.FC = () => {
       '/experiences': 'Experiences',
       '/projects': 'Projets',
       '/contact': 'Contact',
-      '/notes': 'Notes',
       '/uses': 'Uses',
     };
     const dynamicPaths = [{ pattern: /^\/projects\/.+$/, tab: 'Projets' }];
@@ -63,6 +62,7 @@ export const Navbar: React.FC = () => {
               { title: 'À propos', path: '/' },
               { title: 'Services', path: '/services' },
               { title: 'Projets', path: '/projects' },
+              { title: 'Experiences', path: '/experiences' },
               { title: 'Contact', path: '/contact' },
             ].map((tab) => (
               <TabsTrigger
@@ -77,26 +77,8 @@ export const Navbar: React.FC = () => {
           </TabsList>
         </Tabs>
 
-        {/* Onglets alignés à droite */}
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full lg:w-auto">
           <TabsList className="flex h-auto flex-col lg:ml-auto lg:flex-row lg:justify-end">
-            <TabsTrigger
-              value="Notes"
-              onClick={() => handleNavigation('/notes', 'Notes')}
-              className="flex w-full cursor-none items-center lg:w-auto"
-            >
-              <span className="lg:hidden">Notes</span>
-              <NotebookPen size={20} className="hidden lg:inline" />
-            </TabsTrigger>
-            <TabsTrigger
-              value="Experiences"
-              onClick={() => handleNavigation('/experiences', 'Experiences')}
-              className="flex w-full cursor-none items-center lg:w-auto"
-            >
-              <span className="lg:hidden">Experiences</span>
-              <BriefcaseBusiness size={20} className="hidden lg:inline" />
-            </TabsTrigger>
-
             <TabsTrigger
               value="Uses"
               onClick={() => handleNavigation('/uses', 'Uses')}
