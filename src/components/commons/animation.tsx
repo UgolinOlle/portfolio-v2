@@ -6,13 +6,13 @@ import { cn } from '~/lib/utils'
 
 // --- Global variants animation
 const variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
-      duration: 1,
+      delay: i * 0.3,
+      duration: 1.5,
       ease: 'easeOut',
     },
   }),
