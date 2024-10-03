@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Calendar, icons } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { ServiceCardProps } from '~/lib/interfaces/service';
 
@@ -17,7 +17,7 @@ import { BorderBeam } from '~/components/ui/border-beam';
 export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
   // --- Variables
   const variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
@@ -69,7 +69,19 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {isHovered && <BorderBeam fade size={250} duration={12} delay={9} />}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0 z-10 rounded-xl"
+          >
+            <BorderBeam fade size={250} duration={12} delay={9} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="flex w-full items-center justify-between">
         <div className="flex w-2/3 items-center gap-3 text-neutral-900 dark:text-neutral-100">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 p-2 dark:border-neutral-700 dark:bg-neutral-800">
