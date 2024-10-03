@@ -5,8 +5,7 @@ import { MoveUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import { Button } from '~/components/ui/button';
-import { Bugs } from '~/components/commons/menus/bugs';
-import ThemeToggler from '~/components/commons/menus/theme-switcher';
+import { ThemeToggler } from '~/components/commons/menus/theme-toggler';
 
 export const RightMenu: React.FC = () => {
   // -- State
@@ -46,10 +45,9 @@ export const RightMenu: React.FC = () => {
       initial={{ bottom: '10px' }}
       animate={{ bottom: isBottom ? '70px' : '20px' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="fixed right-10 z-50 md:flex flex-col items-center gap-4 hidden"
+      className="fixed right-10 z-50 hidden flex-col items-center gap-4 md:flex"
     >
       <ThemeToggler />
-      <Bugs />
       <Button
         variant="outline"
         className="rounded-full px-2 py-4 text-neutral-600/70 dark:text-neutral-400/70"

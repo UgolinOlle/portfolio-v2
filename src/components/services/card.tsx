@@ -1,14 +1,13 @@
-'use client'
+'use client';
 
-import React, { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
-import { Calendar, icons } from 'lucide-react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { Calendar, icons } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-import { ServiceCardProps } from '~/lib/interfaces/service'
-import { cn } from '~/lib/utils'
+import { ServiceCardProps } from '~/lib/interfaces/service';
 
-import { BorderBeam } from '~/components/commons/border-beam'
+import { BorderBeam } from '~/components/ui/border-beam';
 
 /**
  * @function ServiceCard
@@ -28,11 +27,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
         ease: 'easeOut',
       },
     }),
-  }
-  const LucideIcon = icons[props.icon as keyof typeof icons]
-  const [isHovered, setIsHovered] = React.useState(false)
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  };
+  const LucideIcon = icons[props.icon as keyof typeof icons];
+  const [isHovered, setIsHovered] = React.useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // --- Functions
   useEffect(() => {
@@ -40,24 +39,24 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
+            setIsVisible(true);
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
       { threshold: 0.05 }
-    )
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // --- Render
   return (
@@ -83,17 +82,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
             <span className="text-neutral-500">Sur devis</span>
           ) : (
             <>
-              {props.price}{' '}
-              <span className="text-neutral-500">
-                / {props.hour === true ? 'heure' : 'jour'}
-              </span>
+              {props.price} <span className="text-neutral-500">/ {props.hour === true ? 'heure' : 'jour'}</span>
             </>
           )}
         </p>
       </div>
-      <p className="w-3/4 text-lg text-neutral-700 dark:text-neutral-300">
-        {props.description}
-      </p>
+      <p className="w-3/4 text-lg text-neutral-700 dark:text-neutral-300">{props.description}</p>
       <div className="flex min-h-[150px] w-full flex-col gap-2 rounded-lg border">
         {props.features.map((feature, index) => (
           <p
@@ -105,16 +99,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
         ))}
       </div>
       <div className="m-auto cursor-pointer rounded-lg border border-neutral-200 px-4 py-2 text-lg font-medium tracking-wider transition duration-300 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-100 hover:dark:bg-neutral-800">
-        <Link
-          href={props.link}
-          passHref
-          target="_blank"
-          className="flex items-center gap-2"
-        >
+        <Link href={props.link} passHref target="_blank" className="flex items-center gap-2">
           <Calendar size="18" />
           <span className="font-bold">{props.linkText}</span>
         </Link>
       </div>
     </motion.div>
-  )
-}
+  );
+};

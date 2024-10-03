@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 
-export default function ThemeToggler() {
+export const ThemeToggler = () => {
   // --- Variables
   const { theme, setTheme } = useTheme();
   const [showPopup, setShowPopup] = useState(false);
@@ -25,10 +25,7 @@ export default function ThemeToggler() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        popupRef.current &&
-        !popupRef.current.contains(event.target as Node)
-      ) {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
         setShowPopup(false);
       }
     }
@@ -45,9 +42,7 @@ export default function ThemeToggler() {
       <Button
         variant="outline"
         onClick={togglePopup}
-        className={cn(
-          'p-2 rounded-full text-neutral-600/70 dark:text-neutral-400/70 hover:text-neutral-900/70'
-        )}
+        className={cn('rounded-full p-2 text-neutral-600/70 hover:text-neutral-900/70 dark:text-neutral-400/70')}
       >
         <AnimatePresence mode="wait" initial={false}>
           <SwatchBook size={20} />
@@ -62,7 +57,7 @@ export default function ThemeToggler() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute -top-2 right-12 mt-2 bg-white dark:bg-neutral-900/70 shadow-md rounded-lg w-32 py-2 z-10 border border-neutral-200 dark:border-neutral-700"
+            className="absolute -top-2 right-12 z-10 mt-2 w-32 rounded-lg border border-neutral-200 bg-white py-2 shadow-md dark:border-neutral-700 dark:bg-neutral-900/70"
           >
             {themes.map((t) => (
               <button
@@ -72,7 +67,7 @@ export default function ThemeToggler() {
                   setShowPopup(false);
                 }}
                 className={cn(
-                  'flex items-center w-full px-4 py-2 text-left hover:bg-gray-200 dark:hover:bg-gray-700',
+                  'flex w-full items-center px-4 py-2 text-left hover:bg-gray-200 dark:hover:bg-gray-700',
                   theme === t.name.toLowerCase() && 'font-bold'
                 )}
               >
@@ -85,4 +80,4 @@ export default function ThemeToggler() {
       </AnimatePresence>
     </div>
   );
-}
+};
