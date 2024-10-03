@@ -1,18 +1,14 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Toaster } from 'sonner'
+import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Toaster } from 'sonner';
 
-import { ThemeProvider } from '~/lib/providers/theme'
-import { CursorProvider } from '~/components/commons/cursor'
+import { ThemeProvider } from '~/lib/providers/theme';
+import { Cursor } from '~/components/commons/cursor';
 
-export const Providers = ({
-  children,
-}: {
-  children: React.ReactNode
-}): React.ReactElement => {
+export const Providers = ({ children }: { children: React.ReactNode }): React.ReactElement => {
   // --- Render
   return (
     <>
@@ -20,8 +16,9 @@ export const Providers = ({
       <SpeedInsights />
       <Toaster richColors />
       <ThemeProvider>
-        <CursorProvider>{children}</CursorProvider>
+        <Cursor />
+        {children}
       </ThemeProvider>
     </>
-  )
-}
+  );
+};

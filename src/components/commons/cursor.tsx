@@ -1,33 +1,17 @@
-'use client'
+'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react'
-import { motion, useAnimation, AnimationControls } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
-type CursorContextType = {
-  mousePosition: { x: number; y: number }
-  cursorColor: string
-  isHovering: boolean
-  controls: AnimationControls
-  isPopupVisible: boolean
-  popupText: string
-  handleMouseEnterDiv: (text: string) => void
-  handleMouseLeaveDiv: () => void
-}
-
-// Create a default context
-const CursorContext = createContext<CursorContextType | null>(null)
-
-export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 }) // Nouvelle position de popup
-  const [isHovering, setIsHovering] = useState(false)
-  const [isPopupVisible, setIsPopupVisible] = useState(false)
-  const [popupText, setPopupText] = useState('')
-  const pathname = usePathname()
-  const controls = useAnimation()
+export const Cursor: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [explosionPosition, setExplosionPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isExploding, setIsExploding] = useState(false);
+  const pathname = usePathname();
+  const controls = useAnimation();
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   const cursorColor =
     pathname === '/'
@@ -38,23 +22,26 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
           ? 'hsl(204 100% 49%)'
           : pathname === '/projects'
             ? 'hsl(0 100% 49%)'
-            : 'hsl(262 100% 49%)'
+            : 'hsl(262 100% 49%)';
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (isExploding) {
+        setIsExploding(false);
+        if (cursorRef.current) {
+          cursorRef.current.style.display = 'block';
+        }
+      }
+    };
 
     const handleMouseOver = (e: MouseEvent) => {
-      if (
-        (e.target as HTMLElement).tagName === 'A' ||
-        (e.target as HTMLElement).tagName === 'BUTTON'
-      ) {
-        setIsHovering(true)
+      if ((e.target as HTMLElement).tagName === 'A' || (e.target as HTMLElement).tagName === 'BUTTON') {
+        setIsHovering(true);
       } else {
-        setIsHovering(false)
+        setIsHovering(false);
       }
-    }
+    };
 
     const handleClick = () => {
       controls
@@ -66,47 +53,59 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
           controls.start({
             scale: 1,
             transition: { duration: 0.2 },
-          })
-        })
-    }
+          });
+        });
+    };
 
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mouseover', handleMouseOver)
-    window.addEventListener('click', handleClick)
+    const handleMouseLeave = (e: MouseEvent) => {
+      setExplosionPosition({ x: e.clientX, y: e.clientY });
+      setIsExploding(true);
+      if (cursorRef.current) {
+        cursorRef.current.style.display = 'none';
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('click', handleClick);
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseover', handleMouseOver)
-      window.removeEventListener('click', handleClick)
-    }
-  }, [controls])
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('click', handleClick);
+      document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [controls, isExploding]);
 
-  const handleMouseEnterDiv = (text: string) => {
-    setPopupText(text)
-    setPopupPosition(mousePosition) // Fixe la position de la popup au moment de l'activation
-    setIsPopupVisible(true)
-  }
-
-  const handleMouseLeaveDiv = () => {
-    setIsPopupVisible(false)
-  }
+  const explodingParticles = Array.from({ length: 20 }).map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute h-2 w-2 rounded-full"
+      style={{
+        backgroundColor: cursorColor,
+        top: explosionPosition.y,
+        left: explosionPosition.x,
+      }}
+      initial={{ scale: 0 }}
+      animate={
+        isExploding
+          ? {
+              x: Math.random() * 200 - 100,
+              y: Math.random() * 200 - 100,
+              scale: [1, 0],
+              opacity: [1, 0],
+            }
+          : { scale: 0 }
+      }
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    />
+  ));
 
   return (
-    <CursorContext.Provider
-      value={{
-        mousePosition,
-        cursorColor,
-        isHovering,
-        controls,
-        isPopupVisible,
-        popupText,
-        handleMouseEnterDiv,
-        handleMouseLeaveDiv,
-      }}
-    >
-      {children}
-
+    <motion.div>
       <motion.div
+        ref={cursorRef}
         className="pointer-events-none fixed left-0 top-0 z-[10001]"
         animate={{ x: mousePosition.x, y: mousePosition.y }}
         transition={{
@@ -127,6 +126,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
           style={{
             transform: `translate(-4px, -4px) scale(${isHovering ? 1.2 : 1})`,
             transformOrigin: 'top left',
+            opacity: isExploding ? 0 : 1,
           }}
         >
           <g filter="url(#filter0_d_2_20)">
@@ -159,54 +159,14 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({
               />
               <feOffset dy="19.8759" />
               <feGaussianBlur stdDeviation="19.8759" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_2_20"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow_2_20"
-                result="shape"
-              />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_20" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_20" result="shape" />
             </filter>
           </defs>
         </motion.svg>
-
-        {isPopupVisible && (
-          <motion.div
-            className="absolute rounded-lg bg-white px-2 py-1 text-black shadow-lg"
-            style={{
-              left: popupPosition.x - 300, // Fixer la position avec un décalage constant
-              top: popupPosition.y - 260,
-              transform: 'translate(0, 0)', // Pas de transformation supplémentaire
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {popupText}
-          </motion.div>
-        )}
       </motion.div>
-    </CursorContext.Provider>
-  )
-}
-
-/**
- * @function useCursor
- * @description Hook to get access to the cursor context.
- * @exports useCursor
- */
-export const useCursor = () => {
-  const context = useContext(CursorContext)
-  if (!context) {
-    throw new Error('useCursor must be used within a CursorProvider')
-  }
-  return context
-}
+      {explodingParticles}
+    </motion.div>
+  );
+};
