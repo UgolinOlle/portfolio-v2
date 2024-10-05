@@ -1,15 +1,15 @@
-import React from 'react'
-import { Metadata } from 'next'
+import React from 'react';
+import { Metadata } from 'next';
 
-import { Box, Container } from '~/components/commons/animation'
-import { HeroAbout, HeroAboutTwo } from '~/components/hero/about'
-import { PicturesBento } from '~/components/about/pictures-bento'
+import { Box, Container } from '~/components/commons/animation';
+import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
+import { PicturesBento } from '~/components/about/pictures-bento';
 
 // --- Metadata
 export const metadata: Metadata = {
   title: 'À propos · Ugolin Ollé',
   description: "Page d'accueil de mon portfolio",
-}
+};
 
 /**
  * @function HomePage
@@ -30,5 +30,5 @@ export default function HomePage() {
         <HeroAboutTwo />
       </Box>
     </Container>
-  )
+  );
 }
