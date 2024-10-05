@@ -3,11 +3,7 @@ import { IIcon } from './socials';
 export const SKILLS_ICONS: IIcon = {
   typescript: () => {
     return (
-      <svg
-        viewBox="0 0 256 256"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid"
-      >
+      <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
         <path
           d="M20 0h216c11.046 0 20 8.954 20 20v216c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0Z"
           fill="#3178C6"
@@ -21,11 +17,7 @@ export const SKILLS_ICONS: IIcon = {
   },
   javascript: () => {
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1052 1052"
-        style={{ borderRadius: '10%' }}
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 1052" style={{ borderRadius: '10%' }}>
         <path fill="#f0db4f" d="M0 0h1052v1052H0z" />
         <path
           d="M965.9 801.1c-7.7-48-39-88.3-131.7-125.9-32.2-14.8-68.1-25.399-78.8-49.8-3.8-14.2-4.3-22.2-1.9-30.8 6.9-27.9 40.2-36.6 66.6-28.6 17 5.7 33.1 18.801 42.8 39.7 45.4-29.399 45.3-29.2 77-49.399-11.6-18-17.8-26.301-25.4-34-27.3-30.5-64.5-46.2-124-45-10.3 1.3-20.699 2.699-31 4-29.699 7.5-58 23.1-74.6 44-49.8 56.5-35.6 155.399 25 196.1 59.7 44.8 147.4 55 158.6 96.9 10.9 51.3-37.699 67.899-86 62-35.6-7.4-55.399-25.5-76.8-58.4-39.399 22.8-39.399 22.8-79.899 46.1 9.6 21 19.699 30.5 35.8 48.7 76.2 77.3 266.899 73.5 301.1-43.5 1.399-4.001 10.6-30.801 3.199-72.101zm-394-317.6h-98.4c0 85-.399 169.4-.399 254.4 0 54.1 2.8 103.7-6 118.9-14.4 29.899-51.7 26.2-68.7 20.399-17.3-8.5-26.1-20.6-36.3-37.699-2.8-4.9-4.9-8.7-5.601-9-26.699 16.3-53.3 32.699-80 49 13.301 27.3 32.9 51 58 66.399 37.5 22.5 87.9 29.4 140.601 17.3 34.3-10 63.899-30.699 79.399-62.199 22.4-41.3 17.6-91.3 17.4-146.6.5-90.2 0-180.4 0-270.9z"
@@ -62,25 +54,12 @@ export const SKILLS_ICONS: IIcon = {
           <circle cx="90" cy="90" r="90" fill="black" />
         </mask>
         <g mask="url(#mask0_408_139)">
-          <circle
-            cx="90"
-            cy="90"
-            r="87"
-            fill="black"
-            stroke="white"
-            strokeWidth="6"
-          />
+          <circle cx="90" cy="90" r="87" fill="black" stroke="white" strokeWidth="6" />
           <path
             d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
             fill="url(#paint0_linear_408_139)"
           />
-          <rect
-            x="115"
-            y="54"
-            width="12"
-            height="72"
-            fill="url(#paint1_linear_408_139)"
-          />
+          <rect x="115" y="54" width="12" height="72" fill="url(#paint1_linear_408_139)" />
         </g>
         <defs>
           <linearGradient
@@ -111,42 +90,25 @@ export const SKILLS_ICONS: IIcon = {
   },
   flutter: () => {
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid"
-        viewBox="0 0 256 317"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 317">
         <defs>
           <linearGradient x1="4%" y1="27%" x2="75.9%" y2="52.9%" id="a">
             <stop offset="0%" />
             <stop stop-opacity="0" offset="100%" />
           </linearGradient>
         </defs>
-        <path
-          fill="#47C5FB"
-          d="M158 0 0 158l49 48L255 0zM157 145l-85 85 49 50 49-49 85-86z"
-        />
+        <path fill="#47C5FB" d="M158 0 0 158l49 48L255 0zM157 145l-85 85 49 50 49-49 85-86z" />
         <path fill="#00569E" d="m121 280 37 37h97l-85-86z" />
         <path fill="#00B5F8" d="m72 230 48-48 50 49-49 49z" />
-        <path fill-opacity=".8" fill="url(#a)" d="m121 280 41-14 4-31z" />
+        <path fillOpacity=".8" fill="url(#a)" d="m121 280 41-14 4-31z" />
       </svg>
     );
   },
   tailwindcss: () => {
     return (
-      <svg
-        viewBox="0 0 256 154"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid"
-      >
+      <svg viewBox="0 0 256 154" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
         <defs>
-          <linearGradient
-            x1="-2.778%"
-            y1="32%"
-            x2="100%"
-            y2="67.556%"
-            id="gradient"
-          >
+          <linearGradient x1="-2.778%" y1="32%" x2="100%" y2="67.556%" id="gradient">
             <stop stopColor="#2298BD" offset="0%"></stop>
             <stop stopColor="#0ED7B5" offset="100%"></stop>
           </linearGradient>
@@ -160,11 +122,7 @@ export const SKILLS_ICONS: IIcon = {
   },
   postgresql: () => {
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid"
-        viewBox="0 0 256 264"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 264">
         <path d="M255 158c-2-5-6-8-11-9l-8 1-14 2c12-20 22-43 27-65 9-34 5-50-1-57a77 77 0 0 0-62-30c-14 0-27 3-33 5l-19-2c-12 0-24 3-33 8L78 5c-23-3-42 0-55 9C7 26-1 46 0 74a342 342 0 0 0 28 97c7 14 14 22 23 24 5 2 13 3 22-4l5 4 9 3c11 3 22 2 31-1a643 643 0 0 1 0 10 109 109 0 0 0 5 33c1 4 4 11 9 16 6 6 13 8 20 8l9-1c10-2 21-6 29-17s11-27 12-53v-2l1-2 1 1h1c10 0 22-2 30-6 5-2 24-12 20-26" />
         <path
           d="M238 161c-30 6-32-4-32-4 32-47 45-106 33-120-31-40-84-21-85-21l-20-2c-14 0-24 4-32 10 0 0-95-40-91 49 1 19 28 143 59 106l22-26c6 4 12 6 19 5h1v5c-8 9-6 10-22 14-16 3-7 9 0 11s25 4 36-12v2c3 2 5 16 5 29-1 12-1 21 2 27 2 7 5 22 26 18 17-4 27-14 28-30 1-12 3-10 3-20l1-5c2-16 1-21 12-19l2 1c8 0 19-2 25-5 13-6 21-16 8-13"
@@ -212,11 +170,7 @@ export const SKILLS_ICONS: IIcon = {
   },
   cpp: () => {
     return (
-      <svg
-        viewBox="0 0 306 344.35"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlSpace="preserve"
-      >
+      <svg viewBox="0 0 306 344.35" xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve">
         <path
           fill="#00599C"
           d="M302.107 258.262c2.401-4.159 3.893-8.845 3.893-13.053V99.14c0-4.208-1.49-8.893-3.892-13.052L153 172.175l149.107 86.087z"
@@ -267,10 +221,7 @@ export const SKILLS_ICONS: IIcon = {
             d="M941.5,111.5c0-58.5-47.5-106-106-106s-106,47.5-106,106c0,58.5,47.5,106,106,106S941.5,170.1,941.5,111.5"
           />
           <g>
-            <path
-              fill="#FFFFFF"
-              d="M258.1,627.8h117.3v26.7H227.8V417h30.3V627.8z"
-            />
+            <path fill="#FFFFFF" d="M258.1,627.8h117.3v26.7H227.8V417h30.3V627.8z" />
             <path
               fill="#FFFFFF"
               d="M515.5,654.5v-23.8c-16,22.5-31.9,31.3-57,31.3c-33.2,0-54.4-18.2-54.4-46.6V483.8h27v120.9    c0,20.5,13.7,33.6,35.2,33.6c28.3,0,46.6-22.8,46.6-57.7v-96.8h27v170.7H515.5z"
@@ -294,44 +245,22 @@ export const SKILLS_ICONS: IIcon = {
   },
   nodejs: () => {
     return (
-      <svg
-        viewBox="0 0 256 292"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
+      <svg viewBox="0 0 256 292" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
-          <linearGradient
-            id="a"
-            x1="68.188%"
-            x2="27.823%"
-            y1="17.487%"
-            y2="89.755%"
-          >
+          <linearGradient id="a" x1="68.188%" x2="27.823%" y1="17.487%" y2="89.755%">
             <stop offset="0%" stopColor="#41873F" />
             <stop offset="32.88%" stopColor="#418B3D" />
             <stop offset="63.52%" stopColor="#419637" />
             <stop offset="93.19%" stopColor="#3FA92D" />
             <stop offset="100%" stopColor="#3FAE2A" />
           </linearGradient>
-          <linearGradient
-            id="c"
-            x1="43.277%"
-            x2="159.245%"
-            y1="55.169%"
-            y2="-18.306%"
-          >
+          <linearGradient id="c" x1="43.277%" x2="159.245%" y1="55.169%" y2="-18.306%">
             <stop offset="13.76%" stopColor="#41873F" />
             <stop offset="40.32%" stopColor="#54A044" />
             <stop offset="71.36%" stopColor="#66B848" />
             <stop offset="90.81%" stopColor="#6CC04A" />
           </linearGradient>
-          <linearGradient
-            id="f"
-            x1="-4.389%"
-            x2="101.499%"
-            y1="49.997%"
-            y2="49.997%"
-          >
+          <linearGradient id="f" x1="-4.389%" x2="101.499%" y1="49.997%" y2="49.997%">
             <stop offset="9.192%" stopColor="#6CC04A" />
             <stop offset="28.64%" stopColor="#66B848" />
             <stop offset="59.68%" stopColor="#54A044" />
