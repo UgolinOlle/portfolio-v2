@@ -3,14 +3,14 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '~/lib/utils';
 
 // -- Header Variants
-const headingVariants = cva('text-lg font-semibold text-neutral-900 dark:text-neutral-200', {
+const headingVariants = cva('text-lg font-semibold', {
   variants: {
     variant: {
-      hero: 'lg:text-8xl md:text-7xl text-6xl font-light',
-      h1: 'lg:text-5xl md:text-4xl text-3xl font-bold',
-      h2: 'lg:text-3xl md:text-2xl text-xl font-bold',
-      h3: 'lg:text-2xl md:text-xl text-lg font-bold',
-      h4: 'lg:text-xl md:text-lg text-base font-bold',
+      hero: 'lg:text-8xl text-7xl font-light',
+      h1: 'lg:text-5xl md:text-4xl text-3xl font-bold text-neutral-900 dark:text-neutral-200',
+      h2: 'lg:text-3xl md:text-2xl text-xl font-bold text-neutral-900 dark:text-neutral-200',
+      h3: 'lg:text-2xl md:text-xl text-lg font-bold text-neutral-900 dark:text-neutral-200',
+      h4: 'lg:text-xl md:text-lg text-base font-bold text-neutral-900 dark:text-neutral-200',
     },
     align: {
       left: 'justify-start leading-snug md:leading-normal text-center md:text-left',
