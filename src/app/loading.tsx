@@ -5,7 +5,7 @@ export default function Landing() {
   // -- Render
   return (
     <Container className="flex h-[90vh] w-full flex-col items-center justify-center gap-5 rounded-lg text-black sm:border">
-      <Heading variant="h1" className="m-auto h-full w-full" border={false}>
+      <Heading variant="h1" align="center" border={false}>
         Ugolin Olle
       </Heading>
     </Container>
