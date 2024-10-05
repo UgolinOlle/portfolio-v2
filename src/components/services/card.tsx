@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ServiceCardProps } from '~/lib/interfaces/service';
 
 import { BorderBeam } from '~/components/ui/border-beam';
+import Image from 'next/image';
 
 /**
  * @function ServiceCard
@@ -69,19 +70,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0 z-10 rounded-xl"
-          >
-            <BorderBeam fade size={250} duration={12} delay={9} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isHovered && <BorderBeam fade size={250} duration={12} delay={9} />}
       <div className="flex w-full items-center justify-between">
         <div className="flex w-2/3 items-center gap-3 text-neutral-900 dark:text-neutral-100">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 p-2 dark:border-neutral-700 dark:bg-neutral-800">
@@ -110,7 +99,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
           </p>
         ))}
       </div>
-      <div className="m-auto cursor-pointer rounded-lg border border-neutral-200 px-4 py-2 text-lg font-medium tracking-wider transition duration-300 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-100 hover:dark:bg-neutral-800">
+      <div className="m-auto cursor-pointer rounded-lg border border-neutral-200 bg-primary px-4 py-2 text-lg font-medium tracking-wider text-neutral-100 transition duration-300 ease-in-out hover:bg-primary/90 dark:border-neutral-700 dark:hover:border-neutral-100">
         <Link href={props.link} passHref target="_blank" className="flex items-center gap-2">
           <Calendar size="18" />
           <span className="font-bold">{props.linkText}</span>
