@@ -65,19 +65,19 @@ export const COMMON_ICONS: IIcon = {
       >
         <defs>
           <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-            <stop stop-color="#16B0ED" stop-opacity="0.800235524" offset="0%"></stop>
-            <stop stop-color="#0F59B2" stop-opacity="0.83700023" offset="100%"></stop>
+            <stop stopColor="#16B0ED" stopOpacity="0.800235524" offset="0%"></stop>
+            <stop stopColor="#0F59B2" stopOpacity="0.83700023" offset="100%"></stop>
           </linearGradient>
           <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
-            <stop stop-color="#7DB643" offset="0%"></stop>
-            <stop stop-color="#367533" offset="100%"></stop>
+            <stop stopColor="#7DB643" offset="0%"></stop>
+            <stop stopColor="#367533" offset="100%"></stop>
           </linearGradient>
           <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
-            <stop stop-color="#88C649" stop-opacity="0.8" offset="0%"></stop>
-            <stop stop-color="#439240" stop-opacity="0.84" offset="100%"></stop>
+            <stop stopColor="#88C649" stopOpacity="0.8" offset="0%"></stop>
+            <stop stopColor="#439240" stopOpacity="0.84" offset="100%"></stop>
           </linearGradient>
         </defs>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+        <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="mark-copy" transform="translate(2.000000, 3.000000)">
             <path
               d="M0,155.5704 L155,-1 L154.999997,727 L0,572.237919 L0,155.5704 Z"
