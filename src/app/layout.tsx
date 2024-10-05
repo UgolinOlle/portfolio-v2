@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
-import RobotSlab, { Roboto_Slab } from 'next/font/google'
-import { ViewTransitions } from 'next-view-transitions'
+import type { Metadata } from 'next';
+import { Roboto_Slab, Roboto_Mono } from 'next/font/google';
+import { ViewTransitions } from 'next-view-transitions';
 
-import './globals.css'
+import './globals.css';
 
-import { cn } from '~/lib/utils'
+import { cn } from '~/lib/utils';
 
-import { Providers } from '~/components/commons/providers'
-import { RightMenu } from '~/components/commons/menus/right-menu'
+import { Providers } from '~/components/commons/providers';
+import { RightMenu } from '~/components/commons/menus/right-menu';
 
 export const metadata: Metadata = {
   title: 'Ugolin Ollé',
@@ -130,8 +130,7 @@ export const metadata: Metadata = {
   ].join(', '),
   openGraph: {
     title: 'Ugolin Ollé - Développeur Full Stack & Créateur de SaaS',
-    description:
-      'Mon portfolio, mes projets, mes compétences et mes expériences.',
+    description: 'Mon portfolio, mes projets, mes compétences et mes expériences.',
     url: 'https://ugolin-olle.com',
     siteName: 'Ugolin Ollé Portfolio',
     images: [
@@ -148,22 +147,26 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ugolin Ollé - Développeur Full Stack & Créateur de SaaS',
-    description:
-      'Mon portfolio, mes projets, mes compétences et mes expériences.',
+    description: 'Mon portfolio, mes projets, mes compétences et mes expériences.',
     images: 'https://ugolin-olle.com/profile.png',
     creator: '@ugolin_olle',
   },
-}
+};
 
 const robotSlab = Roboto_Slab({
   subsets: ['latin'],
-  weight: ['400', '700'],
-})
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const robotMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <ViewTransitions>
@@ -171,7 +174,7 @@ export default function RootLayout({
         <body
           className={cn(
             'relative flex flex-col items-center bg-background px-4 py-4 font-body antialiased sm:px-6 md:px-8',
-            `${robotSlab.className}`
+            `${robotSlab.className} ${robotMono.className}`
           )}
         >
           <Providers>
@@ -181,5 +184,5 @@ export default function RootLayout({
         </body>
       </html>
     </ViewTransitions>
-  )
+  );
 }
