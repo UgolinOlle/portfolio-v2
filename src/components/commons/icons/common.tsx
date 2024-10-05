@@ -77,7 +77,7 @@ export const COMMON_ICONS: IIcon = {
             <stop stop-color="#439240" stop-opacity="0.84" offset="100%"></stop>
           </linearGradient>
         </defs>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
           <g id="mark-copy" transform="translate(2.000000, 3.000000)">
             <path
               d="M0,155.5704 L155,-1 L154.999997,727 L0,572.237919 L0,155.5704 Z"
