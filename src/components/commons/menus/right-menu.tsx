@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 import { Button } from '~/components/ui/button';
 import { ThemeToggler } from '~/components/commons/menus/theme-toggler';
+import { RainToggler } from './rain-toggler';
 
 export const RightMenu: React.FC = () => {
   // -- State
@@ -47,6 +48,7 @@ export const RightMenu: React.FC = () => {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="fixed right-10 z-50 hidden flex-col items-center gap-4 md:flex"
     >
+      <RainToggler />
       <ThemeToggler />
       <Button
         variant="outline"
