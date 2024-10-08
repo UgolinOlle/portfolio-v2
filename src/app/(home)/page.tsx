@@ -20,13 +20,13 @@ export default function HomePage() {
   // --- Render
   return (
     <Container className="my-16 flex flex-col gap-16">
-      <Box className="flex flex-col items-center gap-5 md:px-20">
+      <Box className="flex flex-col items-center gap-5 lg:px-20">
         <HeroAbout />
       </Box>
       <Box>
         <PicturesBento />
       </Box>
-      <Box className="md:px-20">
+      <Box className="lg:px-20">
         <HeroAboutTwo />
       </Box>
     </Container>
