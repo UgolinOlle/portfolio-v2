@@ -32,7 +32,7 @@ export const RainToggler: React.FC = (): JSX.Element => {
       variant="outline"
       className={cn('rounded-full p-2 text-neutral-600/70 hover:text-neutral-900/70 dark:text-neutral-400/70')}
     >
-      {isRainActive ? <UmbrellaOff size={24} /> : <Umbrella size={24} />}
+      {isRainActive ? <UmbrellaOff size={20} /> : <Umbrella size={20} />}
     </Button>
   );
 };

@@ -12,15 +12,20 @@ import { Cursor } from '~/components/commons/cursor';
 export const Providers = ({ children }: { children: React.ReactNode }): React.ReactElement => {
   // --- Variables
   const [isRainActive, setIsRainActive] = React.useState(false);
+  const [cozyMode, setCozyMode] = React.useState(false);
 
   // --- Functions
-
   useEffect(() => {
     const handleStorage = () => {
       const savedState = localStorage.getItem('rainActive');
+      const savedCozyState = localStorage.getItem('cozyMode');
 
       if (savedState !== null) {
         setIsRainActive(JSON.parse(savedState));
+      }
+
+      if (savedCozyState !== null) {
+        setCozyMode(JSON.parse(savedCozyState));
       }
     };
 
@@ -34,6 +39,9 @@ export const Providers = ({ children }: { children: React.ReactNode }): React.Re
       if (key === 'rainActive') {
         handleStorage();
       }
+      if (key === 'cozyMode') {
+        handleStorage();
+      }
     };
 
     return () => {
@@ -41,6 +49,16 @@ export const Providers = ({ children }: { children: React.ReactNode }): React.Re
       localStorage.setItem = originalSetItem;
     };
   }, []);
+
+  // --- Update CSS variable when cozyMode changes
+  useEffect(() => {
+    const root = document.documentElement;
+    if (cozyMode) {
+      root.style.setProperty('--primary', '#FFFBEA'); // Blanc-jaune cozy
+    } else {
+      root.style.setProperty('--primary', '#FFFFFF'); // Blanc par défaut
+    }
+  }, [cozyMode]);
 
   // --- Render
   return (
