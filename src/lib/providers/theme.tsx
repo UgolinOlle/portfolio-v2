@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { type ThemeProviderProps } from 'next-themes/dist/types';
+import type { ThemeProviderProps } from 'next-themes/dist/types';
 
 /**
  * @name ThemeProvider
@@ -11,8 +11,6 @@ import { type ThemeProviderProps } from 'next-themes/dist/types';
  * @returns {React.ReactNode} The theme provider.
  * @exports ThemeProvider
  */
-export function ThemeProvider({
-  children,
-}: ThemeProviderProps): React.ReactNode {
+export function ThemeProvider({ children }: ThemeProviderProps): React.ReactNode {
   return <NextThemesProvider attribute="class">{children}</NextThemesProvider>;
 }
