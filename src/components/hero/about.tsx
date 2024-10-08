@@ -43,7 +43,7 @@ const HeroAbout: React.FC = (): JSX.Element => {
   return (
     <div
       ref={textRef}
-      className="w-full text-xl text-neutral-800 dark:text-neutral-300 md:m-auto md:w-3/4 md:text-justify"
+      className="w-full text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
       id="me"
     >
       <p>
@@ -131,7 +131,7 @@ const HeroAboutTwo: React.FC = (): JSX.Element => {
   return (
     <div
       ref={textRef}
-      className="flex w-full flex-col items-center gap-14 text-xl text-neutral-800 dark:text-neutral-300 md:m-auto md:w-3/4 md:text-justify"
+      className="flex w-full flex-col items-center gap-14 text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
     >
       <p>
         J’adore partager mes expériences et réflexions sur le développement et la freelance particulièrement sur{' '}
