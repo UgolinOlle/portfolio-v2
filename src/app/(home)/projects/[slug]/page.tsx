@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Container } from '~/components/commons/animation';
 
 import { MdxRender } from '~/components/commons/mdx/render';
+import { Heading } from '~/components/ui/headers';
 import { getProject, getProjects } from '~/lib/mdx/project';
 
 export const dynamic = 'force-static';
@@ -37,12 +39,16 @@ export default async function RoutePage(props: { params: { slug: string } }) {
   }
 
   return (
-    <article className="prose prose-sm max-w-none lg:prose-lg">
-      <div className="flex items-center gap-2">
-        <p className="text-xs text-muted-foreground">{new Date(post.date).toLocaleDateString()}</p>
-      </div>
-      <h1>{post.title}</h1>
-      <MdxRender>{post.content}</MdxRender>
-    </article>
+    <Container>
+      <article className="prose prose-sm max-w-none lg:prose-lg">
+        <div className="flex items-center gap-2">
+          <p className="text-xs text-muted-foreground">{new Date(post.date).toLocaleDateString()}</p>
+        </div>
+        <Heading variant="h1" border={false}>
+          {post.title}
+        </Heading>
+        <MdxRender>{post.content}</MdxRender>
+      </article>
+    </Container>
   );
 }
