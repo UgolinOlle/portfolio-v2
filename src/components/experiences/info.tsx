@@ -10,7 +10,7 @@ import { EXPERIENCES } from '~/lib/constants/experiences';
 
 import { Timeline } from '~/components/experiences/time-line';
 import { Heading } from '~/components/ui/headers';
-import { MdxRenderClientWrapper } from '../commons/mdx/client-wrapper';
+import { MdxClientWrapper } from '../commons/mdx/client-wrapper';
 
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
   const [selectedExperience, setSelectedExperience] = useState<ITimelineItem | null>(null);
@@ -84,7 +84,7 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
                 variants={variants}
                 className="prose prose-sm max-w-none lg:prose-lg"
               >
-                <MdxRenderClientWrapper>{experienceContent}</MdxRenderClientWrapper>
+                <MdxClientWrapper>{experienceContent}</MdxClientWrapper>
               </motion.div>
             )}
           </motion.article>

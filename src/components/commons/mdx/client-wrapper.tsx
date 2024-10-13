@@ -1,20 +1,16 @@
-'use client';
+import { ReactNode, Suspense } from 'react';
+import { MDXProvider } from '@mdx-js/react';
 
-import React, { Suspense } from 'react';
-import HashLoader from 'react-spinners/HashLoader';
+import { MDX_COMPONENTS } from '~/components/commons/mdx/components';
 
-import { MdxRender } from '~/components/commons/mdx/render';
+type MdxClientWrapperProps = {
+  children: ReactNode;
+};
 
-export function MdxRenderClientWrapper({ children }: { children: string }) {
+export const MdxClientWrapper: React.FC<MdxClientWrapperProps> = ({ children }) => {
   return (
-    <Suspense
-      fallback={
-        <div className="flex h-screen w-full items-center justify-center">
-          <HashLoader color="#5c01f6" size={100} />
-        </div>
-      }
-    >
-      <MdxRender>{children}</MdxRender>
+    <Suspense fallback={<div className="text-center">Chargement du contenu MDX...</div>}>
+      <MDXProvider components={MDX_COMPONENTS}>{children}</MDXProvider>
     </Suspense>
   );
-}
+};
