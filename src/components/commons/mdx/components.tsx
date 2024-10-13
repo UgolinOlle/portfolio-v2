@@ -17,21 +17,11 @@ import {
 import { MdxNote } from '~/components/commons/mdx/note';
 import { Detail, IconListItem, Keyword } from '~/components/commons/mdx/ui';
 import { ProjectGrid } from '~/components/projects/grid';
-import { ImageSwiper } from '~/components/experiences/images-swiper';
-import { SchoolProjects } from '~/components/experiences/school-projects';
 import { COMMON_ICONS } from '~/components/commons/icons/common';
-
-import { SCHOOL_PICTURES } from '~/lib/constants/experiences';
-
-// --- Custom components
-const SchoolImageSwiper = () => <ImageSwiper images={SCHOOL_PICTURES} />;
 
 export const MDX_COMPONENTS = {
   // --- Components
   ProjectGrid: ProjectGrid,
-  SchoolProjects: SchoolProjects,
-  ImageSwiper: ImageSwiper,
-  SchoolImageSwiper: SchoolImageSwiper,
 
   Keyword: Keyword,
   Detail: Detail,
