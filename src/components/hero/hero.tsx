@@ -114,7 +114,7 @@ export const Hero: React.FC = (): JSX.Element => {
               'group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'
             )}
           >
-            <Link href="/contact" passHref>
+            <Link href="https://cal.com/ugolin-olle" passHref>
               <ShinyContainer className="inline-flex items-center justify-center px-4 py-1 text-neutral-600 transition duration-300 ease-out hover:text-neutral-800 hover:dark:text-neutral-200">
                 <span>🎉 Obtenez votre audit gratuit</span>
                 <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
