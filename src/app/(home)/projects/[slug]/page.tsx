@@ -2,9 +2,16 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { MdxRender } from '~/components/commons/mdx/render';
-import { getProject } from '~/lib/mdx/project';
+import { getProject, getProjects } from '~/lib/mdx/project';
 
 export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export const generateMetadata = async (props: { params: { slug: string } }): Promise<Metadata> => {
   const post = await getProject(props.params.slug);
