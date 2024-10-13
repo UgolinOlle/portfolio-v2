@@ -29,7 +29,6 @@ export const Navbar: React.FC = () => {
     const pathMap: { [key: string]: string } = {
       '/': 'À propos',
       '/services': 'Services',
-      '/experiences': 'Experiences',
       '/projects': 'Projets',
       'https://cal.com/ugolin-olle': 'Contact',
       '/uses': 'Uses',
@@ -134,7 +133,6 @@ export const Navbar: React.FC = () => {
             {[
               { title: 'Services', path: '/services' },
               { title: 'Projets', path: '/projects' },
-              { title: 'Experiences', path: '/experiences' },
               { title: 'Contact', path: 'https://cal.com/ugolin-olle' },
             ].map((tab) => (
               <TabsTrigger
