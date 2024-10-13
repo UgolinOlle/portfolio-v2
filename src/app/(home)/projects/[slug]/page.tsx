@@ -1,65 +1,41 @@
-import { serialize } from 'next-mdx-remote/serialize'
-import Image from 'next/image'
-import path from 'path'
-import { notFound } from 'next/navigation'
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-import { getProject, getFilenames } from '~/lib/utils/projects'
+import { MdxRender } from '~/components/commons/mdx/render';
+import { getProject } from '~/lib/mdx/project';
 
-import { Heading } from '~/components/ui/headers'
-import { Container } from '~/components/commons/animation'
-import { ClientMdxRenderer } from '~/components/commons/mdx/render'
-import { CommitList } from '~/components/projects/commits'
+export const dynamic = 'force-static';
 
-export async function generateStaticParams() {
-  const filenames = getFilenames()
-  const markdownRegex = /\.md(x)?$/
-  const paths = filenames.map((filename) => ({
-    slug: filename.replace(markdownRegex, '').split(path.sep),
-  }))
+export const generateMetadata = async (props: { params: { slug: string } }): Promise<Metadata> => {
+  const post = await getProject(props.params.slug);
 
-  return paths
-}
+  if (!post) {
+    return {
+      title: '404 - Page Not Found',
+      description: 'Page not found',
+    };
+  }
 
-export default async function ProjectBySlug({
-  params,
-}: {
-  params: { slug: string }
-}) {
-  // --- Variables
-  const project = getProject(params.slug)
+  return {
+    title: `${post.title} · Ugolin Ollé`,
+    description: post.description,
+  };
+};
 
-  if (!project) notFound()
+export default async function RoutePage(props: { params: { slug: string } }) {
+  const post = await getProject(props.params.slug);
 
-  let mdxSource = await serialize(project.content)
+  if (!post) {
+    notFound();
+  }
 
-  // --- Render
   return (
-    <Container>
-      <Heading variant="h2">{project.data.title}</Heading>
-
-      <br />
-
-      <em>Created: {new Date(project.data.date).toLocaleDateString()}</em>
-
-      <br />
-
-      {project.data.thumbnailUrl && (
-        <Image
-          src={`/images/${project.data.thumbnailUrl}`}
-          alt={`${project.data.title} thumbnail`}
-          width={640}
-          height={200}
-          style={{ objectFit: 'cover' }}
-        />
-      )}
-
-      <br />
-
-      <ClientMdxRenderer content={mdxSource} />
-
-      {project.data.github && (
-        <CommitList repoName={project.data.github} className="w-1/2" />
-      )}
-    </Container>
-  )
+    <article className="prose prose-sm max-w-none lg:prose-lg">
+      <div className="flex items-center gap-2">
+        <p className="text-xs text-muted-foreground">{new Date(post.date).toLocaleDateString()}</p>
+      </div>
+      <h1>{post.title}</h1>
+      <MdxRender>{post.content}</MdxRender>
+    </article>
+  );
 }

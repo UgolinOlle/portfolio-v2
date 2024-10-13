@@ -1,22 +1,22 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { toast } from 'sonner';
+import { motion } from 'framer-motion';
 
 import { ITimelineItem } from '~/lib/interfaces/experience';
 import { EXPERIENCES } from '~/lib/constants/experiences';
+
 import { Timeline } from '~/components/experiences/time-line';
 import { Heading } from '~/components/ui/headers';
-import { MDXWrapper } from '~/components/commons/mdx/mdx';
+import { MdxRenderClientWrapper } from '../commons/mdx/client-wrapper';
 
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
-  // --- Variables
-  const [selectedExperience, setSelectedExperience] =
-    useState<ITimelineItem | null>(null);
-  const [mdxExists, setMdxExists] = useState<boolean>(false);
+  const [selectedExperience, setSelectedExperience] = useState<ITimelineItem | null>(null);
+  const [experienceContent, setExperienceContent] = useState<string | null>(null);
+  const [experienceTitle, setExperienceTitle] = useState<string | null>(null);
+
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -28,81 +28,68 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
     }),
   };
 
-  // --- Functions
   useEffect(() => {
-    const checkMdxFile = async (slug: string) => {
-      const res = await fetch(`/api/mdx?slug=${slug}&category=experiences`);
-      const data = await res.json();
+    const fetchExperienceContent = async (slug: string) => {
+      try {
+        const res = await fetch(`/api/mdx/${slug}`);
+        const experience = await res.json();
 
-      if (!data.exists)
-        toast.error('Aucune information disponible pour le moment.');
-      else {
-        setMdxExists(data.exists);
+        if (!experience) {
+          toast.error('Aucune information disponible pour le moment.');
+          return;
+        }
 
+        setExperienceTitle(experience.title);
+        setExperienceContent(experience.content);
         const element = document.getElementById('experience-info');
         if (element) element.scrollIntoView({ behavior: 'smooth' });
+      } catch (error) {
+        toast.error("Erreur lors du chargement de l'expérience.");
       }
     };
 
     if (selectedExperience) {
-      checkMdxFile(selectedExperience.slug);
+      fetchExperienceContent(selectedExperience.slug);
     }
   }, [selectedExperience]);
 
-  const loadMdxComponent = (filename: string) =>
-    dynamic(() => import(`../../../contents/experiences/${filename}.mdx`), {
-      ssr: false,
-    });
-
-  const MdxContent =
-    selectedExperience && mdxExists
-      ? loadMdxComponent(selectedExperience.slug)
-      : null;
-
-  // --- Render
   return (
     <>
-      <div className="w-full lg:w-1/2 flex flex-col gap-3 lg:mx-5 items-start">
-        <Timeline
-          timelineData={EXPERIENCES}
-          onExperienceClick={setSelectedExperience}
-        />
+      <div className="flex w-full flex-col items-start gap-3 lg:mx-5 lg:w-1/2">
+        <Timeline timelineData={EXPERIENCES} onExperienceClick={setSelectedExperience} />
       </div>
-      <div className="w-full lg:w-1/2 flex flex-col gap-3 items-start">
+      <div className="flex w-full flex-col items-start gap-3 lg:w-1/2">
         {selectedExperience && (
-          <motion.div
+          <motion.article
             initial="hidden"
             animate="visible"
-            
             variants={variants}
             id="experience-info"
+            className="w-full"
           >
-            <div className="flex flex-row items-center gap-5 w-full mb-4">
+            <div className="mb-10 flex w-full flex-row items-start gap-3">
               <Image
                 src={selectedExperience.picture || ''}
-                alt={selectedExperience.title}
+                alt={experienceTitle || ''}
                 width={40}
                 height={20}
                 className="rounded-sm"
               />
-              <Heading variant="h2" border={false}>
-                {selectedExperience.title}
+              <Heading variant="h2" border={false} className="m-0">
+                {experienceTitle}
               </Heading>
             </div>
-            {MdxContent && (
-              <MDXWrapper>
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  
-                  variants={variants}
-                  className="my-5"
-                >
-                  <MdxContent />
-                </motion.div>
-              </MDXWrapper>
+            {experienceContent && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={variants}
+                className="prose prose-sm max-w-none lg:prose-lg"
+              >
+                <MdxRenderClientWrapper>{experienceContent}</MdxRenderClientWrapper>
+              </motion.div>
             )}
-          </motion.div>
+          </motion.article>
         )}
       </div>
     </>

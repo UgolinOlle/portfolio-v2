@@ -1,22 +1,18 @@
-'use client';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
-import dynamic from 'next/dynamic';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { MDXComponents } from './mdx';
+import { rehypePlugin } from '~/lib/mdx/utils';
+import { MDX_COMPONENTS } from '~/components/commons/mdx/components';
 
-const MDXRemote = dynamic(
-  () => import('next-mdx-remote').then((mod) => mod.MDXRemote),
-  {
-    ssr: false,
-  }
-);
-
-interface ClientMdxRendererProps {
-  content: MDXRemoteSerializeResult;
+export function MdxRender({ children }: { children: string }) {
+  return (
+    <MDXRemote
+      source={children}
+      options={{
+        mdxOptions: {
+          rehypePlugins: rehypePlugin,
+        },
+      }}
+      components={MDX_COMPONENTS}
+    />
+  );
 }
-
-export const ClientMdxRenderer: React.FC<ClientMdxRendererProps> = ({
-  content,
-}) => {
-  return <MDXRemote {...content} components={MDXComponents} />;
-};

@@ -4,6 +4,10 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 
+  experimental: {
+    esmExternals: true,
+  },
+
   // -- Images --
   images: {
     remotePatterns: [
@@ -25,15 +29,13 @@ const nextConfig = {
   // -- Webpack config --
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          net: false,
-          dns: false,
-          tls: false,
-          fs: false,
-          request: false,
-        },
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        net: false,
+        dns: false,
+        tls: false,
+        fs: false,
+        request: false,
       };
     }
     return config;

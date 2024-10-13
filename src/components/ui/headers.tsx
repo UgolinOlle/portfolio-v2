@@ -36,9 +36,9 @@ export interface IHeadingProps extends React.HTMLAttributes<HTMLHeadingElement>,
  */
 function Heading({ variant, align, className, border = true, ...props }: IHeadingProps): React.ReactElement {
   return (
-    <div className={cn('flex w-full items-center', `${border ? 'gap-5' : ''}`, headingVariants({ align }))}>
+    <div className={cn('flex w-full items-center', `${border ? '' : 'gap-5'}`, headingVariants({ align }))}>
       <h1 className={cn(headingVariants({ variant }), className)}>{props.children}</h1>
-      <span className={cn(border ? '' : 'hidden', `h-0.5 flex-grow bg-gray-100`)} />
+      <span className={cn(border ? '' : 'hidden h-0', `h-0.5 flex-grow bg-gray-100`)} />
     </div>
   );
 }

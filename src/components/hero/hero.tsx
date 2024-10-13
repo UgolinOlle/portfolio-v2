@@ -18,22 +18,22 @@
  * }
  */
 
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRightIcon } from 'lucide-react'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
-import { Heading } from '~/components/ui/headers'
-import { Button } from '~/components/ui/button'
-import { Appointement } from '~/components/hero/appointement'
-import { RetroGrid } from '~/components/commons/retro'
-import { Clock } from '~/components/hero/clock'
-import AnimatedShinyText from '~/components/ui/shiny'
-import { CrossIcon } from '~/components/commons/icons/common'
-import { Container } from '~/components/commons/animation'
+import { Heading } from '~/components/ui/headers';
+import { Button } from '~/components/ui/button';
+import { Appointement } from '~/components/hero/appointement';
+import { RetroGrid } from '~/components/commons/retro';
+import { Clock } from '~/components/hero/clock';
+import { CrossIcon } from '~/components/commons/icons/common';
+import { Container } from '~/components/commons/animation';
 
-import { SOCIALS } from '~/lib/constants/socials'
-import { cn } from '~/lib/utils'
+import { SOCIALS } from '~/lib/constants/socials';
+import { cn } from '~/lib/utils';
+import { ShinyContainer } from '../ui/shiny';
 
 /**
  * The `Hero` component is a prominent section on the landing page,
@@ -75,11 +75,7 @@ export const Hero: React.FC = (): JSX.Element => {
                     `${social.name.toLowerCase() === 'linkedin' && 'hover:text-[#0A66C2]'}`
                   )}
                 >
-                  <Link
-                    href={social.url}
-                    target="_blank"
-                    className="flex items-center justify-center gap-2"
-                  >
+                  <Link href={social.url} target="_blank" className="flex items-center justify-center gap-2">
                     <span className="h-5 w-5 transform cursor-none transition duration-300 ease-in-out md:group-hover/social-link:-translate-y-4 md:group-hover/social-link:rotate-12">
                       {React.createElement(social.icon)}
                     </span>
@@ -89,8 +85,7 @@ export const Hero: React.FC = (): JSX.Element => {
             </div>
           </div>
           <p className="w-full text-center font-body text-lg font-normal text-gray-700 transition ease-in-out hover:text-gray-700 dark:text-gray-300 md:text-justify lg:w-3/4">
-            Je craft des logiciels sur mesure, dynamise vos sites et met en
-            lumières vos idées.
+            Je craft des logiciels sur mesure, dynamise vos sites et met en lumières vos idées.
           </p>
         </div>
         <div
@@ -98,19 +93,17 @@ export const Hero: React.FC = (): JSX.Element => {
             'group mt-5 rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 lg:mt-10'
           )}
         >
-          <AnimatedShinyText className="flex w-full cursor-none flex-col items-center gap-2 rounded-full px-4 py-1 text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 md:flex-row md:justify-between md:gap-4 lg:w-auto lg:justify-normal">
+          <ShinyContainer className="flex w-full cursor-none flex-col items-center gap-2 rounded-full px-4 py-1 text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 md:flex-row md:justify-between md:gap-4 lg:w-auto lg:justify-normal">
             <div className="flex items-center gap-2">
               <Clock />
               GMT+1
             </div>
             <div className="hidden w-full rounded-full border border-neutral-600/70 dark:border-neutral-400/70 md:block lg:w-56" />
             <span className="flex items-center gap-2 text-nowrap">
-              <span className="transform transition duration-300 ease-in-out group-hover:-translate-y-1">
-                📍
-              </span>
+              <span className="transform transition duration-300 ease-in-out group-hover:-translate-y-1">📍</span>
               Phnom Penh, Cambodge
             </span>
-          </AnimatedShinyText>
+          </ShinyContainer>
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-5 px-2 py-4 md:px-8 md:py-8">
@@ -122,15 +115,15 @@ export const Hero: React.FC = (): JSX.Element => {
             )}
           >
             <Link href="/contact" passHref>
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 text-neutral-600 transition duration-300 ease-out hover:text-neutral-800 hover:dark:text-neutral-200">
+              <ShinyContainer className="inline-flex items-center justify-center px-4 py-1 text-neutral-600 transition duration-300 ease-out hover:text-neutral-800 hover:dark:text-neutral-200">
                 <span>🎉 Obtenez votre audit gratuit</span>
                 <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
-              </AnimatedShinyText>
+              </ShinyContainer>
             </Link>
           </div>
         </div>
       </div>
       <RetroGrid />
     </Container>
-  )
-}
+  );
+};

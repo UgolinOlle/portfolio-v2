@@ -1,13 +1,13 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
 
-import { ExperiencesInfo } from '~/components/experiences/info'
-import { Container } from '~/components/commons/animation'
-import { Heading } from '~/components/ui/headers'
+import { ExperiencesInfo } from '~/components/experiences/info';
+import { Container } from '~/components/commons/animation';
+import { Heading } from '~/components/ui/headers';
 
 export const metadata: Metadata = {
   title: 'Experiences · Ugolin Ollé',
   description: 'Liste des expériences professionnelles.',
-}
+};
 
 export default function ExperiencePage() {
   // -- Render
@@ -23,5 +23,5 @@ export default function ExperiencePage() {
         <ExperiencesInfo />
       </Container>
     </Container>
-  )
+  );
 }

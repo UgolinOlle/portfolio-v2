@@ -1,26 +1,25 @@
-import Image from 'next/image';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 // -- Interfaces
-interface IUiProps {
+type IUiProps = {
   children: React.ReactNode;
-}
+};
 
-interface IKwProps {
+type IKwProps = {
   keywords: string[];
-}
+};
 
-interface IPicture {
-  src: string;
-  alt: string;
-}
+type IconListItemProps = {
+  icon: ReactNode;
+  text: string;
+};
 
 export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
   // -- Render
   return (
-    <div className="flex flex-wrap gap-2 mb-3">
+    <div className="mb-3 flex flex-wrap gap-2">
       {keywords.map((keyword, index) => (
-        <span key={index} className="bg-muted px-2 py-1 rounded-lg">
+        <span key={index} className="rounded-lg bg-muted px-2 py-1">
           {keyword}
         </span>
       ))}
@@ -30,44 +29,14 @@ export const Keyword: React.FC<IKwProps> = ({ keywords }) => {
 
 export const Detail: React.FC<IUiProps> = ({ children }) => {
   // -- Render
+  return <div className="my-4 rounded-lg bg-muted p-4 transition-all ease-in-out">{children}</div>;
+};
+
+export const IconListItem: React.FC<IconListItemProps> = ({ icon, text }) => {
   return (
-    <div className="p-4 bg-muted rounded-lg my-4 transition-all ease-in-out">
-      {children}
-    </div>
+    <li className="mb-2 flex items-start space-x-3">
+      <span className="mt-1 h-5 w-5 flex-shrink-0">{icon}</span>
+      <span>{text}</span>
+    </li>
   );
-};
-
-export const Paragraph: React.FC<IUiProps> = ({ children }) => {
-  // -- Render
-  return (
-    <div className="border-l border-neutral-900/70 dark:border-neutral-100/70 pl-2 text-justify my-5">
-      {children}
-    </div>
-  );
-};
-
-export const Picture: React.FC<IPicture> = ({ src, alt }) => {
-  // -- Render
-  return (
-    <Image src={src} alt={alt} width={50} height={50} className="rounded-lg" />
-  );
-};
-
-export const List: React.FC<IUiProps> = ({ children }) => {
-  // -- Render
-  return (
-    <ul className="list-disc list-inside flex flex-col items-start gap-3 my-4">
-      {children}
-    </ul>
-  );
-};
-
-export const ListItem: React.FC<IUiProps> = ({ children }) => {
-  // -- Render
-  return <li className="flex gap-2 items-center align-top">{children}</li>;
-};
-
-export const Bold: React.FC<IUiProps> = ({ children }) => {
-  // -- Render
-  return <strong>{children}</strong>;
 };

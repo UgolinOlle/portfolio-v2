@@ -1,74 +1,53 @@
-import { COMAI_PICTURES } from '../../src/lib/constants/experiences.ts';
-import { COMMON_ICONS } from '../../src/components/commons/icons/common.tsx';
-
+---
+title: ComAI
+description: Développement de l'API et de l'interface utilisateur pour un outil de gestion de réseaux sociaux.
+date: '2024-03-10'
 ---
 
-<Heading variant="h3" border={false} className="py-2">Détails du projet</Heading>
+### Détails du projet
 
-<Detail>
-  - **Rôle :** Développeur Full Stack
-  - **Durée :** ~2 months
-</Detail>
+<Detail>- **Rôle :** Développeur Full Stack - **Durée :** ~2 months</Detail>
 
-<Keyword keywords={["Nest.js", "Next.js", "TailwindCSS", "PostgreSQL", "AI", "Monolith"]} />
+<Keyword keywords={['Nest.js', 'Next.js', 'TailwindCSS', 'PostgreSQL', 'AI', 'Monolith']} />
 
-<Paragraph>
-  Dans le cadre de la première phase de développement de ComAI, j'ai été chargé de développer l'API et l'interface utilisateur pour le MVP. J'ai utilisé NestJS pour construire une API robuste, intégrant :
-</Paragraph>
+Dans le cadre de la première phase de développement de ComAI, j'ai été chargé de développer l'API et l'interface
+utilisateur pour le MVP. J'ai utilisé NestJS pour construire une API robuste, intégrant :
 
-<List>
-  <ListItem>
-   <COMMON_ICONS.user className="w-5 h-5" />
-   Gestion des utilisateurs.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.company className="w-5 h-5" />
-    Gestion des différentes entreprises de l'utilisateur.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.oauth className="w-5 h-5" />   
-    Authentification OAuth.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.google className="w-5 h-5" />
-    Intégration de Meta et Google My Business.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.gmb className="w-5 h-5" />
-    Automatisation des réponses de la fiche Google My Business.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.robot className="w-5 h-5" />
-    Création de posts et d'images par l'IA.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.chart className="w-5 h-5" />
-    Statistiques des différends profils connectent.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.chartBox className="w-5 h-5" />
-    Conseils et études concurrentiels proposent.
-  </ListItem>
-  <ListItem>
-    <COMMON_ICONS.documentStar className="w-5 h-5" />
-    Publication de posts sur Instagram et Facebook.
-  </ListItem>
-</List>
-  
-<Paragraph>
-  Une première couche de sécurité essentielle a été mise en place pour protéger les données et les interactions des utilisateurs.
-</Paragraph>
+<ul className="list-none pl-0">
+  <IconListItem icon={<COMMON_ICONS.user className="h-5 w-5" />} text="Gestion des utilisateurs." />
+  <IconListItem
+    icon={<COMMON_ICONS.company className="h-5 w-5" />}
+    text="Gestion des différentes entreprises de l'utilisateur."
+  />
+  <IconListItem icon={<COMMON_ICONS.oauth className="h-5 w-5" />} text="Authentification OAuth." />
+  <IconListItem icon={<COMMON_ICONS.google className="h-5 w-5" />} text="Intégration de Meta et Google My Business." />
+  <IconListItem
+    icon={<COMMON_ICONS.gmb className="h-5 w-5" />}
+    text="Automatisation des réponses de la fiche Google My Business."
+  />
+  <IconListItem icon={<COMMON_ICONS.robot className="h-5 w-5" />} text="Création de posts et d'images par l'IA." />
+  <IconListItem
+    icon={<COMMON_ICONS.chart className="h-5 w-5" />}
+    text="Statistiques des différends profils connectés."
+  />
+  <IconListItem
+    icon={<COMMON_ICONS.chartBox className="h-5 w-5" />}
+    text="Conseils et études concurrentiels proposent."
+  />
+  <IconListItem
+    icon={<COMMON_ICONS.documentStar className="h-5 w-5" />}
+    text="Publication de posts sur Instagram et Facebook."
+  />
+</ul>
 
-<Paragraph>
-  Pour le déploiement de l'application sur leur serveur VPS, j'ai intégré des processus de CI/CD, garantissant une livraison et des mises à jour fluides et automatisées.
-</Paragraph>
+Une première couche de sécurité essentielle a été mise en place pour protéger les données et les interactions des
+utilisateurs.
 
-<Paragraph>
-  Sur le front-end, j'ai conçu l'interface utilisateur de A à Z en utilisant shadcn/ui et Tailwind CSS pour un design réactif et moderne. Le développement a été réalisé avec Next.js et TypeScript, assurant ainsi performance et maintenabilité.
-</Paragraph>
+Pour le déploiement de l'application sur leur serveur VPS, j'ai intégré des processus de CI/CD, garantissant une
+livraison et des mises à jour fluides et automatisées.
 
-<Heading variant="h3" className="py-2">Quelques images</Heading>
-
-<ImageSwiper images={COMAI_PICTURES} />
+Sur le front-end, j'ai conçu l'interface utilisateur de A à Z en utilisant shadcn/ui et Tailwind CSS pour un design
+réactif et moderne. Le développement a été réalisé avec Next.js et TypeScript, assurant ainsi performance et
+maintenabilité.
 
 **Date de publication** : 2024-07-10

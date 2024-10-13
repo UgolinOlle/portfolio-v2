@@ -1,2 +1,0 @@
-#"/usr/bin/_/husky.sh"
-npx --no-install commitlint --edit ""

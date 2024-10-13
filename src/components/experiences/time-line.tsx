@@ -32,10 +32,7 @@ export const Timeline = ({
     <ul className="relative border-l border-neutral-300 border-opacity-50">
       {timelineData.map((item, index) => {
         return (
-          <li
-            key={index}
-            className={cn(`mb-10 ms-4 rounded-lg border bg-neutral-100/70 p-4 pl-1 shadow-md dark:bg-neutral-800/70`)}
-          >
+          <li key={index} className={cn(`mb-10 ms-4 rounded-lg border bg-background p-4 pl-1 shadow-sm`)}>
             <div
               className={cn(`absolute -start-1 mt-1.5 h-2 w-2 rounded-full`)}
               style={{ backgroundColor: item.color }}
