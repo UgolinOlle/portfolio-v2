@@ -15,7 +15,6 @@ import { MdxRenderClientWrapper } from '../commons/mdx/client-wrapper';
 export const ExperiencesInfo: React.FC = (): JSX.Element => {
   const [selectedExperience, setSelectedExperience] = useState<ITimelineItem | null>(null);
   const [experienceContent, setExperienceContent] = useState<string | null>(null);
-  const [experienceTitle, setExperienceTitle] = useState<string | null>(null);
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -39,7 +38,6 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
           return;
         }
 
-        setExperienceTitle(experience.title);
         setExperienceContent(experience.content);
         const element = document.getElementById('experience-info');
         if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -70,13 +68,13 @@ export const ExperiencesInfo: React.FC = (): JSX.Element => {
             <div className="mb-10 flex w-full flex-row items-start gap-3">
               <Image
                 src={selectedExperience.picture || ''}
-                alt={experienceTitle || ''}
+                alt={selectedExperience.title}
                 width={40}
                 height={20}
                 className="rounded-sm"
               />
               <Heading variant="h2" border={false} className="m-0">
-                {experienceTitle}
+                {selectedExperience.title}
               </Heading>
             </div>
             {experienceContent && (

@@ -13,7 +13,7 @@ import computer from 'public/images/projects/school/school-computer.jpg';
 export const EXPERIENCES: ITimelineItem[] = [
   {
     picture: '/logos/le-boutiquier.jpeg',
-    title: 'Le Boutiquier - Support Technique',
+    title: 'Le Boutiquier',
     slug: 'le-boutiquier',
     description: 'Support technique et développement de solutions sur mesure.',
     date: '2024',
@@ -21,16 +21,15 @@ export const EXPERIENCES: ITimelineItem[] = [
   },
   {
     picture: '/logos/comai.jpeg',
-    title: 'Comai - Développeur Full Stack',
+    title: 'Comai',
     slug: 'comai',
-    description:
-      "Développement d'un SaaS (MVP) pour la gestion et l'automatisation des comptes réseaux sociaux.",
+    description: "Développement d'un SaaS (MVP) pour la gestion et l'automatisation des comptes réseaux sociaux.",
     date: '2024',
     color: '#7d16f3',
   },
   {
     picture: '/logos/42.jpeg',
-    title: '42 Bangkok - Cadet',
+    title: '42 Bangkok',
     slug: '42-bangkok',
     description: 'Formation en architecture informatique.',
     date: '2023 - 2024',
@@ -38,7 +37,7 @@ export const EXPERIENCES: ITimelineItem[] = [
   },
   {
     picture: '/logos/azertyconsulting.svg',
-    title: 'Azerty Consutling - Développeur Full Stack',
+    title: 'Azerty Consutling',
     slug: 'azerty-consulting',
     description: 'Développement & Accompagnement sur des solutions sur mesure.',
     date: '2022',
@@ -46,10 +45,9 @@ export const EXPERIENCES: ITimelineItem[] = [
   },
   {
     picture: '/logos/nicoka.jpeg',
-    title: 'Nicoka - Développeur Backend',
+    title: 'Nicoka',
     slug: 'nicoka',
-    description:
-      "Stage de fin d'études chez Nicoka, entreprise dédiée aux métiers du conseil et du service.",
+    description: "Stage de fin d'études chez Nicoka, entreprise dédiée aux métiers du conseil et du service.",
     date: '2022',
     color: '#11417f',
   },
@@ -57,8 +55,7 @@ export const EXPERIENCES: ITimelineItem[] = [
     picture: '/logos/autodidact.svg',
     title: 'Appprentissage en auto-didacte',
     slug: 'autodidact',
-    description:
-      'Développement de projets personnels principalement sur du Web & Mobile.',
+    description: 'Développement de projets personnels principalement sur du Web & Mobile.',
     date: '2018 - 2022',
     color: '#d256ff',
   },
