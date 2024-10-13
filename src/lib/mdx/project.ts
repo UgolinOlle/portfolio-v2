@@ -1,7 +1,3 @@
-/**
- * File containing functions to retrieve and manipulate projects.
- */
-
 import fs from 'fs/promises';
 import { z } from 'zod';
 import path from 'path';
@@ -25,21 +21,18 @@ export type Project = z.infer<typeof ProjectSchema> & {
   content: string;
 };
 
-/**
- * Function to get the projects directory.
- * @returns The path of the projects directory.
- */
-function getProjectsDirectory() {
-  return path.join(process.cwd(), 'contents/projects');
-}
+// Cache to store loaded projects in-memory
+let projectCache: Project[] | null = null;
+
+// Path to the projects directory
+const projectsDirectory = path.join(process.cwd(), 'contents/projects');
 
 /**
  * Function to get the filenames of the projects.
  * @returns An array of project filenames.
  */
 function getFilenames() {
-  const projectsDirectory = getProjectsDirectory();
-  return globSync([projectsDirectory + '/**/*.mdx'], { absolute: false, cwd: projectsDirectory });
+  return globSync('**/*.mdx', { cwd: projectsDirectory, absolute: true });
 }
 
 /**
@@ -49,7 +42,7 @@ function getFilenames() {
  * @returns Numeric value for project sorting.
  */
 function sortProjectsByDate(project1: Project, project2: Project) {
-  return new Date(project1.date).getTime() < new Date(project2.date).getTime() ? 1 : -1;
+  return new Date(project2.date).getTime() - new Date(project1.date).getTime();
 }
 
 /**
@@ -57,36 +50,38 @@ function sortProjectsByDate(project1: Project, project2: Project) {
  * @returns A promise that resolves with an array of projects sorted by date.
  */
 async function getProjects() {
+  // Return cached projects if available
+  if (projectCache) return projectCache;
+
   const filenames = getFilenames();
-  const projects = [];
 
-  for await (const filename of filenames) {
-    const fullPath = path.join(getProjectsDirectory(), filename);
-    const fileContent = await fs.readFile(fullPath, 'utf-8');
-    const { data, content } = matter(fileContent);
+  const projects = await Promise.all(
+    filenames.map(async (filename) => {
+      try {
+        const fileContent = await fs.readFile(filename, 'utf-8');
+        const { data, content } = matter(fileContent);
+        const safeData = ProjectSchema.safeParse(data);
 
-    const safeData = ProjectSchema.safeParse(data);
+        if (!safeData.success || safeData.data.status !== 'published') {
+          return null; // Skip files with invalid schema or unpublished projects
+        }
 
-    if (!safeData.success) {
-      console.error(`Error parsing file: ${filename}`);
-      safeData.error.issues.forEach((issue) => {
-        console.error(`  - ${issue.path.join(' -> ')}: ${issue.message}`);
-      });
-      continue;
-    }
+        return {
+          ...safeData.data,
+          slug: path.basename(filename, '.mdx'), // Extract slug from filename
+          content,
+        };
+      } catch (error) {
+        console.error(`Error reading file ${filename}:`, error);
+        return null; // Skip if file reading fails
+      }
+    })
+  );
 
-    if (safeData.data.status !== 'published') {
-      continue;
-    }
+  // Filter out null projects and sort by date
+  projectCache = projects.filter((project): project is Project => project !== null).sort(sortProjectsByDate);
 
-    projects.push({
-      ...safeData.data,
-      slug: filename.replace(/^\d+-/, '').replace('.mdx', ''),
-      content,
-    });
-  }
-
-  return projects.sort(sortProjectsByDate);
+  return projectCache;
 }
 
 /**

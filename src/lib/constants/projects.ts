@@ -1,5 +1,4 @@
 import { IProjectItem } from '~/lib/interfaces/project';
-import { getBaseUrl } from '~/lib/utils';
 
 import whoaide from 'public/images/projects/whoa-ide/whoa-ide.jpg';
 import telescope from 'public/images/projects/whoa-ide/telescope.png';
@@ -27,54 +26,23 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'portfolio-v2',
     name: 'Portfolio v2',
-    description:
-      '💻 · My simple portfolio to show my skills, projects, experiences.',
+    description: '💻 · My simple portfolio to show my skills, projects, experiences.',
     imageUrl: `/images/projects/portfolio/portfolio-v2.jpg`,
     url: 'portfolio-v2',
     githubUrl: 'https://github.com/UgolinOlle/portfolio-v2',
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'shadcn/ui',
-    ],
-    keywords: [
-      'nextjs',
-      'react',
-      'typescript',
-      'tailwindcss',
-      'ui',
-      'landing-page',
-      'website',
-      'web-app',
-    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
+    keywords: ['nextjs', 'react', 'typescript', 'tailwindcss', 'ui', 'landing-page', 'website', 'web-app'],
     date: '2024',
   },
   {
     id: 'vaultflow',
     name: 'Vaultflow',
-    description:
-      '🌐 · A simple landing page about a modern analytics tool for the modern world.',
+    description: '🌐 · A simple landing page about a modern analytics tool for the modern world.',
     imageUrl: `/images/projects/vaultflow/home-1.jpg`,
     url: 'vaultflow',
     githubUrl: 'https://github.com/UgolinOlle/vaultflow',
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'shadcn/ui',
-    ],
-    keywords: [
-      'nextjs',
-      'react',
-      'typescript',
-      'tailwindcss',
-      'ui',
-      'landing-page',
-      'website',
-    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
+    keywords: ['nextjs', 'react', 'typescript', 'tailwindcss', 'ui', 'landing-page', 'website'],
     date: '2024',
   },
   {
@@ -106,8 +74,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'get_next_line',
     name: 'get_next_line',
-    description:
-      '📚 • Une fonction qui lit une ligne terminée par un retour à la ligne depuis un file descriptor.',
+    description: '📚 • Une fonction qui lit une ligne terminée par un retour à la ligne depuis un file descriptor.',
     imageUrl: `/images/school/get_next_linen.png`,
     imageSize: 'contain',
     imageBg: `/logos/42.jpeg`,
@@ -120,8 +87,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'born2beroot',
     name: 'Born2beroot',
-    description:
-      '🐧 • Installation et configuration d’un serveur dédié sous Debian.',
+    description: '🐧 • Installation et configuration d’un serveur dédié sous Debian.',
     imageUrl: `/images/school/born2berootn.png`,
     imageSize: 'contain',
     imageBg: `/logos/42.jpeg`,
@@ -134,8 +100,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'minitalk',
     name: 'Minitalk',
-    description:
-      '💾 - Programme de communication client/serveur utilisant les signaux UNIX',
+    description: '💾 - Programme de communication client/serveur utilisant les signaux UNIX',
     imageUrl: `/images/school/minitalke.png`,
     imageSize: 'contain',
     imageBg: `/logos/42.jpeg`,
@@ -161,8 +126,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'push_swap',
     name: 'push_swap',
-    description:
-      '📤 • Tri efficace de piles en utilisant des opérations limitées dans push_swap.',
+    description: '📤 • Tri efficace de piles en utilisant des opérations limitées dans push_swap.',
     imageUrl: `/images/school/push_swapn.png`,
     imageSize: 'contain',
     imageBg: `/logos/42.jpeg`,
@@ -175,8 +139,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'philosophers',
     name: 'Philosophers',
-    description:
-      '💻・Projet visant à résoudre le problème des philosophes à table.',
+    description: '💻・Projet visant à résoudre le problème des philosophes à table.',
     imageUrl: `/images/school/philosophersn.png`,
     imageSize: 'contain',
     imageBg: `/logos/42.jpeg`,
