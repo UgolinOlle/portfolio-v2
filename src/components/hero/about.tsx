@@ -1,91 +1,73 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion, useInView } from 'framer-motion';
 
 import { COMMON_ICONS } from '~/components/commons/icons/common';
 import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
 
-/**
- * HeroAbout component
- * @name HeroAbout
- * @description A functional React component that displays a short description of the developer.
- * @returns {JSX.Element} A paragraph element describing the developer's passion and motivation.
- * @example
- * return <HeroAbout />
- */
-const HeroAbout: React.FC = (): JSX.Element => {
-  // --- Variables
-  const [showIcons, setShowIcons] = useState(false);
-  const textRef = useRef<HTMLDivElement>(null);
+const ANIMATION_DURATION = 0.5;
+const ICON_WIDTH = '1.5rem';
 
-  // --- Functions
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = textRef.current;
-      if (element) {
-        const { top } = element.getBoundingClientRect();
-        if (top < window.innerHeight && top > 0) {
-          setShowIcons(true);
-        } else {
-          setShowIcons(false);
-        }
-      }
-    };
+const iconVariants = {
+  hidden: { opacity: 0, width: 0 },
+  visible: { opacity: 1, width: ICON_WIDTH },
+};
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+const textVariants = {
+  hidden: { marginLeft: 0 },
+  visible: { marginLeft: ICON_WIDTH },
+};
 
-  // --- Render
+type AnimatedTextProps = {
+  children: React.ReactNode;
+  icon: React.ElementType;
+  isInView: boolean;
+};
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({ children, icon: Icon, isInView }) => {
+  return (
+    <span className="relative inline-flex items-center whitespace-nowrap">
+      <motion.span
+        className="absolute left-0 top-[0.1em]"
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={iconVariants}
+        transition={{ duration: ANIMATION_DURATION }}
+      >
+        <Icon className="h-5 w-5" />
+      </motion.span>
+      <motion.span
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={textVariants}
+        transition={{ duration: ANIMATION_DURATION }}
+      >
+        {children}
+      </motion.span>
+    </span>
+  );
+};
+
+const HeroAbout = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
+
   return (
     <div
-      ref={textRef}
+      ref={ref}
       className="w-full text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
       id="me"
     >
       <p>
         Je m'appelle Ugolin Ollé,{' '}
-        <motion.span
-          className="relative inline-flex items-center whitespace-nowrap"
-          animate={{ paddingLeft: showIcons ? '2.2rem' : '0rem' }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.span
-            className="absolute left-[0.3rem] top-auto"
-            initial={{ opacity: 0, width: 0 }}
-            animate={{
-              opacity: showIcons ? 1 : 0,
-              width: showIcons ? 'auto' : 0,
-              marginRight: showIcons ? '0rem' : '0rem',
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <COMMON_ICONS.neovim className="h-5 w-5" />
-          </motion.span>{' '}
+        <AnimatedText icon={COMMON_ICONS.neovim} isInView={isInView}>
           développeur full stack
-        </motion.span>{' '}
+        </AnimatedText>{' '}
         spécialisé dans les logiciels SaaS. Ce qui m'anime, c'est l'envie constante d'explorer de nouvelles technologies{' '}
-        <motion.span
-          className="relative inline-flex items-center whitespace-nowrap"
-          animate={{ paddingLeft: showIcons ? '2rem' : '0rem' }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.span
-            className="absolute left-[0.4rem] top-auto"
-            initial={{ opacity: 0, width: 0 }}
-            animate={{
-              opacity: showIcons ? 1 : 0,
-              width: showIcons ? 'auto' : 0,
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <COMMON_ICONS.stars className="h-5 w-5" />
-          </motion.span>
+        <AnimatedText icon={COMMON_ICONS.stars} isInView={isInView}>
           et de relever
-        </motion.span>{' '}
+        </AnimatedText>{' '}
         des défis techniques. Mon objectif : transformer des idées en produits concrets, fonctionnels et innovants.
         J'aime apporter des solutions qui allient performance et efficacité, tout en restant à l'écoute des besoins des
         utilisateurs.
@@ -94,93 +76,31 @@ const HeroAbout: React.FC = (): JSX.Element => {
   );
 };
 
-/**
- * HeroAboutTwo component
- * @component
- * @description A functional React component that displays a description about sharing the developer's experience and thoughts.
- * @returns {JSX.Element} A paragraph element describing the developer's activities on LinkedIn and X (Twitter).
- * @example
- * return <HeroAboutTwo />
- */
-const HeroAboutTwo: React.FC = (): JSX.Element => {
-  // --- Variables
-  const [showIcons, setShowIcons] = useState(false);
-  const textRef = useRef<HTMLDivElement>(null);
+const HeroAboutTwo = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
 
-  // --- Functions
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = textRef.current;
-      if (element) {
-        const { top } = element.getBoundingClientRect();
-        if (top < window.innerHeight && top > 0) {
-          setShowIcons(true);
-        } else {
-          setShowIcons(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  // --- Render
   return (
     <div
-      ref={textRef}
+      ref={ref}
       className="flex w-full flex-col items-center gap-14 text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
     >
       <p>
-        J’adore partager mes expériences et réflexions sur le développement et la freelance particulièrement sur{' '}
-        <motion.span
-          className="relative inline-flex items-center whitespace-nowrap"
-          animate={{ paddingLeft: showIcons ? '2.2rem' : '0rem' }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.span
-            className="absolute left-[0.3rem] top-auto"
-            initial={{ opacity: 0, width: 0 }}
-            animate={{
-              opacity: showIcons ? 1 : 0,
-              width: showIcons ? 'auto' : 0,
-              marginRight: showIcons ? '0.5rem' : '0rem',
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <SOCIALS_ICONS.linkedin className="h-5 w-5" />
-          </motion.span>
+        J'adore partager mes expériences et réflexions sur le développement et la freelance particulièrement sur{' '}
+        <AnimatedText icon={SOCIALS_ICONS.linkedin} isInView={isInView}>
           LinkedIn
-        </motion.span>
+        </AnimatedText>
         , je publie régulièrement des contenus pour motiver et aider ceux qui souhaitent se lancer, en partageant mes
         apprentissages, mes erreurs, et des conseils pratiques. Mon but est d'aider chacun à avancer dans son parcours,
         avec des idées concrètes et des exemples issus de mon propre chemin.
       </p>
       <p>
         Sur X (anciennement Twitter){' '}
-        <motion.span
-          className="relative inline-flex items-center whitespace-nowrap"
-          animate={{ paddingLeft: showIcons ? '2.2rem' : '0rem' }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.span
-            className="absolute left-[0.3rem] top-auto"
-            initial={{ opacity: 0, width: 0 }}
-            animate={{
-              opacity: showIcons ? 1 : 0,
-              width: showIcons ? 'auto' : 0,
-              marginRight: showIcons ? '0.5rem' : '0rem',
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <SOCIALS_ICONS.x className="h-5 w-5" />
-          </motion.span>
+        <AnimatedText icon={SOCIALS_ICONS.x} isInView={isInView}>
           , je me concentre
-        </motion.span>{' '}
-        sur des aspects plus personnels. J’y raconte mon quotidien de freelance et de développeur : les défis que je
-        relève, les petites victoires qui de la journée, et tout ce qui fait de cette aventure unique. C’est un espace
+        </AnimatedText>{' '}
+        sur des aspects plus personnels. J'y raconte mon quotidien de freelance et de développeur : les défis que je
+        relève, les petites victoires qui de la journée, et tout ce qui fait de cette aventure unique. C'est un espace
         où je peux être plus spontané, partager les moments authentiques de la vie d'un freelance, et créer des échanges
         plus directs avec les personnes qui me suivent.
       </p>

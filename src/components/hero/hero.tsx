@@ -96,7 +96,7 @@ export const Hero: React.FC = (): JSX.Element => {
           <ShinyContainer className="flex w-full cursor-none flex-col items-center gap-2 rounded-full px-4 py-1 text-center transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 md:flex-row md:justify-between md:gap-4 lg:w-auto lg:justify-normal">
             <div className="flex items-center gap-2">
               <Clock />
-              GMT+1
+              GMT+5
             </div>
             <div className="hidden w-full rounded-full border border-neutral-600/70 dark:border-neutral-400/70 md:block lg:w-56" />
             <span className="flex items-center gap-2 text-nowrap">
