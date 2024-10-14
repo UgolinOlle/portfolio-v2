@@ -1,5 +1,13 @@
+/**
+ * @file list.tsx
+ * @description List component for projects
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,8 +21,8 @@ import { Heading } from '~/components/ui/headers';
 /**
  * @name ProjectItem
  * @description Project item with hover animations.
+ * @param {IProjectItem} props - The props for the project item
  * @returns {JSX.Element} React component
- * @exports ProjectItem
  */
 const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // --- Variables
@@ -115,9 +123,8 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
 /**
  * @name ProjectsList
  * @description List of projects.
+ * @param {IProjectItem[]} filteredProjects - The filtered projects
  * @returns {JSX.Element} React component
- * @example <ProjectsList />
- * @exports ProjectsList
  */
 const ProjectsList: React.FC<{
   filteredProjects: IProjectItem[];

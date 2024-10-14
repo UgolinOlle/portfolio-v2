@@ -1,19 +1,42 @@
-'use client'
+/**
+ * @file card.tsx
+ * @description Card component for uses
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
 
-import Image, { StaticImageData } from 'next/image'
+'use client';
+
+// --- Imports
+import Image, { StaticImageData } from 'next/image';
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 import { Heading } from '~/components/ui/headers'
 import { cn } from '~/lib/utils'
 
-export interface CardProps {
+/**
+ * @type CardProps
+ * @description Interface for the card props
+ * @property {string} title - The title of the card
+ * @property {string} description - The description of the card
+ * @property {StaticImageData} image - The image of the card
+ * @property {string} link - The link of the card
+ * @exports CardProps
+ */
+export type CardProps = {
   title: string
   description: string
   image: StaticImageData
   link?: string
 }
 
+/**
+ * @name UseCard
+ * @description Card component for uses
+ * @param {CardProps} props - The props for the card component
+ * @returns {React.ReactElement} The component
+ */
 const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
   // --- Render
   return (
@@ -53,6 +76,12 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
   )
 }
 
+/**
+ * @name UseCardImage
+ * @description Card component for uses images
+ * @param {CardProps} props - The props for the card component
+ * @returns {React.ReactElement} The component
+ */
 const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
   // --- Variables
   const textVariants = {

@@ -1,4 +1,11 @@
 /**
+ * @file service.ts
+ * @description Interfaces for the service page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+/**
  * @interface ServiceCardProps
  * @property {string} title - The title of the card
  * @property {number} price - The price of the card

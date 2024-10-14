@@ -1,12 +1,32 @@
+/**
+ * @file commits.tsx
+ * @description Commits component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
-import { cn } from '~/lib/utils';
+// --- Imports
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { Heading } from '../ui/headers';
 
-interface Commit {
+import { cn } from '~/lib/utils';
+import { Heading } from '~/components/ui/headers';
+
+/**
+ * @type Commit
+ * @description Commit interface
+ * @property {string} sha - The commit SHA
+ * @property {object} commit - The commit object
+ * @property {string} commit.message - The commit message
+ * @property {object} commit.author - The commit author
+ * @property {string} commit.author.name - The commit author name
+ * @property {string} commit.author.date - The commit author date
+ * @property {string} html_url - The commit URL
+ */
+type Commit = {
   sha: string;
   commit: {
     message: string;
@@ -18,7 +38,13 @@ interface Commit {
   html_url: string;
 }
 
-interface CommitListProps {
+/**
+ * @type CommitListProps
+ * @description Commit list props
+ * @property {string} repoName - The repository name
+ * @property {string} className - The class name
+ */
+type CommitListProps = {
   repoName: string;
   className?: string;
 }
@@ -33,11 +59,12 @@ const CommitList: React.FC<CommitListProps> = ({
   className,
   repoName,
 }): React.ReactElement => {
-  // -- Variables
+  // --- Variables
   const [commits, setCommits] = useState<Commit[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
 
+  // --- Functions
   useEffect(() => {
     const fetchCommits = async () => {
       if (!repoName) {
@@ -64,6 +91,7 @@ const CommitList: React.FC<CommitListProps> = ({
 
   if (error) toast.error(error);
 
+  // --- Render
   return (
     <div className={cn(className, 'py-4 h-[55vh] md:h-[40vh]')}>
       <Heading variant="h3">Dernier commits</Heading>

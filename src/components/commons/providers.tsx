@@ -1,5 +1,13 @@
+/**
+ * @file providers.tsx
+ * @description Providers component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -9,6 +17,12 @@ import { Rain } from 'react-rainfall';
 import { ThemeProvider } from '~/lib/providers/theme';
 import { Cursor } from '~/components/commons/cursor';
 
+/**
+ * @name Providers
+ * @description Providers component
+ * @param children {React.ReactNode} The children of the providers component
+ * @returns {React.ReactElement} The providers component
+ */
 export const Providers = ({ children }: { children: React.ReactNode }): React.ReactElement => {
   // --- Variables
   const [isRainActive, setIsRainActive] = React.useState(false);

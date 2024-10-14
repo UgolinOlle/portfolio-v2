@@ -1,3 +1,11 @@
+/**
+ * @file layout.tsx
+ * @description Layout for the home page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import type { Metadata } from 'next';
 import { Roboto_Slab, Roboto_Mono } from 'next/font/google';
 import { ViewTransitions } from 'next-view-transitions';
@@ -9,6 +17,11 @@ import { cn } from '~/lib/utils';
 import { Providers } from '~/components/commons/providers';
 import { RightMenu } from '~/components/commons/menus/right-menu';
 
+/**
+ * Metadata for the home page
+ * 
+ * @returns {Metadata} The metadata for the home page
+ */
 export const metadata: Metadata = {
   title: 'Ugolin Ollé',
   description:
@@ -153,16 +166,32 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Roboto Slab font
+ * 
+ * @returns {Roboto_Slab} The Roboto Slab font
+ */
 const robotSlab = Roboto_Slab({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
+/**
+ * Roboto Mono font
+ * 
+ * @returns {Roboto_Mono} The Roboto Mono font
+ */
 const robotMono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
+/**
+ * Root layout component
+ * 
+ * @param {Readonly<{ children: React.ReactNode }>} props - The props for the root layout component
+ * @returns {React.JSX.Element} The root layout component
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

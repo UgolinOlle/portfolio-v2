@@ -1,9 +1,23 @@
+/**
+ * @file page.tsx
+ * @description Page to display the tools I use
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { Metadata } from 'next'
+
 import { Container } from '~/components/commons/animation'
 import { Heading } from '~/components/ui/headers'
 import { UseList, UseImagesList } from '~/components/uses/list'
 import { USES_APP, USES_GEAR, USES_WALLPAPER } from '~/lib/constants/uses'
 
+/**
+ * Metadata for the uses page
+ * 
+ * @returns {Metadata} The metadata for the uses page
+ */
 export const metadata: Metadata = {
   title: 'Uses · Ugolin Ollé',
   description:
@@ -11,12 +25,14 @@ export const metadata: Metadata = {
 }
 
 /**
- * @function UsesPage
- * @description This page is dedicated to the list of tools I use
- * @exports UsesPage
+ * Uses page component
+ * 
+ * This component is used to display the uses page.
+ * 
+ * @returns {React.JSX.Element} The uses page component
  */
 export default function UsesPage() {
-  // -- Render
+  // --- Render
   return (
     <Container className="mb-16">
       <Heading variant="h2">Mes outils</Heading>

@@ -1,5 +1,13 @@
+/**
+ * @file animation.tsx
+ * @description Animation component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client'
 
+// --- Imports
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '~/lib/utils'
@@ -19,14 +27,35 @@ const variants = {
 }
 
 /**
- * @function Container
- * @description Animate the container when it's visible
- * @exports Container
+ * @type ContainerProps
+ * @description The props of the container component
+ * @property {React.ReactNode} children - The children of the container
+ * @property {string} className - The class name of the container
  */
-const Container: React.FC<{
+type ContainerProps = {
   children: React.ReactNode
   className?: string
-}> = ({ children, className }) => {
+}
+
+/**
+ * @type BoxProps
+ * @description The props of the box component
+ * @property {React.ReactNode} children - The children of the box
+ * @property {string} className - The class name of the box
+ */
+type BoxProps = {
+  children: React.ReactNode
+  className?: string
+}
+
+/**
+ * @name Container
+ * @description Container component
+ * @param children {React.ReactNode} The children of the container component
+ * @param className {string} The class name of the container component
+ * @returns {React.JSX.Element} The container component
+ */
+const Container: React.FC<ContainerProps> = ({ children, className }) => {
   // --- Variables
   const ref = useRef<HTMLDivElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -71,14 +100,13 @@ const Container: React.FC<{
 }
 
 /**
- * @function Box
- * @description Animate the box when it's visible
- * @exports Box
+ * @name Box
+ * @description Box component
+ * @param children {React.ReactNode} The children of the box component
+ * @param className {string} The class name of the box component
+ * @returns {React.JSX.Element} The box component
  */
-const Box: React.FC<{
-  children: React.ReactNode
-  className?: string
-}> = ({ children, className }) => {
+const Box: React.FC<BoxProps> = ({ children, className }) => {
   // --- Variables
   const ref = useRef<HTMLDivElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)

@@ -1,4 +1,11 @@
 /**
+ * @file project.ts
+ * @description Interfaces for the project page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+/**
  * @interface IProjectItem
  * @description Interface for project item.
  * @property {string} id - Project id.
@@ -25,6 +32,18 @@ export interface IProjectItem {
   date: string;
 }
 
+/**
+ * @interface ProjectData
+ * @description Interface for the project data.
+ * @property {string} title - The project title.
+ * @property {string} description - The project description.
+ * @property {Date} date - The project date.
+ * @property {string} github - The project github url.
+ * @property {string[]} tags - The project tags.
+ * @property {string} thumbnailUrl - The project thumbnail url.
+ * @property {string} status - The project status.
+ * @exports ProjectData
+ */
 export interface ProjectData {
   title: string;
   description: string;
@@ -35,6 +54,14 @@ export interface ProjectData {
   status: 'published' | 'draft';
 }
 
+/**
+ * @interface Project
+ * @description Interface for the project data.
+ * @property {ProjectData} data - The project data.
+ * @property {string} slug - The project slug.
+ * @property {string} content - The project content.
+ * @exports Project
+ */
 export interface Project {
   data: ProjectData;
   slug: string;

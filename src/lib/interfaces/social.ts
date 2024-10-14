@@ -1,3 +1,11 @@
+/**
+ * @file social.ts
+ * @description Interfaces for the social page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IconType } from 'react-icons';
 
 /**

@@ -1,30 +1,52 @@
+/**
+ * @file about.tsx
+ * @description About component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 
 import { COMMON_ICONS } from '~/components/commons/icons/common';
 import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
 
+// --- Constants
 const ANIMATION_DURATION = 0.5;
 const ICON_WIDTH = '1.5rem';
-
 const iconVariants = {
   hidden: { opacity: 0, width: 0 },
   visible: { opacity: 1, width: ICON_WIDTH },
 };
-
 const textVariants = {
   hidden: { marginLeft: 0 },
   visible: { marginLeft: ICON_WIDTH },
 };
 
+/**
+ * @type AnimatedTextProps
+ * @description Animated text props
+ * @param children {React.ReactNode} The children of the animated text component
+ * @param icon {React.ElementType} The icon of the animated text component
+ * @param isInView {boolean} The in view state of the animated text component
+ */
 type AnimatedTextProps = {
   children: React.ReactNode;
   icon: React.ElementType;
   isInView: boolean;
 };
 
+/**
+ * @name AnimatedText
+ * @description Animated text component
+ * @param children {React.ReactNode} The children of the animated text component
+ * @param icon {React.ElementType} The icon of the animated text component
+ * @param isInView {boolean} The in view state of the animated text component
+ * @returns {React.JSX.Element} The animated text component
+ */
 const AnimatedText: React.FC<AnimatedTextProps> = ({ children, icon: Icon, isInView }) => {
   return (
     <span className="relative inline-flex items-center whitespace-nowrap">
@@ -49,6 +71,11 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, icon: Icon, isInV
   );
 };
 
+/**
+ * @name HeroAbout
+ * @description Hero about component
+ * @returns {React.JSX.Element} The hero about component
+ */
 const HeroAbout = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.5 });
@@ -76,6 +103,11 @@ const HeroAbout = () => {
   );
 };
 
+/**
+ * @name HeroAboutTwo
+ * @description Hero about two component
+ * @returns {React.JSX.Element} The hero about two component
+ */
 const HeroAboutTwo = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.5 });

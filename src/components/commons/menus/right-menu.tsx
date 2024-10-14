@@ -1,5 +1,13 @@
+/**
+ * @file right-menu.tsx
+ * @description Right menu component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { useState, useEffect } from 'react';
 import { MoveUp } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -8,11 +16,16 @@ import { Button } from '~/components/ui/button';
 import { ThemeToggler } from '~/components/commons/menus/theme-toggler';
 import { RainToggler } from '~/components/commons/menus/rain-toggler';
 
+/**
+ * @name RightMenu
+ * @description Right menu component
+ * @returns {React.JSX.Element} The right menu component
+ */
 export const RightMenu: React.FC = () => {
-  // -- State
+  // --- Variables
   const [isBottom, setIsBottom] = useState(false);
 
-  // -- Functions
+  // --- Functions  
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,7 +45,6 @@ export const RightMenu: React.FC = () => {
     }
   };
 
-  // -- Effect
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -40,7 +52,7 @@ export const RightMenu: React.FC = () => {
     };
   }, []);
 
-  // -- Render
+  // --- Render
   return (
     <motion.div
       initial={{ bottom: '10px' }}

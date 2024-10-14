@@ -1,3 +1,11 @@
+/**
+ * @file uses.ts
+ * @description Constants for the uses page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { CardProps } from '~/components/uses/card';
 
 import Arc from 'public/images/uses/arc.svg';

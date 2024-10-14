@@ -1,19 +1,37 @@
-import { Heading } from '~/components/ui/headers'
-import { Container } from '~/components/commons/animation'
-import { ProjectsInfo } from '~/components/projects/info'
-import { Metadata } from 'next'
+/**
+ * @file page.tsx
+ * @description Component file for the projects page of Ugolin Ollé's portfolio
+ * @author Ugolin Ollé
+ * @version 1.0.0
+ */
 
+// --- Imports
+import { Heading } from '~/components/ui/headers';
+import { Container } from '~/components/commons/animation';
+import { ProjectsInfo } from '~/components/projects/info';
+import { Metadata } from 'next';
+
+/**
+ * Metadata for the projects page
+ *
+ * @type {Metadata}
+ */
 export const metadata: Metadata = {
-  title: 'Projets · Ugolin Ollé',
-  description: "Découvrez les projets sur lesquels j'ai travaillé.",
-}
+  title: 'Projects · Ugolin Ollé',
+  description: "Discover the projects I've worked on.",
+};
 
-export default function ProjectsPage() {
-  // -- Rendu
+/**
+ * Page component for the projects page
+ *
+ * @returns {React.JSX.Element} The projects page component
+ */
+export default function ProjectsPage(): React.JSX.Element {
+  // -- Rendering
   return (
     <Container className="mb-28 flex flex-col gap-10">
-      <Heading variant="h2">Projects</Heading>
+      <Heading variant="h2">Projets</Heading>
       <ProjectsInfo />
     </Container>
-  )
+  );
 }

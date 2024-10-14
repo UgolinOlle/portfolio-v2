@@ -1,8 +1,22 @@
+/**
+ * @file utils.ts
+ * @description Utils for the MDX
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import rehypeShiki from '@shikijs/rehype';
 import { transformerNotationHighlight } from '@shikijs/transformers';
 import type { ShikiTransformer } from 'shiki/core';
 import type { PluggableList } from 'unified';
 
+/**
+ * @function getFileName
+ * @description Get the filename from the raw string.
+ * @param raw The raw string.
+ * @returns The filename.
+ */
 const getFileName = (raw?: string): string | null => {
   if (!raw) return null;
 
@@ -21,6 +35,11 @@ const getFileName = (raw?: string): string | null => {
   return null;
 };
 
+/**
+ * @function transformerMetadataLanguageClassName
+ * @description Transformer for the language class name.
+ * @returns The transformer.
+ */
 const transformerMetadataLanguageClassName = (): ShikiTransformer => {
   let language = 'js';
   let fileName: string | null = null;
@@ -42,6 +61,7 @@ const transformerMetadataLanguageClassName = (): ShikiTransformer => {
   };
 };
 
+// --- Shiki plugin
 const shikiPlugin = [
   rehypeShiki,
   {

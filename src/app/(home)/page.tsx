@@ -1,3 +1,11 @@
+/**
+ * @file page.tsx
+ * @description Page to display the home page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import React from 'react';
 import { Metadata } from 'next';
 
@@ -5,16 +13,22 @@ import { Box, Container } from '~/components/commons/animation';
 import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
 import { PicturesBento } from '~/components/about/pictures-bento';
 
-// --- Metadata
+/**
+ * Metadata for the home page
+ * 
+ * @returns {Metadata} The metadata for the home page
+ */
 export const metadata: Metadata = {
   title: 'À propos · Ugolin Ollé',
   description: "Page d'accueil de mon portfolio",
 };
 
 /**
- * @function HomePage
- * @description Main page of the portfolio.
- * @exports HomePage
+ * Home page component
+ * 
+ * This component is used to display the home page.
+ * 
+ * @returns {React.JSX.Element} The home page component
  */
 export default function HomePage() {
   // --- Render

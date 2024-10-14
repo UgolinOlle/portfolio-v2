@@ -1,17 +1,30 @@
+/**
+ * @file cursor.tsx
+ * @description Cursor component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
+/**
+ * @name Cursor
+ * @description Cursor component
+ * @returns {React.JSX.Element} The cursor component
+ */
 export const Cursor: React.FC = () => {
+  // --- Variables
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isExploding, setIsExploding] = useState(false);
   const pathname = usePathname();
   const controls = useAnimation();
   const cursorRef = useRef<HTMLDivElement>(null);
-
   const cursorColor =
     pathname === '/'
       ? 'hsl(262 100% 49%)'
@@ -23,6 +36,7 @@ export const Cursor: React.FC = () => {
             ? 'hsl(0 100% 49%)'
             : 'hsl(262 100% 49%)';
 
+  // --- Functions
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
@@ -77,6 +91,7 @@ export const Cursor: React.FC = () => {
     };
   }, [controls, isExploding]);
 
+  // --- Render
   const explodingParticles = Array.from({ length: 20 }).map((_, i) => (
     <motion.div
       key={i}

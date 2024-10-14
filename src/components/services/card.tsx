@@ -1,18 +1,27 @@
+/**
+ * @file card.tsx
+ * @description Card component for services
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Calendar, icons } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { ServiceCardProps } from '~/lib/interfaces/service';
 
 import { BorderBeam } from '~/components/ui/border-beam';
-import Image from 'next/image';
 
 /**
- * @function ServiceCard
+ * @name ServiceCard
  * @description Card to show a service
+ * @param {ServiceCardProps} props - The props for the service card
+ * @returns {React.ReactElement} The component
  * @exports ServiceCard
  */
 export const ServiceCard: React.FC<ServiceCardProps> = (props) => {

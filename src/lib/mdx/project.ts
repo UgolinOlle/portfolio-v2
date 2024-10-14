@@ -1,3 +1,11 @@
+/**
+ * @file project.ts
+ * @description MDX for the project page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import fs from 'fs/promises';
 import { z } from 'zod';
 import path from 'path';
@@ -28,7 +36,8 @@ let projectCache: Project[] | null = null;
 const projectsDirectory = path.join(process.cwd(), 'contents/projects');
 
 /**
- * Function to get the filenames of the projects.
+ * @function getFilenames
+ * @description Get the filenames of the projects.
  * @returns An array of project filenames.
  */
 function getFilenames() {
@@ -36,7 +45,8 @@ function getFilenames() {
 }
 
 /**
- * Function to sort the projects by date.
+ * @function sortProjectsByDate
+ * @description Sort the projects by date.
  * @param project1 The first project.
  * @param project2 The second project.
  * @returns Numeric value for project sorting.
@@ -46,11 +56,11 @@ function sortProjectsByDate(project1: Project, project2: Project) {
 }
 
 /**
- * Function to get all projects.
+ * @function getProjects
+ * @description Get all projects.
  * @returns A promise that resolves with an array of projects sorted by date.
  */
 async function getProjects() {
-  // Return cached projects if available
   if (projectCache) return projectCache;
 
   const filenames = getFilenames();
@@ -63,29 +73,29 @@ async function getProjects() {
         const safeData = ProjectSchema.safeParse(data);
 
         if (!safeData.success || safeData.data.status !== 'published') {
-          return null; // Skip files with invalid schema or unpublished projects
+          return null;
         }
 
         return {
           ...safeData.data,
-          slug: path.basename(filename, '.mdx'), // Extract slug from filename
+          slug: path.basename(filename, '.mdx'),
           content,
         };
       } catch (error) {
         console.error(`Error reading file ${filename}:`, error);
-        return null; // Skip if file reading fails
+        return null;
       }
     })
   );
 
-  // Filter out null projects and sort by date
   projectCache = projects.filter((project): project is Project => project !== null).sort(sortProjectsByDate);
 
   return projectCache;
 }
 
 /**
- * Function to get a project by its slug.
+ * @function getProject
+ * @description Get a project by its slug.
  * @param slug The project slug.
  * @returns A promise that resolves with the corresponding project, or undefined if no project was found.
  */

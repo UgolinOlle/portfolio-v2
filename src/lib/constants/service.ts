@@ -1,3 +1,11 @@
+/**
+ * @file service.ts
+ * @description Constants for the service page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import {
   IServiceBenefitProps,
   ServiceCardProps,

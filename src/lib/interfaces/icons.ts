@@ -1,3 +1,11 @@
+/**
+ * @file icons.ts
+ * @description Interfaces for the icons
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IconType } from 'react-icons';
 
 /**

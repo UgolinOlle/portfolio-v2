@@ -1,16 +1,36 @@
+/**
+ * @file grid.tsx
+ * @description Grid component for projects
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import React, { ReactNode } from 'react';
 
 import { cn } from '~/lib/utils';
 
-interface IProjectItem {
+/**
+ * @type IProjectItem
+ * @description Interface for a project item
+ * @property {string} title - The title of the project
+ * @property {string} description - The description of the project
+ * @property {ReactNode} icon - The icon of the project
+ */
+type IProjectItem = {
   title: string;
   description: string;
   icon: ReactNode;
 }
 
-interface ProjectGridProps {
+/**
+ * @type ProjectGridProps
+ * @description Interface for the project grid props
+ * @property {IProjectItem[]} projects - The projects to display
+ */
+type ProjectGridProps = {
   projects: IProjectItem[];
-}
+};
 
 /**
  * @name ProjectCard
@@ -19,7 +39,7 @@ interface ProjectGridProps {
  * @exports ProjectCard
  */
 const ProjectCard: React.FC<IProjectItem> = (props): JSX.Element => {
-  // -- Render
+  // --- Render
   return (
     <div className="flex flex-col py-10 relative rounded-md hover:shadow-lg transition duration-300 ease-in-out group/feature">
       <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
@@ -45,13 +65,13 @@ const ProjectCard: React.FC<IProjectItem> = (props): JSX.Element => {
 };
 
 /**
- * @component ProjectGrid
+ * @name ProjectGrid
  * @description Grid for projects.
  * @returns {JSX.Element} React component
  * @exports ProjectGrid
  */
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }): JSX.Element => {
-  // -- Render
+  // --- Render
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 w-full mx-auto">
       {projects.map((project) => (

@@ -1,11 +1,24 @@
+/**
+ * @file rain-toggler.tsx
+ * @description Rain toggler component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import { Umbrella, UmbrellaOff } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 
+/**
+ * @name RainToggler
+ * @description Rain toggler component
+ * @returns {React.JSX.Element} The rain toggler component
+ */
 export const RainToggler: React.FC = (): JSX.Element => {
   // --- Variables
   const [isRainActive, setIsRainActive] = useState(false);

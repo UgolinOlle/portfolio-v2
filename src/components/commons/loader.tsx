@@ -1,14 +1,40 @@
+/**
+ * @file loader.tsx
+ * @description Loader component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, OrbitControls, Line } from '@react-three/drei';
 import * as THREE from 'three';
 
+/**
+ * @function lerp
+ * @description Linear interpolation function
+ * @param start {number} The start value
+ * @param end {number} The end value
+ * @param t {number} The interpolation factor
+ * @returns {number} The interpolated value
+ */
 function lerp(start: number, end: number, t: number) {
   return start + (end - start) * t;
 }
 
+/**
+ * @function AnimatedSphereWithOrbit
+ * @description Animated sphere with orbit component
+ * @param position {number[]} The position of the sphere
+ * @param color {string} The color of the sphere
+ * @param speed {number} The speed of the sphere
+ * @param orbitRadius {number} The orbit radius of the sphere
+ * @param cursorRotation {number[]} The cursor rotation of the sphere
+ * @returns {React.JSX.Element} The animated sphere with orbit component
+ */
 function AnimatedSphereWithOrbit({
   position,
   color,
@@ -22,12 +48,14 @@ function AnimatedSphereWithOrbit({
   orbitRadius: number;
   cursorRotation: { x: number; y: number };
 }) {
+  // --- Variables
   const meshRef = useRef<THREE.Mesh>(null!);
   const orbitRef = useRef<THREE.Group>(null!);
   const trailRef = useRef<THREE.BufferGeometry>(null!);
   const trailPositions = useMemo(() => new Float32Array(300 * 3), []);
   const smoothRotation = useRef({ x: 0, y: 0 });
 
+  // --- Functions
   useFrame((state) => {
     const t = state.clock.getElapsedTime() * speed;
     const newX = Math.cos(t) * orbitRadius;
@@ -59,6 +87,7 @@ function AnimatedSphereWithOrbit({
     return points;
   }, [orbitRadius]);
 
+  // --- Render
   return (
     <group ref={orbitRef} position={position}>
       <Sphere args={[0.2, 32, 32]}>
@@ -84,13 +113,19 @@ function AnimatedSphereWithOrbit({
   );
 }
 
+/**
+ * @function Scene
+ * @description Scene component
+ * @returns {React.JSX.Element} The scene component
+ */
 function Scene() {
+  // --- Variables
   const baseColor = new THREE.Color('hsl(262, 100%, 49%)');
   const lighterColor = new THREE.Color('hsl(262, 100%, 70%)');
   const darkerColor = new THREE.Color('hsl(262, 100%, 30%)');
-
   const [cursorRotation, setCursorRotation] = useState({ x: 0, y: 0 });
 
+  // --- Functions
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setCursorRotation({
@@ -105,6 +140,7 @@ function Scene() {
     };
   }, []);
 
+  // --- Render
   return (
     <>
       <ambientLight intensity={0.5} />
@@ -152,6 +188,11 @@ function Scene() {
   );
 }
 
+/**
+ * @name SphereOrbitalTracerLoader
+ * @description Sphere orbital tracer loader component
+ * @returns {React.JSX.Element} The sphere orbital tracer loader component
+ */
 export const SphereOrbitalTracerLoader = () => {
   return (
     <div className="h-screen w-full">

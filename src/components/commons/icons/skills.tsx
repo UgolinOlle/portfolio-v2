@@ -1,5 +1,18 @@
+/**
+ * @file skills.tsx
+ * @description Skills component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IIcon } from './socials';
 
+/**
+ * @constant SKILLS_ICONS
+ * @description Skills icons component
+ * @returns {IIcon} The skills icons component
+ */
 export const SKILLS_ICONS: IIcon = {
   typescript: () => {
     return (

@@ -1,11 +1,24 @@
-import { CrossIcon } from './icons/common';
+/**
+ * @file footer.tsx
+ * @description Footer component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
 
+// --- Imports
+import { CrossIcon } from '~/components/commons/icons/common';
+
+/**
+ * @name Footer
+ * @description Footer component
+ * @returns {React.JSX.Element} The footer component
+ */
 export const Footer: React.FC = () => {
-  // -- Variables
+  // --- Variables
   const sharedTextClasses =
     'text-center text-sm text-gray-700/75 dark:text-gray-300/75';
 
-  // -- Render
+  // --- Render
   return (
     <footer className="w-full text-neutral-600 dark:text-neutral-200 py-5 mt-9 shadow-sm">
       <div className="border border-neutral-300 relative p-2">

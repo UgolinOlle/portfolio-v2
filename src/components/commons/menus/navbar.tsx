@@ -1,17 +1,31 @@
+/**
+ * @file navbar.tsx
+ * @description Navbar component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { SetStateAction, useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { Menu, X, Mouse, BriefcaseBusiness, NotebookPen } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Mouse } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from '~/components/ui/tabs';
 
+/**
+ * @name Navbar
+ * @description Navbar component
+ * @returns {React.JSX.Element} The navbar component
+ */
 export const Navbar: React.FC = () => {
+  // --- Variables
   const router = useRouter();
   const pathname = usePathname();
   const [activeTab, setActiveTab] = useState('about');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // --- Functions
   const handleTabChange = (value: SetStateAction<string>) => {
     setActiveTab(value);
   };
@@ -42,6 +56,7 @@ export const Navbar: React.FC = () => {
     setActiveTab(activeTab);
   }, [pathname]);
 
+  // --- Render
   return (
     <nav className="relative mb-8">
       <div className="flex items-center justify-start lg:hidden">

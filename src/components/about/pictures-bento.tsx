@@ -1,10 +1,23 @@
+/**
+ * @file pictures-bento.tsx
+ * @description Pictures bento component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { ABOUT_IMAGES, ABOUT_IMAGES_2 } from '~/lib/constants/about';
 
+/**
+ * @name PicturesBento
+ * @description Pictures bento component
+ * @returns {React.JSX.Element} The pictures bento component
+ */
 export const PicturesBento: React.FC = (): React.ReactElement => {
   // --- Variables
   const imageVariants = {

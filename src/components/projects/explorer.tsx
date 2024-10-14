@@ -1,15 +1,35 @@
-'use client'
+/**
+ * @file explorer.tsx
+ * @description Explorer component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
 
-import { FC } from 'react'
+'use client';
+
+// --- Imports
+import { FC } from 'react';
 
 import { Tree, Folder, File } from '~/components/ui/file-tree'
-import { Button } from '~/components/ui/button'
+import { Button } from '~/components/ui/button';
 
-interface ProjectExplorerProps {
-  handleSelect: (element: any) => void
+/**
+ * @type ProjectExplorerProps
+ * @description Project explorer props interface
+ * @property {function} handleSelect - The function to handle the selection
+ */
+type ProjectExplorerProps = {
+  handleSelect: (element: any) => void;
 }
 
+/**
+ * @name ProjectExplorer
+ * @description Project explorer component
+ * @param {ProjectExplorerProps} props - The props for the project explorer component
+ * @returns {React.JSX.Element} The project explorer component
+ */
 export const ProjectExplorer: FC<ProjectExplorerProps> = ({ handleSelect }) => {
+  // --- Render
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100 p-4 dark:bg-neutral-900">
       <Button

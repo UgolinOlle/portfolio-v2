@@ -1,3 +1,11 @@
+/**
+ * @file components.tsx
+ * @description MDX components
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import {
   FaCode,
   FaTerminal,
@@ -19,6 +27,11 @@ import { Detail, IconListItem, Keyword } from '~/components/commons/mdx/ui';
 import { ProjectGrid } from '~/components/projects/grid';
 import { COMMON_ICONS } from '~/components/commons/icons/common';
 
+/**
+ * @name MDX_COMPONENTS
+ * @description MDX components
+ * @returns {React.JSX.Element} The MDX components
+ */
 export const MDX_COMPONENTS = {
   // --- Components
   ProjectGrid: ProjectGrid,

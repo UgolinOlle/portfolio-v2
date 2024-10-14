@@ -1,3 +1,11 @@
+/**
+ * @file page.tsx
+ * @description Page to display the services offered
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import React from 'react';
 import { Metadata } from 'next';
 import { CircleCheckBig } from 'lucide-react';
@@ -10,12 +18,23 @@ import { Marquee } from '~/components/ui/marquee';
 
 import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service';
 
-// --- Metadata
+/**
+ * Metadata for the services page
+ * 
+ * @returns {Metadata} The metadata for the services page
+ */
 export const metadata: Metadata = {
   title: 'Services · Ugolin Ollé',
   description: 'Liste des services proposés.',
 };
 
+/**
+ * Services page component
+ * 
+ * This component is used to display the services page.
+ * 
+ * @returns {React.JSX.Element} The services page component
+ */
 export default function ServicesPage() {
   // --- Render
   return (

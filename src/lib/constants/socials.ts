@@ -1,3 +1,11 @@
+/**
+ * @file socials.ts
+ * @description Constants for the socials page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { SOCIALS_ICONS } from '~/components/commons/icons/socials';
 import { ISocialItem } from '~/lib/interfaces/social';
 

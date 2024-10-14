@@ -1,23 +1,11 @@
 /**
- * @file Hero.tsx
- * @module Hero
- * @description A React functional component that serves as the hero section of the website.
- * It includes various UI elements such as headings, buttons, social links, and a custom cursor behavior.
- *
- * The component integrates with the `useCursor` context to track mouse events, change the cursor style,
- * and display additional effects on hover.
- *
- * @example
- * // Usage
- * import { Hero } from '~/components/hero/hero'
- *
- * function App() {
- *   return (
- *     <Hero />
- *   )
- * }
+ * @file hero.tsx
+ * @description Hero component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
  */
 
+// --- Imports
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,11 +24,9 @@ import { cn } from '~/lib/utils';
 import { ShinyContainer } from '../ui/shiny';
 
 /**
- * The `Hero` component is a prominent section on the landing page,
- * featuring personal information, call-to-action buttons, social media links,
- * and dynamic effects with a custom cursor.
- *
- * @returns {JSX.Element} A responsive container that contains the hero layout with dynamic content.
+ * @name Hero
+ * @description Hero component
+ * @returns {React.JSX.Element} The hero component
  */
 export const Hero: React.FC = (): JSX.Element => {
   // --- Render

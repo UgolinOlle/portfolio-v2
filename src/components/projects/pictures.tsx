@@ -1,9 +1,32 @@
+/**
+ * @file pictures.tsx
+ * @description Pictures component for projects
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-export const ProjectPictures: React.FC<string[]> = (images: string[]) => {
-  // -- Variables
+/**
+ * @type ProjectPicturesProps
+ * @description Interface for the project pictures props
+ * @property {string[]} images - The images to display
+ */
+type ProjectPicturesProps = {
+  images: string[];
+};
+
+/**
+ * @name ProjectPictures
+ * @description Pictures component for projects
+ * @param {ProjectPicturesProps} props - The props for the project pictures component
+ * @returns {React.ReactElement} The component
+ */
+export const ProjectPictures: React.FC<ProjectPicturesProps> = ({ images }) => {
+  // --- Variables
   const imageVariants = {
     whileHover: {
       scale: 1.1,
@@ -17,7 +40,7 @@ export const ProjectPictures: React.FC<string[]> = (images: string[]) => {
     },
   };
 
-  // -- Render
+  // --- Render
   return (
     <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
       <div className="flex flex-row -ml-20">

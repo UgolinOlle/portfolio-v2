@@ -1,8 +1,21 @@
+/**
+ * @file skills.tsx
+ * @description Skills component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import React from 'react'
 
 import { BentoGrid, BentoGridItem } from '~/components/ui/bento'
 import { ABOUT_SKILLS } from '~/lib/constants/about'
 
+/**
+ * @name Skills
+ * @description Skills component
+ * @returns {React.JSX.Element} The skills component
+ */
 export const Skills: React.FC = () => {
   // --- Render
   return (

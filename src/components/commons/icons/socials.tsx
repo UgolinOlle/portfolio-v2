@@ -1,9 +1,28 @@
+/**
+ * @file socials.tsx
+ * @description Socials component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IconType } from 'react-icons';
 
+/**
+ * @interface IIcon
+ * @description Socials icons interface
+ * @property {string} [key: string]: IconType
+ * @exports SOCIALS_ICONS
+ */
 export interface IIcon {
   [key: string]: IconType;
 }
 
+/**
+ * @constant SOCIALS_ICONS
+ * @description Socials icons component
+ * @returns {IIcon} The socials icons component
+ */
 export const SOCIALS_ICONS: IIcon = {
   github: ({ className }) => {
     return (

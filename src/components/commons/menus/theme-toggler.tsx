@@ -1,5 +1,13 @@
+/**
+ * @file theme-toggler.tsx
+ * @description Theme toggler component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
 'use client';
 
+// --- Imports
 import React, { useState, useEffect, useRef } from 'react';
 import { MoonIcon, SunIcon, Monitor, SwatchBook } from 'lucide-react';
 import { useTheme } from 'next-themes';
@@ -8,6 +16,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 
+/**
+ * @name ThemeToggler
+ * @description Theme toggler component
+ * @returns {React.JSX.Element} The theme toggler component
+ */
 export const ThemeToggler = () => {
   // --- Variables
   const { theme, setTheme } = useTheme();

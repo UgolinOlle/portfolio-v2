@@ -1,14 +1,16 @@
+/**
+ * @file projects.ts
+ * @description Constants for the projects page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IProjectItem } from '~/lib/interfaces/project';
-
-import whoaide from 'public/images/projects/whoa-ide/whoa-ide.jpg';
-import telescope from 'public/images/projects/whoa-ide/telescope.png';
-
-export const IDE_PICTURES = [whoaide.src, telescope.src];
 
 /**
  * @constant PROJECTS
  * @description List of projects.
- * @type {IProjectItem[]}
  * @exports PROJECTS
  */
 export const PROJECTS: IProjectItem[] = [

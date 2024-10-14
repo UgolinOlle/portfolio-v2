@@ -1,3 +1,11 @@
+/**
+ * @file about.ts
+ * @description Constants for the about page
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { SKILLS_ICONS } from '~/components/commons/icons/skills';
 import { IAboutPicture, IAboutSkill } from '~/lib/interfaces/icons';
 

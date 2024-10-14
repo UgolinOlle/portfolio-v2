@@ -1,7 +1,21 @@
+/**
+ * @file retro.tsx
+ * @description Retro grid component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { cn } from '~/lib/utils';
 
+/**
+ * @name RetroGrid
+ * @description Retro grid component
+ * @param className {string} The class name of the retro grid component
+ * @returns {React.JSX.Element} The retro grid component
+ */
 export function RetroGrid({ className }: { className?: string }): JSX.Element {
-  // -- Render
+  // --- Render
   return (
     <div
       className={cn(

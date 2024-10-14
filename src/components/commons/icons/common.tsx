@@ -1,5 +1,18 @@
+/**
+ * @file common.tsx
+ * @description Common icons component
+ * @author Ugolin Ollé<hello@ugolin-olle.com>
+ * @version 1.0.0
+ */
+
+// --- Imports
 import { IIcon } from './socials';
 
+/**
+ * @constant COMMON_ICONS
+ * @description Common icons component
+ * @returns {IIcon} The common icons component
+ */
 export const COMMON_ICONS: IIcon = {
   stars: ({ className }) => {
     return (
