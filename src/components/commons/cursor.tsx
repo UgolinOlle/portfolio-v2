@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 
 export const Cursor: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [explosionPosition, setExplosionPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isExploding, setIsExploding] = useState(false);
   const pathname = usePathname();
@@ -26,7 +25,8 @@ export const Cursor: React.FC = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      const { clientX, clientY } = e;
+      setMousePosition({ x: clientX, y: clientY });
       if (isExploding) {
         setIsExploding(false);
         if (cursorRef.current) {
@@ -57,8 +57,7 @@ export const Cursor: React.FC = () => {
         });
     };
 
-    const handleMouseLeave = (e: MouseEvent) => {
-      setExplosionPosition({ x: e.clientX, y: e.clientY });
+    const handleMouseLeave = () => {
       setIsExploding(true);
       if (cursorRef.current) {
         cursorRef.current.style.display = 'none';
@@ -81,11 +80,11 @@ export const Cursor: React.FC = () => {
   const explodingParticles = Array.from({ length: 20 }).map((_, i) => (
     <motion.div
       key={i}
-      className="absolute h-2 w-2 rounded-full"
+      className="fixed h-2 w-2 rounded-full"
       style={{
         backgroundColor: cursorColor,
-        top: explosionPosition.y,
-        left: explosionPosition.x,
+        top: mousePosition.y,
+        left: mousePosition.x,
       }}
       initial={{ scale: 0 }}
       animate={
@@ -103,11 +102,11 @@ export const Cursor: React.FC = () => {
   ));
 
   return (
-    <motion.div>
+    <>
       <motion.div
         ref={cursorRef}
         className="pointer-events-none fixed left-0 top-0 z-[10001]"
-        animate={{ x: mousePosition.x, y: mousePosition.y }}
+        animate={mousePosition}
         transition={{
           type: 'spring',
           stiffness: 1000,
@@ -124,8 +123,8 @@ export const Cursor: React.FC = () => {
           aria-hidden="true"
           animate={controls}
           style={{
-            transform: `translate(-4px, -4px) scale(${isHovering ? 1.2 : 1})`,
-            transformOrigin: 'top left',
+            transform: `translate(-50%, -50%) scale(${isHovering ? 1.2 : 1})`,
+            transformOrigin: 'center',
             opacity: isExploding ? 0 : 1,
           }}
         >
@@ -167,6 +166,6 @@ export const Cursor: React.FC = () => {
         </motion.svg>
       </motion.div>
       {explodingParticles}
-    </motion.div>
+    </>
   );
 };
