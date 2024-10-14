@@ -43,29 +43,13 @@ git clone https://github.com/your-username/portfolio-v2.git
 
 ```bash
 cd portfolio-v2
-npm install
-
-or
-
-yarn install
-
-or
-
-pnpm install
+yarn
 ```
 
 3. Run the development server:
 
 ```bash
-npm run start:dev
-
-or
-
 yarn start:dev
-
-or
-
-pnpm start:dev
 ```
 
 4. Open http://localhost:3000 in your browser to see the result.
