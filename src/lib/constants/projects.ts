@@ -17,7 +17,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'whoa-ide',
     name: 'Whoa IDE',
-    description: '⌨️ · My custom configuration for Neovim.',
+    description: '⌨️ · Configuration avancée open-source pour Neovim.',
     imageUrl: `/images/projects/whoa-ide/whoa-ide.jpg`,
     url: 'whoa-ide',
     githubUrl: 'https://github.com/UgolinOlle/WhoaIDE',
@@ -28,7 +28,7 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'portfolio-v2',
     name: 'Portfolio v2',
-    description: '💻 · My simple portfolio to show my skills, projects, experiences.',
+    description: '💻 · La seconde version de mon portfolio.',
     imageUrl: `/images/projects/portfolio/portfolio-v2.jpg`,
     url: 'portfolio-v2',
     githubUrl: 'https://github.com/UgolinOlle/portfolio-v2',
@@ -39,12 +39,23 @@ export const PROJECTS: IProjectItem[] = [
   {
     id: 'vaultflow',
     name: 'Vaultflow',
-    description: '🌐 · A simple landing page about a modern analytics tool for the modern world.',
+    description: '🌐 · Une page d\'accueil simple sur un outil d\'analyse moderne pour le monde moderne.',
     imageUrl: `/images/projects/vaultflow/home-1.jpg`,
     url: 'vaultflow',
     githubUrl: 'https://github.com/UgolinOlle/vaultflow',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
     keywords: ['nextjs', 'react', 'typescript', 'tailwindcss', 'ui', 'landing-page', 'website'],
+    date: '2024',
+  },
+  {
+    id: 'ytb-thumbnail-analyser',
+    name: 'YTB Thumbnail Analyser',
+    description: '🎥 · Un outil pour analyser les thumbnails des vidéos YouTube.',
+    imageUrl: `/images/projects/ytb-thumbnail-analyser/ytb-thumbnail-analyser.jpg`,
+    url: 'ytb-thumbnail-analyser',
+    githubUrl: 'https://github.com/UgolinOlle/ytb-thumbnail-analyser',
+    technologies: ['Python', 'FastAPI', 'OpenAI', 'React.js', 'framer-motion', 'Tailwind CSS', 'Typescript', 'Vite'],
+    keywords: ['python', 'fastapi', 'openai', 'react', 'framer-motion', 'tailwindcss', 'typescript', 'vite'],
     date: '2024',
   },
   {

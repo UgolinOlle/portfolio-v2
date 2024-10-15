@@ -6,10 +6,7 @@
  */
 
 // --- Imports
-import {
-  IServiceBenefitProps,
-  ServiceCardProps,
-} from '~/lib/interfaces/service'
+import { IServiceBenefitProps, ServiceCardProps } from '~/lib/interfaces/service';
 
 /**
  * @constant SERVICES
@@ -22,7 +19,7 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Landing page',
     price: 650,
     description:
-      'Craft des landing pages sur mesure pour convertir vos visiteurs en clients. Fournies en 72h.',
+      'Transformez vos visiteurs en clients avec une landing pages sur mesure, conçues pour maximiser vos conversions. Livraison en 72h avec mise en ligne.',
     icon: 'SwatchBook',
     color: '',
     link: 'https://cal.com/ugolin-olle',
@@ -58,19 +55,14 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Support technique',
     price: 50,
     hour: true,
-    description:
-      'Assistance technique pour maintenir vos systèmes, applications, logiciel et serveur à jour 7/7j.',
+    description: 'Assistance technique pour maintenir vos systèmes, applications, logiciel et serveur à jour 7/7j.',
     icon: 'Computer',
     color: 'red-500',
     link: 'https://cal.com/ugolin-olle',
     linkText: 'Prendre rendez-vous',
-    features: [
-      'Assistance à distance',
-      'Résolution rapide des problèmes',
-      'Support continu',
-    ],
+    features: ['Assistance à distance', 'Résolution rapide des problèmes', '7 jours sur 7'],
   },
-]
+];
 
 /**
  * @constant SERVICES_BENEFITS
@@ -83,7 +75,7 @@ export const SERVICES_BENEFITS: IServiceBenefitProps[] = [
     icon: 'CircleCheckBig',
   },
   {
-    title: 'Disponible 24/7',
+    title: 'Disponible 7 jours/7',
     icon: 'CircleCheckBig',
   },
   {
@@ -91,11 +83,11 @@ export const SERVICES_BENEFITS: IServiceBenefitProps[] = [
     icon: 'CircleCheckBig',
   },
   {
-    title: 'Communication régulière',
+    title: 'Réponse en moins 1h',
     icon: 'CircleCheckBig',
   },
   {
     title: 'Support continu',
     icon: 'CircleCheckBig',
   },
-]
+];
