@@ -17,10 +17,10 @@ export const dynamic = 'force-static';
 
 /**
  * Generates static params for all project pages.
- * 
+ *
  * This function is used by Next.js to statically generate all project pages
  * at build time.
- * 
+ *
  * @returns {Promise<Array<{slug: string}>>} An array of objects containing the slug for each project.
  */
 export async function generateStaticParams() {
@@ -32,10 +32,10 @@ export async function generateStaticParams() {
 
 /**
  * Generates metadata for a specific project page.
- * 
+ *
  * This function is used by Next.js to generate the metadata for each project page,
  * including the title and description.
- * 
+ *
  * @param {Object} props - The props object containing the route parameters.
  * @param {Object} props.params - The route parameters.
  * @param {string} props.params.slug - The slug of the project.
@@ -59,11 +59,11 @@ export const generateMetadata = async (props: { params: { slug: string } }): Pro
 
 /**
  * RoutePage component for rendering individual project pages.
- * 
+ *
  * This component fetches the project data based on the slug from the URL parameters,
  * and renders the project content using MDX. If the project is not found, it triggers
  * the notFound() function.
- * 
+ *
  * @param {Object} props - The props object containing the route parameters.
  * @param {Object} props.params - The route parameters.
  * @param {string} props.params.slug - The slug of the project to render.
@@ -84,9 +84,7 @@ export default async function RoutePage(props: { params: { slug: string } }) {
         <div className="flex items-center gap-2">
           <p className="text-xs text-muted-foreground">{new Date(post.date).toLocaleDateString()}</p>
         </div>
-        <Heading variant="h1" border={false}>
-          {post.title}
-        </Heading>
+        <Heading variant="h1">{post.title}</Heading>
         <MdxRender>{post.content}</MdxRender>
       </article>
     </Container>

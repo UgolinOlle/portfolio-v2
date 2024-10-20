@@ -1,15 +1,18 @@
 /**
  * @file hero.tsx
- * @description Hero component
+ * @description Hero component with enhanced magnet effect using Framer Motion
  * @author Ugolin Ollé<hello@ugolin-olle.com>
- * @version 1.0.0
+ * @version 1.3.0
  */
 
+'use client';
+
 // --- Imports
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 import { Heading } from '~/components/ui/headers';
 import { Button } from '~/components/ui/button';
@@ -17,21 +20,59 @@ import { Appointement } from '~/components/hero/appointement';
 import { RetroGrid } from '~/components/commons/retro';
 import { Clock } from '~/components/hero/clock';
 import { CrossIcon } from '~/components/commons/icons/common';
-import { Container } from '~/components/commons/animation';
 
 import { SOCIALS } from '~/lib/constants/socials';
 import { cn } from '~/lib/utils';
 import { ShinyContainer } from '../ui/shiny';
 
-/**
- * @name Hero
- * @description Hero component
- * @returns {React.JSX.Element} The hero component
- */
 export const Hero: React.FC = (): JSX.Element => {
-  // --- Render
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const dampenedX = useSpring(mouseX, { stiffness: 150, damping: 15 });
+  const dampenedY = useSpring(mouseY, { stiffness: 150, damping: 15 });
+
+  const rotateX = useTransform(dampenedY, [-500, 500], [15, -15]);
+  const rotateY = useTransform(dampenedX, [-500, 500], [-15, 15]);
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (rect) {
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const distanceX = event.clientX - centerX;
+      const distanceY = event.clientY - centerY;
+      const maxDistance = Math.max(rect.width, rect.height);
+
+      if (Math.abs(distanceX) < maxDistance && Math.abs(distanceY) < maxDistance) {
+        mouseX.set(distanceX);
+        mouseY.set(distanceY);
+      } else {
+        handleMouseLeave();
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
-    <Container className="relative flex h-full w-full flex-col-reverse justify-center shadow-sm transition duration-300 ease-in-out md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 lg:flex-row lg:justify-between">
+    <motion.div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: 'preserve-3d',
+        perspective: 1000,
+      }}
+      className="relative flex h-full w-full flex-col-reverse justify-center shadow-sm transition duration-300 ease-in-out md:border md:border-neutral-200/70 dark:md:border-neutral-400/70 lg:flex-row lg:justify-between"
+    >
       <CrossIcon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
       <CrossIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
       <CrossIcon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
@@ -42,8 +83,7 @@ export const Hero: React.FC = (): JSX.Element => {
           <div className="flex flex-col items-center gap-3 lg:items-start lg:justify-start">
             <Heading
               variant="hero"
-              className="mt-8 bg-gradient-to-r from-primary to-neutral-800 bg-clip-text px-4 py-7 font-bumbbled text-transparent md:mt-0"
-              border={false}
+              className="mt-8 bg-gradient-to-r from-primary to-neutral-800 bg-clip-text px-4 py-7 font-bumbbled text-transparent dark:text-neutral-200 md:mt-0"
             >
               Ugolin Ollé
             </Heading>
@@ -110,6 +150,6 @@ export const Hero: React.FC = (): JSX.Element => {
         </div>
       </div>
       <RetroGrid />
-    </Container>
+    </motion.div>
   );
 };

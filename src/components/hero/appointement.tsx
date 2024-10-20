@@ -5,21 +5,21 @@
  * @version 1.0.0
  */
 
-'use client'
+'use client';
 
 // --- Imports
-import React from 'react'
-import { Phone } from 'lucide-react'
+import React from 'react';
+import { Phone } from 'lucide-react';
 
-import { Button } from '../ui/button'
-import Link from 'next/link'
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 /**
  * @name Appointement
  * @description Appointement component
  * @returns {React.JSX.Element} The appointement component
  */
-export const Appointement: React.FC = () => {
+export const Appointement: React.FC = (): React.JSX.Element => {
   // --- Render
   return (
     <Link href="https://cal.com/ugolin-olle" passHref target="_blank">
@@ -32,5 +32,5 @@ export const Appointement: React.FC = () => {
         </div>
       </Button>
     </Link>
-  )
-}
+  );
+};

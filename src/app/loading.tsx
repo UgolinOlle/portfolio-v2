@@ -11,7 +11,7 @@ import { Heading } from '~/components/ui/headers';
 
 /**
  * Loading component
- * 
+ *
  * @returns {React.JSX.Element} The loading component
  */
 export default function Loading() {
@@ -21,7 +21,6 @@ export default function Loading() {
       <Heading
         variant="hero"
         align="center"
-        border={false}
         className="bg-gradient-to-r from-primary to-neutral-800 bg-clip-text px-4 py-7 font-bumbbled text-transparent"
       >
         Ugolin Olle

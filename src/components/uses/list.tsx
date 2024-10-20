@@ -19,7 +19,7 @@ import { Container } from '~/components/commons/animation';
 type ListProps = {
   title: string;
   items: CardProps[];
-}
+};
 
 /**
  * @name UseList
@@ -30,11 +30,9 @@ type ListProps = {
 const UseList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
-    <Container  className="flex flex-col gap-4 mt-16">
-      <Heading variant="h3" border={false}>
-        {title}
-      </Heading>
-      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 my-5">
+    <Container className="mt-16 flex flex-col gap-4">
+      <Heading variant="h3">{title}</Heading>
+      <section className="my-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <UseCard key={index} {...item} />
         ))}
@@ -52,11 +50,9 @@ const UseList: React.FC<ListProps> = ({ title, items }) => {
 const UseImagesList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
-    <Container  className="flex flex-col gap-4 mt-16">
-      <Heading variant="h3" border={false}>
-        {title}
-      </Heading>
-      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 my-5">
+    <Container className="mt-16 flex flex-col gap-4">
+      <Heading variant="h3">{title}</Heading>
+      <section className="my-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <UseCardImage key={index} {...item} />
         ))}

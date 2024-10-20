@@ -82,7 +82,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
       {isHovered && <BorderBeam fade size={250} duration={12} delay={9} />}
       <div className="flex w-full items-center justify-between">
         <div className="flex w-2/3 items-center gap-3 text-neutral-900 dark:text-neutral-100">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 p-2 dark:border-neutral-700 dark:bg-neutral-800">
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 p-2 dark:bg-neutral-800">
             <LucideIcon className="m-auto h-6 w-6 transform stroke-neutral-900 transition duration-300 ease-in-out group-hover/service:-rotate-12 dark:stroke-neutral-100" />
           </div>
           <p className="text-xl font-bold">{props.title}</p>
@@ -92,7 +92,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
             <span className="text-neutral-500">Sur devis</span>
           ) : (
             <>
-              {props.price} <span className="text-neutral-500">/ {props.hour === true ? 'heure' : 'jour'}</span>
+              {props.price} €
+              {props.index != 0 && (
+                <span className="text-neutral-500"> / {props.hour === true ? 'heure' : 'jour'}</span>
+              )}
             </>
           )}
         </p>

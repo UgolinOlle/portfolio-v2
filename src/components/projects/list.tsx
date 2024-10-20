@@ -46,22 +46,22 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
   // --- Render
   return (
     <motion.li
-      className={`bg-neutral-100 dark:bg-neutral-900 shadow-md rounded-lg p-4 w-full flex flex-col items-start gap-10 h-auto border`}
+      className={`flex h-auto w-full flex-col items-start gap-10 rounded-lg border bg-neutral-100 p-4 shadow-md dark:bg-neutral-900`}
       variants={variants}
       whileHover="hover"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       layout
     >
-      <div className="flex flex-col items-start gap-6 w-full">
-        <div className="w-full relative" style={{ paddingBottom: '50%' }}>
+      <div className="flex w-full flex-col items-start gap-6">
+        <div className="relative w-full" style={{ paddingBottom: '50%' }}>
           {props.imageBg && (
             <Image
               src={props.imageBg}
               alt={`${props.name} background`}
               fill
               style={{ objectFit: 'cover' }}
-              className="absolute top-0 left-0 w-full h-full rounded-lg opacity-25"
+              className="absolute left-0 top-0 h-full w-full rounded-lg opacity-25"
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJncmF5Ii8+PC9zdmc+"
             />
@@ -77,40 +77,30 @@ const ProjectItem: React.FC<IProjectItem> = (props): JSX.Element => {
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <Heading variant="h3" border={false}>
-            {props.name}
-          </Heading>
-          <p className="text-md text-neutral-600 dark:text-neutral-300">
-            {props.description}
-          </p>
+          <Heading variant="h3">{props.name}</Heading>
+          <p className="text-md text-neutral-600 dark:text-neutral-300">{props.description}</p>
           <div className="flex items-center gap-5">
             <Link
               href={`/projects/${props.url}`}
-              className="flex items-center gap-2 text-blue-500 hover:underline group/project-link"
+              className="group/project-link flex items-center gap-2 text-blue-500 hover:underline"
             >
               Voir le projet
-              <MoveUpRight
-                size={16}
-                className="group-hover/project-link:underline"
-              />
+              <MoveUpRight size={16} className="group-hover/project-link:underline" />
             </Link>
 
             {props.githubUrl !== '' && (
-              <Link
-                href={props.githubUrl}
-                className="w-5 h-5 text-neutral-600 dark:text-neutral-300 hover:underline"
-              >
+              <Link href={props.githubUrl} className="h-5 w-5 text-neutral-600 hover:underline dark:text-neutral-300">
                 <SOCIALS_ICONS.github />
               </Link>
             )}
           </div>
         </div>
       </div>
-      <ul className="flex flex-wrap gap-2 mt-2">
+      <ul className="mt-2 flex flex-wrap gap-2">
         {props.technologies.map((tech) => (
           <li
             key={tech}
-            className="bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs px-2 py-1 rounded-lg inline-block"
+            className="inline-block rounded-lg bg-neutral-200 px-2 py-1 text-xs text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300"
           >
             {tech}
           </li>
@@ -132,7 +122,7 @@ const ProjectsList: React.FC<{
   // --- Render
   return (
     <motion.ul
-      className="grid grid-cols-1 md:grid-cols-2 gap-5 h-auto"
+      className="grid h-auto grid-cols-1 gap-5 md:grid-cols-2"
       initial="hidden"
       animate="visible"
       exit="hidden"

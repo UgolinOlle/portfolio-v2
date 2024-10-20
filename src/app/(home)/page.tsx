@@ -12,10 +12,11 @@ import { Metadata } from 'next';
 import { Box, Container } from '~/components/commons/animation';
 import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
 import { PicturesBento } from '~/components/about/pictures-bento';
+import { NameWriting } from '~/components/commons/writing';
 
 /**
  * Metadata for the home page
- * 
+ *
  * @returns {Metadata} The metadata for the home page
  */
 export const metadata: Metadata = {
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
 
 /**
  * Home page component
- * 
+ *
  * This component is used to display the home page.
- * 
+ *
  * @returns {React.JSX.Element} The home page component
  */
 export default function HomePage() {
@@ -43,6 +44,7 @@ export default function HomePage() {
       <Box className="lg:px-20">
         <HeroAboutTwo />
       </Box>
+      <NameWriting />
     </Container>
   );
 }

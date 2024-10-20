@@ -9,11 +9,11 @@
 
 // --- Imports
 import Image, { StaticImageData } from 'next/image';
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-import { Heading } from '~/components/ui/headers'
-import { cn } from '~/lib/utils'
+import { Heading } from '~/components/ui/headers';
+import { cn } from '~/lib/utils';
 
 /**
  * @type CardProps
@@ -25,11 +25,11 @@ import { cn } from '~/lib/utils'
  * @exports CardProps
  */
 export type CardProps = {
-  title: string
-  description: string
-  image: StaticImageData
-  link?: string
-}
+  title: string;
+  description: string;
+  image: StaticImageData;
+  link?: string;
+};
 
 /**
  * @name UseCard
@@ -52,7 +52,6 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
         <div className="flex w-full items-center justify-between">
           <Heading
             variant="h3"
-            border={false}
             className="transform transition duration-300 ease-in-out lg:group-hover/uses-card:translate-x-1"
           >
             {title}
@@ -73,8 +72,8 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 /**
  * @name UseCardImage
@@ -91,7 +90,7 @@ const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
       x: 10,
       transition: { duration: 0.4, ease: 'easeInOut' },
     },
-  }
+  };
 
   // --- Render
   return (
@@ -112,10 +111,7 @@ const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
         )}
       >
         <motion.div variants={textVariants}>
-          <Heading
-            variant="h3"
-            className="text-lg font-semibold text-neutral-100"
-          >
+          <Heading variant="h3" className="text-lg font-semibold text-neutral-100">
             {title}
           </Heading>
         </motion.div>
@@ -124,7 +120,7 @@ const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
         </motion.p>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export { UseCard, UseCardImage }
+export { UseCard, UseCardImage };

@@ -5,12 +5,12 @@
  * @version 1.0.0
  */
 
-'use client'
+'use client';
 
 // --- Imports
-import React, { useRef, useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { cn } from '~/lib/utils'
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '~/lib/utils';
 
 // --- Global variants animation
 const variants = {
@@ -24,7 +24,7 @@ const variants = {
       ease: 'easeOut',
     },
   }),
-}
+};
 
 /**
  * @type ContainerProps
@@ -33,9 +33,9 @@ const variants = {
  * @property {string} className - The class name of the container
  */
 type ContainerProps = {
-  children: React.ReactNode
-  className?: string
-}
+  children: React.ReactNode;
+  className?: string;
+};
 
 /**
  * @type BoxProps
@@ -44,9 +44,9 @@ type ContainerProps = {
  * @property {string} className - The class name of the box
  */
 type BoxProps = {
-  children: React.ReactNode
-  className?: string
-}
+  children: React.ReactNode;
+  className?: string;
+};
 
 /**
  * @name Container
@@ -57,8 +57,8 @@ type BoxProps = {
  */
 const Container: React.FC<ContainerProps> = ({ children, className }) => {
   // --- Variables
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // --- Functions
   useEffect(() => {
@@ -66,24 +66,24 @@ const Container: React.FC<ContainerProps> = ({ children, className }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
+            setIsVisible(true);
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
       { threshold: 0.05 }
-    )
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // --- Render
   return (
@@ -96,8 +96,8 @@ const Container: React.FC<ContainerProps> = ({ children, className }) => {
     >
       {children}
     </motion.section>
-  )
-}
+  );
+};
 
 /**
  * @name Box
@@ -108,8 +108,8 @@ const Container: React.FC<ContainerProps> = ({ children, className }) => {
  */
 const Box: React.FC<BoxProps> = ({ children, className }) => {
   // --- Variables
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // --- Functions
   useEffect(() => {
@@ -117,24 +117,24 @@ const Box: React.FC<BoxProps> = ({ children, className }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
+            setIsVisible(true);
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // --- Render
   return (
@@ -147,7 +147,7 @@ const Box: React.FC<BoxProps> = ({ children, className }) => {
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
-export { Container, Box }
+export { Container, Box };
