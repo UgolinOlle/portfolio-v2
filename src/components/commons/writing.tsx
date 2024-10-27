@@ -135,8 +135,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_299_17"
@@ -146,8 +146,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_299_17"
@@ -157,8 +157,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_299_17"
@@ -168,8 +168,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_299_17"
@@ -179,8 +179,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint5_linear_299_17"
@@ -190,8 +190,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint6_linear_299_17"
@@ -201,8 +201,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint7_linear_299_17"
@@ -212,8 +212,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint8_linear_299_17"
@@ -223,8 +223,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <linearGradient
             id="paint9_linear_299_17"
@@ -234,8 +234,8 @@ export const NameWriting: React.FC = (): React.JSX.Element => {
             y2="94.2135"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stropColor="#5C00F8" />
-            <stop offset="1" stropColor="white" />
+            <stop stopColor="#5C00F8" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
         </defs>
       </motion.svg>
