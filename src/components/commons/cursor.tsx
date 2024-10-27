@@ -123,11 +123,16 @@ export const Cursor: React.FC = () => {
         className="pointer-events-none fixed left-0 top-0 z-[10001]"
         animate={mousePosition}
         transition={{
-          type: 'spring',
-          stiffness: 1000,
-          damping: 28,
-          mass: 0.1,
+          type: 'tween',
+          ease: 'linear',
+          duration: 0,
         }}
+        // transition={{
+        //   type: 'spring',
+        //   stiffness: 1000,
+        //   damping: 28,
+        //   mass: 0.1,
+        // }}
       >
         <motion.svg
           width="24"
