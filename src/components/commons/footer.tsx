@@ -15,27 +15,22 @@ import { CrossIcon } from '~/components/commons/icons/common';
  */
 export const Footer: React.FC = () => {
   // --- Variables
-  const sharedTextClasses =
-    'text-center text-sm text-gray-700/75 dark:text-gray-300/75';
+  const sharedTextClasses = 'text-center text-sm text-gray-700/75 dark:text-gray-300/75';
 
   // --- Render
   return (
-    <footer className="w-full text-neutral-600 dark:text-neutral-200 py-5 mt-9 shadow-sm">
-      <div className="border border-neutral-300 relative p-2">
-        <CrossIcon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-        <CrossIcon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-        <CrossIcon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-        <CrossIcon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+    <footer className="mt-9 w-full py-5 text-neutral-600 dark:text-neutral-200">
+      <div className="relative border border-neutral-300 p-2">
+        <CrossIcon className="absolute -left-3 -top-3 h-6 w-6 text-black dark:text-white" />
+        <CrossIcon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
+        <CrossIcon className="absolute -right-3 -top-3 h-6 w-6 text-black dark:text-white" />
+        <CrossIcon className="absolute -bottom-3 -right-3 h-6 w-6 text-black dark:text-white" />
 
-        <div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between gap-3 items-center px-2 sm:px-5">
-          <p className="text-center text-sm">
-            © {new Date().getFullYear()} Ugolin Ollé. All rights reserved.
-          </p>
-          <div className="hidden sm:inline-block h-2 bg-neutral-800 dark:bg-neutral-100 my-2 sm:my-0" />
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-10">
-            <p className={sharedTextClasses}>
-              Built with Next.js, TypeScript, and Tailwind CSS.
-            </p>
+        <div className="flex w-full flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:justify-between sm:px-5">
+          <p className="text-center text-sm">© {new Date().getFullYear()} Ugolin Ollé. All rights reserved.</p>
+          <div className="my-2 hidden h-2 bg-neutral-800 dark:bg-neutral-100 sm:my-0 sm:inline-block" />
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-10">
+            <p className={sharedTextClasses}>Built with Next.js, TypeScript, and Tailwind CSS.</p>
           </div>
         </div>
       </div>
