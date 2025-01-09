@@ -31,7 +31,9 @@ const UseList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
     <Container className="mt-16 flex flex-col gap-4">
-      <Heading variant="h3">{title}</Heading>
+      <Heading variant="h3" className="font-griffiths font-bold italic">
+        {title}
+      </Heading>
       <section className="my-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <UseCard key={index} {...item} />
@@ -51,7 +53,9 @@ const UseImagesList: React.FC<ListProps> = ({ title, items }) => {
   // --- Render
   return (
     <Container className="mt-16 flex flex-col gap-4">
-      <Heading variant="h3">{title}</Heading>
+      <Heading variant="h3" className="font-griffiths font-bold italic">
+        {title}
+      </Heading>
       <section className="my-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <UseCardImage key={index} {...item} />

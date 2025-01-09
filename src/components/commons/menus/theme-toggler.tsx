@@ -70,7 +70,7 @@ export const ThemeToggler = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute -top-2 right-12 z-10 mt-2 w-32 rounded-lg border border-neutral-200 bg-white py-2 shadow-md dark:border-neutral-700 dark:bg-neutral-900/70"
+            className="absolute -top-28 right-12 z-10 mt-2 w-32 rounded-lg border border-neutral-200 bg-white py-2 shadow-md dark:border-neutral-700 dark:bg-neutral-900/70"
           >
             {themes.map((t) => (
               <button

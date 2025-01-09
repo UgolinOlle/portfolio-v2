@@ -51,7 +51,7 @@ const UseCard: React.FC<CardProps> = ({ title, description, image, link }) => {
       <div className="flex w-2/3 flex-col items-start gap-2">
         <div className="flex w-full items-center justify-between">
           <Heading
-            variant="h3"
+            variant="h4"
             className="transform transition duration-300 ease-in-out lg:group-hover/uses-card:translate-x-1"
           >
             {title}
@@ -111,7 +111,7 @@ const UseCardImage: React.FC<CardProps> = ({ title, description, image }) => {
         )}
       >
         <motion.div variants={textVariants}>
-          <Heading variant="h3" className="text-lg font-semibold text-neutral-100">
+          <Heading variant="h4" className="font-semibold text-neutral-100">
             {title}
           </Heading>
         </motion.div>

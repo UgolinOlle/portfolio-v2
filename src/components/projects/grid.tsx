@@ -46,7 +46,7 @@ const ProjectCard: React.FC<IProjectItem> = (props): JSX.Element => {
       <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-200 group-hover/feature:text-[#8338ec] group-hover/feature:translate-x-1 transition duration-300 ease-in-out">
         {props.icon}
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className=" font-bold mb-2 relative z-10 px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 bg-neutral-200 dark:bg-neutral-800 group-hover/feature:bg-[#8338ec] transition-all duration-200 origin-center rounded-tr rounded-br" />
         <span
           className={cn(

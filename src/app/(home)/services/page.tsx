@@ -20,7 +20,7 @@ import { SERVICES, SERVICES_BENEFITS } from '~/lib/constants/service';
 
 /**
  * Metadata for the services page
- * 
+ *
  * @returns {Metadata} The metadata for the services page
  */
 export const metadata: Metadata = {
@@ -28,19 +28,12 @@ export const metadata: Metadata = {
   description: 'Liste des services proposés.',
 };
 
-/**
- * Services page component
- * 
- * This component is used to display the services page.
- * 
- * @returns {React.JSX.Element} The services page component
- */
 export default function ServicesPage() {
   // --- Render
   return (
-    <Container className="my-16">
+    <Container className="my-8 flex flex-col gap-8">
       <Heading variant="h2">Services</Heading>
-      <Box className="my-16 grid grid-cols-1 gap-10 md:grid-cols-2">
+      <Box className="grid grid-cols-1 gap-10 md:grid-cols-2">
         {SERVICES.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
@@ -53,7 +46,7 @@ export default function ServicesPage() {
           {SERVICES_BENEFITS.map((review) => (
             <div className="flex items-center gap-2">
               <CircleCheckBig className="text-primary-500 dark:text-primary-400 h-6 w-6" />
-              <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">{review.title}</p>
+              <p className="font-medium text-neutral-900 dark:text-neutral-100">{review.title}</p>
             </div>
           ))}
         </Marquee>

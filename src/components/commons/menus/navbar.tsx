@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
                 key={tab.title}
                 value={tab.title}
                 onClick={() => handleNavigation(tab.path, tab.title)}
-                className="w-full cursor-none lg:w-auto"
+                className="w-full cursor-none text-sm lg:w-auto"
               >
                 {tab.title.charAt(0).toUpperCase() + tab.title.slice(1)}
               </TabsTrigger>
@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
             <TabsTrigger
               value="Uses"
               onClick={() => handleNavigation('/uses', 'Uses')}
-              className="flex w-full cursor-none items-center lg:w-auto"
+              className="flex w-full cursor-none items-center text-lg lg:w-auto"
             >
               <span className="lg:hidden">Uses</span>
               <Mouse size={20} className="hidden lg:inline" />

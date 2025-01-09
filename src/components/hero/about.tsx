@@ -81,11 +81,7 @@ const HeroAbout = () => {
   const isInView = useInView(ref, { once: false, amount: 0.5 });
 
   return (
-    <div
-      ref={ref}
-      className="w-full text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
-      id="me"
-    >
+    <div ref={ref} className="w-full text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4" id="me">
       <p>
         Je m'appelle Ugolin Ollé,{' '}
         <AnimatedText icon={COMMON_ICONS.neovim} isInView={isInView}>
@@ -115,7 +111,7 @@ const HeroAboutTwo = () => {
   return (
     <div
       ref={ref}
-      className="flex w-full flex-col items-center gap-14 text-xl text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
+      className="flex w-full flex-col items-center gap-14 text-neutral-800 dark:text-neutral-300 md:text-justify lg:m-auto lg:w-3/4"
     >
       <p>
         J'adore partager mes expériences et réflexions sur le développement et la freelance particulièrement sur{' '}

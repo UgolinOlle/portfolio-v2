@@ -19,7 +19,7 @@ import { RightMenu } from '~/components/commons/menus/right-menu';
 
 /**
  * Metadata for the home page
- * 
+ *
  * @returns {Metadata} The metadata for the home page
  */
 export const metadata: Metadata = {
@@ -168,7 +168,7 @@ export const metadata: Metadata = {
 
 /**
  * Roboto Slab font
- * 
+ *
  * @returns {Roboto_Slab} The Roboto Slab font
  */
 const robotSlab = Roboto_Slab({
@@ -178,7 +178,7 @@ const robotSlab = Roboto_Slab({
 
 /**
  * Roboto Mono font
- * 
+ *
  * @returns {Roboto_Mono} The Roboto Mono font
  */
 const robotMono = Roboto_Mono({
@@ -188,7 +188,7 @@ const robotMono = Roboto_Mono({
 
 /**
  * Root layout component
- * 
+ *
  * @param {Readonly<{ children: React.ReactNode }>} props - The props for the root layout component
  * @returns {React.JSX.Element} The root layout component
  */
@@ -202,7 +202,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
-            'relative flex flex-col items-center bg-background px-4 py-4 font-body antialiased sm:px-6 md:px-8',
+            'relative flex flex-col items-center bg-background px-4 py-4 font-body text-base antialiased sm:px-6 md:px-8',
             `${robotSlab.className} ${robotMono.className}`
           )}
         >

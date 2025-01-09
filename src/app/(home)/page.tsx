@@ -5,14 +5,12 @@
  * @version 1.0.0
  */
 
-// --- Imports
 import React from 'react';
-import { Metadata } from 'next';
+import { Metadata, NextPage } from 'next';
 
 import { Box, Container } from '~/components/commons/animation';
 import { HeroAbout, HeroAboutTwo } from '~/components/hero/about';
 import { PicturesBento } from '~/components/about/pictures-bento';
-import { NameWriting } from '~/components/commons/writing';
 
 /**
  * Metadata for the home page
@@ -24,14 +22,7 @@ export const metadata: Metadata = {
   description: "Page d'accueil de mon portfolio",
 };
 
-/**
- * Home page component
- *
- * This component is used to display the home page.
- *
- * @returns {React.JSX.Element} The home page component
- */
-export default function HomePage() {
+const HomePage: NextPage = () => {
   // --- Render
   return (
     <Container className="my-16 flex flex-col gap-16">
@@ -44,7 +35,8 @@ export default function HomePage() {
       <Box className="lg:px-20">
         <HeroAboutTwo />
       </Box>
-      <NameWriting />
     </Container>
   );
-}
+};
+
+export default HomePage;

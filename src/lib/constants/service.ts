@@ -19,7 +19,7 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Landing page',
     price: 950,
     description:
-      'Transformez vos visiteurs en clients avec une landing pages sur mesure, conçues pour maximiser vos conversions. Livraison en 72h avec mise en ligne.',
+      'Transformez vos visiteurs en clients avec une landing pages sur mesure, conçues pour maximiser vos conversions.',
     icon: 'SwatchBook',
     color: '',
     link: 'https://cal.com/ugolin-olle',
@@ -42,8 +42,7 @@ export const SERVICES: ServiceCardProps[] = [
     index: 2,
     title: 'Logiciel / SaaS',
     price: 0,
-    description:
-      'Conception de logiciels et solutions SaaS sur mesure pour automatiser et faire évoluer votre entreprise.',
+    description: 'Conception de logiciels et solutions SaaS sur mesure.',
     icon: 'BookKey',
     color: 'purple-500',
     link: 'https://cal.com/ugolin-olle',

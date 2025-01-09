@@ -16,26 +16,20 @@ import { Container } from '~/components/commons/animation';
 
 /**
  * Home layout component
- * 
+ *
  * This component is used to display the home layout.
- * 
+ *
  * @returns {React.JSX.Element} The home layout component
  */
-export default function HomeLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HomeLayout({ children }: { children: React.ReactNode }) {
   // --- Render
   return (
     <MainContainer>
-      <div className="w-full lg:w-[90vw] xl:w-[80vw] h-full flex flex-col justify-center gap-3 lg:gap-5 lg:justify-between">
-        <Container
-          className="h-full lg:h-2/5 p-2 mt-5 mb-2 md:px-8 md:pt-8"
-        >
+      <div className="flex h-full w-full flex-col justify-center gap-3 text-base lg:w-[90vw] lg:justify-between lg:gap-5 xl:w-[80vw]">
+        <Container className="mb-2 mt-5 h-full p-2 md:px-8 md:pt-8 lg:h-2/5">
           <Hero />
         </Container>
-        <Container  className="h-full lg:h-auto p-2 md:px-8">
+        <Container className="h-full p-2 md:px-8 lg:h-auto">
           <Navbar />
           {children}
           <Footer />

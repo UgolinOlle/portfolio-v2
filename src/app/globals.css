@@ -79,7 +79,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     html {
       cursor: auto;
     }
@@ -91,12 +91,14 @@
 html {
   --cursor-color: #333;
   scroll-behavior: smooth;
-  /* cursor: none; */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: -0.2px;
 }
 
 html.dark-mode {
@@ -123,6 +125,13 @@ img {
 @font-face {
   font-family: 'Bumbbled';
   src: url('/fonts/Bumbbled.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Griffiths';
+  src: url('/fonts/Griffiths.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

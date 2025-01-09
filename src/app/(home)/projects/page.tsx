@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage(): React.JSX.Element {
   // -- Rendering
   return (
-    <Container className="mb-28 flex flex-col gap-10">
+    <Container className="my-8 flex flex-col gap-8">
       <Heading variant="h2">Projets</Heading>
       <ProjectsInfo />
     </Container>
