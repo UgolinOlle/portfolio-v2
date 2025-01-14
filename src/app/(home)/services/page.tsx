@@ -33,9 +33,14 @@ export default function ServicesPage() {
   return (
     <Container className="my-8 flex flex-col gap-8">
       <Heading variant="h2">Services</Heading>
-      <Box className="grid grid-cols-1 gap-10 md:grid-cols-2">
+
+      <Box className={`grid gap-10 ${SERVICES.length === 1 ? 'grid-cols-1 justify-items-center' : 'grid-cols-2'}`}>
         {SERVICES.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+          <ServiceCard
+            key={index}
+            {...service}
+            className={`${SERVICES.length % 2 === 1 && index === SERVICES.length - 1 ? 'justify-self-center' : ''}`}
+          />
         ))}
       </Box>
       <Box className="relative my-16">

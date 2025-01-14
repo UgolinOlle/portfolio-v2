@@ -28,18 +28,6 @@ export const SERVICES: ServiceCardProps[] = [
   },
   {
     index: 1,
-    title: 'Application web',
-    price: 0,
-    description:
-      "Création d'applications web sur mesure, conçues pour être performantes, évolutives, expérience utilisateur fluide et design interactif.",
-    icon: 'Code',
-    color: 'green-500',
-    link: 'https://cal.com/ugolin-olle',
-    linkText: 'Prendre rendez-vous',
-    features: ['Technologies modernes', 'Design interactif', 'Support mobile'],
-  },
-  {
-    index: 2,
     title: 'Logiciel / SaaS',
     price: 0,
     description: 'Conception de logiciels et solutions SaaS sur mesure.',
@@ -50,7 +38,7 @@ export const SERVICES: ServiceCardProps[] = [
     features: ['Cloud-based', 'Scalabilité', 'Sécurité renforcée'],
   },
   {
-    index: 3,
+    index: 2,
     title: 'Support technique',
     price: 50,
     hour: true,

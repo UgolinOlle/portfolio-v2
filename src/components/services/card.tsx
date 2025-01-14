@@ -7,16 +7,16 @@
 
 'use client';
 
-// --- Imports
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Calendar, icons } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import { ServiceCardProps } from '~/lib/interfaces/service';
-
 import { BorderBeam } from '~/components/ui/border-beam';
-import { Heading } from '../ui/headers';
+import { Heading } from '~/components/ui/headers';
+
+import { ServiceCardProps } from '~/lib/interfaces/service';
+import { cn } from '~/lib/utils';
 
 /**
  * @name ServiceCard
@@ -76,7 +76,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'}
       variants={variants}
-      className="group/service relative flex min-h-[400px] min-w-[300px] flex-col items-start justify-start gap-5 rounded-xl border border-neutral-200 p-5 shadow-sm dark:border-neutral-700"
+      className={cn(
+        'group/service relative flex min-h-[400px] min-w-[300px] flex-col items-start justify-start gap-5 rounded-xl border border-neutral-200 p-5 shadow-sm dark:border-neutral-700',
+        props.className
+      )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

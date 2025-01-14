@@ -18,16 +18,17 @@
  * @exports ServiceCardProps
  */
 export interface ServiceCardProps {
-  index: number
-  title: string
-  price: number
-  hour?: boolean
-  description: string
-  color: string
-  icon: string
-  link: string
-  linkText: string
-  features: Array<string>
+  index: number;
+  title: string;
+  price: number;
+  hour?: boolean;
+  description: string;
+  color: string;
+  icon: string;
+  link: string;
+  linkText: string;
+  features: Array<string>;
+  className?: string;
 }
 
 /**
@@ -37,6 +38,6 @@ export interface ServiceCardProps {
  * @exports ServiceBenefitProps
  */
 export interface IServiceBenefitProps {
-  title: string
-  icon: string
+  title: string;
+  icon: string;
 }
