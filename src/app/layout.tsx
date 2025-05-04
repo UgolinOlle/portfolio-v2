@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   keywords: [
     'Ugolin Ollé',
     'ugolin ollé',
-    'UGOLIN OLLÉ',
     'Développeur Full Stack',
     'développeur full stack',
     'DÉVELOPPEUR FULL STACK',
