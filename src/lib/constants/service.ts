@@ -30,7 +30,8 @@ export const SERVICES: ServiceCardProps[] = [
     index: 1,
     title: 'Logiciel / SaaS',
     price: 0,
-    description: 'Conception de logiciels et solutions SaaS sur mesure.',
+    description:
+      'Développez un logiciel ou un SaaS sur mesure, conçu pour s’adapter à vos besoins spécifiques. Profitez d’une solution clé en main.',
     icon: 'BookKey',
     color: 'purple-500',
     link: 'https://cal.com/ugolin-olle',
@@ -42,7 +43,8 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Support technique',
     price: 50,
     hour: true,
-    description: 'Assistance technique pour maintenir vos systèmes, applications, logiciel et serveur à jour 7/7j.',
+    description:
+      'Assurez la maintenance et la stabilité de vos systèmes, applications et serveurs avec un support technique réactif et disponible 7j/7.',
     icon: 'Computer',
     color: 'red-500',
     link: 'https://cal.com/ugolin-olle',
